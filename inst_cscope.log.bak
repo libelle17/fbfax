@@ -1,0 +1,14 @@
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'cscope-15.8b-lp151.2.3.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende NEUE Paket wird installiert:
+  cscope
+
+1 neues Paket zu installieren.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 204,6 KiB. Nach der Operation werden zusätzlich 1,2 MiB belegt.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache cscope-15.8b-lp151.2.3.x86_64.rpm (1/1), 204,6 KiB (  1,2 MiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [.......fertig]
+(1/1) Installieren: cscope-15.8b-lp151.2.3.x86_64 [............fertig]

@@ -1,0 +1,14 @@
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libgssdp-devel-1.0.2-lp151.2.2.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libgssdp-devel
+
+1 zu installierendes Paket.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 42,9 KiB. Nach diesem Vorgang wird kein zusätzlicher Speicherplatz belegt oder freigegeben.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libgssdp-devel-1.0.2-lp151.2.2.x86_64.rpm (1/1),  42,9 KiB (199,1 KiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [....fertig]
+(1/1) Installieren: libgssdp-devel-1.0.2-lp151.2.2.x86_64 [.........fertig]

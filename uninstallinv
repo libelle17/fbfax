@@ -1,0 +1,3 @@
+sudo /usr/bin/rpm -e --nodeps 
+# sudo /usr/bin/zypper -n --gpg-auto-import-keys in -f spandsp
+printf "(Inst: 2019-06-20 02:36:39): $blau%s$reset\n" "sudo /usr/bin/rpm -e --nodeps "

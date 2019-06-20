@@ -1,0 +1,14 @@
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libcapi20-3-2011.8.29-lp151.7.57.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libcapi20-3
+
+1 zu installierendes Paket.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 26,0 KiB. Nach diesem Vorgang wird kein zusätzlicher Speicherplatz belegt oder freigegeben.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libcapi20-3-2011.8.29-lp151.7.57.x86_64.rpm (1/1),  26,0 KiB ( 50,6 KiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [...fertig]
+(1/1) Installieren: libcapi20-3-2011.8.29-lp151.7.57.x86_64 [.....fertig]

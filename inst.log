@@ -1,0 +1,202 @@
+
+Rueckmeldung bei einricht spandsp:
+Metadaten von Repository 'Aktualisierungs-Repository (DEBUG)' abrufen [..fertig]
+Cache für Repository 'Aktualisierungs-Repository (DEBUG)' erzeugen [....fertig]
+Metadaten von Repository 'Hauptaktualisierungs-Repository' abrufen [.......fertig]
+Cache für Repository 'Hauptaktualisierungs-Repository' erzeugen [....fertig]
+Metadaten von Repository 'Aktualisierungs-Repository (Debug)' abrufen [.fertig]
+Cache für Repository 'Aktualisierungs-Repository (Debug)' erzeugen [....fertig]
+Metadaten von Repository 'Hauptaktualisierungs-Repository' abrufen [.fertig]
+Cache für Repository 'Hauptaktualisierungs-Repository' erzeugen [....fertig]
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+IP: ''
+
+Rueckmeldung bei einricht spandsp:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+IP: ''
+
+Rueckmeldung bei einricht spandsp:
+IP: ''
+
+Rueckmeldung bei einricht spandsp-devel:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'spandsp-devel-0.0.6-lp151.2.2.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende NEUE Paket wird installiert:
+  spandsp-devel
+
+1 neues Paket zu installieren.
+Gesamtgröße des Downloads: 146,8 KiB. Bereits im Cache gespeichert: 0 B. Nach der Operation werden zusätzlich 843,7 KiB belegt.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Paket spandsp-devel-0.0.6-lp151.2.2.x86_64 abrufen (1/1), 146,8 KiB (843,7 KiB entpackt)
+Abrufen: spandsp-devel-0.0.6-lp151.2.2.x86_64.rpm [.fertig]
+Überprüfung auf Dateikonflikte läuft: [....fertig]
+(1/1) Installieren: spandsp-devel-0.0.6-lp151.2.2.x86_64 [............fertig]
+IP: ''
+
+Rueckmeldung bei einricht cscope:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'cscope-15.8b-lp151.2.3.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende NEUE Paket wird installiert:
+  cscope
+
+1 neues Paket zu installieren.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 204,6 KiB. Nach der Operation werden zusätzlich 1,2 MiB belegt.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache cscope-15.8b-lp151.2.3.x86_64.rpm (1/1), 204,6 KiB (  1,2 MiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [.......fertig]
+(1/1) Installieren: cscope-15.8b-lp151.2.3.x86_64 [............fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsnd-devel:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+IP: ''
+
+Rueckmeldung bei einricht libsndfile-devel:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsndfile-devel-1.0.28-lp151.4.3.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende NEUE Paket wird installiert:
+  libsndfile-devel
+
+1 neues Paket zu installieren.
+Gesamtgröße des Downloads: 163,3 KiB. Bereits im Cache gespeichert: 0 B. Nach der Operation werden zusätzlich 610,6 KiB belegt.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Paket libsndfile-devel-1.0.28-lp151.4.3.x86_64 abrufen (1/1), 163,3 KiB (610,6 KiB entpackt)
+Abrufen: libsndfile-devel-1.0.28-lp151.4.3.x86_64.rpm [.fertig (600,4 KiB/s)]
+Überprüfung auf Dateikonflikte läuft: [.......fertig]
+(1/1) Installieren: libsndfile-devel-1.0.28-lp151.4.3.x86_64 [...........fertig]
+IP: ''
+
+Rueckmeldung bei einricht libgssdp-devel:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libgssdp-devel-1.0.2-lp151.2.2.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Die folgenden 2 NEUEN Pakete werden installiert:
+  libgssdp-devel typelib-1_0-GSSDP-1_0
+
+2 neue Pakete zu installieren.
+Gesamtgröße des Downloads: 63,6 KiB. Bereits im Cache gespeichert: 0 B. Nach der Operation werden zusätzlich 204,9 KiB belegt.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Paket typelib-1_0-GSSDP-1_0-1.0.2-lp151.2.2.x86_64 abrufen (1/2),  20,7 KiB (  5,8 KiB entpackt)
+Abrufen: typelib-1_0-GSSDP-1_0-1.0.2-lp151.2.2.x86_64.rpm [.fertig (989 B/s)]
+Paket libgssdp-devel-1.0.2-lp151.2.2.x86_64 abrufen (2/2),  42,9 KiB (199,1 KiB entpackt)
+Abrufen: libgssdp-devel-1.0.2-lp151.2.2.x86_64.rpm [fertig]
+Überprüfung auf Dateikonflikte läuft: [....fertig]
+(1/2) Installieren: typelib-1_0-GSSDP-1_0-1.0.2-lp151.2.2.x86_64 [....fertig]
+(2/2) Installieren: libgssdp-devel-1.0.2-lp151.2.2.x86_64 [.........fertig]
+IP: ''
+
+Rueckmeldung bei einricht libgssdp-devel:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libgssdp-devel-1.0.2-lp151.2.2.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libgssdp-devel
+
+1 zu installierendes Paket.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 42,9 KiB. Nach diesem Vorgang wird kein zusätzlicher Speicherplatz belegt oder freigegeben.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libgssdp-devel-1.0.2-lp151.2.2.x86_64.rpm (1/1),  42,9 KiB (199,1 KiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [....fertig]
+(1/1) Installieren: libgssdp-devel-1.0.2-lp151.2.2.x86_64 [.........fertig]
+IP: ''
+
+Rueckmeldung bei einricht libgssdp-devel:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libgssdp-devel-1.0.2-lp151.2.2.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libgssdp-devel
+
+1 zu installierendes Paket.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 42,9 KiB. Nach diesem Vorgang wird kein zusätzlicher Speicherplatz belegt oder freigegeben.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libgssdp-devel-1.0.2-lp151.2.2.x86_64.rpm (1/1),  42,9 KiB (199,1 KiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [....fertig]
+(1/1) Installieren: libgssdp-devel-1.0.2-lp151.2.2.x86_64 [.........fertig]
+IP: ''
+
+Rueckmeldung bei einricht libcapi20-3:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libcapi20-3-2011.8.29-lp151.7.57.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libcapi20-3
+
+1 zu installierendes Paket.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 26,0 KiB. Nach diesem Vorgang wird kein zusätzlicher Speicherplatz belegt oder freigegeben.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libcapi20-3-2011.8.29-lp151.7.57.x86_64.rpm (1/1),  26,0 KiB ( 50,6 KiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [...fertig]
+(1/1) Installieren: libcapi20-3-2011.8.29-lp151.7.57.x86_64 [.....fertig]
+IP: ''
+
+Rueckmeldung bei einricht libgssdp-devel:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libgssdp-devel-1.0.2-lp151.2.2.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libgssdp-devel
+
+1 zu installierendes Paket.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 42,9 KiB. Nach diesem Vorgang wird kein zusätzlicher Speicherplatz belegt oder freigegeben.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libgssdp-devel-1.0.2-lp151.2.2.x86_64.rpm (1/1),  42,9 KiB (199,1 KiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [....fertig]
+(1/1) Installieren: libgssdp-devel-1.0.2-lp151.2.2.x86_64 [.........fertig]
+IP: ''
+
+Rueckmeldung bei einricht libcapi20-3:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libcapi20-3-2011.8.29-lp151.7.57.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libcapi20-3
+
+1 zu installierendes Paket.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 26,0 KiB. Nach diesem Vorgang wird kein zusätzlicher Speicherplatz belegt oder freigegeben.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libcapi20-3-2011.8.29-lp151.7.57.x86_64.rpm (1/1),  26,0 KiB ( 50,6 KiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [...fertig]
+(1/1) Installieren: libcapi20-3-2011.8.29-lp151.7.57.x86_64 [.....fertig]
+IP: ''
+
+Rueckmeldung bei einricht libcapi20-3:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libcapi20-3-2011.8.29-lp151.7.57.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libcapi20-3
+
+1 zu installierendes Paket.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 26,0 KiB. Nach diesem Vorgang wird kein zusätzlicher Speicherplatz belegt oder freigegeben.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libcapi20-3-2011.8.29-lp151.7.57.x86_64.rpm (1/1),  26,0 KiB ( 50,6 KiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [...fertig]
+(1/1) Installieren: libcapi20-3-2011.8.29-lp151.7.57.x86_64 [.....fertig]
+IP: ''

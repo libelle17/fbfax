@@ -1,0 +1,15 @@
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'spandsp-devel-0.0.6-lp151.2.2.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende NEUE Paket wird installiert:
+  spandsp-devel
+
+1 neues Paket zu installieren.
+Gesamtgröße des Downloads: 146,8 KiB. Bereits im Cache gespeichert: 0 B. Nach der Operation werden zusätzlich 843,7 KiB belegt.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Paket spandsp-devel-0.0.6-lp151.2.2.x86_64 abrufen (1/1), 146,8 KiB (843,7 KiB entpackt)
+Abrufen: spandsp-devel-0.0.6-lp151.2.2.x86_64.rpm [.fertig]
+Überprüfung auf Dateikonflikte läuft: [....fertig]
+(1/1) Installieren: spandsp-devel-0.0.6-lp151.2.2.x86_64 [............fertig]

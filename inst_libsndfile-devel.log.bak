@@ -1,0 +1,15 @@
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsndfile-devel-1.0.28-lp151.4.3.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende NEUE Paket wird installiert:
+  libsndfile-devel
+
+1 neues Paket zu installieren.
+Gesamtgröße des Downloads: 163,3 KiB. Bereits im Cache gespeichert: 0 B. Nach der Operation werden zusätzlich 610,6 KiB belegt.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Paket libsndfile-devel-1.0.28-lp151.4.3.x86_64 abrufen (1/1), 163,3 KiB (610,6 KiB entpackt)
+Abrufen: libsndfile-devel-1.0.28-lp151.4.3.x86_64.rpm [.fertig (600,4 KiB/s)]
+Überprüfung auf Dateikonflikte läuft: [.......fertig]
+(1/1) Installieren: libsndfile-devel-1.0.28-lp151.4.3.x86_64 [...........fertig]
