@@ -1,4 +1,5 @@
 #define DPROG "fbfax"
+#include "direkt.h"
 // fuer verschiedene Sprachen //α
 enum T_      
 {

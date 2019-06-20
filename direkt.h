@@ -9,7 +9,9 @@ std::string xmlex(std::string data,std::string lim,std::string lim2=nix,size_t *
 //extern GSList *router_list/*=NULL*/;
 /** Router login blocked shield */
 //extern gboolean router_login_blocked/*=FALSE*/;
-int obverb{0};
+#include <glib.h>
+extern int verbg;
+int dmain(int argc, const gchar** argv);
 
 class fbcl
 {

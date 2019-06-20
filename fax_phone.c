@@ -43,7 +43,7 @@
 
 #define RM_ERROR 
 
-extern int obverb;
+extern int verbg;
 
 /*static */struct session *session = NULL;
 static gconstpointer net_event;
@@ -60,7 +60,7 @@ struct capi_connection *active_capi_connection = NULL;
  */
 struct capi_connection *fax_dial(gchar *tiff, const gchar *trg_no, gboolean suppress)
 {
-  if (obverb) printf("Beginn fax_dial: %s, %s, %d\n",tiff,trg_no,suppress);
+  if (verbg) printf("Beginn fax_dial: %s, %s, %d\n",tiff,trg_no,suppress);
 	struct profile *profile = profile_get_active();
 	gint modem = g_settings_get_int(profile->settings, "fax-bitrate");
 	gboolean ecm = g_settings_get_boolean(profile->settings, "fax-ecm");
@@ -93,7 +93,7 @@ struct capi_connection *fax_dial(gchar *tiff, const gchar *trg_no, gboolean supp
 		connection = fax_send(tiff, modem, ecm, controller, cip, src_no, target, ident, header, suppress);
 	}
 	g_free(target);
-  if (obverb) printf("Ende fax_dial: %s, %s, %d\n",tiff,trg_no,suppress);
+  if (verbg) printf("Ende fax_dial: %s, %s, %d\n",tiff,trg_no,suppress);
 
 	return connection;
 }
@@ -180,7 +180,7 @@ void connection_code(struct capi_connection *connection, gint code)
  */
 void connection_status(struct capi_connection *connection, gint status)
 {
-	if (obverb) printf("Beginn connection_status\n");
+	if (verbg) printf("Beginn connection_status\n");
 	emit_connection_status(status, connection);
 }
 
@@ -237,7 +237,7 @@ gboolean faxophone_connect(gpointer user_data)
 	gboolean retry = TRUE;
 	gchar* host=router_get_host(profile);
 	gint phonecontr=g_settings_get_int(profile->settings, "phone-controller");
-	if (obverb) printf("Beginn faxophone_connect, host: %s, phone-controller: %i\n",host,phonecontr);
+	if (verbg) printf("Beginn faxophone_connect, host: %s, phone-controller: %i\n",host,phonecontr);
 
 again:
 	session = faxophone_init(&session_handlers, router_get_host(profile), g_settings_get_int(profile->settings, "phone-controller") + 1);
@@ -249,7 +249,7 @@ again:
 		goto again;
 	}
 
-	if (obverb) printf("Ende faxophone_connect, host: %s, phone-controller: %i\n",host,phonecontr);
+	if (verbg) printf("Ende faxophone_connect, host: %s, phone-controller: %i\n",host,phonecontr);
 	return session != NULL;
 }
 #endif
@@ -260,7 +260,7 @@ gboolean faxophone_connect(gpointer user_data)
 	gchar* _host=(gchar*)"fritz.box"; // router_get_host(profile);
 //	gint phonecontr=g_settings_get_int(profile->settings, "phone-controller");
 	gint controller=5;
-	if (obverb) printf("Beginn faxophone_connect, host: %s, phone-controller: %i\n",_host,controller/*phonecontr*/);
+	if (verbg) printf("Beginn faxophone_connect, host: %s, phone-controller: %i\n",_host,controller/*phonecontr*/);
 again:
 	session = faxophone_init(&session_handlers, _host/*router_get_host(profile)*/, controller/*g_settings_get_int(profile->settings, "phone-controller") */+ 1);
 	if (!session && retry) {
@@ -274,7 +274,7 @@ again:
 		retry = FALSE;
 		goto again;
 	}
-	if (obverb) printf("Ende faxophone_connect, host: %s, phone-controller: %i\n",_host,controller/*phonecontr*/);
+	if (verbg) printf("Ende faxophone_connect, host: %s, phone-controller: %i\n",_host,controller/*phonecontr*/);
 	return session != NULL;
 }
 
@@ -285,7 +285,7 @@ again:
  */
 gboolean faxophone_disconnect(gpointer user_data)
 {
-	if (obverb) printf("Beginn faxophone_disconnect\n");
+	if (verbg) printf("Beginn faxophone_disconnect\n");
 	faxophone_close(TRUE);
 	return TRUE;
 }
@@ -295,6 +295,6 @@ gboolean faxophone_disconnect(gpointer user_data)
  */
 void faxophone_setup(void)
 {
-	if (obverb) printf("Beginn faxophone_setup\n");
+	if (verbg) printf("Beginn faxophone_setup\n");
 	net_event = net_add_event(faxophone_connect, faxophone_disconnect, NULL);
 }

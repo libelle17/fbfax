@@ -24,6 +24,7 @@
 using namespace std;
 #include "tr64.h"
 #include "direkt.h"
+int verbg{0};
 
 
 fbcl::fbcl()
@@ -44,7 +45,7 @@ void fbcl::waehle(string nr)
 	vector<string> iname; iname.push_back("NewX_AVM-DE_PhoneNumber");
 	vector<string> ival; ival.push_back(nr);
 	tr64.fragurl("/upnp/control/x_voip","urn:dslforum-org:service:X_VoIP:1","X_AVM-DE_DialNumber",&ubuf,&iname,&ival);
-	if (obverb) printf("Ergebnis nach Wahl: %s\n",ubuf.c_str());
+	if (verbg) printf("Ergebnis nach Wahl: %s\n",ubuf.c_str());
 }
 
 
@@ -57,11 +58,11 @@ gboolean fbcl::faxophone_connect_hier()
 {
 //	struct profile *profile = profile_get_active();
 	gboolean retry = TRUE;
-	gchar* _host=(gchar*)"fritz.box"; // router_get_host(profile);
-	if (obverb) printf("Beginn faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
+	const gchar* _host=(const gchar*)"fritz.box"; // router_get_host(profile);
+	if (verbg) printf("Beginn faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
 again:
 	session = faxophone_init(&session_handlers, _host, controller + 1);
-	if (obverb) printf("Mitte faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
+	if (verbg) printf("Mitte faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
 	if (!session && retry) {
 		// Maybe the port is closed, try to activate it and try again 
 		waehle(/*PORT_ISDN1, */"#96*3*");
@@ -69,7 +70,7 @@ again:
 		retry = FALSE;
 		goto again;
 	}
-	if (obverb) printf("Ende faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
+	if (verbg) printf("Ende faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
 	return session != NULL;
 }
 
@@ -107,7 +108,7 @@ void fax_connection_status_cb(AppObject *object, gint status, struct capi_connec
 {
 	struct fax_status *fax_status;
 	gchar buffer[256];
-	if (obverb) printf("Begin fax_connection_status_cb\n");
+	if (verbg) printf("Begin fax_connection_status_cb\n");
 
 	fax_status = (struct fax_status*)connection->priv;
 	if (!fax_status) {
@@ -190,8 +191,10 @@ static void capi_connection_terminated_cb(AppObject *object, struct capi_connect
 	g_message(_("Disconnected"));
 }
 
-int dmain(int argc, char** argv)
+int dmain(int argc, const gchar** argv)
 {
+	// mit G_MESSAGES_DEBUG=all werden die Debug-Infos angezeigt
+	// die Telefonnummer soll mit 0 statt +49 anfangen
 	GError *error = NULL;
 	GOptionContext *context;
 	// gchar *tiff = NULL;
@@ -204,7 +207,7 @@ int dmain(int argc, char** argv)
 
 	context = g_option_context_new("-");
 	g_option_context_add_main_entries(context, entries, GETTEXT_PACKAGE);
-	if (!g_option_context_parse(context, &argc, &argv, &error)) {
+	if (!g_option_context_parse(context, &argc, (gchar***)&argv, &error)) {
 		g_print("option parsing failed: %s\n", error->message);
 		exit(1);
 	}
@@ -229,12 +232,12 @@ int dmain(int argc, char** argv)
 	// gpointer user_data;
 	fbcl fb;
 //	if(argc>1) fb.controller=atoi(argv[1]); /* 4 */
-  char *datei;
+  const char *datei;
   string ndat;
-  char *msn;
-  char *ziel;
-  char *abs;
-  char *autor;
+  const char *msn;
+  const char *ziel;
+  const char *abs;
+  const char *autor;
   if (argc==6) {
     datei=argv[1];
     struct stat dstat{0};
@@ -248,7 +251,7 @@ int dmain(int argc, char** argv)
     if (strcasecmp(datei+dlen-4,tif)) {
       string bef{"gs -q -dNOPAUSE -dSAFER -dBATCH -sDEVICE=tiffg4 -sPAPERSIZE=a4 -dFIXEDMEDIA -r204x196 -sOutputFile="};
       ndat+=tif;
-      bef+=ndat+" "+datei;
+      bef+="\""+ndat+"\" \""+datei+"\"";
       printf("bef: %s\n",bef.c_str());
       if (system(bef.c_str())) {
         printf("Umwandlung %s fehlgeschlagen.\n",bef.c_str());
@@ -278,7 +281,7 @@ int dmain(int argc, char** argv)
 				(gchar*)msn,(gchar*)ziel,/*lsi*/(gchar*)abs,/*local_header_info*/(gchar*)autor,/*return error code*/0);
 		/* Create and start g_main_loop */
 
-		if (obverb) printf("Vor main_loop\n");
+		if (verbg) printf("Vor main_loop\n");
 		// fax_transfer
 		main_loop = g_main_loop_new(NULL, FALSE);
 		g_main_loop_run(main_loop);

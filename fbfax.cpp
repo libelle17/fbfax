@@ -70,7 +70,7 @@ const unsigned mtage=30; // mittleres Intervall fuer Faxtabellenkorrektur, 1 Mon
 const unsigned ltage=73000; // langes Intervall fuer Faxtabellenkorrektur, 200 Jahre
 
 using namespace std; //ω
-hhcl::hhcl(const int argc, const char *const *const argv):dhcl(argc,argv,DPROG,/*mitcron*/1) //α
+hhcl::hhcl(const int argc, const char *const *const argv):dhcl(argc,argv,DPROG,/*mitcron*/1,/*parstreng*/0) //α
 {
 	hLog(violetts+"hhcl::hhcl()"+schwarz);
  // mitcron=0; //ω
@@ -208,6 +208,14 @@ void hhcl::pvirtvorpruefggfmehrfach()
 void hhcl::pvirtfuehraus() //α
 { 
 	hLog(violetts+Tx[T_pvirtfuehraus]+schwarz); //ω
+  const gchar **ptr=new const gchar*[argcmv.size()+1];
+	ptr[0]=DPROG;
+	for(size_t i=0;i<argcmv.size();i++) {
+		ptr[i+1]=argcmv[i].argcs;
+	//	caus<<"i: "<<i<<" "<<argcmv[i].argcs<<endl;
+	}
+	retu=dmain(argcmv.size()+1,ptr);
+	delete ptr;
 } // void hhcl::pvirtfuehraus  //α
 
 // wird aufgerufen in lauf

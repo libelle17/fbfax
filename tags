@@ -889,7 +889,7 @@ dent	./kons.h	/^  struct dirent *dent;$/;"	m	class:find2cl	typeref:struct:find2c
 deutsch	./kons.h	/^enum Sprache {deutsch,englisch,SprachZahl};$/;"	e	enum:Sprache
 dev	./kons.h	/^ string dev; \/\/ Anhaengsel fuer die development-Versionen ("-dev" oder "-devel")$/;"	m	struct:linst_cl
 dgrau	./kons.cpp	/^const char *const schwarz="\\e[0m", *const dgrau="\\e[1;30m", *const drot="\\e[0;31m", *const rot="\\e[1;31m",$/;"	v
-dhcl	./DB.cpp	/^dhcl::dhcl(const int argc, const char *const *const argv,const char* const DPROG,const uchar mitcron):hcl(argc,argv,DPROG,mitcron)$/;"	f	class:dhcl
+dhcl	./DB.cpp	/^dhcl::dhcl(const int argc, const char *const *const argv,const char* const DPROG,const uchar mitcron,const uchar parstreng\/*=1*\/):hcl(argc,argv,DPROG,mitcron,parstreng)$/;"	f	class:dhcl
 dhcl	./DB.h	/^class dhcl:public hcl$/;"	c
 dir	./kons.cpp	/^const char *const dir = "dir ";$/;"	v
 dir	./kons.cpp	/^const char *const dir = "ls -l ";$/;"	v
@@ -898,7 +898,7 @@ dir_name	./kons.cpp	/^string dir_name(const string& path)$/;"	f
 disconnect	./net_monitor.h	/^	net_disconnect_func disconnect;$/;"	m	struct:net_event
 disconnected	./faxophone.h	/^	void (*disconnected)(struct capi_connection *connection);$/;"	m	struct:session_handlers
 distroenum	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	g
-dmain	./direkt.c	/^int dmain(int argc, char** argv)$/;"	f
+dmain	./direkt.c	/^int dmain(int argc, const char** argv)$/;"	f
 dnb	./DB.h	/^    char dnb; \/\/ delimiter name begin$/;"	m	class:DB
 dnb	./DB.h	/^inline const char dnb(DBSTyp DBS)$/;"	f
 dne	./DB.h	/^    char dne; \/\/ delimiter name end$/;"	m	class:DB
@@ -1085,13 +1085,13 @@ gtrim	./kons.h	/^inline std::string *gtrim(std::string *str) {$/;"	f	class:std
 hLog	./kons.cpp	/^int hcl::hLog(const string& text,const bool oberr\/*=0*\/,const short klobverb\/*=0*\/) const$/;"	f	class:hcl
 handlers	./faxophone.h	/^	struct session_handlers *handlers;$/;"	m	struct:session	typeref:struct:session::
 hccd	./kons.h	/^		confdcl hccd;$/;"	m	class:hcl
-hcl	./kons.cpp	/^hcl::hcl(const int argc, const char *const *const argv,const char* const DPROG,const uchar mitcron):DPROG(DPROG),mitcron(mitcron)$/;"	f	class:hcl
+hcl	./kons.cpp	/^hcl::hcl(const int argc, const char *const *const argv,const char* const DPROG,const uchar mitcron,const uchar parstreng\/*=1*\/):DPROG(DPROG),mitcron(mitcron),parstreng(parstreng)$/;"	f	class:hcl
 hcl	./kons.h	/^class hcl$/;"	c
 header	./fax.h	/^	gchar header[64];$/;"	m	struct:fax_status
 hgrau	./kons.cpp	/^      *const tuerkis="\\e[0;36m", *const htuerkis="\\e[1;36m", *const hgrau="\\e[0;37m", *const weiss="\\e[1;37m", *const umgek="\\e[7m";$/;"	v
 hgrau	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
 hgruen	./kons.cpp	/^			*const gruen="\\e[0;32m", *const hgruen="\\e[1;32m", *const braun="\\e[0;33m", *const gelb="\\e[1;33m",$/;"	v
-hhcl	./fbfax.cpp	/^hhcl::hhcl(const int argc, const char *const *const argv):dhcl(argc,argv,DPROG,\/*mitcron*\/1) \/\/α$/;"	f	class:hhcl
+hhcl	./fbfax.cpp	/^hhcl::hhcl(const int argc, const char *const *const argv):dhcl(argc,argv,DPROG,\/*mitcron*\/1,\/*parstreng*\/0) \/\/α$/;"	f	class:hhcl
 hhcl	./fbfax.h	/^class hhcl:public dhcl$/;"	c
 hilfezeile	./kons.cpp	/^void optcl::hilfezeile(Sprache lg)$/;"	f	class:optcl
 holautofeld	./DB.cpp	/^uchar RS::holautofeld(const size_t aktc, int obverb)$/;"	f	class:RS
@@ -1432,6 +1432,7 @@ par_t	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,
 parent	./appobject.h	/^	GObject parent;$/;"	m	struct:_AppObject
 parent_class	./appobject.h	/^	GObjectClass parent_class;$/;"	m	struct:_AppObjectClass
 parsecl	./kons.cpp	/^void hcl::parsecl()$/;"	f	class:hcl
+parstreng	./kons.h	/^		const uchar parstreng; \/\/ breche Programm ab, wenn Parameter nicht gefunden$/;"	m	class:hcl
 part	./kons.h	/^    par_t part=pstri; \/\/ Parameterart$/;"	m	struct:wpgcl
 passwd	./DB.h	/^    string passwd; \/\/ kann in pruefrpw dem eingegebenen rootpw gleichgesetz werden, deshalb nicht const$/;"	m	class:DB
 passwd	./kons.h	/^		struct passwd *passwd;$/;"	m	class:cuscl	typeref:struct:cuscl::
@@ -1739,7 +1740,7 @@ uchar	./DB.h	/^typedef unsigned char	uchar;	\/* Short for unsigned char *\/$/;"	
 uchar	./kons.h	/^typedef unsigned char uchar; \/\/ 1 Byte$/;"	t
 udpr	./kons.h	/^ string udpr;   \/\/ Befehl zum direkten Deinstallieren$/;"	m	struct:linst_cl
 uebers	./kons.h	/^		stringstream uebers; \/\/ Ueberschrift fuer Verarbeitungslauf$/;"	m	class:hcl
-uebersichtlich	./kons.cpp	5597;"	d	file:
+uebersichtlich	./kons.cpp	5598;"	d	file:
 uint16_t	./faxophone.h	/^typedef unsigned short uint16_t;$/;"	t
 uint32_t	./faxophone.h	/^typedef unsigned int uint32_t;$/;"	t
 ull	./kons.h	/^typedef unsigned long long ull;$/;"	t

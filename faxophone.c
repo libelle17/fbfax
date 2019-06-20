@@ -35,7 +35,7 @@
 #include "isdn-convert.h"
 #include "config.h"
 
-extern int obverb;
+extern int verbg;
 
 // #define FAXOPHONE_DEBUG 1
 
@@ -296,7 +296,7 @@ struct capi_connection *capi_call(
 		return connection;
 	}
 
-	if (obverb) printf("Vor capi_connection_set_type, type %i\n",type);
+	if (verbg) printf("Vor capi_connection_set_type, type %i\n",type);
 	/* set connection type */
 	capi_connection_set_type(connection, type);
 
@@ -605,16 +605,16 @@ static int capi_close(void)
 
 	if (phsession != NULL && phsession->appl_id != -1) {
 		for (index = 0; index < CAPI_CONNECTIONS; index++) {
-			if (obverb) printf("In capi_close, Index: %i\n",index);
+			if (verbg) printf("In capi_close, Index: %i\n",index);
 			if (phsession->connection[index].plci != 0 || phsession->connection[index].ncci != 0) {
 				capi_hangup(&phsession->connection[index]);
 				g_usleep(25);
 			}
 		}
 
-		if (obverb) printf("In capi_close, vor capi20_release, phsession->appl_id: %i\n",phsession->appl_id);
+		if (verbg) printf("In capi_close, vor capi20_release, phsession->appl_id: %i\n",phsession->appl_id);
 		CAPI20_RELEASE(phsession->appl_id);
-		if (obverb) printf("In capi_close, nach capi20_release\n");
+		if (verbg) printf("In capi_close, nach capi20_release\n");
 		phsession->appl_id = -1;
 	}
 
@@ -1530,9 +1530,9 @@ static gpointer capi_loop(void *user_data)
  */
 static int get_capi_profile(unsigned controller, struct capi_profile *host)
 {
-  if (obverb) printf("Beginn get_capi_profile, controller %d, ncontroller: %d, nbchannel %d, goptions: %d, support1: %d, support2: %d, support3: %d, manu[0]: %d, manu[1]: %d, manu[2] %d, manu[3]: %d, manu[4]: %d\n",controller,host->ncontroller, host->nbchannel, host->goptions, host->support1, host->support2, host->support3, host->manu[0],host->manu[1],host->manu[2],host->manu[3],host->manu[4]);
+  if (verbg) printf("Beginn get_capi_profile, controller %d, ncontroller: %d, nbchannel %d, goptions: %d, support1: %d, support2: %d, support3: %d, manu[0]: %d, manu[1]: %d, manu[2] %d, manu[3]: %d, manu[4]: %d\n",controller,host->ncontroller, host->nbchannel, host->goptions, host->support1, host->support2, host->support3, host->manu[0],host->manu[1],host->manu[2],host->manu[3],host->manu[4]);
 	int ret_val = CAPI20_GET_PROFILE(controller, (unsigned char *) host);
-  if (obverb) printf("Mitte  get_capi_profile, controller %d, ncontroller: %d, nbchannel %d, goptions: %d, support1: %d, support2: %d, support3: %d, manu[0]: %d, manu[1]: %d, manu[2] %d, manu[3]: %d, manu[4]: %d\n",controller,host->ncontroller, host->nbchannel, host->goptions, host->support1, host->support2, host->support3, host->manu[0],host->manu[1],host->manu[2],host->manu[3],host->manu[4]);
+  if (verbg) printf("Mitte  get_capi_profile, controller %d, ncontroller: %d, nbchannel %d, goptions: %d, support1: %d, support2: %d, support3: %d, manu[0]: %d, manu[1]: %d, manu[2] %d, manu[3]: %d, manu[4]: %d\n",controller,host->ncontroller, host->nbchannel, host->goptions, host->support1, host->support2, host->support3, host->manu[0],host->manu[1],host->manu[2],host->manu[3],host->manu[4]);
 
 	if (ret_val == 0) {
 	}
@@ -1691,7 +1691,7 @@ void setHostName(const char *);
  */
 struct session *faxophone_init(struct session_handlers *handlers, const char *host, gint controller)
 {
-  if (obverb) printf("Beginn faxophone_init, controller: %d\n",controller);
+  if (verbg) printf("Beginn faxophone_init, controller: %d\n",controller);
 	int appl_id = -1;
 
 	create_table_buffer();
@@ -1709,7 +1709,7 @@ struct session *faxophone_init(struct session_handlers *handlers, const char *ho
 		}
 
 		appl_id = capi_init(controller);
-		if (obverb) printf("appl_id: %i\n",appl_id);
+		if (verbg) printf("appl_id: %i\n",appl_id);
 		if (appl_id==-1) {
 			isdn_lock();
 			capi_close();
@@ -1753,9 +1753,9 @@ int faxophone_close(int force)
 {
 	/* Close capi connection */
 	//if (!force) {
-	if (obverb) printf("Vor capi_close\n");
+	if (verbg) printf("Vor capi_close\n");
 	capi_close();
-	if (obverb) printf("Nach capi_close\n");
+	if (verbg) printf("Nach capi_close\n");
 	//}
 
 	if (phsession != NULL) {

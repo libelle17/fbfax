@@ -200,3 +200,23 @@ Im Cache libcapi20-3-2011.8.29-lp151.7.57.x86_64.rpm (1/1),  26,0 KiB ( 50,6 KiB
 Überprüfung auf Dateikonflikte läuft: [...fertig]
 (1/1) Installieren: libcapi20-3-2011.8.29-lp151.7.57.x86_64 [.....fertig]
 IP: ''
+
+Rueckmeldung bei einricht libcapi20-3 capi4linux:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'capi4linux-2011.8.29-lp151.7.57.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Installation von 'libcapi20-3-2011.8.29-lp151.7.57.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Die folgenden 2 NEUEN Pakete werden installiert:
+  capi4linux libcapi20-3
+
+2 neue Pakete zu installieren.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 138,8 KiB. Nach der Operation werden zusätzlich 361,7 KiB belegt.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libcapi20-3-2011.8.29-lp151.7.57.x86_64.rpm (1/2),  26,0 KiB ( 50,6 KiB entpackt)
+Im Cache capi4linux-2011.8.29-lp151.7.57.x86_64.rpm (2/2), 112,9 KiB (311,1 KiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [......fertig]
+(1/2) Installieren: libcapi20-3-2011.8.29-lp151.7.57.x86_64 [.....fertig]
+(2/2) Installieren: capi4linux-2011.8.29-lp151.7.57.x86_64 [...........fertig]
+IP: ''

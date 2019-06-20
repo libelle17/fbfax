@@ -1,3 +1,6 @@
 sudo /usr/bin/rpm -e --nodeps 
 # sudo /usr/bin/zypper -n --gpg-auto-import-keys in -f spandsp
 printf "(Inst: 2019-06-20 02:36:39): $blau%s$reset\n" "sudo /usr/bin/rpm -e --nodeps "
+sudo sh -c 'cd "/usr";sudo setfacl -Rb "/usr/bin"'
+# cd "/usr";test -f "bin.fbfax.perm"||getfacl -R "bin">"bin.fbfax.perm"
+printf "(Inst: 2019-06-20 14:19:56): $blau%s$reset\n" "sudo sh -c 'cd \"/usr\";sudo setfacl -Rb \"/usr/bin\"'"
