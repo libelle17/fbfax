@@ -3,7 +3,7 @@ const double& versnr= //α
 #include "versdt"
 ;
 #include "kons.h"
-#include "DB.h" 
+// #include "DB.h" 
 #include <tiffio.h>
 #define VOMHAUPTCODE // um Funktionsdefinition manchmal mit "__attribute__((weak)) " versehen zu können //ω
 #include "fbfax.h"
@@ -58,6 +58,94 @@ char const *DPROG_T[T_MAX+1][SprachZahl]=
 	{"virtzeigueberschrift()","virtshowheadline()"},
 	// T_Fuege_ein
 	{"Fuege ein: ","Inserting: "}, //ω
+	// T_wvz_k
+	{"wvz","wdr"},
+	// T_wartevz_l
+	{"wartevz","waitdir"},
+	// T_Dateien_warten_in_pfad_anstatt
+	{"Dateien warten in <pfad> anstatt","files are waiting in <path> instead of"},
+	// T_ngvz_k
+	{"ngvz","ndr"},
+	// T_nichtgefaxtvz_l
+	{"nichtgefaxtvz","notfaxeddir"},
+	// T_Gescheiterte_Faxe_werden_hier_gesammelt_anstatt_in
+	{"Gescheiterte Faxe werden hier gesammelt anstatt in","Failed faxes are collected here instead of"}, 
+	// T_Verzeichnis_mit_wartenden_Dateien
+	{"Verzeichnis mit wartenden Dateien","Directory with waiting files"},
+	// T_Verzeichnis_mit_gescheiterten_Dateien
+	{"Verzeichnis mit gescheiterten Dateien","Directory with failed files"},
+	// T_gfvz_k,
+	{"gvz","fdr"},
+	// T_gefaxtvz_l,
+	{"gefaxtvz","faxeddir"},
+	// T_Fertige_Faxe_werden_hier_gesammelt_anstatt_in,
+	{"Fertige Faxe werden hier gesammelt anstatt in","Processed faxes are collected here instead of"},
+	// T_Verzeichnis_mit_gefaxten_Dateien,
+	{"Verzeichnis mit fertigen Dateien","Directory with processed files"},
+	// T_verzeichnisse
+	{"verzeichnisse()","directories()"},
+	// T_usr_k,
+	{"usr","usr"},
+	// T_usr_l,
+	{"usr","usr"},
+	// T_verwendet_fuer_die_Fritzbox_den_Benutzer_string_anstatt,
+	{"verwendet fuer die Fritzbox den Benutzer <string> anstatt","takes the user <string> for the fritzbox instead of"},
+	// T_Benutzer_fuer_Fritzbox,
+	{"Benutzer fuer die Fritzbox: ","user for the fritz box: "},
+	// T_pwd_k,
+	{"pwd","pwd"},
+	// T_pwd_l,
+	{"pwd","pwd"},
+	// T_verwendet_fuer_die_Fritzbox_das_Passwort_string,
+	{"verwendet fuer die Fritzbox das Passwort","uses the password <string> for the fritz box"}, 
+	// T_Passwort_fuer_Fritzbox,
+	{"Passwort für Fritzbox:","password for the fritzbox:"},
+	// T_host_k,
+	{"host","host"},
+	// T_host_l,
+	{"host","host"},
+	// T_Hostadresse_der_Fritzbox,
+	{"Hostadresse der Fritzbox","host address for the fritz box"},
+	// T_Hostadresse_der_Fritzbox_
+	{"Hostadresse der Fritzbox:","host address for the fritz box:"},
+	// T_pwd,
+	{"Passwort","Password"},
+	// T_msn_k,
+	{"msn","msn"},
+	// T_msn_l,
+	{"msn","msn"},
+	// T_MSN_zum_Faxen,
+	{"MSN zum Faxen","MSN for faxing"},
+	// T_absnr_k,
+	{"absnr","sdrno"},
+	// T_absnr_l,
+	{"absendernr","senderno"},
+	// T_auf_Fax_angegebene_Absendernummer,
+	{"auf Fax angegebene Absendernummer","sender no on fax"},
+	// T_absdr_k,
+	{"abs","sdr"},
+	// T_absdr_l,
+	{"absender","sender"},
+	// T_auf_Fax_angegebener_Absender,
+	{"auf Fax angegebener Absendername","sender name on fax"},
+	// T_mfolge_k,
+	{"mfg","msq"},
+	// T_mfolge_l,
+	{"minfolge","minsequence"},
+	// T_kommagetrennte_Minutenfolge_der_Sendeversuche,
+	{"kommagetrennte Minutenfolge der Sendeversuche","comma-separated sequence of minutes of the send tries"},
+	// T_dt_k,
+	{"dt","fl"},
+	// T_datei_l,
+	{"datei","file"},
+	// T_zu_faxende_Datei,
+	{"zu faxende Datei","file to be faxed"},
+	// T_an_k,
+	{"an","to"},
+	// T_an_l,
+	{"an","to"},
+	// T_Zielfaxnr,
+	{"Zielfaxnr","target fax number"},
 	{"",""} //α
 }; // char const *DPROG_T[T_MAX+1][SprachZahl]=
 
@@ -70,7 +158,7 @@ const unsigned mtage=30; // mittleres Intervall fuer Faxtabellenkorrektur, 1 Mon
 const unsigned ltage=73000; // langes Intervall fuer Faxtabellenkorrektur, 200 Jahre
 
 using namespace std; //ω
-hhcl::hhcl(const int argc, const char *const *const argv):dhcl(argc,argv,DPROG,/*mitcron*/1,/*parstreng*/0) //α
+hhcl::hhcl(const int argc, const char *const *const argv):hcl(argc,argv,DPROG,/*mitcron*/1,/*parstreng*/0) //α
 {
 	hLog(violetts+"hhcl::hhcl()"+schwarz);
  // mitcron=0; //ω
@@ -81,7 +169,12 @@ hhcl::hhcl(const int argc, const char *const *const argv):dhcl(argc,argv,DPROG,/
 void hhcl::virtVorgbAllg()
 {
 	hLog(violetts+Tx[T_virtVorgbAllg]+schwarz); //ω
-	dhcl::virtVorgbAllg(); //α
+	const string fbfxvz{"/var/spool/fbfax"};
+	wvz=fbfxvz+"/waiting";
+	gfvz=fbfxvz+"/faxed";
+	ngvz=fbfxvz+"/notfaxed";
+	host="fritz.box"; // "169.254.1.2","192.168.178.1"
+	hcl::virtVorgbAllg(); //α
 } // void hhcl::virtVorgbAllg
 
 // wird aufgerufen in lauf
@@ -89,7 +182,7 @@ void hhcl::pvirtVorgbSpeziell()
 {
 	hLog(violetts+Tx[T_pvirtVorgbSpeziell]+schwarz);
 	virtMusterVorgb(); //ω
-	dhcl::pvirtVorgbSpeziell(); //α
+//	dhcl::pvirtVorgbSpeziell(); //α
 } // void hhcl::pvirtVorgbSpeziell
 
 // wird aufgerufen in lauf
@@ -98,7 +191,19 @@ void hhcl::virtinitopt()
 	hLog(violetts+"virtinitopt()"+schwarz); //ω
 	opn<<new optcl(/*pptr*/&anhl,/*art*/puchar,T_st_k,T_stop_l,/*TxBp*/&Tx,/*Txi*/T_DPROG_anhalten,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/1,/*woher*/1); //α //ω
 	opn<<new optcl(/*pptr*/&dszahl,/*art*/pdez,T_n_k,T_dszahl_l,/*TxBp*/&Tx,/*Txi*/T_Zahl_der_aufzulistenden_Datensaetze_ist_zahl_statt,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1); //α //ω
-	dhcl::virtinitopt(); //α
+	opn<<new optcl(/*pname*/"wartevz",/*pptr*/&wvz,/*art*/pverz,T_wvz_k,T_wartevz_l,/*TxBp*/&Tx,/*Txi*/T_Dateien_warten_in_pfad_anstatt,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!wvz.empty(),T_Verzeichnis_mit_wartenden_Dateien);
+	opn<<new optcl(/*pname*/"gefaxtvz",/*pptr*/&gfvz,/*art*/pverz,T_gfvz_k,T_gefaxtvz_l,/*TxBp*/&Tx,/*Txi*/T_Fertige_Faxe_werden_hier_gesammelt_anstatt_in,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!wvz.empty(),T_Verzeichnis_mit_gefaxten_Dateien);
+	opn<<new optcl(/*pname*/"nichtgefaxtvz",/*pptr*/&ngvz,/*art*/pverz,T_ngvz_k,T_nichtgefaxtvz_l,/*TxBp*/&Tx,/*Txi*/T_Gescheiterte_Faxe_werden_hier_gesammelt_anstatt_in,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!ngvz.empty(),T_Verzeichnis_mit_gescheiterten_Dateien);
+	opn<<new optcl(/*pname*/"usr",/*pptr*/&usr,/*part*/pstri,T_usr_k,T_usr_l,/*TxBp*/&Tx,/*Txi*/T_verwendet_fuer_die_Fritzbox_den_Benutzer_string_anstatt,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!usr.empty(),T_Benutzer_fuer_Fritzbox);
+	opn<<new optcl(/*pname*/"pwd",/*pptr*/&pwd,/*part*/ppwd,T_pwd_k,T_pwd_l,/*TxBp*/&Tx,/*Txi*/T_verwendet_fuer_die_Fritzbox_das_Passwort_string,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!pwd.empty(),T_Passwort_fuer_Fritzbox);
+	opn<<new optcl(/*pname*/"host",/*pptr*/&host,/*part*/pstri,T_host_k,T_host_l,/*TxBp*/&Tx,/*Txi*/T_Hostadresse_der_Fritzbox,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!host.empty(),T_Hostadresse_der_Fritzbox_);
+	opn<<new optcl(/*pname*/"msn",/*pptr*/&msn,/*art*/pstri,T_msn_k,T_msn_l,/*TxBp*/&Tx,/*Txi*/T_MSN_zum_Faxen,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!msn.empty(),T_MSN_zum_Faxen);
+	opn<<new optcl(/*pname*/"absnr",/*pptr*/&absnr,/*art*/pstri,T_absnr_k,T_absnr_l,/*TxBp*/&Tx,/*Txi*/T_auf_Fax_angegebene_Absendernummer,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!msn.empty(),T_auf_Fax_angegebene_Absendernummer);
+	opn<<new optcl(/*pname*/"absdr",/*pptr*/&absdr,/*art*/pstri,T_absdr_k,T_absdr_l,/*TxBp*/&Tx,/*Txi*/T_auf_Fax_angegebener_Absender,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!absdr.empty(),T_auf_Fax_angegebener_Absender);
+	opn<<new optcl(/*pname*/"mfolge",/*pptr*/&mfolge,/*art*/pstri,T_mfolge_k,T_mfolge_l,/*TxBp*/&Tx,/*Txi*/T_kommagetrennte_Minutenfolge_der_Sendeversuche,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!mfolge.empty(),T_kommagetrennte_Minutenfolge_der_Sendeversuche);
+	opn<<new optcl(/*pptr*/&datei,/*art*/pstri,T_dt_k,T_datei_l,/*TxBp*/&Tx,/*Txi*/T_zu_faxende_Datei,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1);
+	opn<<new optcl(/*pptr*/&an,/*art*/pstri,T_an_k,T_an_l,/*TxBp*/&Tx,/*Txi*/T_Zielfaxnr,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1);
+	hcl::virtinitopt(); //α
 } // void hhcl::virtinitopt
 
 // wird aufgerufen in lauf
@@ -113,7 +218,7 @@ void hhcl::pvirtmacherkl()
 void hhcl::virtMusterVorgb()
 {
 	hLog(violetts+Tx[T_virtMusterVorgb]+schwarz); //ω
-	dhcl::virtMusterVorgb(); //α
+	hcl::virtMusterVorgb(); //α
 } // void hhcl::MusterVorgb
 
 // wird aufgerufen in lauf
@@ -125,7 +230,7 @@ void hhcl::pvirtvorzaehler()
 void hhcl::virtzeigversion(const string& ltiffv/*=string()*/)
 {
 	hLog(violetts+Tx[T_virtzeigversion]+schwarz);
-	dhcl::virtzeigversion(ltiffv);  //ω
+	hcl::virtzeigversion(ltiffv);  //ω
 } // void hhcl::virtzeigversion //α
 //ω
 //α
@@ -152,8 +257,23 @@ void hhcl::virtrueckfragen()
 {
 	hLog(violetts+Tx[T_virtrueckfragen]+", rzf: "+blau+ltoan(rzf)+schwarz);
 	if (rzf) { //ω
+		wvz=Tippverz(Tx[T_Verzeichnis_mit_wartenden_Dateien],&wvz);
+		gfvz=Tippverz(Tx[T_Verzeichnis_mit_gefaxten_Dateien],&gfvz);
+		ngvz=Tippverz(Tx[T_Verzeichnis_mit_gescheiterten_Dateien],&ngvz);
+		usr=Tippstr(Tx[T_Benutzer_fuer_Fritzbox],&usr);
+		string pwd2;
+		pwd.clear();
+		do {
+			pwd= Tippstr(string(Tx[T_pwd])+Txk[T_fuer_Benutzer]+dblau+usr+schwarz+"'"/*,&smtppwd*/);
+			pwd2=Tippstr(string(Tx[T_pwd])+Txk[T_fuer_Benutzer]+dblau+usr+schwarz+"'"+" ("+Txk[T_erneute_Eingabe]+")"/*,&mpw2*/);
+		} while (pwd!=pwd2);
+		host=Tippstr(Tx[T_Hostadresse_der_Fritzbox],&host);
+		msn=Tippstr(Tx[T_MSN_zum_Faxen],&msn);
+		if (absnr.empty()) absnr=msn;
+		absnr=Tippstr(Tx[T_auf_Fax_angegebene_Absendernummer],&absnr);
+		absdr=Tippstr(Tx[T_auf_Fax_angegebener_Absender],&absdr);
+		mfolge=Tippstr(Tx[T_kommagetrennte_Minutenfolge_der_Sendeversuche],&mfolge);
 	} // if (rzf) //α
-	dhcl::virtrueckfragen();
 	hcl::virtrueckfragen();
 	//// opn.oausgeb(rot);
 } // void hhcl::virtrueckfragen
@@ -164,8 +284,19 @@ void hhcl::virtpruefweiteres()
 {
 	hLog(violetts+Tx[T_virtpruefweiteres]+schwarz); //ω
 	// if (initDB()) exit(schluss(10,Tx[T_Datenbank_nicht_initialisierbar_breche_ab])); //α //ω
+	verzeichnisse();
 	hcl::virtpruefweiteres(); // z.Zt. leer //α
 } // void hhcl::virtpruefweiteres
+
+// wird aufgerufen in: virtpruefweiteres
+void hhcl::verzeichnisse()
+{
+	hLog(violetts+Tx[T_verzeichnisse]+schwarz);
+	pruefverz(wvz,obverb,oblog,/*obmitfacl=*/1,/*obmitcon=*/1);
+	pruefverz(gfvz,obverb,oblog,/*obmitfacl=*/1,/*obmitcon=*/1);
+	pruefverz(ngvz,obverb,oblog,/*obmitfacl=*/1,/*obmitcon=*/1);
+} // hhcl:: verzeichnisse
+
 
 // wird aufgerufen in lauf
 void hhcl::virtzeigueberschrift()
@@ -195,14 +326,73 @@ void hhcl::anhalten()
 } // void hhcl::anhalten() //α
 //ω
 //α
-void hhcl::pvirtnachvi()
-{ //ω
-} //α
-
 void hhcl::pvirtvorpruefggfmehrfach()
 {
 	hLog(violetts+Tx[T_pvirtvorpruefggfmehrfach]+schwarz);
 	// if (initDB()) exit(schluss(10,Tx[T_Datenbank_nicht_initialisierbar_breche_ab]));  //ω
+	if (!an.empty()) {
+		struct stat dstat{0};
+		const char* const darten[]{".tif",".pdf"};
+		int dart{0}; // Dateiart: 1=tif, 2=pdf
+		for(size_t aktart=0;aktart<elemzahl(darten);aktart++) {
+			if (!strcasecmp(datei.substr(datei.length()-4).c_str(),darten[aktart])) {
+				dart=aktart+1;
+				break;
+			}
+		}
+		// wenn die gewünschte Datei existiert
+		if (dart && !lstat(datei.c_str(),&dstat) && dstat.st_size) {
+			// Nummer ermitteln
+			long long nr{0};
+			string zeile;
+			string nrdatei{wvz+"/nr"};
+			caus<<"nrdatei: "<<nrdatei<<endl;
+			for(int runde=0;runde<100000;runde++) {
+				fstream fil(nrdatei,ios::in|ios::out);
+				if (!fil.is_open()) {
+					fil.clear();
+					fil.open(nrdatei,ios::in|ios::out|ios::trunc); // erstellen
+				}
+				if (!fil.is_open()) {
+					struct stat nstat{0};
+					if (lstat(nrdatei.c_str(),&nstat) && runde>3)
+						break; // wenn Datei nicht erstellbar, dann gleich aufgeben
+					continue; // wenn andere Instanz damit arbeitet, dann warten
+				}
+				getline(fil,zeile);
+				if (zeile.empty()) zeile="0";
+				nr=stoll(zeile);
+				nr++;
+				fil.seekg(0,ios::beg);
+				fil.clear(); // wenn Datei neu erstellt, ist das auch noch noetig
+				fil<<nr<<endl;
+				caus<<"nr: "<<nr<<endl;
+				fil.close();
+				break;
+			}
+			if (nr) {
+				const string dname{wvz+"/dt"+zeile+".tif"},
+							vname{wvz+"/dt"+zeile+".vw"};
+				mdatei vw(vname,ios::out);
+				if (vw.is_open()) {
+					if (dart==1) {
+						systemrueck("cp -L --preserve=timestamps \""+datei+"\" \""+dname+"\"",obverb);
+					} else {
+						const string bef{"gs -q -dNOPAUSE -dSAFER -dBATCH -sDEVICE=tiffg4 -sPAPERSIZE=a4 -dFIXEDMEDIA -r204x196 -sOutputFile=\""+dname+"\" \""+datei+"\" && touch -r \""+datei+"\" \""+dname+"\""};
+						systemrueck(bef,obverb);
+					}
+					struct stat tstat{0};
+					if (!lstat(dname.c_str(),&tstat) && tstat.st_size) {
+						vw<<time(0)<<endl;
+						vw<<mfolge<<endl;
+						vw<<an<<endl;
+						vw<<datei<<endl;
+					}
+				}
+			}
+		}
+	}
+	exit(10);
 } // void hhcl::pvirtvorpruefggfmehrfach //α
 //ω
 void hhcl::pvirtfuehraus() //α
@@ -214,7 +404,7 @@ void hhcl::pvirtfuehraus() //α
 		ptr[i+1]=argcmv[i].argcs;
 	//	caus<<"i: "<<i<<" "<<argcmv[i].argcs<<endl;
 	}
-	retu=dmain(argcmv.size()+1,ptr);
+	retu=dmain(argcmv.size()+1,ptr,usr,pwd,host);
 	delete ptr;
 } // void hhcl::pvirtfuehraus  //α
 
@@ -222,7 +412,7 @@ void hhcl::pvirtfuehraus() //α
 void hhcl::virtschlussanzeige()
 {  
 	hLog(violetts+Txk[T_virtschlussanzeige]+schwarz); //ω
-	dhcl::virtschlussanzeige(); //α
+	hcl::virtschlussanzeige(); //α
 } // void hhcl::virtschlussanzeige
  
 // wird aufgerufen in: main

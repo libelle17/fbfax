@@ -1,5 +1,5 @@
 .br
-    \fRProgramm: \fB/home/schade/fbfax/fbfax\fR, V: \fB0.10074 \fR
+    \fRProgramm: \fB/home/schade/fbfax/fbfax\fR, V: \fB0.10121 \fR
 .br
 \fBOptions which are not saved (current value in parentheses): \fR
 .br
@@ -7,7 +7,9 @@
 .br
 \fB -n, --reccount <string>\fR: No. of listed entries = <no> instead of ('\fB30\fR')
 .br
-\fB -sqlv, --sql-verbose\fR: screen output with SQL commands (\fB0\fR)
+\fB -fl, --file <string>\fR: file to be faxed ('\fB\fR')
+.br
+\fB -to, --to <string>\fR: target fax number ('\fB\fR')
 .br
 \fB -v, --verbose\fR: screen output more verbose (\fB0\fR)
 .br
@@ -33,13 +35,25 @@
 .br
 \fBOptions to be saved in the configuration file: (preced. '1'=don't save, 'no'=contrary, e.g. '-noocra','-1noocri'):\fR
 .br
-\fB -host, --host <string>\fR: takes the database on host <string> instead of ('\fBlocalhost\fR')
+\fB -wdr, --waitdir <path>\fR: files are waiting in <path> instead of ('\fB/var/spool/fbfax/waiting\fR')
 .br
-\fB -muser, --muser <string>\fR: takes the user <string> for MySQL/MariaDB instead of ('\fB\fR')
+\fB -fdr, --faxeddir <path>\fR: Processed faxes are collected here instead of ('\fB/var/spool/fbfax/faxed\fR')
 .br
-\fB -mpwd, --mpwd <string>\fR: takes the password <string> for MySQL/MariaDB
+\fB -ndr, --notfaxeddir <path>\fR: Failed faxes are collected here instead of ('\fB/var/spool/fbfax/notfaxed\fR')
 .br
-\fB -db, --database <string>\fR: uses the database <string> instead of ('\fB\fR')
+\fB -usr, --usr <string>\fR: takes the user <string> for the fritzbox instead of ('\fBlibelle17\fR')
+.br
+\fB -pwd, --pwd <string>\fR: uses the password <string> for the fritz box
+.br
+\fB -host, --host <string>\fR: host address for the fritz box ('\fBfritz.box\fR')
+.br
+\fB -msn, --msn <string>\fR: MSN for faxing ('\fB6150166\fR')
+.br
+\fB -sdrno, --senderno <string>\fR: sender no on fax ('\fB081316150166\fR')
+.br
+\fB -sdr, --sender <string>\fR: sender name on fax ('\fBG.Schade\fR')
+.br
+\fB -msq, --minsequence <string>\fR: comma-separated sequence of minutes of the send tries ('\fB2,2,3,3,3,5,5,10,10,60,60,60,120,120,720,1440\fR')
 .br
 \fB -lg, --language <string>\fR: Language/Sprache/Lingue/Lingua [\fBd\fReutsch,\fBe\fRnglisch] ('\fBe\fR')
 .br

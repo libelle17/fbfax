@@ -1352,7 +1352,6 @@ class hcl
 		void setzzaehler();
 		void schreibzaehler();
 		void dovi();
-		virtual void pvirtnachvi()=0;
 		virtual void virtzeigversion(const string& ltiffv=nix);
 		virtual void pvirtvorrueckfragen()=0;
 		virtual void virtrueckfragen();

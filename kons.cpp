@@ -10,7 +10,7 @@
 #include <acl/libacl.h> // fuer acl_t, acl_entry_t, acl_get_... in pruefberech()
 // #include <sys/acl.h>
 #define caus cout // nur zum Debuggen
-extern const string& pwk; // fuer Antlitzaenderung
+const string& pwk = "4893019320jfdksalö590ßs89d0qÃ9m0943Ã09Ãax"; // fuer Antlitzaenderung
 
 
 #ifdef _WIN32
@@ -1546,7 +1546,7 @@ string ltoan(long value, int base/*=10*/, uchar obtz/*=0*/, uchar minstel/*=0*/)
 		} //   while(ptr1 < ptr)
 	} //   if (base < 2 || base > 36)
   return string(result);
-} // ltoan(long value, char* result, int base)
+} // ltoan
 
 char* ltoa_(long value, char* result, int base/*=10*/) 
 {
@@ -5079,7 +5079,6 @@ void hcl::lauf()
 	lieszaehlerein();
 	if (obvi) {
 		dovi(); 
-		pvirtnachvi();
 	} else if (obvs) {
 		svec rueck;
 		systemrueck("cd \""+instvz+"\";ls -l $(grep 'DTN' vars|sed 's/DTN::=//g')",-1,oblog,&rueck);

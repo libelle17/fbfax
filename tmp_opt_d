@@ -1,5 +1,5 @@
 .br
-    \fRProgramm: \fB/home/schade/fbfax/fbfax\fR, V: \fB0.10074 \fR
+    \fRProgramm: \fB/home/schade/fbfax/fbfax\fR, V: \fB0.10121 \fR
 .br
 \fBOptionen, die nicht gespeichert werden (aktueller Wert in Klammern): \fR
 .br
@@ -7,7 +7,9 @@
 .br
 \fB -n, --dszahl <string>\fR: Zahl der aufzulistenden Datensaetze = <zahl> statt ('\fB30\fR')
 .br
-\fB -sqlw, --sql-wortreich\fR: Bildschirmausgabe mit SQL-Befehlen (\fB0\fR)
+\fB -dt, --datei <string>\fR: zu faxende Datei ('\fB\fR')
+.br
+\fB -an, --an <string>\fR: Zielfaxnr ('\fB\fR')
 .br
 \fB -w, --wortreich\fR: Bildschirmausgabe gespraechiger (\fB0\fR)
 .br
@@ -33,13 +35,25 @@
 .br
 \fBOptionen z.Speich. i.Konfigur'datei (vorausg. '1'=doch nicht speichern, 'no'=Gegenteil, z.B. '-noocra','-1noocri'):\fR
 .br
-\fB -host, --host <string>\fR: verwendet die Datenbank auf Host <string> anstatt auf ('\fBlocalhost\fR')
+\fB -wvz, --wartevz <pfad>\fR: Dateien warten in <pfad> anstatt ('\fB/var/spool/fbfax/waiting\fR')
 .br
-\fB -muser, --muser <string>\fR: verwendet fuer MySQL/MariaDB den Benutzer <string> anstatt ('\fB\fR')
+\fB -gvz, --gefaxtvz <pfad>\fR: Fertige Faxe werden hier gesammelt anstatt in ('\fB/var/spool/fbfax/faxed\fR')
 .br
-\fB -mpwd, --mpwd <string>\fR: verwendet fuer MySQL/MariaDB das Passwort <string>
+\fB -ngvz, --nichtgefaxtvz <pfad>\fR: Gescheiterte Faxe werden hier gesammelt anstatt in ('\fB/var/spool/fbfax/notfaxed\fR')
 .br
-\fB -db, --datenbank <string>\fR: verwendet die Datenbank <string> anstatt ('\fB\fR')
+\fB -usr, --usr <string>\fR: verwendet fuer die Fritzbox den Benutzer <string> anstatt ('\fBlibelle17\fR')
+.br
+\fB -pwd, --pwd <string>\fR: verwendet fuer die Fritzbox das Passwort
+.br
+\fB -host, --host <string>\fR: Hostadresse der Fritzbox ('\fBfritz.box\fR')
+.br
+\fB -msn, --msn <string>\fR: MSN zum Faxen ('\fB6150166\fR')
+.br
+\fB -absnr, --absendernr <string>\fR: auf Fax angegebene Absendernummer ('\fB081316150166\fR')
+.br
+\fB -abs, --absender <string>\fR: auf Fax angegebener Absendername ('\fBG.Schade\fR')
+.br
+\fB -mfg, --minfolge <string>\fR: kommagetrennte Minutenfolge der Sendeversuche ('\fB2,2,3,3,3,5,5,10,10,60,60,60,120,120,720,1440\fR')
 .br
 \fB -sp, --sprache <string>\fR: Language/Sprache/Lingue/Lingua [\fBd\fReutsch,\fBe\fRnglisch] ('\fBd\fR')
 .br

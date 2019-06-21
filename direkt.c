@@ -27,10 +27,9 @@ using namespace std;
 int verbg{0};
 
 
-fbcl::fbcl()
+fbcl::fbcl(const string usr,const string pwd,const string host)
+	:usr(usr),pwd(pwd),host(host)
 {
-  usr="libelle17";
-  pwd="bach17raga";
 //  host="fritz.box";//"192.168.178.1";
 	controller=4;
 }
@@ -191,29 +190,28 @@ static void capi_connection_terminated_cb(AppObject *object, struct capi_connect
 	g_message(_("Disconnected"));
 }
 
-int dmain(int argc, const gchar** argv)
+int dmain(int argc, const gchar** argv,const string usr,const string pwd,const string host)
 {
 	// mit G_MESSAGES_DEBUG=all werden die Debug-Infos angezeigt
 	// die Telefonnummer soll mit 0 statt +49 anfangen
-	GError *error = NULL;
 	GOptionContext *context;
 	// gchar *tiff = NULL;
 	// int ret = 0;
-
 #if !GLIB_CHECK_VERSION(2, 36, 0)
 	/* Init g_type */
 	g_type_init();
 #endif
-
 	context = g_option_context_new("-");
 	g_option_context_add_main_entries(context, entries, GETTEXT_PACKAGE);
+	/*
+	GError *error{0};
 	if (!g_option_context_parse(context, &argc, (gchar***)&argv, &error)) {
 		g_print("option parsing failed: %s\n", error->message);
 		exit(1);
 	}
+	*/
 	routermanager_new(debug, NULL);
 	/* Initialize routermanager */
-
 	routermanager_init(NULL);
 	//faxophone_setup();
 	// static gconstpointer net_event;
@@ -230,7 +228,7 @@ int dmain(int argc, const gchar** argv)
 
 //	system("gs -q -dNOPAUSE -dSAFER -dBATCH -sDEVICE=tiffg4 -sPAPERSIZE=a4 -dFIXEDMEDIA -r204x98 -sOutputFile=t0.pdf.tif ~/rogerj/wand/t0.pdf");
 	// gpointer user_data;
-	fbcl fb;
+	fbcl fb(usr,pwd,host);
 //	if(argc>1) fb.controller=atoi(argv[1]); /* 4 */
   const char *datei;
   string ndat;
@@ -243,7 +241,7 @@ int dmain(int argc, const gchar** argv)
     struct stat dstat{0};
     if (lstat(datei,&dstat)) {
       printf("Datei %s nicht gefunden.\n",datei);
-      exit(3);
+      return(3);
     }
     size_t dlen{strlen(datei)};
     const char* tif{".tif"};
@@ -255,11 +253,11 @@ int dmain(int argc, const gchar** argv)
       printf("bef: %s\n",bef.c_str());
       if (system(bef.c_str())) {
         printf("Umwandlung %s fehlgeschlagen.\n",bef.c_str());
-        exit(5);
+        return(5);
       }
       if (lstat(ndat.c_str(),&dstat)) {
         printf("Datei %s nicht gefunden.\n",ndat.c_str());
-        exit(3);
+        return(3);
       }
     }
     msn=argv[2];
@@ -268,11 +266,10 @@ int dmain(int argc, const gchar** argv)
     autor=argv[5];
   } else {
     printf("Parameterzahl %i statt 5; Benutzung: %s <datei> <msn> <zielnr> <absnr> <autor>\n", argc-1,argv[0]);
-    exit(2);
+    return(2);
   }
 	if (fb.faxophone_connect_hier()) {
 
-		// exit(0);
 		// aus fax_dial
 //		struct capi_connection * conn=fax_send((gchar*)"t0.pdf.tif",/*modem,3=14400*/3,/*ecm*/1,/*controller*/5,/*cip,4=speech,0x11=fax,geht beides*/4,
 //				(gchar*)"616381",(gchar*)"6150166",/*lsi*/(gchar*)"+49616381",/*local_header_info*/(gchar*)"G.Schade",/*return error code*/0);

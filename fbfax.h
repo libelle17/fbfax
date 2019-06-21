@@ -27,10 +27,54 @@ enum T_
 	T_virtzeigversion,
 	T_virtzeigueberschrift, 
 	T_Fuege_ein, //ω
+	T_wvz_k,
+	T_wartevz_l,
+	T_Dateien_warten_in_pfad_anstatt,
+	T_ngvz_k,
+	T_nichtgefaxtvz_l,
+	T_Gescheiterte_Faxe_werden_hier_gesammelt_anstatt_in,
+	T_Verzeichnis_mit_wartenden_Dateien,
+	T_Verzeichnis_mit_gescheiterten_Dateien,
+	T_gfvz_k,
+	T_gefaxtvz_l,
+	T_Fertige_Faxe_werden_hier_gesammelt_anstatt_in,
+	T_Verzeichnis_mit_gefaxten_Dateien,
+	T_verzeichnisse,
+	T_usr_k,
+	T_usr_l,
+	T_verwendet_fuer_die_Fritzbox_den_Benutzer_string_anstatt,
+	T_Benutzer_fuer_Fritzbox,
+	T_pwd_k,
+	T_pwd_l,
+	T_verwendet_fuer_die_Fritzbox_das_Passwort_string,
+	T_Passwort_fuer_Fritzbox,
+	T_host_k,
+	T_host_l,
+	T_Hostadresse_der_Fritzbox,
+	T_Hostadresse_der_Fritzbox_,
+	T_pwd,
+	T_msn_k,
+	T_msn_l,
+	T_MSN_zum_Faxen,
+	T_absnr_k,
+	T_absnr_l,
+	T_auf_Fax_angegebene_Absendernummer,
+	T_absdr_k,
+	T_absdr_l,
+	T_auf_Fax_angegebener_Absender,
+	T_mfolge_k,
+	T_mfolge_l,
+	T_kommagetrennte_Minutenfolge_der_Sendeversuche,
+	T_dt_k,
+	T_datei_l,
+	T_zu_faxende_Datei,
+	T_an_k,
+	T_an_l,
+	T_Zielfaxnr,
 	T_MAX //α
 }; // enum T_ //ω
 //α
-class hhcl:public dhcl
+class hhcl:public hcl
 {
 	private: 
 		uchar anhl{0};    // <DPROG> anhalten
@@ -42,8 +86,21 @@ class hhcl:public dhcl
 		string p3;
 		uchar oblista{0};
 		long listz{30}; //ω
+		string wvz; // Warteverzeichnis
+		string gfvz; // gefaxt-Verzeichnis (Fertige)
+		string ngvz; // Nichtgefaxt-Verzeichnis (Gescheiterte)
+		string usr;
+		string pwd;
+		string host;
+		string msn; 
+		string absnr; // auf Fax angegebene Absendernummer
+		string absdr; // auf Fax angegebener Absender
+		string mfolge; // kommagetrennte Minutenfolge der Sendeversuche
+		string datei; // zu faxende (in Spool zu stellende) Datei
+		string an; // Zielfaxnr
 	public: //α //ω
 	private: //α //ω
+		void verzeichnisse();
 		void virttesterg(); //α
 		void virtlieskonfein();
 		void virtautokonfschreib();
@@ -64,7 +121,6 @@ class hhcl:public dhcl
 		void pvirtvorrueckfragen();
 		void virtrueckfragen();
 		void neurf();
-		void pvirtnachvi();
 		void pvirtvorpruefggfmehrfach();
 		void virtpruefweiteres();
 		void virtzeigueberschrift();

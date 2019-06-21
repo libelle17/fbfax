@@ -4,3 +4,27 @@ printf "(Inst: 2019-06-20 02:36:39): $blau%s$reset\n" "sudo /usr/bin/rpm -e --no
 sudo sh -c 'cd "/usr";sudo setfacl -Rb "/usr/bin"'
 # cd "/usr";test -f "bin.fbfax.perm"||getfacl -R "bin">"bin.fbfax.perm"
 printf "(Inst: 2019-06-20 14:19:56): $blau%s$reset\n" "sudo sh -c 'cd \"/usr\";sudo setfacl -Rb \"/usr/bin\"'"
+sudo rmdir '/var/spool/fbfax'
+# mkdir -m 700 '/var/spool/fbfax'
+printf "(Inst: 2019-06-20 23:54:20): $blau%s$reset\n" "sudo rmdir '/var/spool/fbfax'"
+sudo sh -c 'cd "/var/spool";sudo setfacl -Rb "/var/spool/fbfax"'
+# cd "/var/spool";test -f "fbfax.fbfax.perm"||getfacl -R "fbfax">"fbfax.fbfax.perm"
+printf "(Inst: 2019-06-20 23:54:21): $blau%s$reset\n" "sudo sh -c 'cd \"/var/spool\";sudo setfacl -Rb \"/var/spool/fbfax\"'"
+sudo rmdir '/var/spool/fbfax/waiting'
+# mkdir -m 700 '/var/spool/fbfax/waiting'
+printf "(Inst: 2019-06-20 23:54:21): $blau%s$reset\n" "sudo rmdir '/var/spool/fbfax/waiting'"
+sudo sh -c 'cd "/var/spool/fbfax";sudo setfacl -Rb "/var/spool/fbfax/waiting"'
+# cd "/var/spool/fbfax";test -f "waiting.fbfax.perm"||getfacl -R "waiting">"waiting.fbfax.perm"
+printf "(Inst: 2019-06-20 23:54:21): $blau%s$reset\n" "sudo sh -c 'cd \"/var/spool/fbfax\";sudo setfacl -Rb \"/var/spool/fbfax/waiting\"'"
+sudo rmdir '/var/spool/fbfax/faxed'
+# mkdir -m 700 '/var/spool/fbfax/faxed'
+printf "(Inst: 2019-06-20 23:54:36): $blau%s$reset\n" "sudo rmdir '/var/spool/fbfax/faxed'"
+sudo sh -c 'cd "/var/spool/fbfax";sudo setfacl -Rb "/var/spool/fbfax/faxed"'
+# cd "/var/spool/fbfax";test -f "faxed.fbfax.perm"||getfacl -R "faxed">"faxed.fbfax.perm"
+printf "(Inst: 2019-06-20 23:54:36): $blau%s$reset\n" "sudo sh -c 'cd \"/var/spool/fbfax\";sudo setfacl -Rb \"/var/spool/fbfax/faxed\"'"
+sudo rmdir '/var/spool/fbfax/notfaxed'
+# mkdir -m 700 '/var/spool/fbfax/notfaxed'
+printf "(Inst: 2019-06-20 23:54:59): $blau%s$reset\n" "sudo rmdir '/var/spool/fbfax/notfaxed'"
+sudo sh -c 'cd "/var/spool/fbfax";sudo setfacl -Rb "/var/spool/fbfax/notfaxed"'
+# cd "/var/spool/fbfax";test -f "notfaxed.fbfax.perm"||getfacl -R "notfaxed">"notfaxed.fbfax.perm"
+printf "(Inst: 2019-06-20 23:54:59): $blau%s$reset\n" "sudo sh -c 'cd \"/var/spool/fbfax\";sudo setfacl -Rb \"/var/spool/fbfax/notfaxed\"'"

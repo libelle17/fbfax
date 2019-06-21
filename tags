@@ -632,8 +632,8 @@ VerzeichnisGibts	./kons.cpp	/^uchar VerzeichnisGibts(const char* vname)$/;"	f
 WPcl	./kons.cpp	/^WPcl::WPcl(const string& pname,const void* pptr,par_t part):wpgcl(pname,pptr,part)$/;"	f	class:WPcl
 WPcl	./kons.h	/^struct WPcl:wpgcl $/;"	s
 XOR	./kons.cpp	/^string XOR(const string& value, const string& key)$/;"	f
-_	./direkt.c	78;"	d	file:
 _	./direkt.c	79;"	d	file:
+_	./direkt.c	80;"	d	file:
 _	./routermanager.h	32;"	d
 _AppObject	./appobject.h	/^struct _AppObject {$/;"	s
 _AppObjectClass	./appobject.h	/^struct _AppObjectClass {$/;"	s
@@ -898,7 +898,7 @@ dir_name	./kons.cpp	/^string dir_name(const string& path)$/;"	f
 disconnect	./net_monitor.h	/^	net_disconnect_func disconnect;$/;"	m	struct:net_event
 disconnected	./faxophone.h	/^	void (*disconnected)(struct capi_connection *connection);$/;"	m	struct:session_handlers
 distroenum	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	g
-dmain	./direkt.c	/^int dmain(int argc, const char** argv)$/;"	f
+dmain	./direkt.c	/^int dmain(int argc, const gchar** argv)$/;"	f
 dnb	./DB.h	/^    char dnb; \/\/ delimiter name begin$/;"	m	class:DB
 dnb	./DB.h	/^inline const char dnb(DBSTyp DBS)$/;"	f
 dne	./DB.h	/^    char dne; \/\/ delimiter name end$/;"	m	class:DB

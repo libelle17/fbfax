@@ -43,4 +43,5 @@
 ./fbfax.cpp
 ./appobject.c
 ./appobject-emit.c
+./logtest.sh
 ./audio.c
