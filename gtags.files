@@ -2,12 +2,11 @@
 ./tr64.cpp
 ./kons.cpp
 ./phone.h
-./DB.h
 ./connection.c
 ./contact.h
 ./call.h
 ./fax_phone.h
-./DB.cpp
+./vgb.cpp
 ./phone.c
 ./network.c
 ./appobject-emit.h

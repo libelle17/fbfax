@@ -387,25 +387,84 @@ void hhcl::pvirtvorpruefggfmehrfach()
 						vw<<mfolge<<endl;
 						vw<<an<<endl;
 						vw<<datei<<endl;
-					}
-				}
-			}
-		}
-	}
-	exit(10);
+					} // 					if (!lstat(dname.c_str(),&tstat) && tstat.st_size)
+				} // 				if (vw.is_open())
+			} // 			if (nr)
+		} // 		if (dart && !lstat(datei.c_str(),&dstat) && dstat.st_size)
+	} // 	if (!an.empty())
 } // void hhcl::pvirtvorpruefggfmehrfach //α
 //ω
+
 void hhcl::pvirtfuehraus() //α
 { 
 	hLog(violetts+Tx[T_pvirtfuehraus]+schwarz); //ω
-  const gchar **ptr=new const gchar*[argcmv.size()+1];
-	ptr[0]=DPROG;
-	for(size_t i=0;i<argcmv.size();i++) {
-		ptr[i+1]=argcmv[i].argcs;
-	//	caus<<"i: "<<i<<" "<<argcmv[i].argcs<<endl;
+	svec dtn;
+	systemrueck("find "+wvz+" -maxdepth 1 -size +0c -name 'dt*.vw'",1,oblog,&dtn);
+	for(size_t i=0;i<dtn.size();i++) {
+		caus<<dtn[i]<<endl;
+		string tifd{dtn[i].substr(0,dtn[i].length()-3)+".tif"};
+		caus<<" tifd: "<<tifd<<endl;
+		struct stat tstat{0};
+		if (lstat(tifd.c_str(),&tstat) || !tstat.st_size) continue;
+		fstream vwdt(dtn[i].c_str(),ios::in|ios::out);
+		if (vwdt.is_open()) {
+			string zeile;
+			while (1) { // wird nur einmal durchlaufen
+				time_t jetzt{time(0)};
+				caus<<" jetzt: "<<jetzt<<endl;
+				string zpabstr;
+				if (!getline(vwdt,zpabstr)) break; // Einstell- bzw. naechster Faxzeitpunkt
+				caus<<" zpabstr: "<<zpabstr<<endl;
+				long zpab{atol(zpabstr.c_str())};
+				if (!getline(vwdt,zeile)) break; // naechste Aufrufe in Minuten
+				caus<<" "<<zeile<<endl;
+				const size_t kpos=zeile.find(",");
+				const long min{atol(zeile.substr(0,kpos).c_str())};
+				caus<<" Minuten: "<<min<<endl;
+				const string rest{zeile.substr(kpos+1)};
+				caus<<" Rest: "<<rest<<endl;
+				const long nachher{zpab+60*min};
+				caus<<" nachher: "<<nachher<<endl;
+				string ziel;
+				if (!getline(vwdt,ziel)) break; // Zielrufnummer
+				caus<<" "<<ziel<<endl;
+				string ursp;
+				if (!getline(vwdt,ursp)) break; // Ursprungsdatei
+				caus<<" "<<ursp<<endl;
+				if (jetzt>zpab) {
+					const gchar *ptr[6];
+					ptr[0]=DPROG;
+					ptr[1]=tifd.c_str();
+					ptr[2]=msn.c_str();
+					ptr[3]=ziel.c_str();
+					ptr[4]=absnr.c_str();
+					ptr[5]=absdr.c_str();
+					retu=dmain(6,ptr,usr,pwd,host);
+					vwdt.seekg(0,ios::beg);
+					vwdt.clear(); // wenn Datei neu erstellt, ist das auch noch noetig
+					vwdt<<nachher<<endl;
+					vwdt<<rest<<endl;
+					vwdt<<ziel<<endl;
+					vwdt<<ursp<<endl;
+					// Speicherzugriffsfehler aufspüren; wenn erfolgreich, dann verschieben und nicht mehr neu schreiben; am Ende des Schreibvorgangs Datei beenden
+					// wenn aufgebraucht, in nichtgefaxt verschieben
+					// wenn aufgebraucht, in nichtgefaxt verschieben
+				}
+				break;
+			}
+			caus<<endl;
+		}
 	}
-	retu=dmain(argcmv.size()+1,ptr,usr,pwd,host);
-	delete ptr;
+	if (0) {
+		const gchar **ptr=new const gchar*[argcmv.size()+1];
+		ptr[0]=DPROG;
+		for(size_t i=0;i<argcmv.size();i++) {
+			ptr[i+1]=argcmv[i].argcs;
+			//	caus<<"i: "<<i<<" "<<argcmv[i].argcs<<endl;
+		}
+		retu=dmain(argcmv.size()+1,ptr,usr,pwd,host);
+		delete ptr;
+	}
 } // void hhcl::pvirtfuehraus  //α
 
 // wird aufgerufen in lauf
