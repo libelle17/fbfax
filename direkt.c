@@ -87,6 +87,7 @@ fbcl::~fbcl()
 #undef _
 #define _(x) x
 static gboolean debug = FALSE;
+/*
 static gboolean journal = FALSE;
 static gboolean sendfax = FALSE;
 static gboolean call = FALSE;
@@ -101,6 +102,7 @@ static GOptionEntry entries[] = {
 	{"call", 'c', 0, G_OPTION_ARG_NONE, &call, "Call number", NULL},
 	{NULL}
 };
+*/
 /** Internal main loop */
 GMainLoop *main_loop = NULL;
 static gboolean success = FALSE;
@@ -203,15 +205,15 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 {
 	// mit G_MESSAGES_DEBUG=all werden die Debug-Infos angezeigt
 	// die Telefonnummer soll mit 0 statt +49 anfangen
-	GOptionContext *context;
+//	GOptionContext *context;
 	// gchar *tiff = NULL;
 	// int ret = 0;
 #if !GLIB_CHECK_VERSION(2, 36, 0)
 	/* Init g_type */
 	g_type_init();
 #endif
-	context = g_option_context_new("-");
-	g_option_context_add_main_entries(context, entries, GETTEXT_PACKAGE);
+//	context = g_option_context_new("-");
+//	g_option_context_add_main_entries(context, entries, GETTEXT_PACKAGE);
 	/*
 	GError *error{0};
 	if (!g_option_context_parse(context, &argc, (gchar***)&argv, &error)) {
