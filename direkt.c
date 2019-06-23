@@ -247,10 +247,6 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 //	if(argc>1) fb.controller=atoi(argv[1]); /* 4 */
   const char *datei;
   string ndat;
-  const char *msn;
-  const char *ziel;
-  const char *abs;
-  const char *autor;
   if (argc==6) {
     datei=argv[1];
     struct stat dstat{0};
@@ -275,16 +271,15 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
         return(3);
       }
     }
-    msn=argv[2];
-    ziel=argv[3];
-    abs=argv[4];
-    autor=argv[5];
   } else {
     printf("Parameterzahl %i statt 5; Benutzung: %s <datei> <msn> <zielnr> <absnr> <autor>\n", argc-1,argv[0]);
     return(2);
   }
 	if (fb.faxophone_connect_hier()) {
-
+    const char *msn{argv[2]};
+    const char *ziel{argv[3]};
+    const char *abs{argv[4]};
+    const char *autor{argv[5]};
 		// aus fax_dial
 //		struct capi_connection * conn=fax_send((gchar*)"t0.pdf.tif",/*modem,3=14400*/3,/*ecm*/1,/*controller*/5,/*cip,4=speech,0x11=fax,geht beides*/4,
 //				(gchar*)"616381",(gchar*)"6150166",/*lsi*/(gchar*)"+49616381",/*local_header_info*/(gchar*)"G.Schade",/*return error code*/0);

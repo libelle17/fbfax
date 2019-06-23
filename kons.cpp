@@ -1839,7 +1839,7 @@ betrsys pruefos()
 */
 
 // erg=1: gibt es fuer den aktuellen Benutzer; erg=2: gibt es fuer root; erg=0: nicht gefunden
-int obprogda(const string& prog, int obverb/*=0*/, int oblog/*=0*/, string *pfad/*=0*/)
+int obprogda(const string& prog, int obverb/*=0*/, int oblog/*=0*/, string *pfad/*=0*/,const int keinsu/*=0*/)
 {
   if (prog.empty())
 	  return 0;
@@ -1871,9 +1871,9 @@ int obprogda(const string& prog, int obverb/*=0*/, int oblog/*=0*/, string *pfad
     return 2;
   } // if (!systemrueck("which "+prog+" 2>/dev/null",obverb,oblog,&rueck))
 	// wenn nicht root
-	if (cus.cuid) { // || verarbeitet sich schlecht in systemrueck wegen dort eroeffnetem stream
+	if (cus.cuid) { // 
 		if (!systemrueck("which \""+prog+"\" 2>/dev/null",obverb,oblog,&rueck,/*obsudc=*/1)) {
-			if (!systemrueck("env \"PATH=$PATH\" which \""+prog+"\" 2>/dev/null",obverb,oblog,&rueck,/*obsudc=*/1)) {
+			if (keinsu || !systemrueck("env \"PATH=$PATH\" which \""+prog+"\" 2>/dev/null",obverb,oblog,&rueck,/*obsudc=*/1)) {
 				if (pfad) *pfad=rueck[0];
 				return 3;
 			}
@@ -3045,7 +3045,7 @@ int pruefberecht(const string& datei,const string& benutzer,const mode_t mod/*=0
 // falls Benutzer root
 // wenn !besitzer.empty(), dann wird das letzte und alle neu zu erstellenden Verzeichnisse diesem zugeordnet 
 int pruefverz(const string& verz,int obverb/*=0*/,int oblog/*=0*/, uchar obmitfacl/*=0*/,uchar obmitcon/*=0*/, 
-		const string& besitzer/*=string()*/, const string& benutzer/*=string()*/,const uchar obmachen/*=1*/,const uchar obprot/*=1*/)
+		const string& besitzer/*=string()*/, const string& benutzer/*=string()*/,const uchar obmachen/*=1*/,const uchar obprot/*=1*/,const int keinsu/*=0*/)
 {
 	if (obverb||oblog) fLog(violetts+"pruefverz("+blau+verz+schwarz+")",obverb,oblog);
 	static int obselinux{-1}; // -1=ununtersucht, 0=kein Selinux da, 1=Selinux da
@@ -3152,7 +3152,7 @@ int pruefverz(const string& verz,int obverb/*=0*/,int oblog/*=0*/, uchar obmitfa
 		}
 		if (obmitcon) {
 			if (obselinux==-1) 
-				obselinux=obprogda("sestatus",obverb,oblog);
+				obselinux=obprogda("sestatus",obverb,oblog,/*pfad*/0,keinsu);
 			if (obselinux) {
 				systemrueck("chcon -R -t samba_share_t '"+verz+"'",obverb,oblog,/*rueck=*/0,/*obsudc=*/1);
 			}
@@ -3160,7 +3160,7 @@ int pruefverz(const string& verz,int obverb/*=0*/,int oblog/*=0*/, uchar obmitfa
 	} // 	if (!verz.empty())
 	if (obverb||oblog) fLog(violetts+Txk[T_Ende]+"pruefverz("+blau+verz+schwarz+")",obverb,oblog);
 	return fehlt;
-} // void pruefverz(const string& verz,int obverb,int oblog)
+} // void pruefverz
 
 
 // verwendet in: virtlieskonfein
@@ -5373,7 +5373,7 @@ void hcl::virtlieskonfein()
 		if (rue.size()) {
 			//  $XDG_CONFIG_HOME in XDG Base Directory Specification
 			string confverz{rue[0]+vtz+".config"};
-			pruefverz(confverz,/*obverb=*/0,/*oblog=*/0,/*obmitfacl=*/1,/*obmitcon=*/1);
+			pruefverz(confverz,/*obverb=*/0,/*oblog=*/0,/*obmitfacl=*/1,/*obmitcon=*/1,/*besitzer*/string(),/*benutzer*/string(),/*obmachen*/1,/*obprot*/1,/*keinsu*/1);
 			akonfdt=confverz+"/"+DPROG+".conf";
 		}
 	} // 	if (akonfdt.empty()) 

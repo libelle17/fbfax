@@ -25,7 +25,7 @@
  */
 
 /** main internal app_object containing signals and private data */
-GObject *app_object = NULL;
+GObject *app_object{0};
 
 /** app_object signals array */
 guint app_object_signals[ACB_MAX] = { 0 };
