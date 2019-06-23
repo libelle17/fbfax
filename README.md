@@ -1,6 +1,6 @@
 <h3>Manual: 1) <a href="#english_E">english</a>, 2) <a href="#deutsch_D">deutsch (unten anschließend)</a></h3>
 
-<h1 align="center">FBFAX (Version 0.10156) - english<a name="english_D"></a></h1>
+<h1 align="center">FBFAX (Version 0.10157) - english<a name="english_D"></a></h1>
 
 <a href="#NAME_D">NAME</a><br>
 <a href="#SYNOPSIS_D">SYNOPSIS</a><br>
@@ -8,6 +8,7 @@
 <a href="#INSTALLATION_D">INSTALLATION</a><br>
 <a href="#USAGE_D">USAGE</a><br>
 <a href="#OPTIONS_D">OPTIONS</a><br>
+<a href="#FUNCTIONALITY_D">FUNCTIONALITY</a><br>
 <a href="#FUNCTIONALITY_D">FUNCTIONALITY</a><br>
 <a href="#FUNCTIONALITY_D">FUNCTIONALITY</a><br>
 <a href="#FUNCTIONALITY_D">FUNCTIONALITY</a><br>
@@ -150,6 +151,90 @@ fbfax&rsquo; oder &rsquo;man -Lde fbfax&rsquo;)</p>
 <a name="FUNCTIONALITY_D"></a>
 </h2>
 
+
+<h2>FUNCTIONALITY
+<a name="FUNCTIONALITY_D"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">Programm:
+<b>/home/schade/fbfax/fbfax</b>, V: <b>0.10157 <br>
+Options which are not saved (current value in parentheses):
+<br>
+-st, --stop</b>: stop fbfax (<b>0</b>) <b><br>
+-n, --reccount &lt;string&gt;</b>: No. of listed entries =
+&lt;no&gt; instead of (&rsquo;<b>30</b>&rsquo;) <b><br>
+-fl, --file &lt;string&gt;</b>: file to be faxed
+(&rsquo;&rsquo;) <b><br>
+-to, --to &lt;string&gt;</b>: target fax number
+(&rsquo;&rsquo;) <b><br>
+-v, --verbose</b>: screen output more verbose (<b>0</b>)
+<b><br>
+-lfn, --logfilenew</b>: delete log file afore (<b>0</b>)
+<b><br>
+-cf, --conffile &lt;string&gt;</b>: uses configuration file
+&lt;string&gt; instead of (&rsquo;&rsquo;) <b><br>
+-h, --help</b>: Explanation of frequent options (<b>3</b>)
+<b><br>
+-lh, --longhelp</b>: Explanation of all options (<b>3</b>)
+<b><br>
+-vi, --vi</b>: edit/view configuration file , log file etc.
+(finish with &rsquo;:qa&rsquo;) (<b>0</b>) <b><br>
+-vs, --vs</b>: edit/view source files in
+<b>/home/schade/fbfax</b>(finish with &rsquo;:qa&rsquo;)
+(<b>0</b>) <b><br>
+-autoupd, --autoupdate &lt;zahl&gt;</b>: Update program
+automatically (<b>1</b>) <b><br>
+-ia, --interactive</b>: all parameters will be prompted
+(some of them not shown here) (<b>0</b>) <b><br>
+-noia, --nointeraction</b>: no questions, e.g. for a call
+from within cron (<b>0</b>) <b><br>
+-info, --version</b>: shows the program version (<b>0</b>)
+<b><br>
+Options to be saved in the configuration file: (preced.
+&rsquo;1&rsquo;=don&rsquo;t save, &rsquo;no&rsquo;=contrary,
+e.g. &rsquo;-noocra&rsquo;,&rsquo;-1noocri&rsquo;): <br>
+-wdr, --waitdir &lt;path&gt;</b>: files are waiting in
+&lt;path&gt; instead of
+(&rsquo;<b>/var/spool/fbfax/waiting</b>&rsquo;) <b><br>
+-fdr, --faxeddir &lt;path&gt;</b>: Processed faxes are
+collected here instead of
+(&rsquo;<b>/var/spool/fbfax/faxed</b>&rsquo;) <b><br>
+-ndr, --notfaxeddir &lt;path&gt;</b>: Failed faxes are
+collected here instead of
+(&rsquo;<b>/var/spool/fbfax/notfaxed</b>&rsquo;) <b><br>
+-usr, --usr &lt;string&gt;</b>: takes the user
+&lt;string&gt; for the fritzbox instead of
+(&rsquo;<b>libelle17</b>&rsquo;) <b><br>
+-pwd, --pwd &lt;string&gt;</b>: uses the password
+&lt;string&gt; for the fritz box <b><br>
+-host, --host &lt;string&gt;</b>: host address for the fritz
+box (&rsquo;<b>fritz.box</b>&rsquo;) <b><br>
+-msn, --msn &lt;string&gt;</b>: MSN for faxing
+(&rsquo;<b>6150166</b>&rsquo;) <b><br>
+-sdrno, --senderno &lt;string&gt;</b>: sender no on fax
+(&rsquo;<b>081316150166</b>&rsquo;) <b><br>
+-sdr, --sender &lt;string&gt;</b>: sender name on fax
+(&rsquo;<b>G.Schade</b>&rsquo;) <b><br>
+-msq, --minsequence &lt;string&gt;</b>: comma-separated
+sequence of minutes of the send tries
+(&rsquo;<b>2,2,3,3,3,5,5,10,10,60,60,60,120,120,720,1440</b>&rsquo;)
+<b><br>
+-lg, --language &lt;string&gt;</b>:
+Language/Sprache/Lingue/Lingua
+[<b>d</b>eutsch,<b>e</b>nglisch] (&rsquo;<b>e</b>&rsquo;)
+<b><br>
+-ldr, --logdir &lt;path&gt;</b>: choses &lt;path&gt; as log
+directory, currently (&rsquo;<b>/var/log</b>&rsquo;) <b><br>
+-lf, --logfilename &lt;string&gt;</b>: log file
+&lt;string&gt; (in path &rsquo;<b>/var/log</b>&rsquo;) will
+be used instead of (&rsquo;<b>fbfax.log</b>&rsquo;) <b><br>
+-l, --log &lt;zahl&gt;</b>: put detailed logs in file
+&rsquo;<b>/var/log/fbfax.log</b>&rsquo; (otherwise shorter)
+(<b>0</b>) <b><br>
+-cm, --cronminutes &lt;string&gt;</b>: every how many
+minutes shall <b>fbfax</b> be called in crontab (0=not at
+all), instead of (&rsquo;<b>0</b>&rsquo;)</p>
 
 <h2>FUNCTIONALITY
 <a name="FUNCTIONALITY_D"></a>
@@ -7279,7 +7364,7 @@ all), instead of (&rsquo;<b>0</b>&rsquo;)</p>
 </body>
 </html>
 
-<h1 align="center">FBFAX (Version 0.10156) - deutsch<a name="deutsch_D"></a></h1>
+<h1 align="center">FBFAX (Version 0.10157) - deutsch<a name="deutsch_D"></a></h1>
 
 <a href="#NAME_D">NAME</a><br>
 <a href="#SYNOPSIS_D">SYNOPSIS</a><br>
@@ -7287,6 +7372,7 @@ all), instead of (&rsquo;<b>0</b>&rsquo;)</p>
 <a href="#INSTALLATION_D">INSTALLATION</a><br>
 <a href="#GEBRAUCH_D">GEBRAUCH</a><br>
 <a href="#OPTIONEN_D">OPTIONEN</a><br>
+<a href="#FUNKTIONSWEISE_D">FUNKTIONSWEISE</a><br>
 <a href="#FUNKTIONSWEISE_D">FUNKTIONSWEISE</a><br>
 <a href="#FUNKTIONSWEISE_D">FUNKTIONSWEISE</a><br>
 <a href="#FUNKTIONSWEISE_D">FUNKTIONSWEISE</a><br>
@@ -7429,6 +7515,95 @@ Faxe und Protokollierung aller Faxe in einer Datenbank <br>
 <a name="FUNKTIONSWEISE_D"></a>
 </h2>
 
+
+<h2>FUNKTIONSWEISE
+<a name="FUNKTIONSWEISE_D"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">Programm:
+<b>/home/schade/fbfax/fbfax</b>, V: <b>0.10157 <br>
+Optionen, die nicht gespeichert werden (aktueller Wert in
+Klammern): <br>
+-st, --stop</b>: fbfax anhalten (<b>0</b>) <b><br>
+-n, --dszahl &lt;string&gt;</b>: Zahl der aufzulistenden
+Datensaetze = &lt;zahl&gt; statt (&rsquo;<b>30</b>&rsquo;)
+<b><br>
+-dt, --datei &lt;string&gt;</b>: zu faxende Datei
+(&rsquo;&rsquo;) <b><br>
+-an, --an &lt;string&gt;</b>: Zielfaxnr (&rsquo;&rsquo;)
+<b><br>
+-w, --wortreich</b>: Bildschirmausgabe gespraechiger
+(<b>0</b>) <b><br>
+-ldn, --logdateineu</b>: logdatei vorher loeschen (<b>0</b>)
+<b><br>
+-kd, --konfdatei &lt;string&gt;</b>: verwendet
+Konfigurationsdatei &lt;string&gt; anstatt (&rsquo;&rsquo;)
+<b><br>
+-h, --hilfe</b>: Erklaerung haeufiger Optionen (<b>3</b>)
+<b><br>
+-lh, --langhilfe</b>: Erklaerung aller Optionen (<b>3</b>)
+<b><br>
+-vi, --vi</b>: Konfigurationsdatei , Logdatei usw.
+bearbeiten/sehen (beenden mit &rsquo;:qa&rsquo;) (<b>0</b>)
+<b><br>
+-vs, --vs</b>: Quelldateien in <b>/home/schade/fbfax</b>
+bearbeiten/sehen (beenden mit &rsquo;:qa&rsquo;) (<b>0</b>)
+<b><br>
+-autoakt, --autoaktual &lt;zahl&gt;</b>: Programm
+automatisch aktualisieren (<b>1</b>) <b><br>
+-rf, --rueckfragen</b>: alle Parameter werden abgefragt
+(darunter einige hier nicht gezeigte) (<b>0</b>) <b><br>
+-krf, --keinerueckfragen</b>: keine Rueckfragen, z.B. fuer
+Aufruf aus cron (<b>0</b>) <b><br>
+-info, --version</b>: Zeigt die Programmversion an
+(<b>0</b>) <b><br>
+Optionen z.Speich. i.Konfigur&rsquo;datei (vorausg.
+&rsquo;1&rsquo;=doch nicht speichern,
+&rsquo;no&rsquo;=Gegenteil, z.B.
+&rsquo;-noocra&rsquo;,&rsquo;-1noocri&rsquo;): <br>
+-wvz, --wartevz &lt;pfad&gt;</b>: Dateien warten in
+&lt;pfad&gt; anstatt
+(&rsquo;<b>/var/spool/fbfax/waiting</b>&rsquo;) <b><br>
+-gvz, --gefaxtvz &lt;pfad&gt;</b>: Fertige Faxe werden hier
+gesammelt anstatt in
+(&rsquo;<b>/var/spool/fbfax/faxed</b>&rsquo;) <b><br>
+-ngvz, --nichtgefaxtvz &lt;pfad&gt;</b>: Gescheiterte Faxe
+werden hier gesammelt anstatt in
+(&rsquo;<b>/var/spool/fbfax/notfaxed</b>&rsquo;) <b><br>
+-usr, --usr &lt;string&gt;</b>: verwendet fuer die Fritzbox
+den Benutzer &lt;string&gt; anstatt
+(&rsquo;<b>libelle17</b>&rsquo;) <b><br>
+-pwd, --pwd &lt;string&gt;</b>: verwendet fuer die Fritzbox
+das Passwort <b><br>
+-host, --host &lt;string&gt;</b>: Hostadresse der Fritzbox
+(&rsquo;<b>fritz.box</b>&rsquo;) <b><br>
+-msn, --msn &lt;string&gt;</b>: MSN zum Faxen
+(&rsquo;<b>6150166</b>&rsquo;) <b><br>
+-absnr, --absendernr &lt;string&gt;</b>: auf Fax angegebene
+Absendernummer (&rsquo;<b>081316150166</b>&rsquo;) <b><br>
+-abs, --absender &lt;string&gt;</b>: auf Fax angegebener
+Absendername (&rsquo;<b>G.Schade</b>&rsquo;) <b><br>
+-mfg, --minfolge &lt;string&gt;</b>: kommagetrennte
+Minutenfolge der Sendeversuche
+(&rsquo;<b>2,2,3,3,3,5,5,10,10,60,60,60,120,120,720,1440</b>&rsquo;)
+<b><br>
+-sp, --sprache &lt;string&gt;</b>:
+Language/Sprache/Lingue/Lingua
+[<b>d</b>eutsch,<b>e</b>nglisch] (&rsquo;<b>d</b>&rsquo;)
+<b><br>
+-lvz, --logvz &lt;pfad&gt;</b>: waehlt als Logverzeichnis
+&lt;pfad&gt;, derzeit (&rsquo;<b>/var/log</b>&rsquo;)
+<b><br>
+-ld, --logdname &lt;string&gt;</b>: logdatei &lt;string&gt;
+(im Pfad &rsquo;<b>/var/log</b>&rsquo;) wird verwendet
+anstatt (&rsquo;<b>fbfax.log</b>&rsquo;) <b><br>
+-l, --log &lt;zahl&gt;</b>: protokolliert ausfuehrlich in
+Datei &rsquo;<b>/var/log/fbfax.log</b>&rsquo; (sonst
+knapper) (<b>0</b>) <b><br>
+-cm, --cronminuten &lt;string&gt;</b>: alle wieviel Minuten
+soll <b>fbfax</b> ueber crontab aufgerufen werden (0=gar
+nicht), anstatt (&rsquo;<b>0</b>&rsquo;)</p>
 
 <h2>FUNKTIONSWEISE
 <a name="FUNKTIONSWEISE_D"></a>
