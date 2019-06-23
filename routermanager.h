@@ -53,6 +53,13 @@ gchar *get_directory(gchar *type);
 void routermanager_set_requested_profile(gchar *name);
 gchar *routermanager_get_requested_profile(void);
 
+struct rmcl
+{
+ rmcl(gboolean debug, GError **error);
+ gboolean init(GError **error);
+ ~rmcl();
+};
+
 G_END_DECLS
 
 #endif

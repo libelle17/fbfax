@@ -28,7 +28,7 @@
 GObject *app_object{0};
 
 /** app_object signals array */
-guint app_object_signals[ACB_MAX] = { 0 };
+guint app_object_signals[ACB_MAX]{0};
 
 /** Private app_object data */
 typedef struct _AppObjectPrivate AppObjectPrivate;
@@ -220,7 +220,17 @@ static void app_object_init(AppObject *self)
  * \brief Create new app_object
  * \return new app_object
  */
-GObject *app_object_new(void)
+// GObject *app_object_new(void)
+aocl::aocl()
 {
-	return (GObject*)g_object_new(APP_OBJECT_TYPE, NULL);
+//	return (GObject*)g_object_new(APP_OBJECT_TYPE, NULL);
+ app_object=(GObject*)g_object_new(APP_OBJECT_TYPE, NULL);
+}
+
+aocl::~aocl()
+{
+	g_clear_object(&app_object);
+	app_object=0;
+	for(size_t i=0;i<sizeof app_object_signals/sizeof *app_object_signals;i++)
+		app_object_signals[i]=0;
 }

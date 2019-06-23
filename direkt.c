@@ -221,25 +221,24 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 		exit(1);
 	}
 	*/
-	static int angefangen{0};
-	if (!angefangen) {
-		angefangen=1;
-		routermanager_new(debug, NULL);
-		/* Initialize routermanager */
-		routermanager_init(NULL);
-		//faxophone_setup();
-		// static gconstpointer net_event;
-		//	net_event = net_add_event(faxophone_connect_hier, faxophone_disconnect, NULL);
+//		routermanager_new(debug, NULL);
+	rmcl rm(debug,0);
+	/* Initialize routermanager */
+	//		routermanager_init(NULL);
+	rm.init(0);
+	aocl ao; //app_object
+	//faxophone_setup();
+	// static gconstpointer net_event;
+	//	net_event = net_add_event(faxophone_connect_hier, faxophone_disconnect, NULL);
 
-		/* Only show messages >= INFO */
-		log_set_level(G_LOG_LEVEL_INFO);
-	}
+	/* Only show messages >= INFO */
+	log_set_level(G_LOG_LEVEL_INFO);
 
 //  fb.loadj();
 //  fb.fb_get_settings_05_50();
-		g_signal_connect(app_object, "connection-status", G_CALLBACK(fax_connection_status_cb), NULL);
-		g_signal_connect(app_object, "connection-established", G_CALLBACK(capi_connection_established_cb), NULL);
-		g_signal_connect(app_object, "connection-terminated", G_CALLBACK(capi_connection_terminated_cb), NULL);
+	g_signal_connect(app_object, "connection-status", G_CALLBACK(fax_connection_status_cb), NULL);
+	g_signal_connect(app_object, "connection-established", G_CALLBACK(capi_connection_established_cb), NULL);
+	g_signal_connect(app_object, "connection-terminated", G_CALLBACK(capi_connection_terminated_cb), NULL);
 
 //	system("gs -q -dNOPAUSE -dSAFER -dBATCH -sDEVICE=tiffg4 -sPAPERSIZE=a4 -dFIXEDMEDIA -r204x98 -sOutputFile=t0.pdf.tif ~/rogerj/wand/t0.pdf");
 	// gpointer user_data;
@@ -301,6 +300,5 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 
 	/* Shutdown logging */
 	log_shutdown();
-
 	return 0;
 }

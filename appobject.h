@@ -77,6 +77,15 @@ GObject *app_object_new(void);
 extern GObject *app_object;
 extern guint app_object_signals[ACB_MAX];
 
+struct aocl
+{
+	/** main internal app_object containing signals and private data */
+	/** app_object signals array */
+	aocl();
+	~aocl();
+};
+
+
 G_END_DECLS
 
 #endif

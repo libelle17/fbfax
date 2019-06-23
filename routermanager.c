@@ -49,16 +49,19 @@
  * \brief Print error quark
  * \return quark
  */
+/*
 GQuark rm_print_error_quark(void)
 {
 	return g_quark_from_static_string("rm-print-error-quark");
 }
+*/
 
 /**
  * \brief Get directory of requested type
  * \param type directory type name
  * \return directory as duplicated string
  */
+/*
 gchar *get_directory(gchar *type)
 {
 #ifdef G_OS_WIN32
@@ -92,15 +95,18 @@ gchar *get_directory(gchar *type)
 	return g_strdup(type);
 #endif
 }
+*/
 
 /**
  * \brief Initialize directory paths
  */
+/*
 void init_directory_paths(void)
 {
 	// Komentar 4.1.18
 //	plugin_dir = get_directory(ROUTERMANAGER_PLUGINS);
 }
+*/
 
 /**
  * \brief Return plugin directory
@@ -146,7 +152,8 @@ gchar *routermanager_get_requested_profile(void)
  * \param debug enable debug output
  * \return TRUE on success, FALSE on error
  */
-gboolean routermanager_new(gboolean debug, GError **error)
+// gboolean routermanager_new(gboolean debug, GError **error)
+rmcl::rmcl(gboolean debug, GError **error)
 {
 	gchar *dir;
 
@@ -156,7 +163,7 @@ gboolean routermanager_new(gboolean debug, GError **error)
 #endif
 
 	/* Init directory path */
-	 init_directory_paths();
+//	 init_directory_paths();
 
 	/* Initialize logging system */
 	log_init(debug);
@@ -175,17 +182,17 @@ gboolean routermanager_new(gboolean debug, GError **error)
 	g_free(dir);
 
 	/* Create main app object (signals) */
-	app_object = app_object_new();
-	g_assert(app_object != NULL);
-
-	return TRUE;
+//	app_object = app_object_new();
+//	g_assert(app_object != NULL);
+//	return TRUE;
 }
 
 /**
  * \brief Initialize routermanager
  * \return TRUE on success, FALSE on error
  */
-gboolean routermanager_init(GError **error)
+//gboolean routermanager_init(GError **error)
+gboolean rmcl::init(GError **error)
 {
 	/* Init filter */
 	// Kommentar 4.1.18
@@ -231,7 +238,6 @@ gboolean routermanager_init(GError **error)
 	/* Initialize network monitor */
 	// GSchade ginge auch ohne 
 	net_monitor_init();
-
 	return TRUE;
 }
 
@@ -246,7 +252,8 @@ gboolean routermanager_init(GError **error)
  * - AppObject
  * - Log
  */
-void routermanager_shutdown(void)
+// void routermanager_shutdown(void)
+rmcl::~rmcl()
 {
 	/* Shutdown network monitor */
 	net_monitor_shutdown();
@@ -271,7 +278,7 @@ void routermanager_shutdown(void)
 	// filter_shutdown();
 
 	/* Destroy app_object */
-	g_clear_object(&app_object);
+//	g_clear_object(&app_object);
 
 	/* Shutdown logging */
 	log_shutdown();
