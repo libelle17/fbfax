@@ -1689,7 +1689,7 @@ void setHostName(const char *);
  * \param controller listen controller or -1 for all
  * \return session pointer or NULL on error
  */
-struct session *faxophone_init(struct session_handlers *handlers, const char *host, gint controller)
+struct session *faxophone_init(struct session_handlers_st *handlers, const char *host, gint controller)
 {
   if (verbg) printf("Beginn faxophone_init, controller: %d\n",controller);
 	int appl_id = -1;

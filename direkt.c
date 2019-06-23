@@ -47,7 +47,6 @@ void fbcl::waehle(string nr)
 	if (verbg) printf("Ergebnis nach Wahl: %s\n",ubuf.c_str());
 }
 
-
 /**
  * \brief Faxophone connect
  * \param user_data faxophone plugin pointer
@@ -58,19 +57,29 @@ gboolean fbcl::faxophone_connect_hier()
 //	struct profile *profile = profile_get_active();
 	gboolean retry = TRUE;
 	const gchar* _host=(const gchar*)"fritz.box"; // router_get_host(profile);
-	if (verbg) printf("Beginn faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
+	if (!session) {
+		if (verbg) printf("Beginn faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
 again:
-	session = faxophone_init(&session_handlers, _host, controller + 1);
-	if (verbg) printf("Mitte faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
-	if (!session && retry) {
-		// Maybe the port is closed, try to activate it and try again 
-		waehle(/*PORT_ISDN1, */"#96*3*");
-		g_usleep(G_USEC_PER_SEC * 2);
-		retry = FALSE;
-		goto again;
+		session = faxophone_init(&session_handlers, _host, controller + 1);
+		if (verbg) printf("Mitte faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
+		if (!session && retry) {
+			// Maybe the port is closed, try to activate it and try again 
+			waehle(/*PORT_ISDN1, */"#96*3*");
+			g_usleep(G_USEC_PER_SEC * 2);
+			retry = FALSE;
+			goto again;
+		}
+		if (verbg) printf("Ende faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
 	}
-	if (verbg) printf("Ende faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
 	return session != NULL;
+}
+
+fbcl::~fbcl()
+{
+	if (session) {
+		faxophone_close(TRUE);
+		session=0;
+	}
 }
 
 // aus main_cli.c
@@ -210,15 +219,19 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 		exit(1);
 	}
 	*/
-	routermanager_new(debug, NULL);
-	/* Initialize routermanager */
-	routermanager_init(NULL);
-	//faxophone_setup();
-	// static gconstpointer net_event;
-//	net_event = net_add_event(faxophone_connect_hier, faxophone_disconnect, NULL);
+	static int angefangen{0};
+	if (!angefangen) {
+		angefangen=1;
+		routermanager_new(debug, NULL);
+		/* Initialize routermanager */
+		routermanager_init(NULL);
+		//faxophone_setup();
+		// static gconstpointer net_event;
+		//	net_event = net_add_event(faxophone_connect_hier, faxophone_disconnect, NULL);
 
-	/* Only show messages >= INFO */
-	log_set_level(G_LOG_LEVEL_INFO);
+		/* Only show messages >= INFO */
+		log_set_level(G_LOG_LEVEL_INFO);
+	}
 
 //  fb.loadj();
 //  fb.fb_get_settings_05_50();
@@ -287,11 +300,10 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 	/* Shutdown routermanager */
 	//routermanager_shutdown();
 	/* Destroy app_object */
-	g_clear_object(&app_object);
+//	g_clear_object(&app_object);
 
 	/* Shutdown logging */
 	log_shutdown();
 
-	faxophone_close(TRUE);
 	return 0;
 }

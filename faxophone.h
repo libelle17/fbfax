@@ -155,7 +155,7 @@ struct capi_connection {
 	void (*clean)(struct capi_connection *connection);
 };
 
-struct session_handlers {
+struct session_handlers_st {
 	gpointer (*audio_open)(void);
 	gsize (*audio_input)(gpointer audio, guchar *buf, gsize len);
 	gsize (*audio_output)(gpointer audio, guchar *buf, gsize len);
@@ -178,7 +178,7 @@ struct session {
 	int message_number;
 	int input_thread_state;
 
-	struct session_handlers *handlers;
+	struct session_handlers_st *handlers;
 };
 
 struct capi_connection *capi_get_free_connection(void);
@@ -188,9 +188,9 @@ void capi_hangup(struct capi_connection *connection);
 int capi_pickup(struct capi_connection *connection, int type);
 
 struct session *faxophone_get_session(void);
-struct session *faxophone_init(struct session_handlers *handlers, const char *host, gint controller);
+struct session *faxophone_init(struct session_handlers_st *handlers, const char *host, gint controller);
 int faxophone_close(int force);
 // GSchade 6.1.18
 extern struct session *session;
-extern struct session_handlers session_handlers;
+extern struct session_handlers_st session_handlers;
 #endif

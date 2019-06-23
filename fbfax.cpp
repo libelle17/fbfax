@@ -440,12 +440,20 @@ void hhcl::pvirtfuehraus() //α
 					ptr[4]=absnr.c_str();
 					ptr[5]=absdr.c_str();
 					retu=dmain(6,ptr,usr,pwd,host);
-					vwdt.seekg(0,ios::beg);
-					vwdt.clear(); // wenn Datei neu erstellt, ist das auch noch noetig
-					vwdt<<nachher<<endl;
-					vwdt<<rest<<endl;
-					vwdt<<ziel<<endl;
-					vwdt<<ursp<<endl;
+					if (!retu) {
+						vwdt.close(); // Faxen erfolgreich, Dateien nach gfvz verschieben
+						systemrueck("mv \""+tifd+"\" \""+dtn[i]+"\" \""+gfvz+"/\"",obverb,oblog);
+					} else if (rest.empty()) {
+						vwdt.close(); // Faxen erfolglos, Dateien nach ngvz verschieben
+						systemrueck("mv \""+tifd+"\" \""+dtn[i]+"\" \""+ngvz+"/\"",obverb,oblog);
+					} else {
+						vwdt.seekg(0,ios::beg); // aktuelle Runde erfolglos, neue Daten schreiben
+						vwdt.clear(); // wenn Datei neu erstellt, ist das auch noch noetig
+						vwdt<<nachher<<endl;
+						vwdt<<rest<<endl;
+						vwdt<<ziel<<endl;
+						vwdt<<ursp<<endl;
+					}
 					// Speicherzugriffsfehler aufspüren; wenn erfolgreich, dann verschieben und nicht mehr neu schreiben; am Ende des Schreibvorgangs Datei beenden
 					// wenn aufgebraucht, in nichtgefaxt verschieben
 					// wenn aufgebraucht, in nichtgefaxt verschieben

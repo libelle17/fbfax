@@ -45,88 +45,10 @@
 
 extern int verbg;
 
-/*static */struct session *session = NULL;
-static gconstpointer net_event;
+///*static */struct session *session = NULL;
+// static gconstpointer net_event;
 
 struct capi_connection *active_capi_connection = NULL;
-#undef false
-#ifdef false
-/**
- * \brief Dial number via fax
- * \param tiff tiff file name
- * \param trg_no target number
- * \param suppress suppress number flag
- * \return capi connection pointer
- */
-struct capi_connection *fax_dial(gchar *tiff, const gchar *trg_no, gboolean suppress)
-{
-  if (verbg) printf("Beginn fax_dial: %s, %s, %d\n",tiff,trg_no,suppress);
-	struct profile *profile = profile_get_active();
-	gint modem = g_settings_get_int(profile->settings, "fax-bitrate");
-	gboolean ecm = g_settings_get_boolean(profile->settings, "fax-ecm");
-	gint controller = g_settings_get_int(profile->settings, "fax-controller") + 1;
-	gint cip = g_settings_get_int(profile->settings, "fax-cip");
-	const gchar *src_no = g_settings_get_string(profile->settings, "fax-number");
-	const gchar *header = g_settings_get_string(profile->settings, "fax-header");
-	const gchar *ident = g_settings_get_string(profile->settings, "fax-ident");
-	struct capi_connection *connection = NULL;
-	gchar *target;
-
-	if (EMPTY_STRING(src_no)) {
-		emit_message(0, (gchar*)"Source MSN not set, cannot dial");
-		return NULL;
-	}
-	
-	target = call_canonize_number(trg_no);
-
-	if (cip == 1) {
-		cip = FAX_CIP;
-		g_debug("Using 'ISDN Fax' id");
-	} else {
-		cip = SPEECH_CIP;
-		g_debug("Using 'Analog Fax' id");
-	}
-
-	if (g_settings_get_boolean(profile->settings, "fax-sff")) {
-		connection = sff_send(tiff, modem, ecm, controller, src_no, target, ident, header, suppress);
-	} else {
-		connection = fax_send(tiff, modem, ecm, controller, cip, src_no, target, ident, header, suppress);
-	}
-	g_free(target);
-  if (verbg) printf("Ende fax_dial: %s, %s, %d\n",tiff,trg_no,suppress);
-
-	return connection;
-}
-
-/**
- * \brief Dial number via phone
- * \param trg_no target number
- * \param suppress suppress number flag
- * \return capi connection pointer
- */
-struct capi_connection *phone_dial(const gchar *trg_no, gboolean suppress)
-{
-	struct profile *profile = profile_get_active();
-	gint controller = g_settings_get_int(profile->settings, "phone-controller") + 1;
-	const gchar *src_no = g_settings_get_string(profile->settings, "phone-number");
-	struct capi_connection *connection = NULL;
-	gchar *target;
-
-	if (EMPTY_STRING(src_no)) {
-		emit_message(0, (gchar*)"Source MSN not set, cannot dial");
-		return NULL;
-	}
-
-	target = call_canonize_number(trg_no);
-
-	connection = phone_call(controller, src_no, target, suppress);
-
-	g_free(target);
-
-	return connection;
-}
-#endif
-
 /**
  * \brief Connection ring handler
  * \param connection capi connection structure
@@ -212,7 +134,7 @@ void connection_terminated(struct capi_connection *connection)
 	g_idle_add(connection_terminated_idle, connection);
 }
 
-struct session_handlers session_handlers = {
+struct session_handlers_st session_handlers = {
 	audio_open, /* audio_open */
 	audio_read, /* audio_read */
 	audio_write, /* audio_write */
@@ -225,76 +147,24 @@ struct session_handlers session_handlers = {
 	connection_status, /* connection_status */
 };
 
-/**
- * \brief Faxophone connect
- * \param user_data faxophone plugin pointer
- * \return error code
- */
-#ifdef false
-gboolean faxophone_connect(gpointer user_data)
-{
-	struct profile *profile = profile_get_active();
-	gboolean retry = TRUE;
-	gchar* host=router_get_host(profile);
-	gint phonecontr=g_settings_get_int(profile->settings, "phone-controller");
-	if (verbg) printf("Beginn faxophone_connect, host: %s, phone-controller: %i\n",host,phonecontr);
-
-again:
-	session = faxophone_init(&session_handlers, router_get_host(profile), g_settings_get_int(profile->settings, "phone-controller") + 1);
-	if (!session && retry) {
-		/* Maybe the port is closed, try to activate it and try again */
-		router_dial_number(profile, PORT_ISDN1, "#96*3*");
-		g_usleep(G_USEC_PER_SEC * 2);
-		retry = FALSE;
-		goto again;
-	}
-
-	if (verbg) printf("Ende faxophone_connect, host: %s, phone-controller: %i\n",host,phonecontr);
-	return session != NULL;
-}
-#endif
-gboolean faxophone_connect(gpointer user_data)
-{
-//	struct profile *profile = profile_get_active();
-	gboolean retry = TRUE;
-	gchar* _host=(gchar*)"fritz.box"; // router_get_host(profile);
-//	gint phonecontr=g_settings_get_int(profile->settings, "phone-controller");
-	gint controller=5;
-	if (verbg) printf("Beginn faxophone_connect, host: %s, phone-controller: %i\n",_host,controller/*phonecontr*/);
-again:
-	session = faxophone_init(&session_handlers, _host/*router_get_host(profile)*/, controller/*g_settings_get_int(profile->settings, "phone-controller") */+ 1);
-	if (!session && retry) {
-		// Maybe the port is closed, try to activate it and try again 
-	return session != NULL;
-
-#ifdef false
-		waehle(PORT_ISDN1, "#96*3*");//router_dial_number(profile, PORT_ISDN1, "#96*3*");
-		g_usleep(G_USEC_PER_SEC * 2);
-#endif
-		retry = FALSE;
-		goto again;
-	}
-	if (verbg) printf("Ende faxophone_connect, host: %s, phone-controller: %i\n",_host,controller/*phonecontr*/);
-	return session != NULL;
-}
 
 /**
  * \brief Network disconnect callback
  * \param user_data faxophone plugin pointer
  * \return TRUE
  */
-gboolean faxophone_disconnect(gpointer user_data)
-{
-	if (verbg) printf("Beginn faxophone_disconnect\n");
-	faxophone_close(TRUE);
-	return TRUE;
-}
+// gboolean faxophone_disconnect(gpointer user_data)
+// {
+// 	if (verbg) printf("Beginn faxophone_disconnect\n");
+// 	faxophone_close(TRUE);
+// 	return TRUE;
+// }
 
 /**
  * \brief Init faxophone support
  */
-void faxophone_setup(void)
-{
-	if (verbg) printf("Beginn faxophone_setup\n");
-	net_event = net_add_event(faxophone_connect, faxophone_disconnect, NULL);
-}
+// void faxophone_setup(void)
+// {
+// 	if (verbg) printf("Beginn faxophone_setup\n");
+// 	net_event = net_add_event(faxophone_connect, faxophone_disconnect, NULL);
+// }

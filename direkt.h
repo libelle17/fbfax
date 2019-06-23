@@ -21,8 +21,11 @@ class fbcl
     const std::string host;
 	public:
 		int controller;
+/*static */struct session *session = NULL;
 	public:
     fbcl(const string usr,const string pwd,const string host);
+		~fbcl();
+		// gboolean faxophone_connect(gpointer user_data);
 		void waehle(string nr);
 		gboolean faxophone_connect_hier();
 };

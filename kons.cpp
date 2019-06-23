@@ -1871,11 +1871,13 @@ int obprogda(const string& prog, int obverb/*=0*/, int oblog/*=0*/, string *pfad
     return 2;
   } // if (!systemrueck("which "+prog+" 2>/dev/null",obverb,oblog,&rueck))
 	// wenn nicht root
-  if (cus.cuid) {
-    if (!systemrueck("which \""+prog+"\" 2>/dev/null ||env \"PATH=$PATH\" which \""+prog+"\" 2>/dev/null",obverb,oblog,&rueck,/*obsudc=*/1)) {
-      if (pfad) *pfad=rueck[0];
-      return 3;
-    }
+	if (cus.cuid) { // || verarbeitet sich schlecht in systemrueck wegen dort eroeffnetem stream
+		if (!systemrueck("which \""+prog+"\" 2>/dev/null",obverb,oblog,&rueck,/*obsudc=*/1)) {
+			if (!systemrueck("env \"PATH=$PATH\" which \""+prog+"\" 2>/dev/null",obverb,oblog,&rueck,/*obsudc=*/1)) {
+				if (pfad) *pfad=rueck[0];
+				return 3;
+			}
+		}
 	} // if (!cus.cuid)
   if (pfad) pfad->clear();
   return 0; 
