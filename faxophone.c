@@ -268,6 +268,7 @@ struct capi_connection *capi_call(
 	_cstruct b2_configuration,
 	_cstruct b3_configuration)
 {
+	static int connection2{0};
 	_cmsg cmsg;
 	unsigned char called_party_number[70];
 	unsigned char calling_party_number[70];
@@ -283,12 +284,18 @@ struct capi_connection *capi_call(
 	}
 
 	if (src_no == NULL || strlen(src_no) < 1 || trg_no == NULL || strlen(trg_no) < 1) {
-		g_debug("Wrong phone numbers!");
+		if (!connection2) {
+			g_debug("Wrong phone numbers!");
+			connection2=1;
+		}
 		return connection;
 	}
 
 	/* Say hello */
-	g_debug("REQ: CONNECT (%s->%s)", src_no, trg_no);
+	if (!connection2) {
+		g_debug("REQ: CONNECT (%s->%s)", src_no, trg_no);
+		connection2=1;
+	}
 
 	/* get free connection */
 	connection = capi_get_free_connection();
@@ -386,7 +393,10 @@ struct capi_connection *capi_call(
 
 	/* Error? */
 	if (err) {
-		g_debug("(%d) Unable to send CONNECT_REQ!", err);
+		if (!connection2) {
+			g_debug("(%d) Unable to send CONNECT_REQ!", err);
+			connection2=1;
+		}
 		capi_error(err);
 		capi_set_free(connection);
 		connection = NULL;
@@ -1351,26 +1361,35 @@ static void capi_confirmation(_cmsg capi_message)
 #ifdef FAXOPHONE_DEBUG
 	int controller;
 #endif
+	static int cconf2{0};
 
 	switch (capi_message.Command) {
 	case CAPI_FACILITY:
 		/* Facility */
+		if (!cconf2) {
 		g_debug("CNF: CAPI_FACILITY; Info: %d", capi_message.Info);
+		}
 		break;
 	case CAPI_LISTEN:
 		/* Listen confirmation */
 #ifdef FAXOPHONE_DEBUG
 		controller = LISTEN_CONF_CONTROLLER(&capi_message);
+		if (!cconf2) {
 		g_debug("CNF: CAPI_LISTEN: controller %d, info %d", controller, capi_message.Info);
+		}
 #endif
 		break;
 	case CAPI_ALERT:
 		/* Alert message */
+		if (!cconf2) {
 		g_debug("CNF: CAPI_ALERT");
+		}
 		info = ALERT_CONF_INFO(&capi_message);
 		plci = ALERT_CONF_PLCI(&capi_message);
 
+		if (!cconf2) {
 		g_debug("CNF: CAPI_ALERT: info %d, plci %d", info, plci);
+		}
 
 		connection = capi_find_plci(plci);
 
@@ -1385,13 +1404,17 @@ static void capi_confirmation(_cmsg capi_message)
 	case CAPI_DATA_B3:
 		/* Sent data acknowledge, NOP */
 #ifdef FAXOPHONE_DEBUG
+		if (!cconf2) {
 		g_debug("CNF: DATA_B3");
+		}
 #endif
 		info = DATA_B3_CONF_INFO(&capi_message);
 		ncci = DATA_B3_CONF_NCCI(&capi_message);
 
 #ifdef FAXOPHONE_DEBUG
+		if (!cconf2) {
 		g_debug("CNF: CAPI_ALERT: info %d, ncci %d", info, ncci);
+		}
 #endif
 
 		connection = capi_find_ncci(ncci);
@@ -1401,18 +1424,24 @@ static void capi_confirmation(_cmsg capi_message)
 		break;
 	case CAPI_INFO:
 		/* Info, NOP */
+		if (!cconf2) {
 		g_debug("CNF: CAPI_INFO: info %d", capi_message.Info);
+		}
 		break;
 	case CAPI_CONNECT:
 		/* Physical channel connection is being established */
 		plci = CONNECT_CONF_PLCI(&capi_message);
 		info = CONNECT_CONF_INFO(&capi_message);
 
+		if (!cconf2) {
 		g_debug("CNF: CAPI_CONNECT - (plci: %d, info: %d)", plci, info);
+		}
 		/* .. or new outgoing call? get plci. */
 		connection = capi_find_new();
 		if (connection == NULL) {
+		if (!cconf2) {
 			g_debug("CND: CAPI_CONNECT - Warning! Received confirmation but we didn't requested a connect!!!");
+		}
 			break;
 		}
 
@@ -1432,19 +1461,30 @@ static void capi_confirmation(_cmsg capi_message)
 	case CAPI_CONNECT_B3:
 		plci = CONNECT_CONF_PLCI(&capi_message);
 
+		if (!cconf2) {
 		g_debug("CNF: CAPI_CONNECT_B3");
+		}
 		capi_error(capi_message.Info);
 		break;
 	case CAPI_DISCONNECT:
+		if (!cconf2) {
 		g_debug("CNF: CAPI_DISCONNECT");
+		}
 		break;
 	case CAPI_DISCONNECT_B3:
+		if (!cconf2) {
 		g_debug("CNF: CAPI_DISCONNECT_B3");
+		}
 		break;
 	default:
+		if (!cconf2) {
 		g_debug("Unhandled confirmation, command 0x%x", capi_message.Command);
+		}
 		break;
 	}
+		if (!cconf2) {
+			cconf2=1;
+		}
 }
 
 static int capi_init(int controller);
@@ -1559,7 +1599,11 @@ static int capi_init(int controller)
 	int num_controllers = 0;
 	struct capi_profile profile={0};
 
-	g_debug("capi_init(%i)",controller);
+	static int capiinitialisiert{0};
+	if (!capiinitialisiert) {
+		g_debug("capi_init(%i)",controller);
+		capiinitialisiert=1;
+	}
 	/* Check if capi is installed */
 	error_code = CAPI20_ISINSTALLED();
 	if (error_code != 0) {
@@ -1667,16 +1711,20 @@ static int capi_init(int controller)
 			return -3;
 		}
 
-		g_debug("!!!!!!!!!!!!! Listen to controller #%d ...", index);
 #ifdef FAXOPHONE_DEBUG
 		g_debug("Listen to controller #%d ...", index);
 #endif
 	}
 
-	g_debug("CAPI connection established!");
+	if (!capiinitialisiert) {
+		g_debug("CAPI connection established!");
+	}
 
 	/* ok! */
-	g_debug("Ende capi_init(%i)",controller);
+	if (!capiinitialisiert) {
+		g_debug("Ende capi_init(%i)",controller);
+		capiinitialisiert=1;
+	}
 	return appl_id;
 }
 
@@ -1759,6 +1807,7 @@ int faxophone_close(int force)
 	//}
 
 	if (phsession != NULL) {
+		if (verbg) printf("Hier bin ich noch\n");
 		/* TODO: clear phsession! */
 		faxophone_quit = 1;
 		if (capi_thread != NULL) {
@@ -1768,6 +1817,7 @@ int faxophone_close(int force)
 		capi_thread = NULL;
 	}
 
+	if (verbg) printf("Hier bin ich nicht mehr\n");
 	phsession = NULL;
 
 	return 0;

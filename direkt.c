@@ -24,7 +24,7 @@
 using namespace std;
 #include "tr64.h"
 #include "direkt.h"
-int verbg{0};
+int verbg{1};
 
 
 fbcl::fbcl(const string usr,const string pwd,const string host)
@@ -299,6 +299,6 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 //	g_clear_object(&app_object);
 
 	/* Shutdown logging */
-	log_shutdown();
+//	log_shutdown();
 	return 0;
 }

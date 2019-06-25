@@ -114,8 +114,8 @@ void net_monitor_state_changed(gboolean state)
 		g_debug("Network state repeated, ignored (%s)", net_state(state));
 		return;
 	}
-
-	g_debug("Network state changed from %s to %s", net_state(net_online), net_state(state));
+  if (state!=net_online) // GSchade 24.6.19
+		g_debug("Network state changed from %s to %s", net_state(net_online), net_state(state));
 
 	/* Set internal network state */
 	net_online = state;

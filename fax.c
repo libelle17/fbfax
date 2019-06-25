@@ -275,6 +275,7 @@ static int get_tiff_total_pages(const char *file)
  */
 gint spandsp_init(const gchar *tiff_file, gboolean sending, gchar modem, gchar ecm, const gchar *lsi, const gchar *local_header_info, struct capi_connection *connection)
 {
+	static int spandsp2{0};
 	t30_state_t *t30;
 	logging_state_t *log_state;
 	gint supported_resolutions = 0;
@@ -284,7 +285,10 @@ gint spandsp_init(const gchar *tiff_file, gboolean sending, gchar modem, gchar e
 	if (verbg) printf("Beginn spandsp_init\n");
 
 	status->fax_state = fax_init(NULL, sending);
-	g_debug("status->fax_state: %p", status->fax_state);
+	if (!spandsp2) {
+		g_debug("status->fax_state: %p", status->fax_state);
+		spandsp2=1;
+	}
 
 	fax_set_transmit_on_idle(status->fax_state, TRUE);
 	fax_set_tep_mode(status->fax_state, FALSE);
@@ -506,12 +510,15 @@ void fax_transfer(struct capi_connection *connection, _cmsg capi_message)
  */
 struct capi_connection *fax_send(gchar *tiff_file, gint modem, gint ecm, gint controller, gint cip, const gchar *src_no, const gchar *trg_no, const gchar *lsi, const gchar *local_header_info, gint call_anonymous)
 {
+	static int obconnected{0};
   if (verbg) printf("Beginn fax_send: %s, %d, %d, %d, %d, %s, %s, %s, %s, %d\n",tiff_file,modem,ecm,controller,cip,src_no,trg_no,lsi,local_header_info,call_anonymous);
 	struct fax_status *status;
 	struct capi_connection *connection;
 
-	g_debug("tiff: %s, modem: %d, ecm: %s, controller: %d, src: %s, trg: %s, ident: %s, header: %s, anonymous: %d)", tiff_file, modem, ecm ? "on" : "off", controller, src_no, trg_no, (lsi != NULL ? lsi : "(null)"), (local_header_info != NULL ? local_header_info : "(null)"), call_anonymous);
-
+	if (!obconnected) {
+		g_debug("tiff: %s, modem: %d, ecm: %s, controller: %d, src: %s, trg: %s, ident: %s, header: %s, anonymous: %d)", tiff_file, modem, ecm ? "on" : "off", controller, src_no, trg_no, (lsi != NULL ? lsi : "(null)"), (local_header_info != NULL ? local_header_info : "(null)"), call_anonymous);
+		obconnected=1;
+	}
 	//status = g_slice_new0(struct fax_status);
 	status = (struct fax_status*)malloc(sizeof(struct fax_status));
 	memset(status, 0, sizeof(struct fax_status));

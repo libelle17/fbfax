@@ -569,8 +569,8 @@ VerzeichnisGibts	./kons.cpp	/^uchar VerzeichnisGibts(const char* vname)$/;"	f
 WPcl	./kons.cpp	/^WPcl::WPcl(const string& pname,const void* pptr,par_t part):wpgcl(pname,pptr,part)$/;"	f	class:WPcl
 WPcl	./kons.h	/^struct WPcl:wpgcl $/;"	s
 XOR	./kons.cpp	/^string XOR(const string& value, const string& key)$/;"	f
-_	./direkt.c	78;"	d	file:
-_	./direkt.c	79;"	d	file:
+_	./direkt.c	87;"	d	file:
+_	./direkt.c	88;"	d	file:
 _	./routermanager.h	32;"	d
 _AppObject	./appobject.h	/^struct _AppObject {$/;"	s
 _AppObjectClass	./appobject.h	/^struct _AppObjectClass {$/;"	s
@@ -614,13 +614,12 @@ anfgg	./kons.cpp	/^void anfgg(const string& datei, const string& inhalt, const s
 anfgw	./kons.cpp	/^void anfgw(const string& datei, const string& udpr, const string& inhalt, const string& comment, int obverb\/*=0*\/, int oblog\/*=0*\/)$/;"	f
 anfzweg	./kons.cpp	/^string* anfzweg(string *quelp) {$/;"	f
 anhalten	./fbfax.cpp	/^void hhcl::anhalten()$/;"	f	class:hhcl
+aocl	./appobject.c	/^aocl::aocl()$/;"	f	class:aocl
+aocl	./appobject.h	/^struct aocl$/;"	s
 app_marshal_VOID__POINTER_POINTER	./appobject.c	/^void app_marshal_VOID__POINTER_POINTER(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)$/;"	f
-app_object	./appobject.c	/^GObject *app_object = NULL;$/;"	v
 app_object_class_init	./appobject.c	/^static void app_object_class_init(AppObjectClass *klass)$/;"	f	file:
 app_object_create_signals	./appobject.c	/^static void app_object_create_signals(GObjectClass *g_object_class)$/;"	f	file:
 app_object_init	./appobject.c	/^static void app_object_init(AppObject *self)$/;"	f	file:
-app_object_new	./appobject.c	/^GObject *app_object_new(void)$/;"	f
-app_object_signals	./appobject.c	/^guint app_object_signals[ACB_MAX] = { 0 };$/;"	v
 appl_id	./faxophone.h	/^	int appl_id;$/;"	m	struct:session
 apt	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	e	enum:instprog
 argcl	./kons.cpp	/^argcl::argcl(const int i,const char *const *const argv):argcs(argv[i])$/;"	f	class:argcl
@@ -631,15 +630,15 @@ attrangleich	./kons.cpp	/^int attrangleich(const string& zu, const string& gemae
 audio	./audio.h	/^struct audio {$/;"	s
 audio	./faxophone.h	/^	gpointer audio;$/;"	m	struct:capi_connection
 audio_close	./audio.c	/^gboolean audio_close(gpointer audio_priv)$/;"	f
-audio_close	./faxophone.h	/^	gboolean (*audio_close)(gpointer audio);$/;"	m	struct:session_handlers
+audio_close	./faxophone.h	/^	gboolean (*audio_close)(gpointer audio);$/;"	m	struct:session_handlers_st
 audio_device	./audio.h	/^struct audio_device {$/;"	s
 audio_get_default	./audio.c	/^struct audio *audio_get_default(void)$/;"	f
 audio_get_plugins	./audio.c	/^GSList *audio_get_plugins(void)$/;"	f
-audio_input	./faxophone.h	/^	gsize (*audio_input)(gpointer audio, guchar *buf, gsize len);$/;"	m	struct:session_handlers
+audio_input	./faxophone.h	/^	gsize (*audio_input)(gpointer audio, guchar *buf, gsize len);$/;"	m	struct:session_handlers_st
 audio_list	./audio.c	/^static GSList *audio_list = NULL;$/;"	v	file:
 audio_open	./audio.c	/^gpointer audio_open(void)$/;"	f
-audio_open	./faxophone.h	/^	gpointer (*audio_open)(void);$/;"	m	struct:session_handlers
-audio_output	./faxophone.h	/^	gsize (*audio_output)(gpointer audio, guchar *buf, gsize len);$/;"	m	struct:session_handlers
+audio_open	./faxophone.h	/^	gpointer (*audio_open)(void);$/;"	m	struct:session_handlers_st
+audio_output	./faxophone.h	/^	gsize (*audio_output)(gpointer audio, guchar *buf, gsize len);$/;"	m	struct:session_handlers_st
 audio_read	./audio.c	/^gsize audio_read(gpointer audio_priv, guchar *data, gsize size)$/;"	f
 audio_set_default	./audio.c	/^void audio_set_default(gchar *name)$/;"	f
 audio_write	./audio.c	/^gsize audio_write(gpointer audio_priv, guchar *data, gsize size)$/;"	f
@@ -676,7 +675,6 @@ bytes_received	./fax.h	/^	gint bytes_received;$/;"	m	struct:fax_status
 bytes_sent	./fax.h	/^	gint bytes_sent;$/;"	m	struct:fax_status
 bytes_total	./fax.h	/^	gint bytes_total;$/;"	m	struct:fax_status
 call	./call.h	/^struct call {$/;"	s
-call	./direkt.c	/^static gboolean call = FALSE;$/;"	v	file:
 call_by_call_entry	./call.h	/^struct call_by_call_entry {$/;"	s
 capi_call	./faxophone.c	/^struct capi_connection *capi_call($/;"	f
 capi_close	./faxophone.c	/^static int capi_close(void)$/;"	f	file:
@@ -721,7 +719,7 @@ close	./audio.h	/^	gboolean (*close)(gpointer priv);$/;"	m	struct:audio
 cmd	./kons.h	/^    string cmd; \/\/ string fuer command fuer Betriebssystembefehle$/;"	m	class:hcl
 cmeingegeben	./kons.h	/^		uchar cmeingegeben=0; \/\/ cron-Minuten eingegeben$/;"	m	class:hcl
 cmpmem	./kons.cpp	/^long cmpmem( char* feld, const char* search, int len_feld) \/\/\/\/ , int len_search$/;"	f
-code	./faxophone.h	/^	void (*code)(struct capi_connection *connection, int code);$/;"	m	struct:session_handlers
+code	./faxophone.h	/^	void (*code)(struct capi_connection *connection, int code);$/;"	m	struct:session_handlers_st
 color	./kons.h	/^  color(WORD attribute):m_color(attribute){};$/;"	f	struct:color
 color	./kons.h	/^struct color {$/;"	s
 company	./contact.h	/^	gchar *company;$/;"	m	struct:contact
@@ -732,7 +730,7 @@ confdcl	./kons.h	/^struct confdcl $/;"	s
 confschreib	./kons.cpp	/^template<typename SCL> int schAcl<SCL>::confschreib(const string& fname,ios_base::openmode modus\/*=ios_base::out*\/,const string& mpfad,$/;"	f	class:schAcl
 connect	./net_monitor.h	/^	net_connect_func connect;$/;"	m	struct:net_event
 connect_time	./faxophone.h	/^	time_t connect_time;$/;"	m	struct:capi_connection
-connected	./faxophone.h	/^	void (*connected)(struct capi_connection *connection);$/;"	m	struct:session_handlers
+connected	./faxophone.h	/^	void (*connected)(struct capi_connection *connection);$/;"	m	struct:session_handlers_st
 connection	./connection.h	/^struct connection {$/;"	s
 connection	./fax.h	/^	struct capi_connection *connection;$/;"	m	struct:fax_status	typeref:struct:fax_status::
 connection	./faxophone.h	/^	struct capi_connection connection[CAPI_CONNECTIONS];$/;"	m	struct:session	typeref:struct:session::capi_connection
@@ -797,7 +795,7 @@ dir	./kons.cpp	/^const char *const dir = "ls -l ";$/;"	v
 dir	./kons.h	/^  DIR *dir;$/;"	m	class:find2cl
 dir_name	./kons.cpp	/^string dir_name(const string& path)$/;"	f
 disconnect	./net_monitor.h	/^	net_disconnect_func disconnect;$/;"	m	struct:net_event
-disconnected	./faxophone.h	/^	void (*disconnected)(struct capi_connection *connection);$/;"	m	struct:session_handlers
+disconnected	./faxophone.h	/^	void (*disconnected)(struct capi_connection *connection);$/;"	m	struct:session_handlers_st
 distroenum	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	g
 dmain	./direkt.c	/^int dmain(int argc, const gchar** argv,const string usr,const string pwd,const string host)$/;"	f
 dnf	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	e	enum:instprog
@@ -844,7 +842,6 @@ enableggf	./kons.cpp	/^int servc::enableggf(int obverb\/*=0*\/,int oblog\/*=0*\/
 ename	./kons.h	/^    string sname,ename; \/\/ Dienstname, Exename$/;"	m	class:servc
 encoding	./fax.h	/^	gint encoding;$/;"	m	struct:fax_status
 englisch	./kons.h	/^enum Sprache {deutsch,englisch,SprachZahl};$/;"	e	enum:Sprache
-entries	./direkt.c	/^static GOptionEntry entries[] = {$/;"	v	file:
 eprog	./kons.h	/^ string eprog; \/\/ ersetztes Programm$/;"	m	struct:linst_cl
 erg	./kons.h	/^    set<elem3> erg;$/;"	m	struct:find3cl
 ergcont	./kons.h	/^	char ergcont[reserve],$/;"	m	class:ic_cl
@@ -872,10 +869,8 @@ exitt	./kons.h	138;"	d
 exportvars	./configure	/^exportvars() {$/;"	f
 fLog	./kons.cpp	/^int fLog(const string& text, const short screen\/*=1*\/, const short file\/*=1*\/, const bool oberr\/*=0*\/, const short klobverb\/*=0*\/)$/;"	f
 falsch	./kons.h	/^enum binaer:uchar {falsch,wahr};$/;"	e	enum:binaer
-false	./fax_phone.c	52;"	d	file:
 fax_clean	./fax.c	/^void fax_clean(struct capi_connection *connection)$/;"	f
 fax_connection_status_cb	./direkt.c	/^void fax_connection_status_cb(AppObject *object, gint status, struct capi_connection *connection, gpointer user_data)$/;"	f
-fax_dial	./fax_phone.c	/^struct capi_connection *fax_dial(gchar *tiff, const gchar *trg_no, gboolean suppress)$/;"	f
 fax_phase	./fax.h	/^enum fax_phase {$/;"	g
 fax_process	./appobject.h	/^	void (*fax_process)(const gchar *filename);$/;"	m	struct:_AppObjectClass
 fax_receive	./fax.c	/^gint fax_receive(struct capi_connection *connection, const gchar *tiff_file, gint modem, gint ecm, const gchar *src_no, gchar *trg_no, gint manual_hookup)$/;"	f
@@ -886,14 +881,11 @@ fax_state	./fax.h	/^	fax_state_t *fax_state;$/;"	m	struct:fax_status
 fax_status	./fax.h	/^struct fax_status {$/;"	s
 fax_transfer	./fax.c	/^void fax_transfer(struct capi_connection *connection, _cmsg capi_message)$/;"	f
 faxophone_close	./faxophone.c	/^int faxophone_close(int force)$/;"	f
-faxophone_connect	./fax_phone.c	/^gboolean faxophone_connect(gpointer user_data)$/;"	f
 faxophone_connect_hier	./direkt.c	/^gboolean fbcl::faxophone_connect_hier()$/;"	f	class:fbcl
-faxophone_disconnect	./fax_phone.c	/^gboolean faxophone_disconnect(gpointer user_data)$/;"	f
 faxophone_get_session	./faxophone.c	/^struct session *faxophone_get_session(void)$/;"	f
-faxophone_init	./faxophone.c	/^struct session *faxophone_init(struct session_handlers *handlers, const char *host, gint controller)$/;"	f
+faxophone_init	./faxophone.c	/^struct session *faxophone_init(struct session_handlers_st *handlers, const char *host, gint controller)$/;"	f
 faxophone_quit	./faxophone.c	/^static unsigned char faxophone_quit = 1;$/;"	v	file:
 faxophone_reconnect	./faxophone.c	/^static void faxophone_reconnect(struct session *phsession)$/;"	f	file:
-faxophone_setup	./fax_phone.c	/^void faxophone_setup(void)$/;"	f
 fbcl	./direkt.c	/^fbcl::fbcl(const string usr,const string pwd,const string host)$/;"	f	class:fbcl
 fbcl	./direkt.h	/^class fbcl$/;"	c
 fed	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	e	enum:lsysen
@@ -901,7 +893,6 @@ fehler	./kons.h	/^    int fehler=0; \/\/ Exit-Code der Exe-Datei$/;"	m	class:ser
 fertige	./kons.h	/^    set<wele> wurz,fertige;$/;"	m	struct:find3cl
 file	./faxophone.h	/^	SNDFILE *file;$/;"	m	struct:recorder
 file_load	./file.c	/^gchar *file_load(gchar *name, gsize *size)$/;"	f
-file_name	./direkt.c	/^static gchar *file_name = NULL;$/;"	v	file:
 file_name	./faxophone.h	/^	char *file_name;$/;"	m	struct:recorder
 file_save	./file.c	/^void file_save(gchar *name, const gchar *data, gsize len)$/;"	f
 fileno	./kons.h	49;"	d
@@ -931,7 +922,6 @@ getIPR	./configure	/^getIPR() {$/;"	f
 getOS	./configure	/^getOS() {$/;"	f
 get_capi_profile	./faxophone.c	/^static int get_capi_profile(unsigned controller, struct capi_profile *host)$/;"	f	file:
 get_devices	./audio.h	/^	GSList *(*get_devices)(void);$/;"	m	struct:audio
-get_directory	./routermanager.c	/^gchar *get_directory(gchar *type)$/;"	f
 get_line_level_in	./isdn-convert.c	/^double get_line_level_in(struct capi_connection *connection)$/;"	f
 get_line_level_out	./isdn-convert.c	/^double get_line_level_out(struct capi_connection *connection)$/;"	f
 get_tiff_total_pages	./fax.c	/^static int get_tiff_total_pages(const char *file)$/;"	f	file:
@@ -951,7 +941,7 @@ groupdt	./kons.h	/^		static const string passwddt, groupdt, sudoersdt;$/;"	m	cla
 gruen	./kons.cpp	/^			*const gruen="\\e[0;32m", *const hgruen="\\e[1;32m", *const braun="\\e[0;33m", *const gelb="\\e[1;33m",$/;"	v
 gtrim	./kons.h	/^inline std::string *gtrim(std::string *str) {$/;"	f	class:std
 hLog	./kons.cpp	/^int hcl::hLog(const string& text,const bool oberr\/*=0*\/,const short klobverb\/*=0*\/) const$/;"	f	class:hcl
-handlers	./faxophone.h	/^	struct session_handlers *handlers;$/;"	m	struct:session	typeref:struct:session::
+handlers	./faxophone.h	/^	struct session_handlers_st *handlers;$/;"	m	struct:session	typeref:struct:session::
 hccd	./kons.h	/^		confdcl hccd;$/;"	m	class:hcl
 hcl	./kons.cpp	/^hcl::hcl(const int argc, const char *const *const argv,const char* const DPROG,const uchar mitcron,const uchar parstreng\/*=1*\/):DPROG(DPROG),mitcron(mitcron),parstreng(parstreng)$/;"	f	class:hcl
 hcl	./kons.h	/^class hcl$/;"	c
@@ -985,8 +975,8 @@ image_uri	./contact.h	/^	gchar *image_uri;$/;"	m	struct:contact
 init	./audio.h	/^	gboolean (*init)(guchar channels, gushort rate, guchar bits);$/;"	m	struct:audio
 init	./kons.cpp	/^void elem2::init(const string& vmutter, const string& name) {$/;"	f	class:elem2
 init	./kons.cpp	/^void find2cl::init(const string& mutter, const string& name, regex_t *reg, const int folge,const long maxdepth, const int& typbit,$/;"	f	class:find2cl
+init	./routermanager.c	/^gboolean rmcl::init(GError **error)$/;"	f	class:rmcl
 init_data	./faxophone.h	/^	void (*init_data)(struct capi_connection *connection);$/;"	m	struct:capi_connection
-init_directory_paths	./routermanager.c	/^void init_directory_paths(void)$/;"	f
 input_thread_state	./faxophone.h	/^	int input_thread_state;$/;"	m	struct:session
 instp	./kons.h	/^ string instp; \/\/ Befehl zum Installieren ueber das Installationnssystem$/;"	m	struct:linst_cl
 instprog	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	g
@@ -1018,7 +1008,6 @@ it	./kons.h	/^    static set<wele>::iterator it;$/;"	m	struct:find3cl
 it2	./kons.cpp	/^el2set::iterator it2;$/;"	v
 it3	./kons.cpp	/^set<elem3>::iterator it3;$/;"	v
 iwert	./kons.h	/^    int iwert; \/\/ Wert, der pptr zugewiesen wird, falls dieser Parameter gewaehlt wird; -1= Wert steht im nächsten Parameter, 1=pro Nennung in der Kommandozeile wert um 1 erhöhen$/;"	m	struct:optcl
-journal	./direkt.c	/^static gboolean journal = FALSE;$/;"	v	file:
 journal_loaded	./appobject.h	/^	void (*journal_loaded)(GSList *journal);$/;"	m	struct:_AppObjectClass
 kauswert	./kons.cpp	/^template <typename SCL> void confdcl::kauswert(schAcl<SCL> *sA, int obverb,const uchar mitclear\/*=1*\/)$/;"	f	class:confdcl
 keineverarbeitung	./kons.h	/^		uchar keineverarbeitung=0; \/\/ wenn cronminuten geaendert werden sollen, vorher abkuerzen$/;"	m	class:hcl
@@ -1147,7 +1136,6 @@ nersetze	./kons.cpp	/^string nersetze(const string& quelle, string const& was, s
 net_add_event	./net_monitor.c	/^gconstpointer net_add_event(net_connect_func connect, net_disconnect_func disconnect, gpointer user_data)$/;"	f
 net_connect_func	./net_monitor.h	/^typedef gboolean (*net_connect_func)(gpointer user_data);$/;"	t
 net_disconnect_func	./net_monitor.h	/^typedef gboolean (*net_disconnect_func)(gpointer user_data);$/;"	t
-net_event	./fax_phone.c	/^static gconstpointer net_event;$/;"	v	file:
 net_event	./net_monitor.h	/^struct net_event {$/;"	s
 net_event_list	./net_monitor.c	/^static GSList *net_event_list = NULL;$/;"	v	file:
 net_init	./network.c	/^gboolean net_init(void)$/;"	f
@@ -1173,7 +1161,6 @@ notification	./connection.h	/^	void *notification;$/;"	m	struct:connection
 nr	./kons.h	/^ unsigned long nr=0;$/;"	m	class:perfcl
 nrp	./kons.h	/^  ull *nrp=0;$/;"	m	class:find2cl
 number	./contact.h	/^	gchar *number;$/;"	m	struct:contact
-number	./direkt.c	/^static gchar *number = NULL;$/;"	v	file:
 number_format	./call.h	/^enum number_format {$/;"	g
 numbers	./contact.h	/^	GSList *numbers;$/;"	m	struct:contact
 nurexec	./kons.h	/^		int nurexec;$/;"	m	struct:find3cl
@@ -1194,7 +1181,7 @@ oblogp	./kons.cpp	/^int *find3cl::obverbp, *find3cl::oblogp;$/;"	m	class:find3cl
 oblogp	./kons.h	/^		static int *obverbp, *oblogp;$/;"	m	struct:find3cl
 obnmr	./kons.h	/^ uchar obnmr=1;$/;"	m	struct:linst_cl
 oboffen	./kons.h	/^  int oboffen=0;$/;"	m	class:mdatei
-obprogda	./kons.cpp	/^int obprogda(const string& prog, int obverb\/*=0*\/, int oblog\/*=0*\/, string *pfad\/*=0*\/)$/;"	f
+obprogda	./kons.cpp	/^int obprogda(const string& prog, int obverb\/*=0*\/, int oblog\/*=0*\/, string *pfad\/*=0*\/,const int keinsu\/*=0*\/)$/;"	f
 obsetz	./kons.h	/^		uchar obsetz=1; \/\/ setzzaehler$/;"	m	class:hcl
 obsotiff	./kons.h	/^		uchar obsotiff=0; \/\/ 1 = tiff wird von der source verwendet$/;"	m	class:hcl
 obsvfeh	./kons.cpp	/^int servc::obsvfeh(int obverb\/*=0*\/,int oblog\/*=0*\/) \/\/ ob service einrichtungs fehler$/;"	f	class:servc
@@ -1266,7 +1253,6 @@ phase_handler_d	./fax.c	/^static gint phase_handler_d(t30_state_t *state, void *
 phase_handler_e	./fax.c	/^static void phase_handler_e(t30_state_t *state, void *user_data, gint result)$/;"	f	file:
 phone_call	./phone.c	/^struct capi_connection *phone_call(guchar controller, const char *source, const char *target, gboolean anonymous)$/;"	f
 phone_conference	./phone.c	/^void phone_conference(struct capi_connection *active, struct capi_connection *hold)$/;"	f
-phone_dial	./fax_phone.c	/^struct capi_connection *phone_dial(const gchar *trg_no, gboolean suppress)$/;"	f
 phone_flush	./phone.c	/^void phone_flush(struct capi_connection *connection)$/;"	f
 phone_hangup	./phone.c	/^void phone_hangup(struct capi_connection *connection)$/;"	f
 phone_hold	./phone.c	/^void phone_hold(struct capi_connection *connection, guchar hold)$/;"	f
@@ -1355,16 +1341,14 @@ restart	./kons.cpp	/^int servc::restart(int obverb\/*=0*\/,int oblog\/*=0*\/)$/;
 retry	./network.h	/^	gboolean retry;$/;"	m	struct:auth_data
 richtige	./kons.h	/^	size_t richtige;$/;"	m	struct:confdcl
 right	./kons.h	/^inline std::string right(std::string const& source, size_t const length)$/;"	f
-ring	./faxophone.h	/^	void (*ring)(struct capi_connection *connection);$/;"	m	struct:session_handlers
+ring	./faxophone.h	/^	void (*ring)(struct capi_connection *connection);$/;"	m	struct:session_handlers_st
 rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon4
-rm_print_error_quark	./routermanager.c	/^GQuark rm_print_error_quark(void)$/;"	f
+rmcl	./routermanager.c	/^rmcl::rmcl(gboolean debug, GError **error)$/;"	f	class:rmcl
+rmcl	./routermanager.h	/^struct rmcl$/;"	s
 rot	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
 rot	./kons.cpp	/^const char *const schwarz="\\e[0m", *const dgrau="\\e[1;30m", *const drot="\\e[0;31m", *const rot="\\e[1;31m",$/;"	v
 rottxt	./kons.h	/^    const string rottxt; \/\/ ggf rot zu markierender Text zwischen Txi und Txi2$/;"	m	struct:optcl
 routermanager_audio_register	./audio.c	/^void routermanager_audio_register(struct audio *audio)$/;"	f
-routermanager_init	./routermanager.c	/^gboolean routermanager_init(GError **error)$/;"	f
-routermanager_new	./routermanager.c	/^gboolean routermanager_new(gboolean debug, GError **error)$/;"	f
-routermanager_shutdown	./routermanager.c	/^void routermanager_shutdown(void)$/;"	f
 rtrim	./kons.h	/^inline std::string *rtrim(std::string *str) {$/;"	f	class:std
 rtrim	./kons.h	/^inline void rtrim(char* str,size_t size) {$/;"	f
 rzf	./kons.h	/^    uchar rzf=0; \/\/ rueckzufragen$/;"	m	class:hcl
@@ -1382,7 +1366,6 @@ schwarz	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz=""
 schwarz	./kons.cpp	/^const char *const schwarz="\\e[0m", *const dgrau="\\e[1;30m", *const drot="\\e[0;31m", *const rot="\\e[1;31m",$/;"	v
 semanpruef	./kons.cpp	/^void servc::semanpruef(int obverb\/*=0*\/,int oblog\/*=0*\/,const string& mod\/*="getty_t*\/)$/;"	f	class:servc
 semodpruef	./kons.cpp	/^void servc::semodpruef(int obverb\/*=0*\/,int oblog\/*=0*\/)$/;"	f	class:servc
-sendfax	./direkt.c	/^static gboolean sendfax = FALSE;$/;"	v	file:
 sending	./fax.h	/^	gboolean sending;$/;"	m	struct:fax_status
 sep	./fbfax.cpp	/^const char sep = 9; \/\/ geht auch: "[[:blank:]]"$/;"	v
 sersetze	./kons.cpp	/^string *sersetze(string* src, string const& target, string const& repl) $/;"	f
@@ -1391,11 +1374,11 @@ servc	./kons.cpp	/^servc::servc(const string& vsname,const string& vename,int ob
 servc	./kons.h	/^    servc(const string& vsname,const string& vename): sname((vsname.empty()?vename:vsname)),ename(vename) {}$/;"	f	class:servc
 servc	./kons.h	/^class servc {$/;"	c
 servs	./tr64.h	/^		string servs;$/;"	m	class:tr64cl
-session	./fax_phone.c	/^\/*static *\/struct session *session = NULL;$/;"	v	typeref:struct:
+session	./direkt.h	/^\/*static *\/struct session *session = NULL;$/;"	m	class:fbcl	typeref:struct:fbcl::
 session	./faxophone.h	/^struct session {$/;"	s
 session	./network.h	/^	SoupSession *session;$/;"	m	struct:auth_data
-session_handlers	./fax_phone.c	/^struct session_handlers session_handlers = {$/;"	v	typeref:struct:session_handlers
-session_handlers	./faxophone.h	/^struct session_handlers {$/;"	s
+session_handlers	./fax_phone.c	/^struct session_handlers_st session_handlers = {$/;"	v	typeref:struct:session_handlers_st
+session_handlers_st	./faxophone.h	/^struct session_handlers_st {$/;"	s
 session_type	./faxophone.h	/^enum session_type {$/;"	g
 setfaclggf	./kons.cpp	/^int setfaclggf(const string& datei,int obverb\/*=0*\/,int oblog\/*=0*\/,const binaer obunter\/*=falsch*\/,int mod\/*=4*\/,uchar obimmer\/*=0*\/,$/;"	f
 setz_gitv	./Makefile	/^define setz_gitv$/;"	m
@@ -1434,7 +1417,7 @@ startbar	./kons.cpp	/^int servc::startbar()$/;"	f	class:servc
 startundenable	./kons.cpp	/^int servc::startundenable(int obverb\/*=0*\/,int oblog\/*=0*\/)$/;"	f	class:servc
 state	./faxophone.h	/^	enum state state;$/;"	m	struct:capi_connection	typeref:enum:capi_connection::state
 state	./faxophone.h	/^enum state {$/;"	g
-status	./faxophone.h	/^	void (*status)(struct capi_connection *connection, int error_code);$/;"	m	struct:session_handlers
+status	./faxophone.h	/^	void (*status)(struct capi_connection *connection, int error_code);$/;"	m	struct:session_handlers_st
 std	./direkt.c	/^using namespace std;$/;"	v
 sterg	./kons.h	/^    int sterg;$/;"	m	struct:elem2
 still	./configure	/^still() {$/;"	f
@@ -1495,7 +1478,7 @@ type	./faxophone.h	/^	enum session_type type;$/;"	m	struct:capi_connection	typer
 uchar	./kons.h	/^typedef unsigned char uchar; \/\/ 1 Byte$/;"	t
 udpr	./kons.h	/^ string udpr;   \/\/ Befehl zum direkten Deinstallieren$/;"	m	struct:linst_cl
 uebers	./kons.h	/^		stringstream uebers; \/\/ Ueberschrift fuer Verarbeitungslauf$/;"	m	class:hcl
-uebersichtlich	./kons.cpp	5597;"	d	file:
+uebersichtlich	./kons.cpp	5599;"	d	file:
 uint16_t	./faxophone.h	/^typedef unsigned short uint16_t;$/;"	t
 uint32_t	./faxophone.h	/^typedef unsigned int uint32_t;$/;"	t
 ull	./kons.h	/^typedef unsigned long long ull;$/;"	t
@@ -1617,9 +1600,12 @@ zuvec	./kons.cpp	/^void find2cl::zuvec(svec *zu,uchar anteil\/*=0*\/)$/;"	f	clas
 zuvec	./kons.cpp	/^void find3cl::zuvec(svec *zu,uchar anteil\/*=0*\/)$/;"	f	class:find3cl
 zuzahl	./kons.cpp	/^string zuzahl(const string& q)$/;"	f
 zypper	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	e	enum:instprog
+~aocl	./appobject.c	/^aocl::~aocl()$/;"	f	class:aocl
+~fbcl	./direkt.c	/^fbcl::~fbcl()$/;"	f	class:fbcl
 ~find2cl	./kons.cpp	/^find2cl::~find2cl()$/;"	f	class:find2cl
 ~hcl	./kons.cpp	/^hcl::~hcl()$/;"	f	class:hcl
 ~hhcl	./fbfax.cpp	/^hhcl::~hhcl() $/;"	f	class:hhcl
 ~ic_cl	./kons.cpp	/^ic_cl::~ic_cl() { $/;"	f	class:ic_cl
 ~optcl	./kons.cpp	/^optcl::~optcl()$/;"	f	class:optcl
+~rmcl	./routermanager.c	/^rmcl::~rmcl()$/;"	f	class:rmcl
 ~schAcl	./kons.cpp	/^template<typename SCL> schAcl<SCL>::~schAcl()$/;"	f	class:schAcl
