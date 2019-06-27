@@ -66,6 +66,7 @@ static unsigned char faxophone_quit = 1;
 static void capi_error(long error)
 {
 	if (error != 0) {
+		if (verbg) printf("Beginn capi_error, error %li\n",error);
 		g_debug("->Error: 0x%lX", error);
 		if (error == 0x3301) {
 			g_warning("Protocol Error Layer 1");
@@ -75,6 +76,7 @@ static void capi_error(long error)
 		if (phsession) {
 			phsession->handlers->status(NULL, error);
 		}
+		if (verbg) printf("Ende capi_error, error %li\n",error);
 	}
 }
 
@@ -86,6 +88,7 @@ static void capi_error(long error)
  */
 static int capi_connection_set_type(struct capi_connection *connection, int type)
 {
+	if (verbg) printf("Beginn capi_connection_set_type %i\n",type);
 	int result = 0;
 
 	/* Set type */
@@ -120,6 +123,7 @@ static int capi_connection_set_type(struct capi_connection *connection, int type
 		break;
 	}
 
+	if (verbg) printf("Ende capi_connection_set_type %i\n",type);
 	return result;
 }
 
@@ -154,6 +158,7 @@ struct capi_connection *capi_get_free_connection(void)
 static int capi_set_free(struct capi_connection *connection)
 {
 	/* reset connection */
+	if (verbg) printf("Beginn capi_set_free\n");
 	if (connection->priv != NULL) {
 		if (connection->clean) {
 			connection->clean(connection);
@@ -164,6 +169,7 @@ static int capi_set_free(struct capi_connection *connection)
 
 	memset(connection, 0, sizeof(struct capi_connection));
 
+	if (verbg) printf("Ende capi_set_free\n");
 	return 0;
 }
 
@@ -173,6 +179,7 @@ static int capi_set_free(struct capi_connection *connection)
  */
 void capi_hangup(struct capi_connection *connection)
 {
+	if (verbg) printf("Beginn capi_hangup\n");
 	_cmsg cmsg1;
 	guint info = 0;
 
@@ -242,6 +249,7 @@ void capi_hangup(struct capi_connection *connection)
 		g_debug("Unexpected state 0x%x on disconnect", connection->state);
 		break;
 	}
+	if (verbg) printf("Ende capi_hangup\n");
 }
 
 /**
@@ -268,6 +276,7 @@ struct capi_connection *capi_call(
 	_cstruct b2_configuration,
 	_cstruct b3_configuration)
 {
+	if (verbg) printf("Beginn capi_call\n");
 	static int connection2{0};
 	_cmsg cmsg;
 	unsigned char called_party_number[70];
@@ -406,7 +415,7 @@ struct capi_connection *capi_call(
 	connection->target = strdup(trg_no);
 	connection->source = strdup(src_no);
 
-	// printf("Ende capi_call\n");
+	if (verbg) printf("Ende capi_call\n");
 	return connection;
 }
 
@@ -418,6 +427,7 @@ struct capi_connection *capi_call(
  */
 int capi_pickup(struct capi_connection *connection, int type)
 {
+	if (verbg) printf("Beginn capi_pickup\n");
 	_cmsg message;
 	unsigned char local_num[4];
 	struct session *session = faxophone_get_session();
@@ -442,6 +452,7 @@ int capi_pickup(struct capi_connection *connection, int type)
 		connection->state = STATE_INCOMING_WAIT;
 	}
 
+	if (verbg) printf("Ende capi_pickup\n");
 	return 0;
 }
 
@@ -452,6 +463,7 @@ int capi_pickup(struct capi_connection *connection, int type)
  */
 static void capi_get_source_no(_cmsg *cmsg, char number[256])
 {
+	if (verbg) printf("Beginn capi_get_source_no\n");
 	unsigned char *pnX = CONNECT_IND_CALLINGPARTYNUMBER(cmsg);
 	unsigned int len = 0;
 
@@ -500,6 +512,7 @@ static void capi_get_source_no(_cmsg *cmsg, char number[256])
 	if (!strlen(number)) {
 		strcpy(number, "anonymous");
 	}
+	if (verbg) printf("Ende capi_get_source_no\n");
 }
 
 /**
@@ -509,6 +522,7 @@ static void capi_get_source_no(_cmsg *cmsg, char number[256])
  */
 static void capi_get_target_no(_cmsg *cmsg, char number[256])
 {
+	if (verbg) printf("Beginn capi_get_target_no, number: %s\n",number);
 	unsigned char *x = CONNECT_IND_CALLEDPARTYNUMBER(cmsg);
 	unsigned int len = 0;
 
@@ -550,6 +564,7 @@ static void capi_get_target_no(_cmsg *cmsg, char number[256])
 	if (!strlen(number)) {
 		strcpy(number, "anonymous");
 	}
+	if (verbg) printf("Ende capi_get_target_no number: %s\n",number);
 }
 
 /**
@@ -559,6 +574,7 @@ static void capi_get_target_no(_cmsg *cmsg, char number[256])
  */
 static struct capi_connection *capi_find_plci(int plci)
 {
+	if (verbg) printf("Beginn capi_find_plci\n");
 	int index;
 
 	for (index = 0; index < CAPI_CONNECTIONS; index++) {
@@ -566,7 +582,7 @@ static struct capi_connection *capi_find_plci(int plci)
 			return &phsession->connection[index];
 		}
 	}
-
+	if (verbg) printf("Ende capi_find_plci\n");
 	return NULL;
 }
 
@@ -576,6 +592,7 @@ static struct capi_connection *capi_find_plci(int plci)
  */
 static struct capi_connection *capi_find_new(void)
 {
+	if (verbg) printf("Beginn capi_find_new\n");
 	int index;
 
 	for (index = 0; index < CAPI_CONNECTIONS; index++) {
@@ -584,6 +601,7 @@ static struct capi_connection *capi_find_new(void)
 		}
 	}
 
+	if (verbg) printf("Ende capi_find_new\n");
 	return NULL;
 }
 
@@ -594,6 +612,7 @@ static struct capi_connection *capi_find_new(void)
  */
 static struct capi_connection *capi_find_ncci(int ncci)
 {
+	if (verbg) printf("Beginn capi_find_ncci\n");
 	int index;
 
 	for (index = 0; index < CAPI_CONNECTIONS; index++) {
@@ -601,7 +620,7 @@ static struct capi_connection *capi_find_ncci(int ncci)
 			return &phsession->connection[index];
 		}
 	}
-
+	if (verbg) printf("Ende capi_find_ncci\n");
 	return NULL;
 }
 
@@ -611,6 +630,7 @@ static struct capi_connection *capi_find_ncci(int ncci)
  */
 static int capi_close(void)
 {
+	if (verbg) printf("Beginn capi_close\n");
 	int index;
 
 	if (phsession != NULL && phsession->appl_id != -1) {
@@ -627,7 +647,7 @@ static int capi_close(void)
 		if (verbg) printf("In capi_close, nach capi20_release\n");
 		phsession->appl_id = -1;
 	}
-
+	if (verbg) printf("Ende capi_close\n");
 	return 0;
 }
 

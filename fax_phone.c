@@ -104,6 +104,7 @@ void connection_status(struct capi_connection *connection, gint status)
 {
 	if (verbg) printf("Beginn connection_status\n");
 	emit_connection_status(status, connection);
+	if (verbg) printf("Ende connection_status\n");
 }
 
 gboolean connection_established_idle(gpointer data)
@@ -123,9 +124,7 @@ void connection_established(struct capi_connection *connection)
 gboolean connection_terminated_idle(gpointer data)
 {
 	struct capi_connection *connection = (struct capi_connection*)data;
-
 	emit_connection_terminated(connection);
-
 	return G_SOURCE_REMOVE;
 }
 
