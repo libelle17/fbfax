@@ -659,6 +659,7 @@ static int capi_close(void)
 static void capi_resp_connection(int plci, unsigned int ignore)
 {
 	_cmsg cmsg1;
+	if (verbg) printf("Beginn capi_resp_connection, plci: %i, ignore: %ui\n",plci,ignore);
 
 	if (!ignore) {
 		/* *ring* */
@@ -672,6 +673,7 @@ static void capi_resp_connection(int plci, unsigned int ignore)
 		CONNECT_RESP(&cmsg1, phsession->appl_id, phsession->message_number++, plci, ignore, 1, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 		isdn_unlock();
 	}
+	if (verbg) printf("Ende capi_resp_connection, plci: %i, ignore: %ui\n",plci,ignore);
 }
 
 /**
@@ -683,6 +685,7 @@ static void capi_enable_dtmf(struct capi_connection *connection)
 {
 	_cmsg message;
 	_cbyte facility[11];
+	if (verbg) printf("Beginn capi_enable_dtmf\n");
 
 	/* Message length */
 	facility[0] = 10;
@@ -713,6 +716,7 @@ static void capi_enable_dtmf(struct capi_connection *connection)
 	isdn_lock();
 	FACILITY_REQ(&message, phsession->appl_id, 0/*isdn->message_number++*/, connection->plci, 0x01, (unsigned char *) facility);
 	isdn_unlock();
+	if (verbg) printf("Ende capi_enable_dtmf\n");
 }
 
 /**
@@ -722,6 +726,7 @@ static void capi_enable_dtmf(struct capi_connection *connection)
  */
 static void capi_get_dtmf_code(struct capi_connection *connection, unsigned char dtmf)
 {
+	if (verbg) printf("Beginn capi_get_dtmf_code, connection.id: %ui, dtmf: %uc\n",connection->id, dtmf);
 	if (dtmf == 0) {
 		return;
 	}
@@ -733,6 +738,7 @@ static void capi_get_dtmf_code(struct capi_connection *connection, unsigned char
 	}
 
 	phsession->handlers->code(connection, dtmf);
+	if (verbg) printf("Ende capi_get_dtmf_code, connection.id: %ui, dtmf: %uc\n",connection->id, dtmf);
 }
 
 /**
@@ -744,6 +750,7 @@ void capi_send_dtmf_code(struct capi_connection *connection, unsigned char dtmf)
 {
 	_cmsg message;
 	_cbyte facility[32];
+	if (verbg) printf("Beginn capi_send_dtmf_code, connection.id: %ui, dtmf: %uc\n",connection->id, dtmf);
 
 	g_debug("dtmf: %c", dtmf);
 
@@ -772,6 +779,7 @@ void capi_send_dtmf_code(struct capi_connection *connection, unsigned char dtmf)
 	isdn_lock();
 	FACILITY_REQ(&message, phsession->appl_id, 0/*isdn->message_number++*/, connection->ncci, 0x01, (unsigned char *) facility);
 	isdn_unlock();
+	if (verbg) printf("Ende capi_send_dtmf_code, connection.id: %ui, dtmf: %uc\n",connection->id, dtmf);
 }
 
 /**
@@ -783,6 +791,7 @@ void capi_send_display_message(struct capi_connection *connection, char *text)
 {
 	_cmsg message;
 	_cbyte facility[62 + 3];
+	if (verbg) printf("Beginn capi_send_display_message, connection.id: %ui, text: %s\n",connection->id, text);
 	int len = 31;
 
 	g_debug("Sending text: '%s'", text);
@@ -804,6 +813,7 @@ void capi_send_display_message(struct capi_connection *connection, char *text)
 	isdn_lock();
 	INFO_REQ(&message, phsession->appl_id, 0, connection->plci, (unsigned char *) "", (unsigned char *) "", (unsigned char *) "", (unsigned char *) "", (unsigned char *) facility, NULL);
 	isdn_unlock();
+	if (verbg) printf("Ende capi_send_display_message, connection.id: %ui, text: %s\n",connection->id, text);
 }
 
 /**
@@ -814,6 +824,7 @@ void capi_send_display_message(struct capi_connection *connection, char *text)
 static int capi_indication(_cmsg capi_message)
 {
 	_cmsg cmsg1;
+	if (verbg) printf("Beginn capi_indication, _cmsg: %s\n",capi_message.Data);
 	int plci = -1;
 	int ncci = -1;
 	char source_phone_number[256];
@@ -1365,6 +1376,7 @@ static int capi_indication(_cmsg capi_message)
 		break;
 	}
 
+	if (verbg) printf("Ende capi_indication, _cmsg: %s\n",capi_message.Data);
 	return 0;
 }
 
@@ -1374,6 +1386,7 @@ static int capi_indication(_cmsg capi_message)
  */
 static void capi_confirmation(_cmsg capi_message)
 {
+	if (verbg) printf("Beginn capi_confirmation, _cmsg: %s\n",capi_message.Data);
 	struct capi_connection *connection = NULL;
 	unsigned int info;
 	unsigned int plci;
@@ -1505,6 +1518,7 @@ static void capi_confirmation(_cmsg capi_message)
 		if (!cconf2) {
 			cconf2=1;
 		}
+	if (verbg) printf("Ende capi_confirmation, _cmsg: %s\n",capi_message.Data);
 }
 
 static int capi_init(int controller);
@@ -1516,12 +1530,14 @@ static int capi_init(int controller);
  */
 static void faxophone_reconnect(struct session *phsession)
 {
+	if (verbg) printf("Ende faxophone_reconnect\n");
 	isdn_lock();
 	capi_close();
 
 	phsession->appl_id = capi_init(-1);
 
 	isdn_unlock();
+	if (verbg) printf("Ende faxophone_reconnect\n");
 }
 
 /**
