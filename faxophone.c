@@ -427,7 +427,7 @@ struct capi_connection *capi_call(
  */
 int capi_pickup(struct capi_connection *connection, int type)
 {
-	if (verbg) printf("Beginn capi_pickup\n");
+	if (verbg) printf("Beginn capi_pickup, type: %i\n",type);
 	_cmsg message;
 	unsigned char local_num[4];
 	struct session *session = faxophone_get_session();
@@ -574,7 +574,7 @@ static void capi_get_target_no(_cmsg *cmsg, char number[256])
  */
 static struct capi_connection *capi_find_plci(int plci)
 {
-	if (verbg) printf("Beginn capi_find_plci\n");
+	if (verbg) printf("Beginn capi_find_plci, plci: %i\n", plci);
 	int index;
 
 	for (index = 0; index < CAPI_CONNECTIONS; index++) {
@@ -642,6 +642,7 @@ static int capi_close(void)
 			}
 		}
 
+		if (verbg) printf("In capi_close, vor capi20_release\n");
 		if (verbg) printf("In capi_close, vor capi20_release, phsession->appl_id: %i\n",phsession->appl_id);
 		CAPI20_RELEASE(phsession->appl_id);
 		if (verbg) printf("In capi_close, nach capi20_release\n");
@@ -837,6 +838,7 @@ static int capi_indication(_cmsg capi_message)
 	int index;
 	int nTmp;
 
+	if (verbg) printf("Stelle -1, capi_message.Command: %i\n", capi_message.Command);
 	switch (capi_message.Command) {
 	case CAPI_CONNECT:
 		/* CAPI_CONNECT - Connect indication when called from remote phone */
@@ -880,14 +882,21 @@ static int capi_indication(_cmsg capi_message)
 
 	/* CAPI_CONNECT_ACTIVE - Active */
 	case CAPI_CONNECT_ACTIVE:
+	if (verbg) printf("Stelle 1\n");
 		plci = CONNECT_ACTIVE_IND_PLCI(&capi_message);
 
+	if (verbg) printf("Stelle 2\n");
 		g_debug("IND: CAPI_CONNECT_ACTIVE - plci %d", plci);
 
+	if (verbg) printf("Stelle 3\n");
 		g_debug("RESP: CAPI_CONNECT_ACTIVE - plci %d", plci);
+	if (verbg) printf("Stelle 4\n");
 		isdn_lock();
+	if (verbg) printf("Stelle 5\n");
 		CONNECT_ACTIVE_RESP(&cmsg1, phsession->appl_id, phsession->message_number++, plci);
+	if (verbg) printf("Stelle 6\n");
 		isdn_unlock();
+	if (verbg) printf("Stelle 7\n");
 
 		connection = capi_find_plci(plci);
 		if (connection == NULL) {
@@ -940,9 +949,13 @@ static int capi_indication(_cmsg capi_message)
 
 	/* CAPI_CONNECT_B3 - data connect */
 	case CAPI_CONNECT_B3:
+	if (verbg) printf("Stelle 8\n");
 		g_debug("IND: CAPI_CONNECT_B3");
+	if (verbg) printf("Stelle 9\n");
 		ncci = CONNECT_B3_IND_NCCI(&capi_message);
+	if (verbg) printf("Stelle 10\n");
 		plci = ncci & 0x0000ffff;
+	if (verbg) printf("Stelle 11\n");
 
 		connection = capi_find_plci(plci);
 		if (connection == NULL) {
@@ -965,9 +978,13 @@ static int capi_indication(_cmsg capi_message)
 
 	/* CAPI_CONNECT_B3_ACTIVE - data active */
 	case CAPI_CONNECT_B3_ACTIVE:
+	if (verbg) printf("Stelle 12\n");
 		g_debug("IND: CAPI_CONNECT_B3_ACTIVE");
+	if (verbg) printf("Stelle 13\n");
 		ncci = CONNECT_B3_ACTIVE_IND_NCCI(&capi_message);
+	if (verbg) printf("Stelle 14\n");
 		plci = ncci & 0x0000ffff;
+	if (verbg) printf("Stelle 15\n");
 
 		connection = capi_find_plci(plci);
 		if (connection == NULL) {
@@ -1012,13 +1029,20 @@ static int capi_indication(_cmsg capi_message)
 
 	/* CAPI_FACILITY - Facility (DTMF) */
 	case CAPI_FACILITY:
+	if (verbg) printf("Stelle 16\n");
 		g_debug("IND: CAPI_FACILITY");
+	if (verbg) printf("Stelle 17\n");
 		ncci = CONNECT_B3_IND_NCCI(&capi_message);
+	if (verbg) printf("Stelle 18\n");
 		plci = ncci & 0x0000ffff;
+	if (verbg) printf("Stelle 19\n");
 
 		isdn_lock();
+	if (verbg) printf("Stelle 20\n");
 		FACILITY_RESP(&cmsg1, phsession->appl_id, phsession->message_number++, plci, FACILITY_IND_FACILITYSELECTOR(&capi_message), FACILITY_IND_FACILITYINDICATIONPARAMETER(&capi_message));
+	if (verbg) printf("Stelle 21\n");
 		isdn_unlock();
+	if (verbg) printf("Stelle 22\n");
 
 		connection = capi_find_plci(plci);
 		if (connection == NULL) {
@@ -1071,18 +1095,27 @@ static int capi_indication(_cmsg capi_message)
 
 	/* CAPI_INFO */
 	case CAPI_INFO:
+	if (verbg) printf("Stelle 25\n");
 		plci = INFO_IND_PLCI(&capi_message);
+	if (verbg) printf("Stelle 26\n");
 		info = INFO_IND_INFONUMBER(&capi_message);
+	if (verbg) printf("Stelle 27\n");
 
 		/* Respond to INFO */
+	if (verbg) printf("Stelle 28\n");
 		isdn_lock();
+	if (verbg) printf("Stelle 29\n");
 		INFO_RESP(&cmsg1, phsession->appl_id, phsession->message_number++, plci);
+	if (verbg) printf("Stelle 30\n");
 		isdn_unlock();
+	if (verbg) printf("Stelle 31\n");
 
 		memset(info_element, 0, sizeof(info_element));
+	if (verbg) printf("Stelle 32\n");
 		for (index = 0; (size_t)index < sizeof(info_element); index++) {
 			info_element[index] = INFO_IND_INFOELEMENT(&capi_message)[index];
 		}
+	if (verbg) printf("Stelle 33, info: %i\n", info);
 
 		switch (info) {
 		case 0x0008:
@@ -1231,6 +1264,7 @@ static int capi_indication(_cmsg capi_message)
 			break;
 		case 0x8045:
 			/* Disconnect */
+	if (verbg) printf("Stelle 23\n");
 			connection = capi_find_plci(plci);
 
 			if (connection == NULL) {
@@ -1270,6 +1304,7 @@ static int capi_indication(_cmsg capi_message)
 			break;
 		}
 
+	if (verbg) printf("Stelle 24\n");
 		connection = capi_find_plci(plci);
 		if (connection != NULL) {
 			if (connection->early_b3 != 0 && connection->state == STATE_CONNECT_WAIT && info == 0x001E) {
@@ -1327,15 +1362,23 @@ static int capi_indication(_cmsg capi_message)
 
 	/* CAPI_DISCONNECT - Disconnect */
 	case CAPI_DISCONNECT:
+	if (verbg) printf("Stelle 25\n");
 		plci = DISCONNECT_IND_PLCI(&capi_message);
+	if (verbg) printf("Stelle 26\n");
 		info = DISCONNECT_IND_REASON(&capi_message);
+	if (verbg) printf("Stelle 27\n");
 
 		g_debug("IND: DISCONNECT - plci %d", plci);
+	if (verbg) printf("Stelle 28\n");
 
 		g_debug("RESP: DISCONNECT - plci %d", plci);
+	if (verbg) printf("Stelle 29\n");
 		isdn_lock();
+	if (verbg) printf("Stelle 30\n");
 		DISCONNECT_RESP(&cmsg1, phsession->appl_id, phsession->message_number++, plci);
+	if (verbg) printf("Stelle 31\n");
 		isdn_unlock();
+	if (verbg) printf("Stelle 32\n");
 
 		connection = capi_find_plci(plci);
 		if (connection == NULL) {
@@ -1386,7 +1429,8 @@ static int capi_indication(_cmsg capi_message)
  */
 static void capi_confirmation(_cmsg capi_message)
 {
-	if (verbg) printf("Beginn capi_confirmation, _cmsg: %s\n",capi_message.Data);
+	if (verbg) printf("Beginn capi_confirmation\n");
+	if (verbg) printf("Beginn capi_confirmation, _cmsg.Command: %i\n",capi_message.Command);
 	struct capi_connection *connection = NULL;
 	unsigned int info;
 	unsigned int plci;
@@ -1413,17 +1457,24 @@ static void capi_confirmation(_cmsg capi_message)
 #endif
 		break;
 	case CAPI_ALERT:
+	if (verbg) printf("Stelle 33\n");
 		/* Alert message */
 		if (!cconf2) {
+	if (verbg) printf("Stelle 34\n");
 		g_debug("CNF: CAPI_ALERT");
 		}
+	if (verbg) printf("Stelle 35\n");
 		info = ALERT_CONF_INFO(&capi_message);
+	if (verbg) printf("Stelle 36\n");
 		plci = ALERT_CONF_PLCI(&capi_message);
+	if (verbg) printf("Stelle 37\n");
 
 		if (!cconf2) {
+	if (verbg) printf("Stelle 38\n");
 		g_debug("CNF: CAPI_ALERT: info %d, plci %d", info, plci);
 		}
 
+	if (verbg) printf("Stelle 39\n");
 		connection = capi_find_plci(plci);
 
 		if (info != 0 && info != 3) {
@@ -1837,7 +1888,7 @@ int faxophone_close(int force)
 {
 	/* Close capi connection */
 	//if (!force) {
-	if (verbg) printf("Vor capi_close\n");
+	if (verbg) printf("Vor capi_close, force: %i\n", force);
 	capi_close();
 	if (verbg) printf("Nach capi_close\n");
 	//}
