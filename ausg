@@ -1,48 +1,106 @@
-no output option set, defaulting to --exists
-Error printing disabled by default due to use of output options --exists, --atleast/exact/max-version, --list-all or no output option at all. Value of --print-errors: 0
-Error printing disabled
-Adding virtual 'pkg-config' package to list of known packages
-Looking for package 'dbus-1'
-Looking for package 'dbus-1-uninstalled'
-Reading 'dbus-1' from file '/usr/lib64/pkgconfig/dbus-1.pc'
-Parsing package file '/usr/lib64/pkgconfig/dbus-1.pc'
-  line>original_prefix=/usr
- Variable declaration, 'original_prefix' has value '/usr'
-  line>prefix=${original_prefix}
- Variable declaration, 'prefix' has value '/usr'
-  line>exec_prefix=/usr
- Variable declaration, 'exec_prefix' has value '/usr'
-  line>bindir=/usr/bin
- Variable declaration, 'bindir' has value '/usr/bin'
-  line>libdir=/usr/lib64
- Variable declaration, 'libdir' has value '/usr/lib64'
-  line>includedir=/usr/include
- Variable declaration, 'includedir' has value '/usr/include'
-  line>system_bus_default_address=unix:path=/run/dbus/system_bus_socket
- Variable declaration, 'system_bus_default_address' has value 'unix:path=/run/dbus/system_bus_socket'
-  line>datarootdir=${prefix}/share
- Variable declaration, 'datarootdir' has value '/usr/share'
-  line>datadir=/usr/share
- Variable declaration, 'datadir' has value '/usr/share'
-  line>sysconfdir=/etc
- Variable declaration, 'sysconfdir' has value '/etc'
-  line>session_bus_services_dir=${datadir}/dbus-1/services
- Variable declaration, 'session_bus_services_dir' has value '/usr/share/dbus-1/services'
-  line>system_bus_services_dir=${datadir}/dbus-1/system-services
- Variable declaration, 'system_bus_services_dir' has value '/usr/share/dbus-1/system-services'
-  line>interfaces_dir=${datadir}/dbus-1/interfaces
- Variable declaration, 'interfaces_dir' has value '/usr/share/dbus-1/interfaces'
-  line>daemondir=$bindir
- Variable declaration, 'daemondir' has value '$bindir'
-  line>
-  line>Name: dbus
-  line>Description: Free desktop message bus
-  line>Version: 1.12.2
-  line>Libs: -L${libdir} -ldbus-1
-  line>Libs.private: -lpthread    -lsystemd
-Unknown keyword 'Libs.private' in '/usr/lib64/pkgconfig/dbus-1.pc'
-  line>Cflags: -I${includedir}/dbus-1.0 -I${libdir}/dbus-1.0/include 
-Path position of 'dbus-1' is 4
-Adding 'dbus-1' to list of known packages
-Package dbus-1 has -L /usr/lib64 in Libs
-Removing -L /usr/lib64 from libs for dbus-1
+GNU gdb (GDB; openSUSE Leap 15.1) 8.2
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-suse-linux".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://bugs.opensuse.org/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from fbfax...done.
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Exception ignored in: <gdb.GdbOutputFile object at 0x7f8a5f3dcf60>
+Traceback (most recent call last):
+  File "/usr/share/gdb/python/gdb/__init__.py", line 43, in flush
+    def flush(self):
+KeyboardInterrupt

@@ -220,3 +220,8 @@ Im Cache capi4linux-2011.8.29-lp151.7.57.x86_64.rpm (2/2), 112,9 KiB (311,1 KiB 
 (1/2) Installieren: libcapi20-3-2011.8.29-lp151.7.57.x86_64 [.....fertig]
 (2/2) Installieren: capi4linux-2011.8.29-lp151.7.57.x86_64 [...........fertig]
 IP: ''
+
+Rueckmeldung bei einricht glib-2.0:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+IP: ''

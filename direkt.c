@@ -24,6 +24,13 @@
 using namespace std;
 #include "tr64.h"
 #include "direkt.h"
+#undef g_debug
+#define g_debug(format...)    g_log_structured (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,     \
+                                                "CODE_FILE", __FILE__,               \
+                                                "CODE_LINE", G_STRINGIFY (__LINE__), \
+                                                "CODE_FUNC", G_STRFUNC,               \
+                                                "MESSAGE", format)
+
 int verbg{1};
 
 
@@ -226,7 +233,8 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 	/* Initialize routermanager */
 	//		routermanager_init(NULL);
 	rm.init(0);
-	aocl ao; //app_object
+//	static aocl ao; //app_object
+	__attribute__((unused)) aocl *ao=new aocl; //app_object
 	//faxophone_setup();
 	// static gconstpointer net_event;
 	//	net_event = net_add_event(faxophone_connect_hier, faxophone_disconnect, NULL);
@@ -274,6 +282,9 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
     printf("Parameterzahl %i statt 5; Benutzung: %s <datei> <msn> <zielnr> <absnr> <autor>\n", argc-1,argv[0]);
     return(2);
   }
+  g_log_structured (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"CODE_FILE", __FILE__,"CODE_LINE", G_STRINGIFY (__LINE__),"CODE_FUNC", G_STRFUNC,"MESSAGE", "Absturz");
+	g_debug("Absturz");
+
 	if (fb.faxophone_connect_hier()) {
     const char *msn{argv[2]};
     const char *ziel{argv[3]};
@@ -291,6 +302,7 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 		// fax_transfer
 		main_loop = g_main_loop_new(NULL, FALSE);
 		g_main_loop_run(main_loop);
+		g_main_loop_unref(main_loop);
 	}
 
 	/* Shutdown routermanager */

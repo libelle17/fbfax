@@ -23,6 +23,13 @@
 #include "gstring.h"
 #include "network.h"
 #include "appobject-emit.h"
+#undef g_debug
+#define g_debug(format...)    g_log_structured (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,     \
+                                                "CODE_FILE", __FILE__,               \
+                                                "CODE_LINE", G_STRINGIFY (__LINE__), \
+                                                "CODE_FUNC", G_STRFUNC,               \
+                                                "MESSAGE", format)
+
 
 /** Soup session */
 SoupSession *soup_session = NULL;

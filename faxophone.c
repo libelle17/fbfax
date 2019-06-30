@@ -34,6 +34,13 @@
 #include "phone.h"
 #include "isdn-convert.h"
 #include "config.h"
+#undef g_debug
+#define g_debug(format...)    g_log_structured (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,     \
+                                                "CODE_FILE", __FILE__,               \
+                                                "CODE_LINE", G_STRINGIFY (__LINE__), \
+                                                "CODE_FUNC", G_STRFUNC,               \
+                                                "MESSAGE", format)
+
 
 extern int verbg;
 
@@ -1104,7 +1111,7 @@ static int capi_indication(_cmsg capi_message)
 		/* Respond to INFO */
 	if (verbg) printf("Stelle 28\n");
 		isdn_lock();
-	if (verbg) printf("Stelle 29\n");
+	if (verbg) printf("Stelle 29a\n");
 		INFO_RESP(&cmsg1, phsession->appl_id, phsession->message_number++, plci);
 	if (verbg) printf("Stelle 30\n");
 		isdn_unlock();

@@ -28,3 +28,4 @@ printf "(Inst: 2019-06-20 23:54:59): $blau%s$reset\n" "sudo rmdir '/var/spool/fb
 sudo sh -c 'cd "/var/spool/fbfax";sudo setfacl -Rb "/var/spool/fbfax/notfaxed"'
 # cd "/var/spool/fbfax";test -f "notfaxed.fbfax.perm"||getfacl -R "notfaxed">"notfaxed.fbfax.perm"
 printf "(Inst: 2019-06-20 23:54:59): $blau%s$reset\n" "sudo sh -c 'cd \"/var/spool/fbfax\";sudo setfacl -Rb \"/var/spool/fbfax/notfaxed\"'"
+printf "Loesche/Deleting /root/bin/cdir.sh...\n";rm -r /root/bin/cdir.sh;hash -r;
