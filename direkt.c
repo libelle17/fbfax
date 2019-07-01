@@ -233,8 +233,8 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 	/* Initialize routermanager */
 	//		routermanager_init(NULL);
 	rm.init(0);
-//	static aocl ao; //app_object
-	__attribute__((unused)) aocl *ao=new aocl; //app_object
+	/*static*/ aocl ao; //app_object
+//	__attribute__((unused)) aocl *ao=new aocl; //app_object
 	//faxophone_setup();
 	// static gconstpointer net_event;
 	//	net_event = net_add_event(faxophone_connect_hier, faxophone_disconnect, NULL);
