@@ -301,9 +301,10 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 		if (verbg) printf("Vor main_loop\n");
 		// fax_transfer
     if (1) {
-		main_loop = g_main_loop_new(NULL, FALSE);
+		GMainContext *context=g_main_context_new();
+		main_loop = g_main_loop_new(context, FALSE);
 		g_main_loop_run(main_loop);
-    // g_main_context_unref(NULL);
+    g_main_context_unref(context);
 		g_main_loop_unref(main_loop);
     }
 		if (verbg) printf("Nach main_loop\n");

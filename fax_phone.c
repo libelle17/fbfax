@@ -51,6 +51,42 @@
 #define RM_ERROR 
 
 extern int verbg;
+// aus gmain.c , g_idle_add_full
+guint 
+g_idle_add_full_con (gint           priority,
+		 GSourceFunc    function,
+		 gpointer       data,
+		 GDestroyNotify notify,
+		 GMainContext *context)
+{
+  GSource *source;
+  guint id;
+  
+  g_return_val_if_fail (function != NULL, 0);
+
+  source = g_idle_source_new ();
+
+  if (priority != G_PRIORITY_DEFAULT_IDLE)
+    g_source_set_priority (source, priority);
+
+  g_source_set_callback (source, function, data, notify);
+  id = g_source_attach (source, context);
+
+  // TRACE (GLIB_IDLE_ADD (source, g_main_context_default (), id, priority, function, data));
+
+  g_source_unref (source);
+
+  return id;
+}
+
+// aus gmain.c , g_idle_add
+guint
+g_idle_add_con (GSourceFunc    function,
+	    gpointer       data,
+			GMainContext *context)
+{
+  return g_idle_add_full_con (G_PRIORITY_DEFAULT_IDLE, function, data, NULL,context);
+}
 
 ///*static */struct session *session = NULL;
 // static gconstpointer net_event;
