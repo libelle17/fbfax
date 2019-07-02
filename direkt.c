@@ -303,6 +303,7 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 		main_loop = g_main_loop_new(NULL, FALSE);
 		g_main_loop_run(main_loop);
 		g_main_loop_unref(main_loop);
+    g_main_context_unref(NULL);
 	}
 
 	/* Shutdown routermanager */
