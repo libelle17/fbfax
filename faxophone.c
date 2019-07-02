@@ -1609,6 +1609,7 @@ static gpointer capi_loop(void *user_data)
 	unsigned int info;
 	unsigned int ret;
 	_cmsg capi_message;
+	if (verbg) printf("Begin capi_loop\n");
 
 	while (!faxophone_quit) {
 		time_val.tv_sec = 1;
@@ -1651,6 +1652,7 @@ static gpointer capi_loop(void *user_data)
 	}
 
 	phsession = NULL;
+	if (verbg) printf("Ende capi_loop\n");
 
 	return NULL;
 }

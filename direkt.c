@@ -297,13 +297,16 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 		__attribute__ ((unused)) struct capi_connection * conn=fax_send((gchar*)ndat.c_str(),/*modem,3=14400*/3,/*ecm*/1,/*controller*/5,/*cip,4=speech,0x11=fax,geht beides*/4,
 				(gchar*)msn,(gchar*)ziel,/*lsi*/(gchar*)abs,/*local_header_info*/(gchar*)autor,/*return error code*/0);
 		/* Create and start g_main_loop */
-
+    
 		if (verbg) printf("Vor main_loop\n");
 		// fax_transfer
+    if (1) {
 		main_loop = g_main_loop_new(NULL, FALSE);
 		g_main_loop_run(main_loop);
+    // g_main_context_unref(NULL);
 		g_main_loop_unref(main_loop);
-    g_main_context_unref(NULL);
+    }
+		if (verbg) printf("Nach main_loop\n");
 	}
 
 	/* Shutdown routermanager */
