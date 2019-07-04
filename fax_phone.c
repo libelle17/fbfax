@@ -51,6 +51,7 @@
 #define RM_ERROR 
 
 extern int verbg;
+extern GMainContext *ctx;
 // aus gmain.c , g_idle_add_full
 guint 
 g_idle_add_full_con (gint           priority,
@@ -124,7 +125,8 @@ gboolean connection_ring_idle(gpointer data)
 
 void connection_ring(struct capi_connection *capi_connection)
 {
-	g_idle_add(connection_ring_idle, capi_connection);
+	// g_idle_add(connection_ring_idle, capi_connection);
+	g_idle_add_con(connection_ring_idle, capi_connection,ctx);
 }
 
 
@@ -161,7 +163,8 @@ gboolean connection_established_idle(gpointer data)
 
 void connection_established(struct capi_connection *connection)
 {
-	g_idle_add(connection_established_idle, connection);
+	// g_idle_add(connection_established_idle, connection);
+	g_idle_add_con(connection_established_idle, connection,ctx);
 }
 
 gboolean connection_terminated_idle(gpointer data)
@@ -173,7 +176,8 @@ gboolean connection_terminated_idle(gpointer data)
 
 void connection_terminated(struct capi_connection *connection)
 {
-	g_idle_add(connection_terminated_idle, connection);
+	// g_idle_add(connection_terminated_idle, connection);
+	g_idle_add_con(connection_terminated_idle, connection,ctx);
 }
 
 struct session_handlers_st session_handlers = {

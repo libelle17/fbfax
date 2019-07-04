@@ -32,6 +32,7 @@ using namespace std;
                                                 "MESSAGE", format)
 
 int verbg{1};
+GMainContext *ctx;
 
 
 fbcl::fbcl(const string usr,const string pwd,const string host)
@@ -301,10 +302,10 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 		if (verbg) printf("Vor main_loop\n");
 		// fax_transfer
     if (1) {
-		GMainContext *context=g_main_context_new();
-		main_loop = g_main_loop_new(context, FALSE);
+		ctx=g_main_context_new();
+		main_loop = g_main_loop_new(ctx, FALSE);
 		g_main_loop_run(main_loop);
-    g_main_context_unref(context);
+    g_main_context_unref(ctx);
 		g_main_loop_unref(main_loop);
     }
 		if (verbg) printf("Nach main_loop\n");
