@@ -334,10 +334,12 @@ void hhcl::pvirtvorpruefggfmehrfach()
 		struct stat dstat{0};
 		const char* const darten[]{".tif",".pdf"};
 		int dart{0}; // Dateiart: 1=tif, 2=pdf
-		for(size_t aktart=0;aktart<elemzahl(darten);aktart++) {
-			if (!strcasecmp(datei.substr(datei.length()-4).c_str(),darten[aktart])) {
-				dart=aktart+1;
-				break;
+		if (datei.length()>=4) {
+			for(size_t aktart=0;aktart<elemzahl(darten);aktart++) {
+				if (!strcasecmp(datei.substr(datei.length()-4).c_str(),darten[aktart])) {
+					dart=aktart+1;
+					break;
+				}
 			}
 		}
 		// wenn die gewünschte Datei existiert
