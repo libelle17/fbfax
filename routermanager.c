@@ -288,5 +288,5 @@ rmcl::~rmcl()
 //	g_clear_object(&app_object);
 
 	/* Shutdown logging */
-	log_shutdown();
+//	log_shutdown();
 }

@@ -50,7 +50,7 @@
 
 #define RM_ERROR 
 
-extern int verbg;
+//extern int verbg;
 extern GMainContext *ctx;
 // aus gmain.c , g_idle_add_full
 guint 
@@ -147,9 +147,9 @@ void connection_code(struct capi_connection *connection, gint code)
  */
 void connection_status(struct capi_connection *connection, gint status)
 {
-	if (verbg) printf("Beginn connection_status\n");
+//	if (verbg) printf("Beginn connection_status\n");
 	emit_connection_status(status, connection);
-	if (verbg) printf("Ende connection_status\n");
+//	if (verbg) printf("Ende connection_status\n");
 }
 
 gboolean connection_established_idle(gpointer data)

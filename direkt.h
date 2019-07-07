@@ -10,7 +10,7 @@ std::string xmlex(std::string data,std::string lim,std::string lim2=nix,size_t *
 /** Router login blocked shield */
 //extern gboolean router_login_blocked/*=FALSE*/;
 #include <glib.h>
-extern int verbg;
+//extern int verbg;
 int dmain(int argc, const gchar** argv,const string usr,const string pwd,const string host);
 
 class fbcl

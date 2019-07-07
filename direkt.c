@@ -31,7 +31,7 @@ using namespace std;
                                                 "CODE_FUNC", G_STRFUNC,               \
                                                 "MESSAGE", format)
 
-int verbg{1};
+//int verbg{1};
 GMainContext *ctx;
 
 
@@ -52,7 +52,7 @@ void fbcl::waehle(string nr)
 	vector<string> iname; iname.push_back("NewX_AVM-DE_PhoneNumber");
 	vector<string> ival; ival.push_back(nr);
 	tr64.fragurl("/upnp/control/x_voip","urn:dslforum-org:service:X_VoIP:1","X_AVM-DE_DialNumber",&ubuf,&iname,&ival);
-	if (verbg) printf("Ergebnis nach Wahl: %s\n",ubuf.c_str());
+//	if (verbg) printf("Ergebnis nach Wahl: %s\n",ubuf.c_str());
 }
 
 /**
@@ -66,10 +66,10 @@ gboolean fbcl::faxophone_connect_hier()
 	gboolean retry = TRUE;
 	const gchar* _host=(const gchar*)"fritz.box"; // router_get_host(profile);
 	if (!session) {
-		if (verbg) printf("Beginn faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
+//		if (verbg) printf("Beginn faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
 again:
 		session = faxophone_init(&session_handlers, _host, controller + 1);
-		if (verbg) printf("Mitte faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
+//		if (verbg) printf("Mitte faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
 		if (!session && retry) {
 			// Maybe the port is closed, try to activate it and try again 
 			waehle(/*PORT_ISDN1, */"#96*3*");
@@ -77,7 +77,7 @@ again:
 			retry = FALSE;
 			goto again;
 		}
-		if (verbg) printf("Ende faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
+//		if (verbg) printf("Ende faxophone_connect_hier, host: %s, phone-controller: %i\n",_host,controller);
 	}
 	return session != NULL;
 }
@@ -126,7 +126,7 @@ void fax_connection_status_cb(AppObject *object, gint status, struct capi_connec
 {
 	struct fax_status *fax_status;
 	gchar buffer[256];
-	if (verbg) printf("Begin fax_connection_status_cb\n");
+//	if (verbg) printf("Begin fax_connection_status_cb\n");
 
 	fax_status = (struct fax_status*)connection->priv;
 	if (!fax_status) {
@@ -283,8 +283,6 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
     printf("Parameterzahl %i statt 5; Benutzung: %s <datei> <msn> <zielnr> <absnr> <autor>\n", argc-1,argv[0]);
     return(2);
   }
-  g_log_structured (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"CODE_FILE", __FILE__,"CODE_LINE", G_STRINGIFY (__LINE__),"CODE_FUNC", G_STRFUNC,"MESSAGE", "Absturz");
-	g_debug("Absturz");
 
 	if (fb.faxophone_connect_hier()) {
     const char *msn{argv[2]};
@@ -299,7 +297,7 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 				(gchar*)msn,(gchar*)ziel,/*lsi*/(gchar*)abs,/*local_header_info*/(gchar*)autor,/*return error code*/0);
 		/* Create and start g_main_loop */
     
-		if (verbg) printf("Vor main_loop\n");
+//		if (verbg) printf("Vor main_loop\n");
 		// fax_transfer
     if (1) {
 		ctx=g_main_context_new();
@@ -308,7 +306,7 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
     g_main_context_unref(ctx);
 		g_main_loop_unref(main_loop);
     }
-		if (verbg) printf("Nach main_loop\n");
+//		if (verbg) printf("Nach main_loop\n");
 	}
 
 	/* Shutdown routermanager */
@@ -317,6 +315,6 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 //	g_clear_object(&app_object);
 
 	/* Shutdown logging */
-//	log_shutdown();
+	log_shutdown();
 	return 0;
 }

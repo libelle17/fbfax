@@ -38,7 +38,7 @@
                                                 "MESSAGE", format)
 
 
-extern int verbg;
+//extern int verbg;
 
 static int8_t *_linear16_2_law = (int8_t *) &linear16_2_law[32768];
 static uint16_t *_law_2_linear16 = &law_2_linear16[0];
@@ -289,7 +289,7 @@ gint spandsp_init(const gchar *tiff_file, gboolean sending, gchar modem, gchar e
 	gint supported_image_sizes = 0;
 	gint supported_modems = 0;
 	struct fax_status *status = (struct fax_status *)connection->priv;
-	if (verbg) printf("Beginn spandsp_init\n");
+//	if (verbg) printf("Beginn spandsp_init\n");
 
 	status->fax_state = fax_init(NULL, sending);
 	if (!spandsp2) {
@@ -518,7 +518,7 @@ void fax_transfer(struct capi_connection *connection, _cmsg capi_message)
 struct capi_connection *fax_send(gchar *tiff_file, gint modem, gint ecm, gint controller, gint cip, const gchar *src_no, const gchar *trg_no, const gchar *lsi, const gchar *local_header_info, gint call_anonymous)
 {
 	static int obconnected{0};
-  if (verbg) printf("Beginn fax_send: %s, %d, %d, %d, %d, %s, %s, %s, %s, %d\n",tiff_file,modem,ecm,controller,cip,src_no,trg_no,lsi,local_header_info,call_anonymous);
+//  if (verbg) printf("Beginn fax_send: %s, %d, %d, %d, %d, %s, %s, %s, %s, %d\n",tiff_file,modem,ecm,controller,cip,src_no,trg_no,lsi,local_header_info,call_anonymous);
 	struct fax_status *status;
 	struct capi_connection *connection;
 
@@ -640,11 +640,11 @@ void fax_clean(struct capi_connection *connection)
 {
 	struct fax_status *status = (struct fax_status*)connection->priv;
 
-  if (verbg) printf("Beginn fax_clean\n");
+//  if (verbg) printf("Beginn fax_clean\n");
 	spandsp_close(status->fax_state);
-  if (verbg) printf("Mitte fax_clean\n");
+//  if (verbg) printf("Mitte fax_clean\n");
 
 	free(status);
-  if (verbg) printf("Ende fax_clean\n");
+//  if (verbg) printf("Ende fax_clean\n");
 	connection->priv = NULL;
 }

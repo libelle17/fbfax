@@ -109,8 +109,8 @@ void log_init(gboolean debug)
 	GFile *file;
 	gchar *filename;
 
-	if (!debug) {
-		return;
+	if (!debug) { 
+		return; 
 	}
 
 	filename = g_build_filename(g_get_user_cache_dir(), "routermanager", "debug.log", NULL);
@@ -138,7 +138,8 @@ void log_shutdown(void)
 	if (stream) {
 		g_output_stream_close(G_OUTPUT_STREAM(stream), NULL, NULL);
 	}
-	g_log_set_default_handler(NULL, NULL);
+// auskommentiert GSchade 7.7.19, sonst beim zweiten Fax Absturz
+//	g_log_set_default_handler(NULL, NULL);
 }
 
 /**
