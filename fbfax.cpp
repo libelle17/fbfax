@@ -436,7 +436,7 @@ void hhcl::pvirtfuehraus() //α
 					const long min{atol(zeile.substr(0,kpos).c_str())};
 					caus<<blau<<" Minuten: "<<schwarz<<min<<endl;
 					const string rest{zeile.substr(kpos+1)};
-					caus<<blau<<" Rest:    "<<schwarz<<rest<<endl;
+					caus<<blau<<" Rest:    ";for(unsigned long i=0;i<kpos+1;i++) caus<<" ";caus<<schwarz<<rest<<endl;
 					const long nachher{zpab+60*min}; // in Sekunden
 					tm *natm{localtime(&nachher)};
 					strftime(buffer,sizeof buffer,"%a, %d.%m.%Y %H:%M:%S", natm);
