@@ -403,41 +403,49 @@ void hhcl::pvirtfuehraus() //α
 	svec dtn;
 	systemrueck("find "+wvz+" -maxdepth 1 -size +0c -name 'dt*.vw'",1,oblog,&dtn);
 	for(size_t i=0;i<dtn.size();i++) {
-		caus<<dtn[i]<<endl;
+		caus<<blau<<dtn[i]<<schwarz<<":"<<endl;
 		string tifd{dtn[i].substr(0,dtn[i].length()-3)+".tif"};
-		caus<<" tifd: "<<tifd<<endl;
+		caus<<blau<<" tifd: "<<schwarz<<tifd<<endl;
 		struct stat tstat{0};
 		if (lstat(tifd.c_str(),&tstat) || !tstat.st_size) continue;
 		fstream vwdt(dtn[i].c_str(),ios::in|ios::out);
 		if (vwdt.is_open()) {
 			string zeile;
 			while (1) { // wird nur einmal durchlaufen
+				char buffer[64];
 				time_t jetzt{time(0)};
-				caus<<" jetzt: "<<jetzt<<endl;
+				tm *jetzttm{localtime(&jetzt)};
+				strftime(buffer,sizeof buffer,"%a, %d.%m.%Y %H:%M:%S", jetzttm);
+				caus<<blau<<" jetzt  : "<<schwarz<<tuerkis<<jetzt<<schwarz<<" "<<buffer<<endl;
 				string zpabstr;
 				if (!getline(vwdt,zpabstr)) break; // Einstell- bzw. naechster Faxzeitpunkt
-				caus<<" zpabstr: "<<zpabstr<<endl;
 				long zpab{atol(zpabstr.c_str())};
+				tm *zptm{localtime(&zpab)};
+				strftime(buffer,sizeof buffer,"%a, %d.%m.%Y %H:%M:%S", zptm);
+				caus<<blau<<" zpabstr: "<<schwarz<<tuerkis<<zpabstr<<schwarz<<" "<<buffer<<endl;
 				if (!getline(vwdt,zeile)) break; // naechste Aufrufe in Minuten
-				caus<<" "<<zeile<<endl;
-				const size_t kpos=zeile.find(",");
-				const long min{atol(zeile.substr(0,kpos).c_str())};
-				caus<<" Minuten: "<<min<<endl;
-				const string rest{zeile.substr(kpos+1)};
-				caus<<" Rest: "<<rest<<endl;
-				const long nachher{zpab+60*min};
-				caus<<" nachher: "<<nachher<<endl;
 				string ziel;
 				if (!getline(vwdt,ziel)) break; // Zielrufnummer
-				caus<<" "<<ziel<<endl;
+				caus<<blau<<" ziel:    "<<schwarz<<ziel<<endl;
 				string ursp;
 				if (!getline(vwdt,ursp)) break; // Ursprungsdatei
-				caus<<" "<<ursp<<endl;
-				if (jetzt>zpab) {
-//					const gchar *ptr[6]; // die Aktionen nach Faxen müssen auch in dmain, genauer fax_connection_status_cb geschehen, da oft danach Crash
+				caus<<blau<<" ursp:    "<<schwarz<<ursp<<endl;
+				if (jetzt>=zpab) {
+					caus<<blau<<" nae.min: "<<schwarz<<zeile<<endl;
+					const size_t kpos=zeile.find(",");
+					const long min{atol(zeile.substr(0,kpos).c_str())};
+					caus<<blau<<" Minuten: "<<schwarz<<min<<endl;
+					const string rest{zeile.substr(kpos+1)};
+					caus<<blau<<" Rest:    "<<schwarz<<rest<<endl;
+					const long nachher{zpab+60*min}; // in Sekunden
+					tm *natm{localtime(&nachher)};
+					strftime(buffer,sizeof buffer,"%a, %d.%m.%Y %H:%M:%S", natm);
+					caus<<blau<<" nachher: "<<schwarz<<nachher<<" "<<buffer<<endl;
+					caus<<" jetzt >= zpab "<<endl;
+					//					const gchar *ptr[6]; // die Aktionen nach Faxen müssen auch in dmain, genauer fax_connection_status_cb geschehen, da oft danach Crash
 					string ptr[/*12*/]{DPROG,tifd,msn,ziel,absnr,absdr,dtn[i],gfvz,ngvz,rest,ltoan(nachher),ursp};
 					retu=dmain(sizeof ptr/sizeof *ptr,ptr,&vwdt,usr,pwd,host);
-					caus<<"retu: "<<retu<<endl;
+//					caus<<"retu: "<<retu<<endl;
 					/*
 					if (!retu) {
 						vwdt.close(); // Faxen erfolgreich, Dateien nach gfvz verschieben
@@ -458,6 +466,8 @@ void hhcl::pvirtfuehraus() //α
 					// Speicherzugriffsfehler aufspüren; wenn erfolgreich, dann verschieben und nicht mehr neu schreiben; am Ende des Schreibvorgangs Datei beenden
 					// wenn aufgebraucht, in nichtgefaxt verschieben
 					// wenn aufgebraucht, in nichtgefaxt verschieben
+				} else {
+					 caus<<" jetzt <= zpab "<<endl;
 				}
 				break;
 			}

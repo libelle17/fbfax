@@ -168,6 +168,9 @@ void fax_connection_status_cb(AppObject *object, gint status, struct capi_connec
 					*vwdtp<<ptr[9]/*rest*/<<endl;
 					*vwdtp<<ptr[3]/*ziel*/<<endl;
 					*vwdtp<<ptr[11]/*ursp*/<<endl;
+					long pos{vwdtp->tellp()};
+					vwdtp->close();
+					truncate(ptr[6].c_str()/*tdn[i]*/,pos);
 				}
 				success = FALSE;
 			}
@@ -317,13 +320,11 @@ int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string 
     
 //		if (verbg) printf("Vor main_loop\n");
 		// fax_transfer
-    if (1) {
-		ctx=g_main_context_new();
+		ctx=NULL/*g_main_context_new()*/; // geht bis jetzt nicht, führt bei wiederholten Faxen zum Absturz
 		main_loop = g_main_loop_new(ctx, FALSE);
 		g_main_loop_run(main_loop);
-    g_main_context_unref(ctx);
+    if (ctx) g_main_context_unref(ctx);
 		g_main_loop_unref(main_loop);
-    }
 //		if (verbg) printf("Nach main_loop\n");
 	}
 
@@ -334,5 +335,5 @@ int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string 
 
 	/* Shutdown logging */
 	log_shutdown();
-	return 0;
+	return !success;
 }
