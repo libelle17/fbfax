@@ -434,19 +434,17 @@ void hhcl::pvirtfuehraus() //α
 				if (!getline(vwdt,ursp)) break; // Ursprungsdatei
 				caus<<" "<<ursp<<endl;
 				if (jetzt>zpab) {
-					const gchar *ptr[6];
-					ptr[0]=DPROG;
-					ptr[1]=tifd.c_str();
-					ptr[2]=msn.c_str();
-					ptr[3]=ziel.c_str();
-					ptr[4]=absnr.c_str();
-					ptr[5]=absdr.c_str();
-					retu=dmain(6,ptr,usr,pwd,host);
+//					const gchar *ptr[6]; // die Aktionen nach Faxen müssen auch in dmain, genauer fax_connection_status_cb geschehen, da oft danach Crash
+					string ptr[/*12*/]{DPROG,tifd,msn,ziel,absnr,absdr,dtn[i],gfvz,ngvz,rest,ltoan(nachher),ursp};
+					retu=dmain(sizeof ptr/sizeof *ptr,ptr,&vwdt,usr,pwd,host);
+					caus<<"retu: "<<retu<<endl;
+					/*
 					if (!retu) {
 						vwdt.close(); // Faxen erfolgreich, Dateien nach gfvz verschieben
 						systemrueck("mv \""+tifd+"\" \""+dtn[i]+"\" \""+gfvz+"/\"",obverb,oblog);
 					} else if (rest.empty()) {
 						vwdt.close(); // Faxen erfolglos, Dateien nach ngvz verschieben
+						obverb=1;
 						systemrueck("mv \""+tifd+"\" \""+dtn[i]+"\" \""+ngvz+"/\"",obverb,oblog);
 					} else {
 						vwdt.seekg(0,ios::beg); // aktuelle Runde erfolglos, neue Daten schreiben
@@ -456,6 +454,7 @@ void hhcl::pvirtfuehraus() //α
 						vwdt<<ziel<<endl;
 						vwdt<<ursp<<endl;
 					}
+					*/
 					// Speicherzugriffsfehler aufspüren; wenn erfolgreich, dann verschieben und nicht mehr neu schreiben; am Ende des Schreibvorgangs Datei beenden
 					// wenn aufgebraucht, in nichtgefaxt verschieben
 					// wenn aufgebraucht, in nichtgefaxt verschieben
@@ -464,16 +463,6 @@ void hhcl::pvirtfuehraus() //α
 			}
 			caus<<endl;
 		}
-	}
-	if (0) {
-		const gchar **ptr=new const gchar*[argcmv.size()+1];
-		ptr[0]=DPROG;
-		for(size_t i=0;i<argcmv.size();i++) {
-			ptr[i+1]=argcmv[i].argcs;
-			//	caus<<"i: "<<i<<" "<<argcmv[i].argcs<<endl;
-		}
-		retu=dmain(argcmv.size()+1,ptr,usr,pwd,host);
-		delete ptr;
 	}
 } // void hhcl::pvirtfuehraus  //α
 

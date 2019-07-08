@@ -32,6 +32,8 @@ using namespace std;
                                                 "MESSAGE", format)
 
 //int verbg{1};
+string *ptr;
+fstream *vwdtp;
 GMainContext *ctx;
 
 
@@ -151,9 +153,22 @@ void fax_connection_status_cb(AppObject *object, gint status, struct capi_connec
 		case PHASE_E:
 			if (!fax_status->error_code) {
 				g_message("%s", "Fax transfer successful");
+				vwdtp->close();
+				system((string("mv \"")+ptr[1]/*tifd*/+"\" \""+ptr[6]/*dtn[i]*/+"\" \""+ptr[7]/*gfvz*/+"/\"").c_str());
 				success = TRUE;
 			} else {
 				g_message("%s", "Fax transfer failed");
+				if (ptr[9]/*rest*/.empty()) {
+					vwdtp->close();
+					system((string("mv \"")+ptr[1]/*tifd*/+"\" \""+ptr[6]/*dtn[i]*/+"\" \""+ptr[8]/*ngvz*/+"/\"").c_str());
+				} else {
+					vwdtp->seekg(0,ios::beg); // aktuelle Runde erfolglos, neue Daten schreiben
+					vwdtp->clear(); // wenn Datei neu erstellt, ist das auch noch noetig
+					*vwdtp<<ptr[10]/*nachher*/<<endl;
+					*vwdtp<<ptr[9]/*rest*/<<endl;
+					*vwdtp<<ptr[3]/*ziel*/<<endl;
+					*vwdtp<<ptr[11]/*ursp*/<<endl;
+				}
 				success = FALSE;
 			}
 			phone_hangup(connection);
@@ -209,8 +224,11 @@ static void capi_connection_terminated_cb(AppObject *object, struct capi_connect
 	g_message(_("Disconnected"));
 }
 
-int dmain(int argc, const gchar** argv,const string usr,const string pwd,const string host)
+//int dmain(int argc, const gchar** argv,fstream vwdt, const string usr,const string pwd,const string host)
+int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string pwd,const string host)
 {
+	ptr=argv;
+	vwdtp=vwdtph;
 	// mit G_MESSAGES_DEBUG=all werden die Debug-Infos angezeigt
 	// die Telefonnummer soll mit 0 statt +49 anfangen
 //	GOptionContext *context;
@@ -255,8 +273,8 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
 //	if(argc>1) fb.controller=atoi(argv[1]); /* 4 */
   const char *datei;
   string ndat;
-  if (argc==6) {
-    datei=argv[1];
+  if (argc==12) {
+    datei=argv[1].c_str();
     struct stat dstat{0};
     if (lstat(datei,&dstat)) {
       printf("Datei %s nicht gefunden.\n",datei);
@@ -280,15 +298,15 @@ int dmain(int argc, const gchar** argv,const string usr,const string pwd,const s
       }
     }
   } else {
-    printf("Parameterzahl %i statt 5; Benutzung: %s <datei> <msn> <zielnr> <absnr> <autor>\n", argc-1,argv[0]);
+    printf("Parameterzahl %i statt 5; Benutzung: %s <datei> <msn> <zielnr> <absnr> <autor>\n", argc-1,argv[0].c_str());
     return(2);
   }
 
 	if (fb.faxophone_connect_hier()) {
-    const char *msn{argv[2]};
-    const char *ziel{argv[3]};
-    const char *abs{argv[4]};
-    const char *autor{argv[5]};
+    const char *msn{argv[2].c_str()};
+    const char *ziel{argv[3].c_str()};
+    const char *abs{argv[4].c_str()};
+    const char *autor{argv[5].c_str()};
 		// aus fax_dial
 //		struct capi_connection * conn=fax_send((gchar*)"t0.pdf.tif",/*modem,3=14400*/3,/*ecm*/1,/*controller*/5,/*cip,4=speech,0x11=fax,geht beides*/4,
 //				(gchar*)"616381",(gchar*)"6150166",/*lsi*/(gchar*)"+49616381",/*local_header_info*/(gchar*)"G.Schade",/*return error code*/0);
