@@ -442,7 +442,7 @@ void hhcl::pvirtfuehraus() //α
           size_t pos{versz.find('/')};
           if (pos!=string::npos) {
             gesz=versz.substr(pos+1);
-            versz=versz.substr(0,pos-1);
+            versz=versz.substr(0,pos);
           }
         }
         if (jetzt>=zpab) {
