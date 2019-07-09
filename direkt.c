@@ -168,6 +168,9 @@ void fax_connection_status_cb(AppObject *object, gint status, struct capi_connec
 					*vwdtp<<ptr[9]/*rest*/<<endl;
 					*vwdtp<<ptr[3]/*ziel*/<<endl;
 					*vwdtp<<ptr[11]/*ursp*/<<endl;
+					if (!ptr[12].empty()) {
+						*vwdtp<<ptr[12]<<"/"<<ptr[13]<<endl;
+					}
 					long pos{vwdtp->tellp()};
 					vwdtp->close();
 					truncate(ptr[6].c_str()/*tdn[i]*/,pos);
@@ -228,7 +231,7 @@ static void capi_connection_terminated_cb(AppObject *object, struct capi_connect
 }
 
 //int dmain(int argc, const gchar** argv,fstream vwdt, const string usr,const string pwd,const string host)
-int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string pwd,const string host)
+int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string pwd,const string host,int obverb)
 {
 	ptr=argv;
 	vwdtp=vwdtph;
@@ -263,6 +266,7 @@ int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string 
 
 	/* Only show messages >= INFO */
 	log_set_level(G_LOG_LEVEL_INFO);
+	if (obverb) putenv((char*)"G_MESSAGES_DEBUG=all");
 
 //  fb.loadj();
 //  fb.fb_get_settings_05_50();
@@ -276,7 +280,7 @@ int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string 
 //	if(argc>1) fb.controller=atoi(argv[1]); /* 4 */
   const char *datei;
   string ndat;
-  if (argc==12) {
+  if (argc==14) {
     datei=argv[1].c_str();
     struct stat dstat{0};
     if (lstat(datei,&dstat)) {
@@ -313,7 +317,8 @@ int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string 
 		// aus fax_dial
 //		struct capi_connection * conn=fax_send((gchar*)"t0.pdf.tif",/*modem,3=14400*/3,/*ecm*/1,/*controller*/5,/*cip,4=speech,0x11=fax,geht beides*/4,
 //				(gchar*)"616381",(gchar*)"6150166",/*lsi*/(gchar*)"+49616381",/*local_header_info*/(gchar*)"G.Schade",/*return error code*/0);
-    printf("Sende: Datei: %s, Msn: %s, Ziel: %s, Absender: %s, Autor: %s\n",ndat.c_str(),msn,ziel,abs,autor);
+		const char* blau{"\e[1;34m"}, *schwarz{"\e[0m"};
+    printf("Sende: Datei: %s%s%s, Msn: %s%s%s, Ziel: %s%s%s, Absender: %s%s%s, Autor: %s%s%s\n",blau,ndat.c_str(),schwarz,blau,msn,schwarz,blau,ziel,schwarz,blau,abs,schwarz,blau,autor,schwarz);
 		__attribute__ ((unused)) struct capi_connection * conn=fax_send((gchar*)ndat.c_str(),/*modem,3=14400*/3,/*ecm*/1,/*controller*/5,/*cip,4=speech,0x11=fax,geht beides*/4,
 				(gchar*)msn,(gchar*)ziel,/*lsi*/(gchar*)abs,/*local_header_info*/(gchar*)autor,/*return error code*/0);
 		/* Create and start g_main_loop */

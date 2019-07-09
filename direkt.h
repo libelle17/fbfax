@@ -13,7 +13,7 @@ std::string xmlex(std::string data,std::string lim,std::string lim2=nix,size_t *
 //extern int verbg;
 #include <fstream>
 // int dmain(int argc, const gchar** argv,fstream vwdt,const string usr,const string pwd,const string host);
-int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string pwd,const string host);
+int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string pwd,const string host,int oblog);
 
 class fbcl
 {

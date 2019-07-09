@@ -346,7 +346,7 @@ void hhcl::pvirtvorpruefggfmehrfach()
 		if (dart && !lstat(datei.c_str(),&dstat) && dstat.st_size) {
 			// Nummer ermitteln
 			long long nr{0};
-			string zeile;
+			string nrz;
 			string nrdatei{wvz+"/nr"};
 			caus<<"nrdatei: "<<nrdatei<<endl;
 			for(int runde=0;runde<100000;runde++) {
@@ -361,9 +361,9 @@ void hhcl::pvirtvorpruefggfmehrfach()
 						break; // wenn Datei nicht erstellbar, dann gleich aufgeben
 					continue; // wenn andere Instanz damit arbeitet, dann warten
 				}
-				getline(fil,zeile);
-				if (zeile.empty()) zeile="0";
-				nr=stoll(zeile);
+				getline(fil,nrz);
+				if (nrz.empty()) nrz="0";
+				nr=stoll(nrz);
 				nr++;
 				fil.seekg(0,ios::beg);
 				fil.clear(); // wenn Datei neu erstellt, ist das auch noch noetig
@@ -373,8 +373,8 @@ void hhcl::pvirtvorpruefggfmehrfach()
 				break;
 			}
 			if (nr) {
-				const string dname{wvz+"/dt"+zeile+".tif"},
-							vname{wvz+"/dt"+zeile+".vw"};
+				const string dname{wvz+"/dt"+nrz+".tif"},
+							vname{wvz+"/dt"+nrz+".vw"};
 				mdatei vw(vname,ios::out);
 				if (vw.is_open()) {
 					if (dart==1) {
@@ -386,12 +386,13 @@ void hhcl::pvirtvorpruefggfmehrfach()
 					struct stat tstat{0};
 					if (!lstat(dname.c_str(),&tstat) && tstat.st_size) {
 						vw<<time(0)<<endl;
-						vw<<mfolge<<endl;
+						string gesfolge{"0,"+mfolge};
+						vw<<gesfolge<<endl;
 						vw<<an<<endl;
 						vw<<datei<<endl;
-            gtrim(&mfolge);
-            int versz{!!mfolge.length()}; // 1 für nicht-leere mfolge
-            for(string::iterator it=mfolge.begin();it!=mfolge.end();++it)
+            gtrim(&gesfolge);
+            int versz{1};
+            for(string::iterator it=gesfolge.begin();it!=gesfolge.end()-1;++it) // wenn am Schluß ein Komma steht, zählt es nicht
               if (*it==',')
                 versz++; // und für jedes Komma eins mehr
             vw<<"0/"<<versz<<endl;
@@ -416,20 +417,23 @@ void hhcl::pvirtfuehraus() //α
 		if (lstat(tifd.c_str(),&tstat) || !tstat.st_size) continue;
 		fstream vwdt(dtn[i].c_str(),ios::in|ios::out);
 		if (vwdt.is_open()) {
-			string zeile;
 			while (1) { // wird nur einmal durchlaufen
 				char buffer[64];
 				time_t jetzt{time(0)};
 				tm *jetzttm{localtime(&jetzt)};
 				strftime(buffer,sizeof buffer,"%a, %d.%m.%Y %H:%M:%S", jetzttm);
-				caus<<blau<<" jetzt  : "<<schwarz<<tuerkis<<jetzt<<schwarz<<" "<<buffer<<endl;
+				caus<<blau<<" jetzt:   "<<schwarz<<tuerkis<<jetzt<<schwarz<<" "<<buffer<<endl;
 				string zpabstr;
 				if (!getline(vwdt,zpabstr)) break; // Einstell- bzw. naechster Faxzeitpunkt
 				long zpab{atol(zpabstr.c_str())};
+				string gesfolge;
+				if (!getline(vwdt,gesfolge)) break; // naechste Aufrufe in Minuten
+				const size_t kpos=gesfolge.find(",");
+				const long min{atol(gesfolge.substr(0,kpos).c_str())};
+				zpab+=60*min; // in Sekunden
 				tm *zptm{localtime(&zpab)};
 				strftime(buffer,sizeof buffer,"%a, %d.%m.%Y %H:%M:%S", zptm);
-				caus<<blau<<" zpabstr: "<<schwarz<<tuerkis<<zpabstr<<schwarz<<" "<<buffer<<endl;
-				if (!getline(vwdt,zeile)) break; // naechste Aufrufe in Minuten
+				caus<<blau<<" zpab:    "<<schwarz<<tuerkis<<zpab<<schwarz<<" "<<buffer<<endl;
 				string ziel;
 				if (!getline(vwdt,ziel)) break; // Zielrufnummer
 				caus<<blau<<" ziel:    "<<schwarz<<ziel<<endl;
@@ -437,29 +441,28 @@ void hhcl::pvirtfuehraus() //α
 				if (!getline(vwdt,ursp)) break; // Ursprungsdatei
 				caus<<blau<<" ursp:    "<<schwarz<<ursp<<endl;
         string versz,gesz;
-        getline(vwdt,versz);
-        if (!versz.empty()) {
-          size_t pos{versz.find('/')};
-          if (pos!=string::npos) {
-            gesz=versz.substr(pos+1);
-            versz=versz.substr(0,pos);
-          }
-        }
-        if (jetzt>=zpab) {
-          caus<<blau<<" nae.min: "<<schwarz<<zeile<<endl;
-          const size_t kpos=zeile.find(",");
-          const long min{atol(zeile.substr(0,kpos).c_str())};
+				getline(vwdt,versz);
+				if (!versz.empty()) {
+					caus<<blau<<" versz:   "<<schwarz<<versz<<endl;
+					size_t pos{versz.find('/')};
+					if (pos!=string::npos) {
+						gesz=versz.substr(pos+1);
+						versz=versz.substr(0,pos);
+					}
+				}
+				if (jetzt>=zpab) {
+					caus<<blau<<" MinFolge:"<<schwarz<<gesfolge<<endl;
           caus<<blau<<" Minuten: "<<schwarz<<min<<endl;
-					const string rest{zeile.substr(kpos+1)};
-					caus<<blau<<" Rest:    ";for(unsigned long i=0;i<kpos+1;i++) caus<<" ";caus<<schwarz<<rest<<endl;
-					const long nachher{zpab+60*min}; // in Sekunden
-					tm *natm{localtime(&nachher)};
-					strftime(buffer,sizeof buffer,"%a, %d.%m.%Y %H:%M:%S", natm);
-					caus<<blau<<" nachher: "<<schwarz<<nachher<<" "<<buffer<<endl;
-					caus<<" jetzt >= zpab "<<endl;
+					const string rest{kpos==string::npos?"":gesfolge.substr(kpos+1)};
+					caus<<blau<<" Rest:    "; for(unsigned long i=0;i<kpos+1;i++) caus<<" "; caus<<schwarz<<rest<<endl;
+					if (!versz.empty()) {
+						const long vers{atol(versz.c_str())+1};
+						versz=ltoan(vers);
+					}
+					caus<<tuerkis<<" jetzt >= zpab "<<schwarz<<endl;
 					//					const gchar *ptr[6]; // die Aktionen nach Faxen müssen auch in dmain, genauer fax_connection_status_cb geschehen, da oft danach Crash
-					string ptr[/*12*/]{DPROG,tifd,msn,ziel,absnr,absdr,dtn[i],gfvz,ngvz,rest,ltoan(nachher),ursp};
-					retu=dmain(sizeof ptr/sizeof *ptr,ptr,&vwdt,usr,pwd,host);
+					string ptr[/*14*/]{DPROG,tifd,msn,ziel,absnr,absdr,dtn[i],gfvz,ngvz,rest,ltoan(zpab),ursp,versz,gesz};
+					retu=dmain(sizeof ptr/sizeof *ptr,ptr,&vwdt,usr,pwd,host,obverb);
 //					caus<<"retu: "<<retu<<endl;
 					/*
 					if (!retu) {
@@ -472,7 +475,7 @@ void hhcl::pvirtfuehraus() //α
 					} else {
 						vwdt.seekg(0,ios::beg); // aktuelle Runde erfolglos, neue Daten schreiben
 						vwdt.clear(); // wenn Datei neu erstellt, ist das auch noch noetig
-						vwdt<<nachher<<endl;
+						vwdt<<zpab<<endl;
 						vwdt<<rest<<endl;
 						vwdt<<ziel<<endl;
 						vwdt<<ursp<<endl;
@@ -482,7 +485,7 @@ void hhcl::pvirtfuehraus() //α
 					// wenn aufgebraucht, in nichtgefaxt verschieben
 					// wenn aufgebraucht, in nichtgefaxt verschieben
 				} else {
-					 caus<<" jetzt <= zpab "<<endl;
+					 caus<<tuerkis<<" jetzt <= zpab "<<schwarz<<endl;
 				}
 				break;
 			}
