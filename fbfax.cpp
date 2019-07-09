@@ -389,6 +389,12 @@ void hhcl::pvirtvorpruefggfmehrfach()
 						vw<<mfolge<<endl;
 						vw<<an<<endl;
 						vw<<datei<<endl;
+            gtrim(&mfolge);
+            int versz{!!mfolge.length()}; // 1 für nicht-leere mfolge
+            for(string::iterator it=mfolge.begin();it!=mfolge.end();++it)
+              if (*it==',')
+                versz++; // und für jedes Komma eins mehr
+            vw<<"0/"<<versz<<endl;
 					} // 					if (!lstat(dname.c_str(),&tstat) && tstat.st_size)
 				} // 				if (vw.is_open())
 			} // 			if (nr)
@@ -430,11 +436,20 @@ void hhcl::pvirtfuehraus() //α
 				string ursp;
 				if (!getline(vwdt,ursp)) break; // Ursprungsdatei
 				caus<<blau<<" ursp:    "<<schwarz<<ursp<<endl;
-				if (jetzt>=zpab) {
-					caus<<blau<<" nae.min: "<<schwarz<<zeile<<endl;
-					const size_t kpos=zeile.find(",");
-					const long min{atol(zeile.substr(0,kpos).c_str())};
-					caus<<blau<<" Minuten: "<<schwarz<<min<<endl;
+        string versz,gesz;
+        getline(vwdt,versz);
+        if (!versz.empty()) {
+          size_t pos{versz.find('/')};
+          if (pos!=string::npos) {
+            gesz=versz.substr(pos+1);
+            versz=versz.substr(0,pos-1);
+          }
+        }
+        if (jetzt>=zpab) {
+          caus<<blau<<" nae.min: "<<schwarz<<zeile<<endl;
+          const size_t kpos=zeile.find(",");
+          const long min{atol(zeile.substr(0,kpos).c_str())};
+          caus<<blau<<" Minuten: "<<schwarz<<min<<endl;
 					const string rest{zeile.substr(kpos+1)};
 					caus<<blau<<" Rest:    ";for(unsigned long i=0;i<kpos+1;i++) caus<<" ";caus<<schwarz<<rest<<endl;
 					const long nachher{zpab+60*min}; // in Sekunden
