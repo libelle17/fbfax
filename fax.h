@@ -31,6 +31,14 @@
 /* Service indicator (0x04=speech, 0x11=fax/g3) */
 #define SPEECH_CIP			0x04
 #define FAX_CIP				0x11
+//extern int verbg;
+#ifdef __cplusplus
+extern "C" {
+#endif
+extern int nstumm; // nicht stumm
+#ifdef __cplusplus
+}
+#endif
 
 enum fax_phase {
 	IDLE = -1,

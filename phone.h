@@ -41,3 +41,11 @@ void phone_flush(struct capi_connection *connection);
 gint recording_write(struct recorder *recorder, short *buf, gint size, gint channel);
 
 #endif
+#ifdef __cplusplus
+extern "C" {
+#endif
+//extern int verbg;
+extern int nstumm; // nicht stumm
+#ifdef __cplusplus
+}
+#endif

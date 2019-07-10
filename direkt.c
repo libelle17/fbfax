@@ -24,14 +24,16 @@
 using namespace std;
 #include "tr64.h"
 #include "direkt.h"
+//int verbg{1};
+int nstumm{1}; // nichtstumm
+extern const char* blau, *schwarz;
 #undef g_debug
-#define g_debug(format...)    g_log_structured (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,     \
+#define g_debug(format...)    if (nstumm) g_log_structured (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,     \
                                                 "CODE_FILE", __FILE__,               \
                                                 "CODE_LINE", G_STRINGIFY (__LINE__), \
                                                 "CODE_FUNC", G_STRFUNC,               \
                                                 "MESSAGE", format)
 
-//int verbg{1};
 string *ptr;
 fstream *vwdtp;
 GMainContext *ctx;
@@ -142,22 +144,22 @@ void fax_connection_status_cb(AppObject *object, gint status, struct capi_connec
 			g_debug("Ident: %s", fax_status->remote_ident);
 			snprintf(buffer, sizeof(buffer), "%d/%d", fax_status->page_current, fax_status->page_total);
 
-			g_message(_("Transfer starting:"));
-			g_message("%s", buffer);
+			if (nstumm) g_message(_("Transfer starting:"));
+			if (nstumm) g_message("%s", buffer);
 			break;
 		case PHASE_D:
 			snprintf(buffer, sizeof(buffer), "%d", fax_status->page_current);
-			g_message(_("Transferring page"));
-			g_message("%s", buffer);
+			if (nstumm) g_message(_("Transferring page"));
+			if (nstumm) g_message("%s", buffer);
 			break;
 		case PHASE_E:
 			if (!fax_status->error_code) {
-				g_message("%s", "Fax transfer successful");
+				if (nstumm) g_message("%s", "Fax transfer successful");
 				vwdtp->close();
 				system((string("mv \"")+ptr[1]/*tifd*/+"\" \""+ptr[6]/*dtn[i]*/+"\" \""+ptr[7]/*gfvz*/+"/\"").c_str());
 				success = TRUE;
 			} else {
-				g_message("%s", "Fax transfer failed");
+				if (nstumm) g_message("%s", "Fax transfer failed");
 				if (ptr[9]/*rest*/.empty()) {
 					vwdtp->close();
 					system((string("mv \"")+ptr[1]/*tifd*/+"\" \""+ptr[6]/*dtn[i]*/+"\" \""+ptr[8]/*ngvz*/+"/\"").c_str());
@@ -204,7 +206,7 @@ void fax_connection_status_cb(AppObject *object, gint status, struct capi_connec
 		old_percent = percent;
 
 		snprintf(text, sizeof(text), "%d%%", percent);
-		g_message("Transfer at %s", text);
+		if (nstumm) g_message("Transfer at %s", text);
 	}
 }
 
@@ -216,7 +218,7 @@ void fax_connection_status_cb(AppObject *object, gint status, struct capi_connec
  */
 static void capi_connection_established_cb(AppObject *object, struct capi_connection *connection, gpointer user_data)
 {
-	g_message(_("Connected"));
+	if (nstumm) g_message(_("Connected"));
 }
 
 /**
@@ -227,7 +229,7 @@ static void capi_connection_established_cb(AppObject *object, struct capi_connec
  */
 static void capi_connection_terminated_cb(AppObject *object, struct capi_connection *connection, gpointer user_data)
 {
-	g_message(_("Disconnected"));
+	if (nstumm) g_message(_("Disconnected"));
 }
 
 //int dmain(int argc, const gchar** argv,fstream vwdt, const string usr,const string pwd,const string host)
@@ -284,7 +286,7 @@ int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string 
     datei=argv[1].c_str();
     struct stat dstat{0};
     if (lstat(datei,&dstat)) {
-      printf("Datei %s nicht gefunden.\n",datei);
+      if (nstumm) printf("Datei %s%s%s nicht gefunden.\n",blau,datei,schwarz);
       return(3);
     }
     size_t dlen{strlen(datei)};
@@ -294,18 +296,18 @@ int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string 
       string bef{"gs -q -dNOPAUSE -dSAFER -dBATCH -sDEVICE=tiffg4 -sPAPERSIZE=a4 -dFIXEDMEDIA -r204x196 -sOutputFile="};
       ndat+=tif;
       bef+="\""+ndat+"\" \""+datei+"\"";
-      printf("bef: %s\n",bef.c_str());
+      if (nstumm) printf("bef: %s%s%s\n",blau,bef.c_str(),schwarz);
       if (system(bef.c_str())) {
-        printf("Umwandlung %s fehlgeschlagen.\n",bef.c_str());
+        if (nstumm) printf("Umwandlung %s%s%s fehlgeschlagen.\n",blau,bef.c_str(),schwarz);
         return(5);
       }
       if (lstat(ndat.c_str(),&dstat)) {
-        printf("Datei %s nicht gefunden.\n",ndat.c_str());
+        if (nstumm) printf("Datei %s%s%s nicht gefunden.\n",blau,ndat.c_str(),schwarz);
         return(3);
       }
     }
   } else {
-    printf("Parameterzahl %i statt 5; Benutzung: %s <datei> <msn> <zielnr> <absnr> <autor>\n", argc-1,argv[0].c_str());
+    if (nstumm) printf("Parameterzahl %s%i%s statt 5; Benutzung: %s%s%s <datei> <msn> <zielnr> <absnr> <autor>\n", blau,argc-1,schwarz,blau,argv[0].c_str(),schwarz);
     return(2);
   }
 
@@ -317,8 +319,9 @@ int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string 
 		// aus fax_dial
 //		struct capi_connection * conn=fax_send((gchar*)"t0.pdf.tif",/*modem,3=14400*/3,/*ecm*/1,/*controller*/5,/*cip,4=speech,0x11=fax,geht beides*/4,
 //				(gchar*)"616381",(gchar*)"6150166",/*lsi*/(gchar*)"+49616381",/*local_header_info*/(gchar*)"G.Schade",/*return error code*/0);
-		const char* blau{"\e[1;34m"}, *schwarz{"\e[0m"};
-    printf("Sende: Datei: %s%s%s, Msn: %s%s%s, Ziel: %s%s%s, Absender: %s%s%s, Autor: %s%s%s\n",blau,ndat.c_str(),schwarz,blau,msn,schwarz,blau,ziel,schwarz,blau,abs,schwarz,blau,autor,schwarz);
+    if (nstumm) {
+      printf("Sende: Datei: %s%s%s, Msn: %s%s%s, Ziel: %s%s%s, Absender: %s%s%s, Autor: %s%s%s\n",blau,ndat.c_str(),schwarz,blau,msn,schwarz,blau,ziel,schwarz,blau,abs,schwarz,blau,autor,schwarz);
+    }
 		__attribute__ ((unused)) struct capi_connection * conn=fax_send((gchar*)ndat.c_str(),/*modem,3=14400*/3,/*ecm*/1,/*controller*/5,/*cip,4=speech,0x11=fax,geht beides*/4,
 				(gchar*)msn,(gchar*)ziel,/*lsi*/(gchar*)abs,/*local_header_info*/(gchar*)autor,/*return error code*/0);
 		/* Create and start g_main_loop */

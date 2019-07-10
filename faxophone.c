@@ -42,7 +42,6 @@
                                                 "MESSAGE", format)
 
 
-//extern int verbg;
 
 // #define FAXOPHONE_DEBUG 1
 

@@ -199,14 +199,14 @@ static void app_object_create_signals(GObjectClass *g_object_class)
  */
 static void app_object_class_init(AppObjectClass *klass)
 {
-	printf("Beginn app_object_class_init\n");
+//	printf("Beginn app_object_class_init\n");
 	GObjectClass *g_object_class;
 
 	g_object_class = G_OBJECT_CLASS(klass);
 
 	g_type_class_add_private(klass, sizeof(AppObjectPrivate));
 	app_object_create_signals(g_object_class);
-	printf("Ende app_object_class_init\n");
+//	printf("Ende app_object_class_init\n");
 }
 
 /**

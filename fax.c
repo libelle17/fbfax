@@ -38,7 +38,6 @@
                                                 "MESSAGE", format)
 
 
-//extern int verbg;
 
 static int8_t *_linear16_2_law = (int8_t *) &linear16_2_law[32768];
 static uint16_t *_law_2_linear16 = &law_2_linear16[0];

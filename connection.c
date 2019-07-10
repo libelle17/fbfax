@@ -23,7 +23,7 @@
 
 #include "connection.h"
 #undef g_debug
-#define g_debug(format...)    g_log_structured (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,     \
+#define g_debug(format...)    if (nstumm) g_log_structured (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,     \
                                                 "CODE_FILE", __FILE__,               \
                                                 "CODE_LINE", G_STRINGIFY (__LINE__), \
                                                 "CODE_FUNC", G_STRFUNC,               \

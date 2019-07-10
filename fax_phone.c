@@ -50,7 +50,6 @@
 
 #define RM_ERROR 
 
-//extern int verbg;
 extern GMainContext *ctx;
 // aus gmain.c , g_idle_add_full
 guint 

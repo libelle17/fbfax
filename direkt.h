@@ -9,8 +9,15 @@ std::string xmlex(std::string data,std::string lim,std::string lim2=nix,size_t *
 //extern GSList *router_list/*=NULL*/;
 /** Router login blocked shield */
 //extern gboolean router_login_blocked/*=FALSE*/;
-#include <glib.h>
 //extern int verbg;
+#ifdef __cplusplus
+extern "C" {
+#endif
+extern int nstumm; // nicht stumm
+#ifdef __cplusplus
+}
+#endif
+#include <glib.h>
 #include <fstream>
 // int dmain(int argc, const gchar** argv,fstream vwdt,const string usr,const string pwd,const string host);
 int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string pwd,const string host,int oblog);

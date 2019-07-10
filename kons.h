@@ -319,6 +319,8 @@ enum Tkons_
 	T_sprachstr,
 	T_v_k,
 	T_verbose_l,
+	T_stu_k,
+	T_stumm_l,
 	T_lvz_k,
 	T_logvz_l,
 	T_ld_k,
@@ -330,6 +332,7 @@ enum Tkons_
 	T_kd_k,
 	T_konfdatei_l,
 	T_Bildschirmausgabe_gespraechiger,
+  T_Bildschirmausgabe_ganz_stumm,
 	T_waehlt_als_Logverzeichnis_pfad_derzeit,
 	T_logdatei_string_im_Pfad,
 	T_sonst_knapper,
@@ -1282,6 +1285,7 @@ class hcl
 	public:
 		int retu{0}; // Return-Value
 		int obverb=0; // verbose
+		int stumm=0; // gar keine Bildschirmausgabe
 		int oblog=0;  // mehr Protokollieren
     uchar rzf=0; // rueckzufragen
 		uchar obvi=0; // ob Konfigurationsdatei editiert werden soll

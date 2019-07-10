@@ -348,7 +348,7 @@ void hhcl::pvirtvorpruefggfmehrfach()
 			long long nr{0};
 			string nrz;
 			string nrdatei{wvz+"/nr"};
-			caus<<"nrdatei: "<<nrdatei<<endl;
+      if (nstumm) fLog("nrdatei: "+blaus+nrdatei+schwarz,1,oblog);
 			for(int runde=0;runde<100000;runde++) {
 				fstream fil(nrdatei,ios::in|ios::out);
 				if (!fil.is_open()) {
@@ -368,7 +368,7 @@ void hhcl::pvirtvorpruefggfmehrfach()
 				fil.seekg(0,ios::beg);
 				fil.clear(); // wenn Datei neu erstellt, ist das auch noch noetig
 				fil<<nr<<endl;
-				caus<<"nr: "<<nr<<endl;
+        if (nstumm) fLog("nr: "+blaus+ltoan(nr)+schwarz,1,oblog);
 				fil.close();
 				break;
 			}
@@ -396,6 +396,9 @@ void hhcl::pvirtvorpruefggfmehrfach()
               if (*it==',')
                 versz++; // und für jedes Komma eins mehr
             vw<<"0/"<<versz<<endl;
+            if (cronminut=="0") {
+              cronminut="1"; // wenn root, so wird dann der cronjob ueberprueft und ggf. eingetragen
+            }
 					} // 					if (!lstat(dname.c_str(),&tstat) && tstat.st_size)
 				} // 				if (vw.is_open())
 			} // 			if (nr)
@@ -408,11 +411,11 @@ void hhcl::pvirtfuehraus() //α
 { 
 	hLog(violetts+Tx[T_pvirtfuehraus]+schwarz); //ω
 	svec dtn;
-	systemrueck("find "+wvz+" -maxdepth 1 -size +0c -name 'dt*.vw'",1,oblog,&dtn);
+	systemrueck("find "+wvz+" -maxdepth 1 -size +0c -name 'dt*.vw'",obverb,oblog,&dtn);
 	for(size_t i=0;i<dtn.size();i++) {
-		caus<<blau<<dtn[i]<<schwarz<<":"<<endl;
+    if (nstumm) {fLog(blaus+dtn[i]+schwarz+":",1,oblog);}
 		string tifd{dtn[i].substr(0,dtn[i].length()-3)+".tif"};
-		caus<<blau<<" tifd: "<<schwarz<<tifd<<endl;
+    if (nstumm) {fLog(blaus+" tifd:    "+schwarz+tifd,1,oblog);}
 		struct stat tstat{0};
 		if (lstat(tifd.c_str(),&tstat) || !tstat.st_size) continue;
 		fstream vwdt(dtn[i].c_str(),ios::in|ios::out);
@@ -422,8 +425,8 @@ void hhcl::pvirtfuehraus() //α
 				time_t jetzt{time(0)};
 				tm *jetzttm{localtime(&jetzt)};
 				strftime(buffer,sizeof buffer,"%a, %d.%m.%Y %H:%M:%S", jetzttm);
-				caus<<blau<<" jetzt:   "<<schwarz<<tuerkis<<jetzt<<schwarz<<" "<<buffer<<endl;
-				string zpabstr;
+        if (nstumm) fLog(blaus+" jetzt:   "+tuerkis+ltoan(jetzt)+schwarz+" "+buffer,1,oblog);
+        string zpabstr;
 				if (!getline(vwdt,zpabstr)) break; // Einstell- bzw. naechster Faxzeitpunkt
 				long zpab{atol(zpabstr.c_str())};
 				string gesfolge;
@@ -433,17 +436,17 @@ void hhcl::pvirtfuehraus() //α
 				zpab+=60*min; // in Sekunden
 				tm *zptm{localtime(&zpab)};
 				strftime(buffer,sizeof buffer,"%a, %d.%m.%Y %H:%M:%S", zptm);
-				caus<<blau<<" zpab:    "<<schwarz<<tuerkis<<zpab<<schwarz<<" "<<buffer<<endl;
+        if (nstumm) fLog(blaus+" zpab:    "+tuerkis+ltoan(zpab)+schwarz+" "+buffer,1,oblog);
 				string ziel;
 				if (!getline(vwdt,ziel)) break; // Zielrufnummer
-				caus<<blau<<" ziel:    "<<schwarz<<ziel<<endl;
+        if (nstumm) fLog(blaus+" ziel:    "+schwarz+ziel+schwarz,1,oblog);
 				string ursp;
 				if (!getline(vwdt,ursp)) break; // Ursprungsdatei
-				caus<<blau<<" ursp:    "<<schwarz<<ursp<<endl;
+        if (nstumm) fLog(blaus+" ursp:    "+schwarz+ursp+schwarz,1,oblog);
         string versz,gesz;
 				getline(vwdt,versz);
 				if (!versz.empty()) {
-					caus<<blau<<" versz:   "<<schwarz<<versz<<endl;
+          if (nstumm) fLog(blaus+" versz:   "+schwarz+versz+schwarz,1,oblog);
 					size_t pos{versz.find('/')};
 					if (pos!=string::npos) {
 						gesz=versz.substr(pos+1);
@@ -451,15 +454,15 @@ void hhcl::pvirtfuehraus() //α
 					}
 				}
 				if (jetzt>=zpab) {
-					caus<<blau<<" MinFolge:"<<schwarz<<gesfolge<<endl;
-          caus<<blau<<" Minuten: "<<schwarz<<min<<endl;
+          if (nstumm) fLog(blaus+" MinFolge:"+schwarz+gesfolge,1,oblog);
+          if (nstumm) fLog(blaus+" Minuten: "+schwarz+ltoan(min),1,oblog);
 					const string rest{kpos==string::npos?"":gesfolge.substr(kpos+1)};
-					caus<<blau<<" Rest:    "; for(unsigned long i=0;i<kpos+1;i++) caus<<" "; caus<<schwarz<<rest<<endl;
+          if (nstumm) fLog(blaus+" Rest:    "+string(kpos+1,' ')+schwarz+rest,1,oblog);
 					if (!versz.empty()) {
 						const long vers{atol(versz.c_str())+1};
 						versz=ltoan(vers);
 					}
-					caus<<tuerkis<<" jetzt >= zpab "<<schwarz<<endl;
+          if (nstumm) fLog(tuerkiss+" jetzt >= zpab "+schwarz,1,oblog);
 					//					const gchar *ptr[6]; // die Aktionen nach Faxen müssen auch in dmain, genauer fax_connection_status_cb geschehen, da oft danach Crash
 					string ptr[/*14*/]{DPROG,tifd,msn,ziel,absnr,absdr,dtn[i],gfvz,ngvz,rest,ltoan(zpab),ursp,versz,gesz};
 					retu=dmain(sizeof ptr/sizeof *ptr,ptr,&vwdt,usr,pwd,host,obverb);
@@ -485,11 +488,11 @@ void hhcl::pvirtfuehraus() //α
 					// wenn aufgebraucht, in nichtgefaxt verschieben
 					// wenn aufgebraucht, in nichtgefaxt verschieben
 				} else {
-					 caus<<tuerkis<<" jetzt <= zpab "<<schwarz<<endl;
+          if (nstumm) fLog(tuerkiss+" jetzt <= zpab "+schwarz,1,oblog);
 				}
 				break;
 			}
-			caus<<endl;
+      if (nstumm) fLog(string(),1,oblog);
 		}
 	}
 } // void hhcl::pvirtfuehraus  //α
@@ -529,6 +532,7 @@ void hhcl::virtlieskonfein()
 	const int altobverb{obverb};
 	//	obverb=1;
 	hLog(violetts+Txk[T_virtlieskonfein]+schwarz); //ω
+  nstumm=!stumm;
 	hcl::virtlieskonfein(); //α //ω
 	hLog(violetts+Txk[T_Ende]+Txk[T_virtlieskonfein]+schwarz); //α
 	obverb=altobverb;

@@ -387,6 +387,10 @@ const char *kons_T[T_konsMAX+1][SprachZahl]=
 	{"w","v"},
 	// T_verbose_l,
 	{"wortreich","verbose"},
+	// T_stu_k,
+	{"stu","mu"},
+	// T_stumm_l
+	{"stumm","mute"},
 	// T_lvz_k
 	{"lvz","ldr"},
 	// T_logvz_l
@@ -409,6 +413,8 @@ const char *kons_T[T_konsMAX+1][SprachZahl]=
 	{"konfdatei","conffile"},
 	// T_Bildschirmausgabe_gespraechiger
 	{"Bildschirmausgabe gespraechiger","screen output more verbose"},
+  // T_Bildschirmausgabe_ganz_stumm
+  {"Bildschirmausgabe ganz stumm","screen output completely mute"},
 	// T_waehlt_als_Logverzeichnis_pfad_derzeit
 	{"waehlt als Logverzeichnis <pfad>, derzeit","choses <path> as log directory, currently"},
 	// T_logdatei_string_im_Pfad
@@ -1151,7 +1157,9 @@ mdatei::mdatei(const string& name, ios_base::openmode modus/*=ios_base::in|ios_b
 			} // if (!systemrueck(sudc+"test -f '"+name+"' || "+sudc+"touch '"+name+"'",obverb,oblog)) 
 		} // 		if (mehralslesen)
 	} // for(int iru=0;iru<3;iru++) 
-	if (obverb||oblog) fLog(violetts+Txk[T_Ende]+"mdatei("+blau+name+schwarz+","+blau+ltoan(modus)+schwarz+","+blau+(faclbak?"1":"0")+schwarz+")",oblog,obverb);
+	if (obverb||oblog) {
+    fLog(violetts+Txk[T_Ende]+"mdatei("+blau+name+schwarz+","+blau+ltoan(modus)+schwarz+","+blau+(faclbak?"1":"0")+schwarz+")",oblog,obverb);
+  }
 } // mdatei::mdatei (const string& name, ios_base::openmode modus)
 
 #ifdef oeffalsch
@@ -5123,36 +5131,39 @@ void hcl::holbefz0(const int argc, const char *const *const argv)
 	for(int i=1;i<argc;i++)
 		if (argv[i][0]) {
 			if (!obverb && argv[i][1]) {
-				Sprache altSpr=Txk.lgn;
-				for(int akts=0;akts<SprachZahl;akts++) {
-					Txk.lgn=(Sprache)akts;
-					if ((strchr("-/",argv[i][0])&&!strcmp(argv[i]+1,Txk[T_v_k])) || 
-							(!strncmp(argv[i],"--",2)&&!strcmp(argv[i]+2,Txk[T_verbose_l]))) { // -v, -w, -verbose, -wortreich
-						cout<<violett<<Txk[T_hcl_hcl]<<schwarz<<endl;
-						obverb=1;
-					} // if ((strchr...
-				} //         for(int akts=0;akts<SprachZahl;akts++)
-				Txk.lgn=altSpr;
-			} // 			if (!obverb && argv[i][1])
-			argcmv.push_back(argcl(i,argv)); 
-			cl+=" ";
-			cl+=argv[i];
-		} //     if (argv[i][0])
+        Sprache altSpr=Txk.lgn;
+        for(int akts=0;akts<SprachZahl;akts++) {
+          Txk.lgn=(Sprache)akts;
+          if (strchr("-/",argv[i][0])) {
+            if (!strcmp(argv[i]+1,Txk[T_v_k]) || (!strncmp(argv[i],"--",2)&&!strcmp(argv[i]+2,Txk[T_verbose_l]))) { // -v, -w, -verbose, -wortreich
+              cout<<violett<<Txk[T_hcl_hcl]<<schwarz<<endl;
+              obverb=1;
+            } else if (!strcmp(argv[i]+1,Txk[T_stu_k])||(!strncmp(argv[i],"--",2)&&!strcmp(argv[i]+2,Txk[T_stumm_l]))) {
+              stumm=1;
+            }
+          } // if ((strchr...
+        } //         for(int akts=0;akts<SprachZahl;akts++)
+        Txk.lgn=altSpr;
+      } // 			if (!obverb && argv[i][1])
+      argcmv.push_back(argcl(i,argv)); 
+      cl+=" ";
+      cl+=argv[i];
+    } //     if (argv[i][0])
 } // void hcl::holbefz0
 
 // wird aufgerufen in: hcl::hcl
 string holsystemsprache(int obverb/*=0*/)
 {
-	if (obverb)
-		cout<<violett<<Txk[T_holsystemsprache]<<schwarz<<endl;
-	schAcl<WPcl> cglangA("cglangA"); // Systemsprach-Konfiguration
-	string ret;
-	// OpenSuse, Fedora, Debian
-	const char* const langdt[]{"/etc/sysconfig/language","/etc/locale.conf","/etc/default/locale","/etc/sysconfig/i18n"};
-	const char* const langvr[]{"RC_LANG","LANG","LANG","LANG"};
-	for (size_t lind=0;lind<elemzahl(langdt);lind++) {
-		struct stat langstat{0};
-		if (!lstat(langdt[lind],&langstat)) {
+  if (obverb)
+    cout<<violett<<Txk[T_holsystemsprache]<<schwarz<<endl;
+  schAcl<WPcl> cglangA("cglangA"); // Systemsprach-Konfiguration
+  string ret;
+  // OpenSuse, Fedora, Debian
+  const char* const langdt[]{"/etc/sysconfig/language","/etc/locale.conf","/etc/default/locale","/etc/sysconfig/i18n"};
+  const char* const langvr[]{"RC_LANG","LANG","LANG","LANG"};
+  for (size_t lind=0;lind<elemzahl(langdt);lind++) {
+    struct stat langstat{0};
+    if (!lstat(langdt[lind],&langstat)) {
 			cglangA.sinit(1, langvr[lind]);
 			confdcl langcd(langdt[lind],obverb);
 			langcd.kauswert(&cglangA,obverb);
@@ -5241,6 +5252,7 @@ void hcl::virtinitopt()
 	opn<<new optcl(/*pname*/"language",/*pptr*/&langu,/*art*/pstri,T_lg_k,T_language_l,/*TxBp*/&Txk,/*Txi*/T_sprachstr,/*wi*/1,/*Txi2*/-1,/*rottxt*/string(),/*wert*/-1,/*woher*/1,T_Sprachen);
 	opn<<new optcl(/*pname*/"language",/*pptr*/&langu,/*art*/pstri,T_lang_k,T_lingue_l,/*TxBp*/&Txk,/*Txi*/-1,/*wi*/1,/*Txi2*/-1,/*rottxt*/string(),/*wert*/-1,/*woher*/1,-1);
 	opn<<new optcl(/*pptr*/&obverb,/*art*/puchar,T_v_k,T_verbose_l,/*TxBp*/&Txk,/*Txi*/T_Bildschirmausgabe_gespraechiger,/*wi*/1,/*Txi2*/-1,/*rottxt*/string(),/*wert*/1,/*woher*/1);
+	opn<<new optcl(/*pptr*/&stumm,/*art*/puchar,T_stu_k,T_stumm_l,/*TxBp*/&Txk,/*Txi*/T_Bildschirmausgabe_ganz_stumm,/*wi*/1,/*Txi2*/-1,/*rottxt*/string(),/*wert*/1,/*woher*/1);
 	opn<<new optcl(/*pname*/"logvz",/*pptr*/&logvz,/*art*/pverz,T_lvz_k,T_logvz_l,/*TxBp*/&Txk,/*Txi*/T_waehlt_als_Logverzeichnis_pfad_derzeit,/*wi*/0,/*Txi2*/-1,/*rottxt*/string(),/*wert*/-1,/*woher*/!logvz.empty(),T_Logverzeichnis);
 	opn<<new optcl(/*pname*/"logdname",/*pptr*/&logdname,/*art*/pstri,T_ld_k,T_logdname_l,/*TxBp*/&Txk,/*Txi*/T_logdatei_string_im_Pfad,/*wi*/0,/*Txi2*/T_wird_verwendet_anstatt,/*rottxt*/logvz,/*wert*/-1,/*woher*/!logdname.empty(),T_Logdateiname);
 	opn<<new optcl(/*pname*/"oblog",/*pptr*/&oblog,/*art*/pint,T_l_k,T_log_l,/*TxBp*/&Txk,/*Txi*/T_protokolliert_ausfuehrlich_in_Datei,/*wi*/1,/*Txi2*/T_sonst_knapper,/*rottxt*/loggespfad,/*wert*/1,/*woher*/1,T_Oblog_ausf_Protok);
@@ -5272,9 +5284,9 @@ void hcl::parsecl()
 	vector<argcl>::iterator ap,apn;
 	for(ap=argcmv.begin();ap!=argcmv.end();ap++) {
 		uchar nichtspeichern{0}, gegenteil{0}, kurzp{0}, langp{0};
-		const char *acstr=ap->argcs;
+		const char *acstr{ap->argcs};
 		//// <<rot<<"acstr: "<<schwarz<<acstr<<endl;
-		unsigned aclen=strlen(acstr);
+		unsigned long aclen{strlen(acstr)};
 		if (aclen>1) {
 			if (aclen>2 && acstr[0]=='-'&&acstr[1]=='-') {
 				langp=1;
@@ -5583,8 +5595,8 @@ uchar hcl::pruefcron(const string& cm)
 			if (vorcm.empty() && !cronzuplanen) {
 				if (obverb||cmeingegeben) 
 					fLog(Txk[T_Kein_cron_gesetzt_nicht_zu_setzen],1,oblog);
-			} else {
-				if (cmhier==vorcm) {
+      } else {
+        if (cmhier==vorcm) {
 					if (cmeingegeben) fLog(blaus+"'"+zsaufr+"'"+schwarz+Txk[T_wird]+Txk[T_unveraendert]+
 							+blau+(vorcm.empty()?Txk[T_gar_nicht]:Txk[T_alle]+vorcm+Txk[T_Minuten])+schwarz+Txk[T_aufgerufen],1,oblog);
 				} else {
@@ -5650,7 +5662,7 @@ void hcl::virtzeigueberschrift()
 				+(vorcm!=cronminut&&!(vorcm.empty()&&cronminut=="0")?((vorcm.empty()?Txk[T_gar_nicht]:vorcm)+" -> "):string())
 				+(cronminut=="0"?Txk[T_kein_Aufruf]+schwarzs:cronminut+schwarz+(cronminut=="1"?Txk[T_Minute]:Txk[T_Minuten])):
 				string());
-	fLog(uebers.str(),1,oblog);
+	if (!stumm) fLog(uebers.str(),1,oblog);
 } // void hcl::virtzeigueberschrift
 
 
@@ -6546,20 +6558,21 @@ void hcl::setztmpcron()
 // wird aufgerufen in pruefcron (2x)
 void hcl::tucronschreib(const string& zsauf,const uchar cronzuplanen,const string& cbef)
 {
-	string unicmd{"rm -f "+tmpcron+";"};
+	string unicmd{"T="+tmpcron+";rm -f $T;"};
 	string cmd{unicmd};
-	string dazu{"crontab -l|sed '/"+zsauf+"/d'>"+tmpcron+";"};
+	string dazu{"crontab -l|sed '/"+zsauf+"/d' >$T;"};
 	unicmd+=dazu;	
 	if (!nochkeincron) {
 		// cmd=dazu; // 26.2.17: Debian: nach Deinstallation rootscrontab mit root-Berechtigungen, die Programm hier aufhielten
 		cmd=unicmd;
 	}
 	if (cronzuplanen) {
-		cmd+=" echo \""+cbef+"\">>"+tmpcron+";";
+		cmd+=" echo \""+cbef+"\" >>$T;";
 	}
-	dazu=" crontab "+tmpcron+";";
+	dazu=" crontab $T;";
 	unicmd+=dazu;
 	cmd+=dazu;
+  caus<<gruen<<cmd<<schwarz<<endl;
 	systemrueck(cmd,obverb,oblog,/*rueck=*/0,/*obsudc=*/1);
 	//// ersetzAlle(unicmd,"'\\''","'");
 	const string bef{sudc+"sh -c '"+cmd+"'"};
