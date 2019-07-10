@@ -398,6 +398,7 @@ void hhcl::pvirtvorpruefggfmehrfach()
             vw<<"0/"<<versz<<endl;
             if (cronminut=="0") {
               cronminut="1"; // wenn root, so wird dann der cronjob ueberprueft und ggf. eingetragen
+							hccd.obzuschreib=1;
             }
 					} // 					if (!lstat(dname.c_str(),&tstat) && tstat.st_size)
 				} // 				if (vw.is_open())

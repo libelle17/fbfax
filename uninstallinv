@@ -29,3 +29,6 @@ sudo sh -c 'cd "/var/spool/fbfax";sudo setfacl -Rb "/var/spool/fbfax/notfaxed"'
 # cd "/var/spool/fbfax";test -f "notfaxed.fbfax.perm"||getfacl -R "notfaxed">"notfaxed.fbfax.perm"
 printf "(Inst: 2019-06-20 23:54:59): $blau%s$reset\n" "sudo sh -c 'cd \"/var/spool/fbfax\";sudo setfacl -Rb \"/var/spool/fbfax/notfaxed\"'"
 printf "Loesche/Deleting /root/bin/cdir.sh...\n";rm -r /root/bin/cdir.sh;hash -r;
+T=/home/schade/rootscrontab;rm -f $T;crontab -l|sed '/fbfax -noia/d' >$T; crontab $T;
+# sh -c 'T=/home/schade/rootscrontab;rm -f $T;crontab -l|sed '/fbfax -noia/d' >$T; echo "*/1 * * * * /usr/bin/ionice -c2 -n7 /usr/bin/nice -n19 /usr/bin/fbfax -noia -cf /home/schade/.config/fbfax.conf >/dev/null 2>&1" >>$T; crontab $T;'
+printf "(Inst: 2019-07-10 23:29:24): $blau%s$reset\n" "T=/home/schade/rootscrontab;rm -f $T;crontab -l|sed '/fbfax -noia/d' >$T; crontab $T;"
