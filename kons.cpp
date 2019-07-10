@@ -10,7 +10,7 @@
 #include <acl/libacl.h> // fuer acl_t, acl_entry_t, acl_get_... in pruefberech()
 // #include <sys/acl.h>
 #define caus cout // nur zum Debuggen
-const string& pwk = "4893019320jfdksalö590ßs89d0qÃ9m0943Ã09Ãax"; // fuer Antlitzaenderung
+const string& pwk{"4893019320jfdksalö590ßs89d0qÃ9m0943Ã09Ãax"}; // fuer Antlitzaenderung
 
 
 #ifdef _WIN32
@@ -61,7 +61,7 @@ printf(drot, unter windows escape-Sequenzen rausfieselen und durch SetConsoleTex
 ////har logdatei[PATH_MAX+1]="v:\\log_termine.txt";
 #endif // linux elif defined _WIN32
 const boost::locale::generator gen;
-const std::locale loc = gen("en_US.UTF-8");
+const std::locale loc{gen("en_US.UTF-8")};
 
 // z.B. "/root/autofax"
 const string& instvz{
@@ -5610,31 +5610,29 @@ uchar hcl::pruefcron(const string& cm)
 #ifdef anders
 #define uebersichtlich
 #ifdef uebersichtlich
-			string befehl;
+			string befehl{"T="+tmpcron+";"};
 			if (!cronzuplanen) {
 				if (nochkeincron) {
 				} else {
-					befehl="bash -c 'grep \""+saufr[0]+"\" -q <(crontab -l)&&{ crontab -l|sed \"/"+zsaufr[0]+"/d\">"+tmpcron+";"
-						"crontab "+tmpcron+";}||:'";
+					befehl+="bash -c 'grep \""+saufr[0]+"\" -q <(crontab -l)&&{ crontab -l|sed \"/"+zsaufr[0]+"/d\" >$T;crontab $T;}||:'";
 				}
 			} else {
 				if (nochkeincron) {
-					befehl="rm -f "+tmpcron+";";
+					befehl+="rm -f $T;";
 				} else {
-					befehl="bash -c 'grep \"\\*/"+cmhier+czt+cabfr+"\" -q <(crontab -l)||{ crontab -l|sed \"/"+zsaufr[0]+"/d\">"+tmpcron+";";
+					befehl+="bash -c 'grep \"\\*/"+cmhier+czt+cabfr+"\" -q <(crontab -l)||{ crontab -l|sed \"/"+zsaufr[0]+"/d\" >$T;";
 				}
-				befehl+="echo \""+cbef+"\">>"+tmpcron+"; crontab "+tmpcron+"";
+				befehl+="echo \""+cbef+"\" >>$T; crontab $T";
 				if (!nochkeincron)
 					befehl+=";}'";
 			} // 			if (!cronzuplanen)
 #else // uebersichtlich
-			const string befehl{cronzuplanen?
-				(nochkeincron?"rm -f "+tmpcron+";":
-				 "bash -c 'grep \"\\*/"+cmhier+czt+cabfr+"\" -q <(crontab -l)||{ crontab -l | sed \"/"+zsaufr[0]+"/d\">"+tmpcron+"; ")+
-					"echo \""+cbef+"\">>"+tmpcron+"; crontab "+tmpcron+(nochkeincron?"":";}'")
+			const string befehl{"T="+tmpcron+";"+cronzuplanen?
+				(nochkeincron?"rm -f $T;":
+				 "bash -c 'grep \"\\*/"+cmhier+czt+cabfr+"\" -q <(crontab -l)||{ crontab -l | sed \"/"+zsaufr[0]+"/d\" >$T; ")+
+					"echo \""+cbef+"\" >>$T; crontab $T"+(nochkeincron?"":";}'")
 					:
-					(nochkeincron?"":"bash -c 'grep \""+saufr[0]+"\" -q <(crontab -l)&&{ crontab -l | sed \"/"+zsaufr[0]+"/d\">"+tmpcron+";"
-					 +"crontab "+tmpcron+";}||:'")
+					(nochkeincron?"":"bash -c 'grep \""+saufr[0]+"\" -q <(crontab -l)&&{ crontab -l | sed \"/"+zsaufr[0]+"/d\" >$T;crontab $T;}||:'")
 			};
 #endif   // uebersichtlich else
 			systemrueck(befehl,obverb,oblog,/*rueck=*/0,/*obsudc=*/1);
