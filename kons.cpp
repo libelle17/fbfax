@@ -5081,16 +5081,16 @@ void hcl::lauf()
 	if (obhilfe==3) { // Standardausgabe gewaehrleisten
 		virtMusterVorgb();
 	} else {
-		virtlieskonfein();
-		verarbeitkonf();
+    virtlieskonfein();
+    if (kfzg) {
+      cout<<akonfdt<<endl;
+      exit(0);
+    }
+    verarbeitkonf();
 //		opn.gibomapaus();
 //		if (obverb) opn.oausgeb(gruen);
 	} // if (obhilfe==3)
 //	opn.omapzuw();
-  if (kfzg) {
-    cout<<akonfdt<<endl;
-    exit(0);
-  }
 	virtzeigueberschrift();
 	pvirtmacherkl();
 	if (zeighilfe(&erkl)) {
@@ -5981,7 +5981,7 @@ int hcl::kompiliere(const string& was,const string& endg, const string& vorcfg/*
 	return 1;
 } // int hcl::kompiliere(const string was,const string endg,const string nachtar, const string vorcfg,const string cfgbismake)
 
-// aufgerufen in: main
+// aufgerufen: nirgends
 void hcl::zeigkonf()
 {
 	struct stat kstat{0};
@@ -6003,8 +6003,7 @@ void hcl::zeigkonf()
 		cout<<Txk[T_mit_w_werden_die_Einstellungen_noch_ausfuehrlicher_angezeigt]<<endl;
 		opn.zeigschoen();
 	}
-} // void hcl::zeigkonf()
-// augerufen in: anhalten(), zeigkonf()
+} // void hcl::zeigkonf
 
 wpgcl::wpgcl(const string& pname,const void* pptr,par_t part):pname(pname),pptr(pptr),part(part),eingetragen(0)
 {
