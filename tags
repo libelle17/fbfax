@@ -456,6 +456,8 @@ T_nicht_zum_Lesen_oeffnen	./kons.h	/^  T_nicht_zum_Lesen_oeffnen,$/;"	e	enum:Tko
 T_nicht_zum_Schreiben_oeffnen	./kons.h	/^  T_nicht_zum_Schreiben_oeffnen,$/;"	e	enum:Tkons_
 T_nichtgefaxtvz_l	./fbfax.h	/^	T_nichtgefaxtvz_l,$/;"	e	enum:T_
 T_noext	./kons.h	/^	T_noext,$/;"	e	enum:Tkons_
+T_nr_k	./fbfax.h	/^	T_nr_k,$/;"	e	enum:T_
+T_nurrein_l	./fbfax.h	/^	T_nurrein_l,$/;"	e	enum:T_
 T_oblog	./kons.h	/^	T_oblog,$/;"	e	enum:Tkons_
 T_obsfveh	./kons.h	/^	T_obsfveh,$/;"	e	enum:Tkons_
 T_obunter	./kons.h	/^	T_obunter,$/;"	e	enum:Tkons_
@@ -498,6 +500,7 @@ T_st_k	./fbfax.h	/^	T_st_k,$/;"	e	enum:T_
 T_standardhilfe	./kons.h	/^	T_standardhilfe,$/;"	e	enum:Tkons_
 T_startundenable	./kons.h	/^	T_startundenable,$/;"	e	enum:Tkons_
 T_statt	./kons.h	/^	T_statt,$/;"	e	enum:Tkons_
+T_stellt_Faxe_nur_rein	./fbfax.h	/^	T_stellt_Faxe_nur_rein,$/;"	e	enum:T_
 T_stop_l	./fbfax.h	/^	T_stop_l,$/;"	e	enum:T_
 T_stopdis_sname	./kons.h	/^	T_stopdis_sname,$/;"	e	enum:Tkons_
 T_stu_k	./kons.h	/^	T_stu_k,$/;"	e	enum:Tkons_
@@ -569,8 +572,8 @@ VerzeichnisGibts	./kons.cpp	/^uchar VerzeichnisGibts(const char* vname)$/;"	f
 WPcl	./kons.cpp	/^WPcl::WPcl(const string& pname,const void* pptr,par_t part):wpgcl(pname,pptr,part)$/;"	f	class:WPcl
 WPcl	./kons.h	/^struct WPcl:wpgcl $/;"	s
 XOR	./kons.cpp	/^string XOR(const string& value, const string& key)$/;"	f
-_	./direkt.c	97;"	d	file:
-_	./direkt.c	98;"	d	file:
+_	./direkt.c	100;"	d	file:
+_	./direkt.c	99;"	d	file:
 _	./routermanager.h	32;"	d
 _AppObject	./appobject.h	/^struct _AppObject {$/;"	s
 _AppObjectClass	./appobject.h	/^struct _AppObjectClass {$/;"	s
@@ -827,7 +830,7 @@ elem2	./kons.h	/^    elem2(){};$/;"	f	struct:elem2
 elem2	./kons.h	/^struct elem2$/;"	s
 elem3	./kons.h	/^    elem3(string pfad, const struct stat *sbp, int& tflag, const struct FTW *ftwp, string lnk,const struct stat& lst):$/;"	f	struct:elem3
 elem3	./kons.h	/^struct elem3$/;"	s
-elemzahl	./kons.h	489;"	d
+elemzahl	./kons.h	490;"	d
 elemzahlT	./kons.h	/^template<typename T> size_t elemzahlT(T& v){return sizeof(v)\/sizeof(*v);}$/;"	f
 emit_authenticate	./appobject-emit.c	/^void emit_authenticate(struct auth_data *auth_data)$/;"	f
 emit_connection_established	./appobject-emit.c	/^void emit_connection_established(struct capi_connection *connection)$/;"	f
@@ -917,8 +920,8 @@ ftw	./kons.h	/^    const struct FTW ftw={0};$/;"	m	struct:elem3	typeref:struct:e
 fuersamba	./kons.cpp	/^void fuersamba(string& roh)$/;"	f
 g_debug	./connection.c	25;"	d	file:
 g_debug	./connection.c	26;"	d	file:
-g_debug	./direkt.c	27;"	d	file:
-g_debug	./direkt.c	28;"	d	file:
+g_debug	./direkt.c	30;"	d	file:
+g_debug	./direkt.c	31;"	d	file:
 g_debug	./fax.c	33;"	d	file:
 g_debug	./fax.c	34;"	d	file:
 g_debug	./fax_phone.c	43;"	d	file:
@@ -1011,15 +1014,15 @@ ipr	./kons.h	/^ instprog ipr=keinp; \/\/ installiertes Program$/;"	m	struct:lins
 irfind	./kons.cpp	/^size_t irfind(const string& wo, const string& was)$/;"	f
 is_connected	./net_monitor.h	/^	gboolean is_connected;$/;"	m	struct:net_event
 isatty	./kons.h	50;"	d
-isdn_lock	./faxophone.c	59;"	d	file:
-isdn_lock	./faxophone.c	62;"	d	file:
-isdn_lock	./faxophone.c	65;"	d	file:
+isdn_lock	./faxophone.c	58;"	d	file:
+isdn_lock	./faxophone.c	61;"	d	file:
+isdn_lock	./faxophone.c	64;"	d	file:
 isdn_lock	./faxophone.h	70;"	d
 isdn_lock	./faxophone.h	73;"	d
 isdn_mutex	./faxophone.h	/^	GMutex isdn_mutex;$/;"	m	struct:session
-isdn_unlock	./faxophone.c	60;"	d	file:
-isdn_unlock	./faxophone.c	63;"	d	file:
-isdn_unlock	./faxophone.c	66;"	d	file:
+isdn_unlock	./faxophone.c	59;"	d	file:
+isdn_unlock	./faxophone.c	62;"	d	file:
+isdn_unlock	./faxophone.c	65;"	d	file:
 isdn_unlock	./faxophone.h	71;"	d
 isdn_unlock	./faxophone.h	74;"	d
 isneun	./kons.h	/^inline int isneun(const std::string& str)$/;"	f
@@ -1066,7 +1069,6 @@ linear2alaw	./isdn-convert.c	/^static unsigned char linear2alaw(short sample)$/;
 linst_cl	./kons.cpp	/^linst_cl::linst_cl(int obverb,int oblog)$/;"	f	class:linst_cl
 linst_cl	./kons.h	/^struct linst_cl$/;"	s
 lnk	./kons.h	/^    const string lnk;$/;"	m	struct:elem3
-loc	./kons.cpp	/^const std::locale loc = gen("en_US.UTF-8");$/;"	v
 local	./call.h	/^	struct contact *local;$/;"	m	struct:call	typeref:struct:call::
 local	./faxophone.h	/^	struct record_channel local;$/;"	m	struct:recorder	typeref:struct:recorder::record_channel
 local_number	./connection.h	/^	gchar *local_number;$/;"	m	struct:connection
@@ -1193,7 +1195,7 @@ oausgeb	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::oausgeb(const char
 obenabled	./kons.h	/^		int obenabled=0;$/;"	m	class:servc
 oberreicht	./kons.cpp	/^int perfcl::oberreicht(unsigned long sek)$/;"	f	class:perfcl
 obfehlt	./kons.cpp	/^int linst_cl::obfehlt(const string& prog,int obverb,int oblog)$/;"	f	class:linst_cl
-obfstream	./kons.h	1042;"	d
+obfstream	./kons.h	1043;"	d
 obgelesen	./kons.h	/^	uchar obgelesen;$/;"	m	struct:confdcl
 obhilfe	./kons.h	/^    uchar obhilfe=0;      \/\/ Hilfe anzeigen: 1=kurze Hilfe, 2=lange Hilfe, 3=Standardhilfe$/;"	m	class:hcl
 oblgschreib	./kons.h	/^    uchar oblgschreib=0; \/\/ Konfigurationsdatei seitens der Sprache voraussichtlich schreiben$/;"	m	class:hcl
@@ -1333,7 +1335,6 @@ pvirtvorrueckfragen	./fbfax.cpp	/^void hhcl::pvirtvorrueckfragen()$/;"	f	class:h
 pvirtvorzaehler	./fbfax.cpp	/^void hhcl::pvirtvorzaehler()$/;"	f	class:hhcl
 pwd	./direkt.h	/^    const std::string pwd;$/;"	m	class:fbcl
 pwd	./fbfax.h	/^		string pwd;$/;"	m	class:hhcl
-pwk	./kons.cpp	/^const string& pwk = "4893019320jfdksalö590ßs89d0qÃ9m0943Ã09Ãax"; \/\/ fuer Antlitzaenderung$/;"	v
 pzuweis	./kons.cpp	/^int optcl::pzuweis(const char *const nacstr, const uchar vgegenteil\/*=0*\/, const uchar vnichtspeichern\/*=0*\/)$/;"	f	class:optcl
 read	./audio.h	/^	gsize (*read)(gpointer priv, guchar *buffer, gsize max_len);$/;"	m	struct:audio
 real_time_frame_handler	./fax.c	/^static void real_time_frame_handler(t30_state_t *state, void *user_data, gint direction, const uint8_t *msg, gint len)$/;"	f	file:
@@ -1476,7 +1477,6 @@ thr_strftime	./kons.cpp	/^size_t thr_strftime(const struct tm* const timeptr,str
 tiff_file	./fax.h	/^	gchar tiff_file[256];$/;"	m	struct:fax_status
 timemutex	./kons.cpp	/^pthread_mutex_t printf_mutex, getmutex, timemutex;$/;"	v
 tmloc	./kons.h	/^		tm tmloc;$/;"	m	class:ztacl
-tmmoegl	./kons.cpp	/^const char *const tmmoegl[]={$/;"	v
 tmmoelen	./kons.h	/^		unsigned tmmoelen;$/;"	m	class:hcl
 tmpcron	./kons.h	/^		string tmpcron; \/\/ fuer crontab$/;"	m	class:hcl
 touch	./kons.cpp	/^int touch(const string& pfad,int obverb\/*=0*\/,int oblog\/*=0*\/)$/;"	f
@@ -1502,7 +1502,7 @@ type	./faxophone.h	/^	enum session_type type;$/;"	m	struct:capi_connection	typer
 uchar	./kons.h	/^typedef unsigned char uchar; \/\/ 1 Byte$/;"	t
 udpr	./kons.h	/^ string udpr;   \/\/ Befehl zum direkten Deinstallieren$/;"	m	struct:linst_cl
 uebers	./kons.h	/^		stringstream uebers; \/\/ Ueberschrift fuer Verarbeitungslauf$/;"	m	class:hcl
-uebersichtlich	./kons.cpp	5606;"	d	file:
+uebersichtlich	./kons.cpp	5611;"	d	file:
 uint16_t	./faxophone.h	/^typedef unsigned short uint16_t;$/;"	t
 uint32_t	./faxophone.h	/^typedef unsigned int uint32_t;$/;"	t
 ull	./kons.h	/^typedef unsigned long long ull;$/;"	t
@@ -1522,7 +1522,7 @@ usr	./fbfax.h	/^		string usr;$/;"	m	class:hhcl
 usr_lib64_vz	./kons.h	/^		string usr_lib64_vz;$/;"	m	class:lsyscl
 usys	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	e	enum:lsysen
 uypr	./kons.h	/^ string uypr;   \/\/ Befehl zum Deinstallieren ueber das Installationssystem ohne Rueckfrage$/;"	m	struct:linst_cl
-vagenau	./kons.cpp	1351;"	d	file:
+vagenau	./kons.cpp	1353;"	d	file:
 vector_incl	./kons.h	32;"	d
 verarbeit	./kons.cpp	/^int find3cl::verarbeit(const char *fpath, const struct stat *sb, int tflag, struct FTW *ftwbuf)$/;"	f	class:find3cl
 verarbeitkonf	./kons.cpp	/^void hcl::verarbeitkonf()$/;"	f	class:hcl

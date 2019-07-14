@@ -70,6 +70,9 @@ enum T_
 	T_zu_faxende_Datei,
 	T_an_k,
 	T_an_l,
+	T_nr_k,
+	T_nurrein_l,
+	T_stellt_Faxe_nur_rein,
 	T_Zielfaxnr,
 	T_MAX //α
 }; // enum T_ //ω
@@ -85,6 +88,7 @@ class hhcl:public hcl
 		int p2;
 		string p3;
 		uchar oblista{0};
+    uchar nurrein{0};
 		long listz{30}; //ω
 		string wvz; // Warteverzeichnis
 		string gfvz; // gefaxt-Verzeichnis (Fertige)

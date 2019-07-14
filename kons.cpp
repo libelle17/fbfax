@@ -18,7 +18,7 @@ const char *const dir = "dir ";
 #elif linux
 const char *const dir = "ls -l ";
 #endif
-const char *const tmmoegl[]={
+const char *const tmmoegl[]{
 	"%d.%m.%y %H.%M.%S","%d.%m.%Y %H.%M.%S","%d.%m.%y %H:%M:%S","%d.%m.%Y %H:%M:%S",
 	"%d.%m.%y %H.%M","%d.%m.%Y %H.%M","%d.%m.%y %H:%M","%d.%m.%Y %H:%M",
 	"%d.%m.%y","%d.%m.%Y","%d.%m.%y","%d.%m.%Y",
@@ -5066,7 +5066,6 @@ int schluss(const int fnr,const string text,int oblog)
 // zum Aufruf virtueller Funktionen aus dem Konstruktur verschoben
 void hcl::lauf()
 {
-	virtzeigueberschrift();
 	virtVorgbAllg();
 	pvirtVorgbSpeziell(); // die Vorgaben, die in einer zusaetzlichen Datei mit einer weiteren Funktion "void hhcl::pvirtVorgbSpeziell()" ueberladbar sind
 	virtinitopt();
@@ -5080,6 +5079,7 @@ void hcl::lauf()
 //		if (obverb) opn.oausgeb(gruen);
 	} // if (obhilfe==3)
 //	opn.omapzuw();
+	virtzeigueberschrift();
 	pvirtmacherkl();
 	if (zeighilfe(&erkl)) {
 		virttesterg();
@@ -5102,11 +5102,13 @@ void hcl::lauf()
 	else if (!keineverarbeitung) {
 		pvirtvorrueckfragen();
 		virtrueckfragen();
-		pvirtvorpruefggfmehrfach();
-		pruefggfmehrfach();
-		if (logdateineu) tuloeschen(logdt,string(),obverb,oblog);
-		hLog(Txk[T_Logpfad]+drots+loggespfad+schwarz+Txk[T_oblog]+drot+ltoan((int)oblog)+schwarz+")");
-		virtpruefweiteres();
+		pvirtvorpruefggfmehrfach(); // kann noch keineverarbeitung setzen
+    if (!keineverarbeitung) {
+      pruefggfmehrfach();
+      if (logdateineu) tuloeschen(logdt,string(),obverb,oblog);
+      hLog(Txk[T_Logpfad]+drots+loggespfad+schwarz+Txk[T_oblog]+drot+ltoan((int)oblog)+schwarz+")");
+      virtpruefweiteres();
+    }
 	} // 	if (!keineverarbeitung)
 	if (mitcron) pruefcron(string()); // soll vor Log(Txk[T_Verwende ... stehen
 	if (!keineverarbeitung) {
@@ -5724,6 +5726,7 @@ int wartaufpids(pidvec *pidv,const ulong runden/*=0*/,const int obverb/*=0*/,con
 {
 	////	int* ovp=(int*)&obverb; *ovp=0;
 	ulong aktru=0; 
+//	const int nobverb{2}; memcpy((int*)&obverb,&nobverb,sizeof obverb);
 	yLog(obverb>1,oblog>1,0,0,"%s%s()%s, %s, %s%s pid: %s%lu%s, pidv->size(): %s%zu%s",
 			violett,__FUNCTION__,blau,wo.c_str(),schwarz,Txk[T_eigene],blau,getpid(),schwarz,blau,pidv->size(),schwarz);
 	for(size_t i=0;i<pidv->size();i++) {

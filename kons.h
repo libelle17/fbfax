@@ -467,6 +467,7 @@ enum Tkons_
 	T_Intervall_Minuten,
 	T_konsMAX
 }; // Tkons_
+// Konsistenz in gdb pruefen, z.B.:  p (const char* const)reinterpret_cast<TCtp*>(Txk.TCp)[T_unbek][Txk.lgn]
 
 extern const string sprachstr;
 /*
@@ -1258,7 +1259,9 @@ class hcl
 		pidvec pidv;
     double tstart, tende;
     size_t optslsz=0; // last opts.size()
+	public:
 		confdcl hccd;
+	protected:
 		string tmpcron; // fuer crontab
     string cronminut; // Minuten fuer crontab; 0 = kein Crontab-Eintrag
 		uchar nochkeincron;

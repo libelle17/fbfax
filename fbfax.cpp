@@ -144,6 +144,12 @@ char const *DPROG_T[T_MAX+1][SprachZahl]=
 	{"an","to"},
 	// T_an_l,
 	{"an","to"},
+	// T_nr_k
+	{"nr","oi"},
+	// T_nurrein_l
+	{"nurrein","onlyin"},
+	// T_stellt_Faxe_nur_rein
+	{"stellt Faxe nur rein","inserts faxes only"},
 	// T_Zielfaxnr,
 	{"Zielfaxnr","target fax number"},
 	{"",""} //α
@@ -203,6 +209,7 @@ void hhcl::virtinitopt()
 	opn<<new optcl(/*pname*/"mfolge",/*pptr*/&mfolge,/*art*/pstri,T_mfolge_k,T_mfolge_l,/*TxBp*/&Tx,/*Txi*/T_kommagetrennte_Minutenfolge_der_Sendeversuche,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!mfolge.empty(),T_kommagetrennte_Minutenfolge_der_Sendeversuche);
 	opn<<new optcl(/*pptr*/&datei,/*art*/pstri,T_dt_k,T_datei_l,/*TxBp*/&Tx,/*Txi*/T_zu_faxende_Datei,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&an,/*art*/pstri,T_an_k,T_an_l,/*TxBp*/&Tx,/*Txi*/T_Zielfaxnr,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1);
+	opn<<new optcl(/*pptr*/&nurrein,/*art*/puchar,T_nr_k,T_nurrein_l,/*TxBp*/&Tx,/*Txi*/T_stellt_Faxe_nur_rein,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/1,/*woher*/1);
 	hcl::virtinitopt(); //α
 } // void hhcl::virtinitopt
 
@@ -405,6 +412,7 @@ void hhcl::pvirtvorpruefggfmehrfach()
 			} // 			if (nr)
 		} // 		if (dart && !lstat(datei.c_str(),&dstat) && dstat.st_size)
 	} // 	if (!an.empty())
+  if (nurrein) keineverarbeitung=1; // wenn von autofax faxe reingestellt werden, sollen die aus Zeitgruenden nicht gleich verarbeitet werden 
 } // void hhcl::pvirtvorpruefggfmehrfach //α
 //ω
 
