@@ -569,6 +569,14 @@ const char *kons_T[T_konsMAX+1][SprachZahl]=
 	{"Konfigurationsdatei ","edit/view configuration file "},
 	// T_Logdatei_usw_bearbeiten_sehen
 	{", Logdatei usw. bearbeiten/sehen (beenden mit ':qa')",", log file etc. (finish with ':qa')"},
+  // T_kf_k,
+  {"zkf","scf"},
+  // T_konfzeiglang_l,
+  {"konfzeig","showconf"},
+  // T_Konfigurationsdateinamen,
+  {"Konfigurationsdateinamen","show the name of the configuration file"},
+  // T_anzeigen,
+  {"anzeigen",""},
 	// T_vs_k
 	{"vs","vs"},
 	// T_vs_l
@@ -5079,6 +5087,10 @@ void hcl::lauf()
 //		if (obverb) opn.oausgeb(gruen);
 	} // if (obhilfe==3)
 //	opn.omapzuw();
+  if (kfzg) {
+    cout<<akonfdt<<endl;
+    exit(0);
+  }
 	virtzeigueberschrift();
 	pvirtmacherkl();
 	if (zeighilfe(&erkl)) {
@@ -5087,7 +5099,7 @@ void hcl::lauf()
 	}
 	pvirtvorzaehler();
 	lieszaehlerein();
-	if (obvi) {
+  if (obvi) {
 		dovi(); 
 	} else if (obvs) {
 		svec rueck;
@@ -5267,6 +5279,7 @@ void hcl::virtinitopt()
 	opn<<new optcl(/*pptr*/&obhilfe,/*art*/puchar,T_libtest,T_libtest,/*TxBp*/&Txk,/*Txi*/-1,/*wi*/255,/*Txi2*/-1,/*rottxt*/string(),/*wert*/4,/*woher*/1);
 	opn<<new optcl(/*pname*/"cronminut",/*pptr*/&cronminut,/*art*/pdez,T_cm_k,T_cronminuten_l,/*TxBp*/&Txk,/*Txi*/T_Alle_wieviel_Minuten_soll,/*wi*/1,/*Txi2*/T_aufgerufen_werden_0_ist_gar_nicht,/*rottxt*/meinname,/*wert*/-1,/*woher*/1,T_Intervall_Minuten);
 	opn<<new optcl(/*pptr*/&obvi,/*art*/puchar,T_vi_k,T_vi_l,/*TxBp*/&Txk,/*Txi*/T_Konfigurationsdatei,/*wi*/0,/*Txi2*/T_Logdatei_usw_bearbeiten_sehen,/*rottxt*/akonfdt,/*wert*/1,/*woher*/1);
+	opn<<new optcl(/*pptr*/&kfzg,/*art*/puchar,T_kf_k,T_konfzeiglang_l,/*TxBp*/&Txk,/*Txi*/T_Konfigurationsdateinamen,/*wi*/0,/*Txi2*/T_anzeigen,/*rottxt*/akonfdt,/*wert*/1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&obvs,/*art*/puchar,T_vs_k,T_vs_l,/*TxBp*/&Txk,/*Txi*/T_Quelldateien_in,/*wi*/0,/*Txi2*/T_bearbeiten_sehen,/*rottxt*/instvz,/*wert*/1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&autoupd,/*art*/pint,T_autoupd_k,T_autoupd_l,/*TxBp*/&Txk,/*Txi*/T_Programm_automatisch_aktualisieren,/*wi*/1,/*Txi2*/-1,/*rottxt*/string(),/*wert*/1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&rzf,/*art*/puchar,T_rf_k,T_rueckfragen_l,/*TxBp*/&Txk,/*Txi*/T_alle_Parameter_werden_abgefragt_darunter_einige_hier_nicht_gezeigte,/*wi*/1,/*Txi2*/-1,/*rottxt*/string(),/*wert*/1,/*woher*/1);
@@ -5545,7 +5558,7 @@ void hcl::virtrueckfragen()
 // wird aufgerufen in lauf
 void hcl::pruefggfmehrfach()
 {
-	if (!obhilfe &&!obvi &&!obvs &&!zeigvers &&!rzf) {
+	if (!obhilfe &&!obvi && !kfzg &&!obvs &&!zeigvers &&!rzf) {
 		pruefmehrfach(meinname,obverb,nrzf);
 	}
 } // void hhcl::pruefggfmehrfach

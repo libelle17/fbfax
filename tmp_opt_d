@@ -1,5 +1,5 @@
 .br
-    \fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10304 \fR
+    \fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10305 \fR
 .br
 \fBOptionen, die nicht gespeichert werden (aktueller Wert in Klammern): \fR
 .br
@@ -26,6 +26,8 @@
 \fB -lh, --langhilfe\fR: Erklaerung aller Optionen (\fB3\fR)
 .br
 \fB -vi, --vi\fR: Konfigurationsdatei , Logdatei usw. bearbeiten/sehen (beenden mit ':qa') (\fB0\fR)
+.br
+\fB -zkf, --konfzeig\fR: Konfigurationsdateinamenanzeigen (\fB0\fR)
 .br
 \fB -vs, --vs\fR: Quelldateien in \fB/home/schade/fbfax\fR bearbeiten/sehen (beenden mit ':qa') (\fB0\fR)
 .br

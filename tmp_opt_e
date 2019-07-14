@@ -1,5 +1,5 @@
 .br
-    \fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10304 \fR
+    \fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10305 \fR
 .br
 \fBOptions which are not saved (current value in parentheses): \fR
 .br
@@ -26,6 +26,8 @@
 \fB -lh, --longhelp\fR: Explanation of all options (\fB3\fR)
 .br
 \fB -vi, --vi\fR: edit/view configuration file , log file etc. (finish with ':qa') (\fB0\fR)
+.br
+\fB -scf, --showconf\fR: show the name of the configuration file (\fB0\fR)
 .br
 \fB -vs, --vs\fR: edit/view source files in \fB/home/schade/fbfax\fR(finish with ':qa') (\fB0\fR)
 .br
