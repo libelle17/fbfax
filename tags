@@ -587,7 +587,7 @@ _AppObjectClass	./appobject.h	/^struct _AppObjectClass {$/;"	s
 _AppObjectPrivate	./appobject.c	/^struct _AppObjectPrivate {$/;"	s	file:
 _CRT_SECURE_NO_WARNINGS	./kons.h	2;"	d
 _DPROG	./kons.cpp	/^string _DPROG;$/;"	v
-_access	./kons.cpp	48;"	d	file:
+_access	./kons.cpp	53;"	d	file:
 _blau	./kons.cpp	/^const char *_drot=drot, *_rot=rot, *_schwarz=schwarz, *_blau=blau, *_gelb=gelb, *_tuerkis=tuerkis, *_hgrau=hgrau;$/;"	v
 _blau	./kons.h	/^inline std::ostream& _blau(std::ostream &s){$/;"	f	class:std
 _drot	./kons.cpp	/^const char *_drot=drot, *_rot=rot, *_schwarz=schwarz, *_blau=blau, *_gelb=gelb, *_tuerkis=tuerkis, *_hgrau=hgrau;$/;"	v
@@ -715,7 +715,7 @@ capi_send_dtmf_code	./faxophone.c	/^void capi_send_dtmf_code(struct capi_connect
 capi_set_free	./faxophone.c	/^static int capi_set_free(struct capi_connection *connection)$/;"	f	file:
 capi_thread	./faxophone.c	/^static GThread *capi_thread = NULL;$/;"	v	file:
 caseersetze	./kons.cpp	/^string caseersetze(const string& u, const char* const alt, const char* const neu) $/;"	f
-caus	./kons.cpp	12;"	d	file:
+caus	./kons.cpp	17;"	d	file:
 caus	./kons.h	137;"	d
 cgid	./kons.h	/^		gid_t cgid;$/;"	m	class:cuscl
 charersetze	./kons.cpp	/^char* charersetze(char *u, const char alt, const char neu) $/;"	f
@@ -1511,7 +1511,7 @@ type	./faxophone.h	/^	enum session_type type;$/;"	m	struct:capi_connection	typer
 uchar	./kons.h	/^typedef unsigned char uchar; \/\/ 1 Byte$/;"	t
 udpr	./kons.h	/^ string udpr;   \/\/ Befehl zum direkten Deinstallieren$/;"	m	struct:linst_cl
 uebers	./kons.h	/^		stringstream uebers; \/\/ Ueberschrift fuer Verarbeitungslauf$/;"	m	class:hcl
-uebersichtlich	./kons.cpp	5626;"	d	file:
+uebersichtlich	./kons.cpp	5649;"	d	file:
 uint16_t	./faxophone.h	/^typedef unsigned short uint16_t;$/;"	t
 uint32_t	./faxophone.h	/^typedef unsigned int uint32_t;$/;"	t
 ull	./kons.h	/^typedef unsigned long long ull;$/;"	t
@@ -1531,7 +1531,7 @@ usr	./fbfax.h	/^		string usr;$/;"	m	class:hhcl
 usr_lib64_vz	./kons.h	/^		string usr_lib64_vz;$/;"	m	class:lsyscl
 usys	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	e	enum:lsysen
 uypr	./kons.h	/^ string uypr;   \/\/ Befehl zum Deinstallieren ueber das Installationssystem ohne Rueckfrage$/;"	m	struct:linst_cl
-vagenau	./kons.cpp	1361;"	d	file:
+vagenau	./kons.cpp	1380;"	d	file:
 vector_incl	./kons.h	32;"	d
 verarbeit	./kons.cpp	/^int find3cl::verarbeit(const char *fpath, const struct stat *sb, int tflag, struct FTW *ftwbuf)$/;"	f	class:find3cl
 verarbeitkonf	./kons.cpp	/^void hcl::verarbeitkonf()$/;"	f	class:hcl

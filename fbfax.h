@@ -74,6 +74,10 @@ enum T_
 	T_nurrein_l,
 	T_stellt_Faxe_nur_rein,
 	T_Zielfaxnr,
+	T_zgvz_k,
+	T_zgvz_l,
+	T_Spoolverzeichnisse_wie,
+	T_anzeigen_,
 	T_MAX //α
 }; // enum T_ //ω
 //α
@@ -89,6 +93,7 @@ class hhcl:public hcl
 		string p3;
 		uchar oblista{0};
     uchar nurrein{0};
+    uchar zgvz=0; // zeig Verzeichnisse
 		long listz{30}; //ω
 		string wvz; // Warteverzeichnis
 		string gfvz; // gefaxt-Verzeichnis (Fertige)

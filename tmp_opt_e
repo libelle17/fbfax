@@ -1,5 +1,5 @@
 .br
-\fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10319 \fR
+\fRProgramm: \fB/home/schade/fbfax/fbfax\fR, V: \fB0.10322 \fR
 .br
 \fBOptions which are not saved (current value in parentheses): \fR
 .br
@@ -12,6 +12,8 @@
 \fB -to, --to <string>\fR: target fax number ('\fB\fR')
 .br
 \fB -oi, --onlyin\fR: inserts faxes only (\fB0\fR)
+.br
+\fB -shdr, --showdirs\fR: show spool directories like \fB/var/spool/fbfax/waiting\fR (\fB0\fR)
 .br
 \fB -v, --verbose\fR: screen output more verbose (\fB0\fR)
 .br
@@ -47,19 +49,19 @@
 .br
 \fB -ndr, --notfaxeddir <path>\fR: Failed faxes are collected here instead of ('\fB/var/spool/fbfax/notfaxed\fR')
 .br
-\fB -usr, --usr <string>\fR: takes the user <string> for the fritzbox instead of ('\fB\fR')
+\fB -usr, --usr <string>\fR: takes the user <string> for the fritzbox instead of ('\fBlibelle17\fR')
 .br
 \fB -pwd, --pwd <string>\fR: uses the password <string> for the fritz box
 .br
 \fB -host, --host <string>\fR: host address for the fritz box ('\fBfritz.box\fR')
 .br
-\fB -msn, --msn <string>\fR: MSN for faxing ('\fB\fR')
+\fB -msn, --msn <string>\fR: MSN for faxing ('\fB6150166\fR')
 .br
-\fB -sdrno, --senderno <string>\fR: sender no on fax ('\fB\fR')
+\fB -sdrno, --senderno <string>\fR: sender no on fax ('\fB081316150166\fR')
 .br
-\fB -sdr, --sender <string>\fR: sender name on fax ('\fB\fR')
+\fB -sdr, --sender <string>\fR: sender name on fax ('\fBG.Schade\fR')
 .br
-\fB -msq, --minsequence <string>\fR: comma-separated sequence of minutes of the send tries ('\fB\fR')
+\fB -msq, --minsequence <string>\fR: comma-separated sequence of minutes of the send tries ('\fB2,2,3,3,3,5,5,10,10,60,60,60,120,120,720,1440\fR')
 .br
 \fB -lg, --language <string>\fR: Language/Sprache/Lingue/Lingua [\fBd\fReutsch,\fBe\fRnglisch] ('\fBe\fR')
 .br

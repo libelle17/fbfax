@@ -1,5 +1,5 @@
 .br
-\fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10319 \fR
+\fRProgramm: \fB/home/schade/fbfax/fbfax\fR, V: \fB0.10322 \fR
 .br
 \fBOptionen, die nicht gespeichert werden (aktueller Wert in Klammern): \fR
 .br
@@ -12,6 +12,8 @@
 \fB -an, --an <string>\fR: Zielfaxnr ('\fB\fR')
 .br
 \fB -nr, --nurrein\fR: stellt Faxe nur rein (\fB0\fR)
+.br
+\fB -zgvz, --zeigverz\fR: Spoolverzeichnisse wie \fB/var/spool/fbfax/waiting\fRanzeigen (\fB0\fR)
 .br
 \fB -w, --wortreich\fR: Bildschirmausgabe gespraechiger (\fB0\fR)
 .br
@@ -47,19 +49,19 @@
 .br
 \fB -ngvz, --nichtgefaxtvz <pfad>\fR: Gescheiterte Faxe werden hier gesammelt anstatt in ('\fB/var/spool/fbfax/notfaxed\fR')
 .br
-\fB -usr, --usr <string>\fR: verwendet fuer die Fritzbox den Benutzer <string> anstatt ('\fB\fR')
+\fB -usr, --usr <string>\fR: verwendet fuer die Fritzbox den Benutzer <string> anstatt ('\fBlibelle17\fR')
 .br
 \fB -pwd, --pwd <string>\fR: verwendet fuer die Fritzbox das Passwort
 .br
 \fB -host, --host <string>\fR: Hostadresse der Fritzbox ('\fBfritz.box\fR')
 .br
-\fB -msn, --msn <string>\fR: MSN zum Faxen ('\fB\fR')
+\fB -msn, --msn <string>\fR: MSN zum Faxen ('\fB6150166\fR')
 .br
-\fB -absnr, --absendernr <string>\fR: auf Fax angegebene Absendernummer ('\fB\fR')
+\fB -absnr, --absendernr <string>\fR: auf Fax angegebene Absendernummer ('\fB081316150166\fR')
 .br
-\fB -abs, --absender <string>\fR: auf Fax angegebener Absendername ('\fB\fR')
+\fB -abs, --absender <string>\fR: auf Fax angegebener Absendername ('\fBG.Schade\fR')
 .br
-\fB -mfg, --minfolge <string>\fR: kommagetrennte Minutenfolge der Sendeversuche ('\fB\fR')
+\fB -mfg, --minfolge <string>\fR: kommagetrennte Minutenfolge der Sendeversuche ('\fB2,2,3,3,3,5,5,10,10,60,60,60,120,120,720,1440\fR')
 .br
 \fB -sp, --sprache <string>\fR: Language/Sprache/Lingue/Lingua [\fBd\fReutsch,\fBe\fRnglisch] ('\fBd\fR')
 .br

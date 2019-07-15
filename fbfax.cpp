@@ -152,6 +152,14 @@ char const *DPROG_T[T_MAX+1][SprachZahl]=
 	{"stellt Faxe nur rein","inserts faxes only"},
 	// T_Zielfaxnr,
 	{"Zielfaxnr","target fax number"},
+	// T_zgvz_k,
+	{"zgvz","shdr"},
+	// T_zgvz_l,
+	{"zeigverz","showdirs"},
+	// T_Spoolverzeichnisse_wie,
+	{"Spoolverzeichnisse wie ","show spool directories like "},
+  // T_anzeigen_,
+  {"anzeigen",""},
 	{"",""} //α
 }; // char const *DPROG_T[T_MAX+1][SprachZahl]=
 
@@ -210,6 +218,7 @@ void hhcl::virtinitopt()
 	opn<<new optcl(/*pptr*/&datei,/*art*/pstri,T_dt_k,T_datei_l,/*TxBp*/&Tx,/*Txi*/T_zu_faxende_Datei,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&an,/*art*/pstri,T_an_k,T_an_l,/*TxBp*/&Tx,/*Txi*/T_Zielfaxnr,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&nurrein,/*art*/puchar,T_nr_k,T_nurrein_l,/*TxBp*/&Tx,/*Txi*/T_stellt_Faxe_nur_rein,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/1,/*woher*/1);
+	opn<<new optcl(/*pptr*/&zgvz,/*art*/puchar,T_zgvz_k,T_zgvz_l,/*TxBp*/&Tx,/*Txi*/T_Spoolverzeichnisse_wie,/*wi*/0,/*Txi2*/T_anzeigen_,/*rottxt*/wvz,/*wert*/1,/*woher*/1);
 	hcl::virtinitopt(); //α
 } // void hhcl::virtinitopt
 
@@ -543,6 +552,12 @@ void hhcl::virtlieskonfein()
 	hLog(violetts+Txk[T_virtlieskonfein]+schwarz); //ω
   nstumm=!stumm;
 	hcl::virtlieskonfein(); //α //ω
+	if (zgvz) { // zeigverzeichnisse, fuer Autofax
+		cout<<wvz<<endl;
+		cout<<gfvz<<endl;
+		cout<<ngvz<<endl;
+		exit(0);
+	}
 	hLog(violetts+Txk[T_Ende]+Txk[T_virtlieskonfein]+schwarz); //α
 	obverb=altobverb;
 } // void hhcl::virtlieskonfein() //ω
