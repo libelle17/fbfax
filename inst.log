@@ -225,3 +225,25 @@ Rueckmeldung bei einricht glib-2.0:
 Repository-Daten werden geladen...
 Installierte Pakete werden gelesen...
 IP: ''
+
+Rueckmeldung bei einricht libtermcap:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+IP: ''
+
+Rueckmeldung bei einricht termcap:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'termcap-2.0.8-lp151.1027.3.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende NEUE Paket wird installiert:
+  termcap
+
+1 neues Paket zu installieren.
+Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 187,9 KiB. Nach der Operation werden zusätzlich 579,7 KiB belegt.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache termcap-2.0.8-lp151.1027.3.x86_64.rpm (1/1), 187,9 KiB (579,7 KiB entpackt)
+Überprüfung auf Dateikonflikte läuft: [...fertig]
+(1/1) Installieren: termcap-2.0.8-lp151.1027.3.x86_64 [............fertig]
+IP: ''

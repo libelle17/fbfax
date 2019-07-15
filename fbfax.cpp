@@ -546,6 +546,7 @@ void hhcl::virtlieskonfein()
 	hLog(violetts+Txk[T_Ende]+Txk[T_virtlieskonfein]+schwarz); //α
 	obverb=altobverb;
 } // void hhcl::virtlieskonfein() //ω
+
 int main(int argc,char** argv) //α
 {
 	if (argc>1) { //ω
