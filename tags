@@ -297,6 +297,7 @@ T_Soll_die_SuSEfirewall_bearbeitet_werden	./kons.h	/^	T_Soll_die_SuSEfirewall_be
 T_Sollen_fehlende_Sambafreigaben_fuer_die_angegebenen_Verzeichnisse_ergaenzt_werden	./kons.h	/^	T_Sollen_fehlende_Sambafreigaben_fuer_die_angegebenen_Verzeichnisse_ergaenzt_werden,$/;"	e	enum:Tkons_
 T_Sollen_neue_Programmversionen_von	./kons.h	/^	T_Sollen_neue_Programmversionen_von,$/;"	e	enum:Tkons_
 T_Sonstiges	./kons.h	/^	T_Sonstiges,$/;"	e	enum:Tkons_
+T_Spoolverzeichnisse_wie	./fbfax.h	/^	T_Spoolverzeichnisse_wie,$/;"	e	enum:T_
 T_Sprachen	./kons.h	/^	T_Sprachen,$/;"	e	enum:Tkons_
 T_Suchbefehl	./kons.h	/^  T_Suchbefehl,$/;"	e	enum:Tkons_
 T_Suche_in	./kons.h	/^	T_Suche_in,$/;"	e	enum:Tkons_
@@ -333,6 +334,7 @@ T_an_k	./fbfax.h	/^	T_an_k,$/;"	e	enum:T_
 T_an_l	./fbfax.h	/^	T_an_l,$/;"	e	enum:T_
 T_anhalten	./fbfax.h	/^	T_anhalten,$/;"	e	enum:T_
 T_anzeigen	./kons.h	/^  T_anzeigen,$/;"	e	enum:Tkons_
+T_anzeigen_	./fbfax.h	/^	T_anzeigen_,$/;"	e	enum:T_
 T_auf_Fax_angegebene_Absendernummer	./fbfax.h	/^	T_auf_Fax_angegebene_Absendernummer,$/;"	e	enum:T_
 T_auf_Fax_angegebener_Absender	./fbfax.h	/^	T_auf_Fax_angegebener_Absender,$/;"	e	enum:T_
 T_aufgerufen	./kons.h	/^	T_aufgerufen,$/;"	e	enum:Tkons_
@@ -550,6 +552,8 @@ T_wird_jetzt_eingetragen	./kons.h	/^	T_wird_jetzt_eingetragen,$/;"	e	enum:Tkons_
 T_wird_verwendet_anstatt	./kons.h	/^	T_wird_verwendet_anstatt,$/;"	e	enum:Tkons_
 T_wvz_k	./fbfax.h	/^	T_wvz_k,$/;"	e	enum:T_
 T_zeigvers	./kons.h	/^	T_zeigvers,$/;"	e	enum:Tkons_
+T_zgvz_k	./fbfax.h	/^	T_zgvz_k,$/;"	e	enum:T_
+T_zgvz_l	./fbfax.h	/^	T_zgvz_l,$/;"	e	enum:T_
 T_zu	./kons.h	/^	T_zu,$/;"	e	enum:Tkons_
 T_zu_faxende_Datei	./fbfax.h	/^	T_zu_faxende_Datei,$/;"	e	enum:T_
 T_zu_schreiben	./kons.h	/^	T_zu_schreiben,$/;"	e	enum:Tkons_
@@ -1617,6 +1621,7 @@ zeighilfe	./kons.cpp	/^int hcl::zeighilfe(const stringstream *const erkl)$/;"	f	
 zeigkonf	./kons.cpp	/^void hcl::zeigkonf()$/;"	f	class:hcl
 zeigschoen	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::zeigschoen()$/;"	f	class:schAcl
 zeigvers	./kons.h	/^    uchar zeigvers=0;  \/\/ Version anzeigen$/;"	m	class:hcl
+zgvz	./fbfax.h	/^    uchar zgvz=0; \/\/ zeig Verzeichnisse$/;"	m	class:hhcl
 ziehraus	./kons.cpp	/^void linst_cl::ziehraus(svec srueck, string *ustringp)$/;"	f	class:linst_cl
 zip	./contact.h	/^	gchar *zip;$/;"	m	struct:contact
 zip	./contact.h	/^	gchar *zip;$/;"	m	struct:contact_address

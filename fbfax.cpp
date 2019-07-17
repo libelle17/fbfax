@@ -412,6 +412,7 @@ void hhcl::pvirtvorpruefggfmehrfach()
               if (*it==',')
                 versz++; // und für jedes Komma eins mehr
             vw<<"0/"<<versz<<endl;
+						cout<<vname<<endl; // Name fuer autofax ausgeben
             if (cronminut=="0") {
               cronminut="1"; // wenn root, so wird dann der cronjob ueberprueft und ggf. eingetragen
 							hccd.obzuschreib=1;
