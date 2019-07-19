@@ -582,6 +582,12 @@ const char *kons_T[T_konsMAX+1][SprachZahl]=
   {"Konfigurationsdateinamen","show the name of the configuration file"},
   // T_anzeigen,
   {"anzeigen",""},
+	// T_Konfigurationsdatei_schreiben,
+	{"Konfigurationsdatei schreiben","write configuration file"},
+	// T_ks_k,
+	{"kschrb","writec"},
+	//	T_kschreib_l,
+  {"kschreib","writeconf"},
 	// T_vs_k
 	{"vs","vs"},
 	// T_vs_l
@@ -1901,14 +1907,14 @@ int obprogda(const string& prog, int obverb/*=0*/, int oblog/*=0*/, string *pfad
     }
   } // for(int iru=0;iru<3;iru++) 
   svec rueck;
-  if (!systemrueck("which "+prog+" 2>/dev/null",obverb,oblog,&rueck,/*obsudc=*/0,/*verbergen*/0,/*obergebnisanzeig*/wahr,/*ueberschr*/string(),/*errm*/0,/*obincron*/0,/*ausgp*/0,/*obdirekt*/0,/*ohnewisch*/1)) {
+  if (!systemrueck("which "+prog+" 2>/dev/null",obverb,oblog,&rueck)) {
     if (pfad) *pfad=rueck[0];
     return 2;
   } // if (!systemrueck("which "+prog+" 2>/dev/null",obverb,oblog,&rueck))
 	// wenn nicht root
 	if (cus.cuid && !keinsu) { // 
-		if (!systemrueck("which \""+prog+"\" 2>/dev/null",obverb,oblog,&rueck,/*obsudc=*/1,/*verbergen*/0,/*obergebnisanzeig*/wahr,/*ueberschr*/string(),/*errm*/0,/*obincron*/0,/*ausgp*/0,/*obdirekt*/0,/*ohnewisch*/1)) {
-			if (!systemrueck("env \"PATH=$PATH\" which \""+prog+"\" 2>/dev/null",obverb,oblog,&rueck,/*obsudc=*/1,/*verbergen*/0,/*obergebnisanzeig*/wahr,/*ueberschr*/string(),/*errm*/0,/*obincron*/0,/*ausgp*/0,/*obdirekt*/0,/*ohnewisch*/1)) {
+		if (!systemrueck("which \""+prog+"\" 2>/dev/null",obverb,oblog,&rueck,/*obsudc=*/1)) {
+			if (!systemrueck("env \"PATH=$PATH\" which \""+prog+"\" 2>/dev/null",obverb,oblog,&rueck,/*obsudc=*/1)) {
 				if (pfad) *pfad=rueck[0];
 				return 3;
 			}
@@ -2067,7 +2073,7 @@ linst_cl::linst_cl(int obverb,int oblog)
 	svec qrueck;
 	// in findfile wird ueber setfacl evtl. Installation aufgerufen, was (aus Kontruktor) zum Absturz fuehrt
 //	if (findv==1) {
-		systemrueck("find /usr -maxdepth 1 -type d -name 'lib*'",obverb,oblog,&qrueck,/*obsudc=*/0,/*verbergen*/0,/*obergebnisanzeig*/wahr,/*ueberschr*/string(),/*errm*/0,/*obincron*/0,/*ausgp*/0,/*obdirekt*/0,/*ohnewisch*/1);
+		systemrueck("find /usr -maxdepth 1 -type d -name 'lib*'",obverb,oblog,&qrueck);
 //	} else findfile(&qrueck,findv,obverb,oblog,0,"/usr",/*muster=*/"lib[^/]*$",1,34,1);
 	for(size_t iru=0;iru<qrueck.size();iru++) libs+=qrueck[iru]+" ";
 	obprogda("sh",obverb,oblog,&shpf);// Pfad zu sh
@@ -3132,13 +3138,13 @@ int pruefverz(const string& verz,int obverb/*=0*/,int oblog/*=0*/, uchar obmitfa
 						fehlt=chown(stack[i].c_str(),uid,gid);
 					}
 					if (fehlt) {
-						fehlt=systemrueck(bef,obverb,oblog,/*rueck=*/0,/*obsudc=*/1,/*verbergen*/0,/*obergebnisanzeig*/wahr,/*ueberschr*/string(),/*errm*/0,/*obincron*/0,/*ausgp*/0,/*obdirekt*/0,/*ohnewisch*/1);
+						fehlt=systemrueck(bef,obverb,oblog,/*rueck=*/0,/*obsudc=*/1);
 					}
 					if (!fehlt) {
 						if (unindt.find(stack[i])) { // wenn der Anfang nicht identisch ist, also nicht das Verzeichnis von unindt geprueft werden soll
 							anfgg(unindt,sudc+"rmdir '"+stack[i]+"'",bef,obverb,oblog);
 						}
-					}
+					} // if (!fehlt)
 				} // 					if (fehlt)
 				// folgendes mindestens notwendig fuer sverz.st_mode
 				fehlt=lstat(stack[i].c_str(),&sverz);
@@ -3171,13 +3177,13 @@ int pruefverz(const string& verz,int obverb/*=0*/,int oblog/*=0*/, uchar obmitfa
 						}
 						if (obverb||oblog) fLog(Txk[T_datei]+blaus+stack[i].c_str()+schwarz+", mode: "+blau+altmod+schwarz+" -> "+blau+
 								ltoan(sverz.st_mode,8)+schwarz,obverb,oblog);
-//						if (chmod(stack[i].c_str(),sverz.st_mode)) {
-							//             if (1) 
-							string bef{"chmod "+modstr+" '"+stack[i]+"'"};
-							fehlt=systemrueck(bef,obverb,oblog,/*rueck=*/0,/*obsudc=*/1,/*verbergen*/0,/*obergebnisanzeig*/wahr,/*ueberschr*/string(),/*errm*/0,/*obincron*/0,/*ausgp*/0,/*obdirekt*/0,/*ohnewisch*/1);
-//						}
+						//						if (chmod(stack[i].c_str(),sverz.st_mode)) {
+						//             if (1) 
+						string bef{"chmod "+modstr+" '"+stack[i]+"'"};
+						fehlt=systemrueck(bef,obverb,oblog,/*rueck=*/0,/*obsudc=*/1);
+						//						}
 					}
-					if (obverb) systemrueck("ls -ld \""+stack[i]+"\"",2,0,/*rueck=*/0,/*obsudc=*/1,/*verbergen*/0,/*obergebnisanzeig*/wahr,/*ueberschr*/string(),/*errm*/0,/*obincron*/0,/*ausgp*/0,/*obdirekt*/0,/*ohnewisch*/1);
+					if (obverb) systemrueck("ls -ld \""+stack[i]+"\"",2,0,/*rueck=*/0,/*obsudc=*/1);
 				}
 			} // 				if (obmachen)
 			if (fehlt) {
@@ -3192,7 +3198,7 @@ int pruefverz(const string& verz,int obverb/*=0*/,int oblog/*=0*/, uchar obmitfa
 			if (obselinux==-1) 
 				obselinux=obprogda("sestatus",obverb,oblog,/*pfad*/0,keinsu);
 			if (obselinux) {
-				systemrueck("chcon -R -t samba_share_t '"+verz+"'",obverb,oblog,/*rueck=*/0,/*obsudc=*/1,/*verbergen*/0,/*obergebnisanzeig*/wahr,/*ueberschr*/string(),/*errm*/0,/*obincron*/0,/*ausgp*/0,/*obdirekt*/0,/*ohnewisch*/1);
+				systemrueck("chcon -R -t samba_share_t '"+verz+"'",obverb,oblog,/*rueck=*/0,/*obsudc=*/1);
 			}
 		} // 		if (obmitcon)
 	} // 	if (!verz.empty())
@@ -5221,8 +5227,7 @@ string holsystemsprache(int obverb/*=0*/)
 // wird aufgerufen in: virtrueckfragen, parsecl, virtlieskonfein, hcl::hcl nach holsystemsprache
 void hcl::virtlgnzuw()
 {
-	//// int altobverb=obverb;
-	//// obverb=1;
+	//// int altobverb=obverb; obverb=1;
 	fLog(violetts+Txk[T_virtlgnzuw_langu]+schwarzs+": "+langu,obverb,oblog);
 	//// obverb=altobverb;
 	if (langu=="d" || langu=="D" || langu=="deutsch" || langu=="Deutsch") {
@@ -5303,8 +5308,9 @@ void hcl::virtinitopt()
 	opn<<new optcl(/*pname*/"cronminut",/*pptr*/&cronminut,/*art*/pdez,T_cm_k,T_cronminuten_l,/*TxBp*/&Txk,/*Txi*/T_Alle_wieviel_Minuten_soll,/*wi*/1,/*Txi2*/T_aufgerufen_werden_0_ist_gar_nicht,/*rottxt*/meinname,/*wert*/-1,/*woher*/1,T_Intervall_Minuten);
 	opn<<new optcl(/*pptr*/&obvi,/*art*/puchar,T_vi_k,T_vi_l,/*TxBp*/&Txk,/*Txi*/T_Konfigurationsdatei,/*wi*/0,/*Txi2*/T_Logdatei_usw_bearbeiten_sehen,/*rottxt*/akonfdt,/*wert*/1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&kfzg,/*art*/puchar,T_kf_k,T_konfzeiglang_l,/*TxBp*/&Txk,/*Txi*/T_Konfigurationsdateinamen,/*wi*/0,/*Txi2*/T_anzeigen,/*rottxt*/akonfdt,/*wert*/1,/*woher*/1);
+	opn<<new optcl(/*pptr*/&kschreib,/*art*/puchar,T_ks_k,T_kschreib_l,/*TxBp*/&Txk,/*Txi*/T_Konfigurationsdatei_schreiben,/*wi*/0,/*Txi2*/-1,/*rottxt*/string(),/*wert*/1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&obvs,/*art*/puchar,T_vs_k,T_vs_l,/*TxBp*/&Txk,/*Txi*/T_Quelldateien_in,/*wi*/0,/*Txi2*/T_bearbeiten_sehen,/*rottxt*/instvz,/*wert*/1,/*woher*/1);
-	opn<<new optcl(/*pptr*/&autoupd,/*art*/pint,T_autoupd_k,T_autoupd_l,/*TxBp*/&Txk,/*Txi*/T_Programm_automatisch_aktualisieren,/*wi*/1,/*Txi2*/-1,/*rottxt*/string(),/*wert*/1,/*woher*/1);
+	opn<<new optcl(/*pname*/"autoupd",/*pptr*/&autoupd,/*art*/pint,T_autoupd_k,T_autoupd_l,/*TxBp*/&Txk,/*Txi*/T_Programm_automatisch_aktualisieren,/*wi*/1,/*Txi2*/-1,/*rottxt*/string(),/*wert*/-1,/*woher*/1,T_Programm_automatisch_aktualisieren);
 	opn<<new optcl(/*pptr*/&rzf,/*art*/puchar,T_rf_k,T_rueckfragen_l,/*TxBp*/&Txk,/*Txi*/T_alle_Parameter_werden_abgefragt_darunter_einige_hier_nicht_gezeigte,/*wi*/1,/*Txi2*/-1,/*rottxt*/string(),/*wert*/1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&nrzf,/*art*/puchar,T_krf_k,T_keinerueckfragen_l,/*TxBp*/&Txk,/*Txi*/T_keine_Rueckfragen_zB_aus_Cron,/*wi*/1,/*Txi2*/-1,/*rottxt*/string(),/*wert*/1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&zeigvers,/*art*/puchar,T_info_k,T_version_l,/*TxBp*/&Txk,/*Txi*/T_Zeigt_die_Programmversion_an,/*wi*/1,/*Txi2*/-1,/*rottxt*/string(),/*wert*/1,/*woher*/1);
@@ -5351,7 +5357,7 @@ void hcl::parsecl()
 				if (langp) omp=&opn.olmap;
 				else if (kurzp) omp=&opn.okmap;
 				if (omp) {
-////					<<"acstr: '"<<acstr<<"', omp->size(): "<<omp->size()<<endl;
+					//// <<"acstr: '"<<acstr<<"', omp->size(): "<<omp->size()<<endl;
 					for(omit=omp->begin();omit!=omp->end();omit++) {
 						//// <<"omit: "<<omit->second->pname<<", "<<omit->first<<endl;
 						// omit ist also jetzt iterator fuer die relevante map auf die aktuelle Option (kurz oder lang)
@@ -5419,7 +5425,7 @@ void hcl::virtlieskonfein()
 	if (akonfdt.empty()) {
 		svec rue;
 		// aus Datenschutzgruenden sollte das Home-Verzeichnis zuverlaessig ermittelt werden
-	  systemrueck("getent passwd $(logname 2>/dev/null||loginctl user-status|sed -n '1s/\\(.*\\) .*/\\1/p'||whoami)|cut -d: -f6",0,0,&rue,/*obsudc=*/0,/*verbergen*/0,/*obergebnisanzeig*/wahr,/*ueberschr*/string(),/*errm*/0,/*obincron*/0,/*ausgp*/0,/*obdirekt*/0,/*ohnewisch*/1);
+	  systemrueck("getent passwd $(logname 2>/dev/null||loginctl user-status|sed -n '1s/\\(.*\\) .*/\\1/p'||whoami)|cut -d: -f6",0,0,&rue);
 		if (rue.size()) {
 			//  $XDG_CONFIG_HOME in XDG Base Directory Specification
 			string confverz{rue[0]+vtz+".config"};
@@ -5438,6 +5444,7 @@ void hcl::virtlieskonfein()
 	if (!hccd.obzuschreib) {
 		for (map<string,optcl*>::iterator omit=opn.omap.begin();omit!=opn.omap.end();omit++) {
 			if (omit->second->woher<2) {
+				caus<<"setze obzuschreib, da woher<2 in "<<omit->first<<endl;
 				hccd.obzuschreib=1;
 				break;
 			} // 			if (omit->second->woher<2)
@@ -5706,7 +5713,10 @@ void hcl::virtzeigueberschrift()
 void hcl::virtautokonfschreib()
 {
 	hLog(violetts+Txk[T_autokonfschreib]+schwarz+", "+Txk[T_rueckzufragen]+blau+(rzf?Txk[T_ja]:Txk[T_nein])+schwarz+", "+Txk[T_zu_schreiben]+blau+(hccd.obzuschreib?Txk[T_ja]:Txk[T_nein])+schwarz);
-	if (rzf||hccd.obzuschreib) {
+	caus<<"rzf: "<<(int)rzf<<endl;
+	caus<<"obzuschreib: "<<(int)hccd.obzuschreib<<endl;
+	caus<<"kschreib: "<<(int)kschreib<<endl;
+	if (rzf||hccd.obzuschreib||kschreib) {
 		hLog(gruens+Txk[T_schreibe_Konfiguration]+schwarz);
 		opn.confschreib(akonfdt,ios::out,mpfad,0,obverb,oblog);
 	} // if (rzf||obzuschreib)
@@ -5939,7 +5949,7 @@ void hcl::prueftif(string aktvers)
 {
 	hLog(violetts+Txk[T_prueftif]+schwarz+" "+aktvers);
 	//	const string vstr="4.0.8"; //// "4.08001";
-const int altobverb{obverb};
+	////const int altobverb{obverb};
 	size_t p1;
 	if ((p1=aktvers.find('\n'))!=string::npos) aktvers.erase(p1);
 	if ((p1=aktvers.rfind(' '))!=string::npos) aktvers.erase(0,p1+1);
@@ -5965,7 +5975,7 @@ const int altobverb{obverb};
 					anfgg(unindt,sudc+"rm -f \""+tiffmark+"\"","",obverb,oblog);
 				}
 			} // if (!kompiliere(
-			obverb=altobverb;
+////			obverb=altobverb;
 		} // 	if (dcmv<3.62)
 	} else {
 		if (incfehlt|| !systemrueck("find /usr/lib64 /usr/lib -maxdepth 2 -type l -xtype f -name libtiff.so -print -quit 2>/dev/null",obverb,oblog)) {
@@ -6132,6 +6142,7 @@ int optcl::setzstr(const char* const neuw,uchar *const obzuschreib/*=0*/,const u
 	// nicht mit Vorgaben (woher 2) Befehlszeilenoption (woher 3) ueberschreiben
 	const int sstfnr{wpgcl::tusetzstr(neuw,/*obzuschreib*/&tuschreib,ausDatei,/*keineprio*/woher>2)};
 	if (tuschreib) if (obzuschreib) if (!*obzuschreib) if (!nichtspeichern) {
+		caus<<"setze obzuschreib in setzstr "<<neuw<<" ausDatei: "<<(int)ausDatei<<endl;
 		*obzuschreib=1;
 	}
 	return sstfnr;

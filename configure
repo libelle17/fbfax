@@ -170,11 +170,11 @@ getIPR() {
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include .*acl.h>" "$A" &&break;done ||LACL=;
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include .*curl.h>" "$A" &&break;done ||LCURL=;
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include .*curses.h>" "$A" &&break;done ||LCURS=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include[ ]*<term.h>" "$A" &&break;done ||LTERM=;
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include <spandsp.h>" "$A" &&break;done ||LSPAN=;
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include <glib.h>" "$A" &&break;done ||LGLIB=;
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include .*soup.h>" "$A" &&break;done ||LSOUP=;
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include <sndfile.h>" "$A" &&break;done ||LSND=;
+	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include[ ]*<term.h>" "$A" &&break;done ||LTERM=;
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do grep -qm1 '^[[:space:]]*[^/].*\(gchar\|gboolean\|gint\)' "$A" &&break;done ||LGSSDP=;
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do grep -qim1 '^[[:space:]]*[^/].*\(capi20_isinstalled\)' "$A" &&break;done ||LCAPI=;
 	IPR="${SUDC}$IdPR";

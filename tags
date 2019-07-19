@@ -34,15 +34,15 @@ B_FIFO	./kons.h	123;"	d
 B_Link	./kons.h	124;"	d
 B_Sock	./kons.h	125;"	d
 B_Verzn	./kons.h	120;"	d
-CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon1
-CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon1
-CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon1
-CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon1
-CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon1
-CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon1
-CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon1
-CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon1
-CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon1
+CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon4
+CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon4
+CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon4
+CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon4
+CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon4
+CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon4
+CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon4
+CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon4
+CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon4
 CAPI_BCHANNELS	./faxophone.h	65;"	d
 CAPI_BUFFERCNT	./faxophone.h	63;"	d
 CAPI_CONNECTIONS	./faxophone.h	59;"	d
@@ -152,9 +152,9 @@ RECORDING_REMOTE	./faxophone.h	/^	RECORDING_REMOTE$/;"	e	enum:recording
 REGFEHLER	./kons.h	/^  REGFEHLER=997,$/;"	e	enum:__anon2
 RM_ERROR	./fax_phone.c	51;"	d	file:
 RM_ERROR	./routermanager.h	40;"	d
-RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon4
-RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon4
-RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon4
+RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon1
+RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon1
+RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon1
 ROUTERMANAGER_PATH	./routermanager.h	38;"	d
 ROUTERMANAGER_SCHEME	./routermanager.h	34;"	d
 ROUTERMANAGER_SCHEME_PROFILE	./routermanager.h	35;"	d
@@ -312,7 +312,6 @@ T_Verzeichnis	./kons.h	/^	T_Verzeichnis,$/;"	e	enum:Tkons_
 T_Verzeichnis_mit_gefaxten_Dateien	./fbfax.h	/^	T_Verzeichnis_mit_gefaxten_Dateien,$/;"	e	enum:T_
 T_Verzeichnis_mit_gescheiterten_Dateien	./fbfax.h	/^	T_Verzeichnis_mit_gescheiterten_Dateien,$/;"	e	enum:T_
 T_Verzeichnis_mit_wartenden_Dateien	./fbfax.h	/^	T_Verzeichnis_mit_wartenden_Dateien,$/;"	e	enum:T_
-T_VorgbSpeziell_Ueberlad	./vgb.cpp	/^  T_VorgbSpeziell_Ueberlad,$/;"	e	enum:Txvg_	file:
 T_Weder_zypper_noch_apt_get_noch_dnf_noch_yum_als_Installationspgrogramm_gefunden	./kons.h	/^  T_Weder_zypper_noch_apt_get_noch_dnf_noch_yum_als_Installationspgrogramm_gefunden,$/;"	e	enum:Tkons_
 T_Wert	./kons.h	/^	T_Wert,$/;"	e	enum:Tkons_
 T_Zahl_der_aufzulistenden_Datensaetze_ist_zahl_statt	./fbfax.h	/^	T_Zahl_der_aufzulistenden_Datensaetze_ist_zahl_statt,$/;"	e	enum:T_
@@ -526,7 +525,6 @@ T_verwendet_fuer_die_Fritzbox_das_Passwort_string	./fbfax.h	/^	T_verwendet_fuer_
 T_verwendet_fuer_die_Fritzbox_den_Benutzer_string_anstatt	./fbfax.h	/^	T_verwendet_fuer_die_Fritzbox_den_Benutzer_string_anstatt,$/;"	e	enum:T_
 T_verwendet_wird	./kons.h	/^	T_verwendet_wird,$/;"	e	enum:Tkons_
 T_verzeichnisse	./fbfax.h	/^	T_verzeichnisse,$/;"	e	enum:T_
-T_vgMAX	./vgb.cpp	/^  T_vgMAX,$/;"	e	enum:Txvg_	file:
 T_vi_k	./kons.h	/^	T_vi_k,$/;"	e	enum:Tkons_
 T_vi_l	./kons.h	/^	T_vi_l,$/;"	e	enum:Tkons_
 T_virtMusterVorgb	./fbfax.h	/^	T_virtMusterVorgb,$/;"	e	enum:T_
@@ -573,7 +571,6 @@ Tippzahl	./kons.cpp	/^string Tippzahl(const string& frage, const string *const v
 Tkons_	./kons.h	/^enum Tkons_ $/;"	g
 TxB	./kons.cpp	/^TxB::TxB(const char* const* const* const *TCp):TCp(TCp)$/;"	f	class:TxB
 TxB	./kons.h	/^class TxB \/\/ Text-Basisklasse$/;"	c
-Txvg_	./vgb.cpp	/^enum Txvg_ {$/;"	g	file:
 USE_ISDN_MUTEX	./faxophone.h	67;"	d
 USE_PRINTER_SPOOLER	./config.h	154;"	d
 Ubuntu	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
@@ -1340,7 +1337,6 @@ ptr	./direkt.c	/^string *ptr;$/;"	v
 puchar	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	e	enum:par_t
 pverz	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	e	enum:par_t
 pvirtVorgbSpeziell	./fbfax.cpp	/^void hhcl::pvirtVorgbSpeziell()$/;"	f	class:hhcl
-pvirtVorgbSpeziell	./vgb.cpp	/^void hhcl::pvirtVorgbSpeziell()$/;"	f	class:hhcl
 pvirtfuehraus	./fbfax.cpp	/^void hhcl::pvirtfuehraus() \/\/α$/;"	f	class:hhcl
 pvirtmacherkl	./fbfax.cpp	/^void hhcl::pvirtmacherkl()$/;"	f	class:hhcl
 pvirtvorpruefggfmehrfach	./fbfax.cpp	/^void hhcl::pvirtvorpruefggfmehrfach()$/;"	f	class:hhcl
@@ -1379,7 +1375,7 @@ retry	./network.h	/^	gboolean retry;$/;"	m	struct:auth_data
 richtige	./kons.h	/^	size_t richtige;$/;"	m	struct:confdcl
 right	./kons.h	/^inline std::string right(std::string const& source, size_t const length)$/;"	f
 ring	./faxophone.h	/^	void (*ring)(struct capi_connection *connection);$/;"	m	struct:session_handlers_st
-rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon4
+rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon1
 rmcl	./routermanager.c	/^rmcl::rmcl(gboolean debug, GError **error)$/;"	f	class:rmcl
 rmcl	./routermanager.h	/^struct rmcl$/;"	s
 rot	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
@@ -1515,7 +1511,7 @@ type	./faxophone.h	/^	enum session_type type;$/;"	m	struct:capi_connection	typer
 uchar	./kons.h	/^typedef unsigned char uchar; \/\/ 1 Byte$/;"	t
 udpr	./kons.h	/^ string udpr;   \/\/ Befehl zum direkten Deinstallieren$/;"	m	struct:linst_cl
 uebers	./kons.h	/^		stringstream uebers; \/\/ Ueberschrift fuer Verarbeitungslauf$/;"	m	class:hcl
-uebersichtlich	./kons.cpp	5649;"	d	file:
+uebersichtlich	./kons.cpp	5656;"	d	file:
 uint16_t	./faxophone.h	/^typedef unsigned short uint16_t;$/;"	t
 uint32_t	./faxophone.h	/^typedef unsigned int uint32_t;$/;"	t
 ull	./kons.h	/^typedef unsigned long long ull;$/;"	t
@@ -1535,7 +1531,7 @@ usr	./fbfax.h	/^		string usr;$/;"	m	class:hhcl
 usr_lib64_vz	./kons.h	/^		string usr_lib64_vz;$/;"	m	class:lsyscl
 usys	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	e	enum:lsysen
 uypr	./kons.h	/^ string uypr;   \/\/ Befehl zum Deinstallieren ueber das Installationssystem ohne Rueckfrage$/;"	m	struct:linst_cl
-vagenau	./kons.cpp	1380;"	d	file:
+vagenau	./kons.cpp	1386;"	d	file:
 vector_incl	./kons.h	32;"	d
 verarbeit	./kons.cpp	/^int find3cl::verarbeit(const char *fpath, const struct stat *sb, int tflag, struct FTW *ftwbuf)$/;"	f	class:find3cl
 verarbeitkonf	./kons.cpp	/^void hcl::verarbeitkonf()$/;"	f	class:hcl
