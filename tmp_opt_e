@@ -63,7 +63,7 @@
 .br
 \fB -msq, --minsequence <string>\fR: comma-separated sequence of minutes of the send tries ('\fB2,2,3,3,3,5,5,10,10,60,60,60,120,120,720,1440\fR')
 .br
-\fB -msec, --maxsec <zahl>\fR: no of seconds for a fax (\fB2\fR)
+\fB -msec, --maxsec <zahl>\fR: no of seconds for a fax (\fB900\fR)
 .br
 \fB -lg, --language <string>\fR: Language/Sprache/Lingue/Lingua [\fBd\fReutsch,\fBe\fRnglisch] ('\fBe\fR')
 .br

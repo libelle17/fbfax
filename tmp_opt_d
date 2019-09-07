@@ -63,7 +63,7 @@
 .br
 \fB -mfg, --minfolge <string>\fR: kommagetrennte Minutenfolge der Sendeversuche ('\fB2,2,3,3,3,5,5,10,10,60,60,60,120,120,720,1440\fR')
 .br
-\fB -msec, --maxsec <zahl>\fR: Zahl der Sekunden fuer ein Fax (\fB2\fR)
+\fB -msec, --maxsec <zahl>\fR: Zahl der Sekunden fuer ein Fax (\fB900\fR)
 .br
 \fB -sp, --sprache <string>\fR: Language/Sprache/Lingue/Lingua [\fBd\fReutsch,\fBe\fRnglisch] ('\fBd\fR')
 .br
