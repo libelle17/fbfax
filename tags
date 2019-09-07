@@ -26,23 +26,23 @@ AppCallbackId	./appobject.h	/^} AppCallbackId;$/;"	t	typeref:enum:__anon3
 AppObject	./appobject.h	/^typedef struct _AppObject AppObject;$/;"	t	typeref:struct:_AppObject
 AppObjectClass	./appobject.h	/^typedef struct _AppObjectClass AppObjectClass;$/;"	t	typeref:struct:_AppObjectClass
 AppObjectPrivate	./appobject.c	/^typedef struct _AppObjectPrivate AppObjectPrivate;$/;"	t	typeref:struct:_AppObjectPrivate	file:
-B_Alle	./kons.h	126;"	d
-B_Block	./kons.h	122;"	d
-B_Chdev	./kons.h	121;"	d
-B_Datei	./kons.h	119;"	d
-B_FIFO	./kons.h	123;"	d
-B_Link	./kons.h	124;"	d
-B_Sock	./kons.h	125;"	d
-B_Verzn	./kons.h	120;"	d
-CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon4
-CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon4
-CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon4
-CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon4
-CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon4
-CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon4
-CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon4
-CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon4
-CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon4
+B_Alle	./kons.h	127;"	d
+B_Block	./kons.h	123;"	d
+B_Chdev	./kons.h	122;"	d
+B_Datei	./kons.h	120;"	d
+B_FIFO	./kons.h	124;"	d
+B_Link	./kons.h	125;"	d
+B_Sock	./kons.h	126;"	d
+B_Verzn	./kons.h	121;"	d
+CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon1
+CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon1
+CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon1
+CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon1
+CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon1
+CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon1
+CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon1
+CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon1
+CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon1
 CAPI_BCHANNELS	./faxophone.h	65;"	d
 CAPI_BUFFERCNT	./faxophone.h	63;"	d
 CAPI_CONNECTIONS	./faxophone.h	59;"	d
@@ -73,9 +73,9 @@ FB	./tr64.h	/^		string FB;$/;"	m	class:tr64cl
 FERTIG	./Makefile	/^FERTIG=$(error transfer finished\/ Fertig mit Transfer!)$/;"	m
 Fedora	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
 Fedoraalt	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
-Fol_Dat	./kons.h	127;"	d
-Fol_Mus	./kons.h	129;"	d
-Fol_Ver	./kons.h	128;"	d
+Fol_Dat	./kons.h	128;"	d
+Fol_Mus	./kons.h	130;"	d
+Fol_Ver	./kons.h	129;"	d
 GDK_VERSION_MAX_ALLOWED	./config.h	8;"	d
 GDK_VERSION_MIN_REQUIRED	./config.h	11;"	d
 GETTEXT_PACKAGE	./config.h	14;"	d
@@ -138,8 +138,8 @@ PACKAGE_STRING	./config.h	133;"	d
 PACKAGE_TARNAME	./config.h	136;"	d
 PACKAGE_URL	./config.h	139;"	d
 PACKAGE_VERSION	./config.h	142;"	d
-PATH_MAX	./kons.h	54;"	d
-PATH_MAX	./kons.h	58;"	d
+PATH_MAX	./kons.h	55;"	d
+PATH_MAX	./kons.h	59;"	d
 PHASE_B	./fax.h	/^	PHASE_B = 2,$/;"	e	enum:fax_phase
 PHASE_D	./fax.h	/^	PHASE_D = 3,$/;"	e	enum:fax_phase
 PHASE_E	./fax.h	/^	PHASE_E = 4,$/;"	e	enum:fax_phase
@@ -152,9 +152,9 @@ RECORDING_REMOTE	./faxophone.h	/^	RECORDING_REMOTE$/;"	e	enum:recording
 REGFEHLER	./kons.h	/^  REGFEHLER=997,$/;"	e	enum:__anon2
 RM_ERROR	./fax_phone.c	51;"	d	file:
 RM_ERROR	./routermanager.h	40;"	d
-RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon1
-RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon1
-RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon1
+RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon4
+RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon4
+RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon4
 ROUTERMANAGER_PATH	./routermanager.h	38;"	d
 ROUTERMANAGER_SCHEME	./routermanager.h	34;"	d
 ROUTERMANAGER_SCHEME_PROFILE	./routermanager.h	35;"	d
@@ -244,6 +244,7 @@ T_Freie_Software	./kons.h	/^	T_Freie_Software,$/;"	e	enum:Tkons_
 T_Fuege_ein	./fbfax.h	/^	T_Fuege_ein, \/\/ω$/;"	e	enum:T_
 T_Fuehre_aus	./kons.h	/^  T_Fuehre_aus,$/;"	e	enum:Tkons_
 T_Fuehrte_aus	./kons.h	/^  T_Fuehrte_aus,$/;"	e	enum:Tkons_
+T_Gabelung_zu_dmain_misslungen	./fbfax.h	/^	T_Gabelung_zu_dmain_misslungen,$/;"	e	enum:T_
 T_Gebrauch	./kons.h	/^	T_Gebrauch,$/;"	e	enum:Tkons_
 T_Gescheiterte_Faxe_werden_hier_gesammelt_anstatt_in	./fbfax.h	/^	T_Gescheiterte_Faxe_werden_hier_gesammelt_anstatt_in,$/;"	e	enum:T_
 T_Hilfe	./kons.h	/^	T_Hilfe,$/;"	e	enum:Tkons_
@@ -257,6 +258,7 @@ T_Kein_cron_gesetzt_nicht_zu_setzen	./kons.h	/^	T_Kein_cron_gesetzt_nicht_zu_set
 T_Kompiliert	./kons.h	/^	T_Kompiliert,$/;"	e	enum:Tkons_
 T_Konfiguration_fuer	./kons.h	/^  T_Konfiguration_fuer,$/;"	e	enum:Tkons_
 T_Konfigurationsdatei	./kons.h	/^	T_Konfigurationsdatei,$/;"	e	enum:Tkons_
+T_Konfigurationsdatei_schreiben	./kons.h	/^	T_Konfigurationsdatei_schreiben,$/;"	e	enum:Tkons_
 T_Konfigurationsdateinamen	./kons.h	/^  T_Konfigurationsdateinamen,$/;"	e	enum:Tkons_
 T_Konnte_Datei	./kons.h	/^  T_Konnte_Datei,$/;"	e	enum:Tkons_
 T_Konnte_regulaeren_Ausdruck_nicht_kompilieren	./kons.h	/^	T_Konnte_regulaeren_Ausdruck_nicht_kompilieren,$/;"	e	enum:Tkons_
@@ -312,6 +314,7 @@ T_Verzeichnis	./kons.h	/^	T_Verzeichnis,$/;"	e	enum:Tkons_
 T_Verzeichnis_mit_gefaxten_Dateien	./fbfax.h	/^	T_Verzeichnis_mit_gefaxten_Dateien,$/;"	e	enum:T_
 T_Verzeichnis_mit_gescheiterten_Dateien	./fbfax.h	/^	T_Verzeichnis_mit_gescheiterten_Dateien,$/;"	e	enum:T_
 T_Verzeichnis_mit_wartenden_Dateien	./fbfax.h	/^	T_Verzeichnis_mit_wartenden_Dateien,$/;"	e	enum:T_
+T_VorgbSpeziell_Ueberlad	./vgb.cpp	/^  T_VorgbSpeziell_Ueberlad,$/;"	e	enum:Txvg_	file:
 T_Weder_zypper_noch_apt_get_noch_dnf_noch_yum_als_Installationspgrogramm_gefunden	./kons.h	/^  T_Weder_zypper_noch_apt_get_noch_dnf_noch_yum_als_Installationspgrogramm_gefunden,$/;"	e	enum:Tkons_
 T_Wert	./kons.h	/^	T_Wert,$/;"	e	enum:Tkons_
 T_Zahl_der_aufzulistenden_Datensaetze_ist_zahl_statt	./fbfax.h	/^	T_Zahl_der_aufzulistenden_Datensaetze_ist_zahl_statt,$/;"	e	enum:T_
@@ -345,7 +348,6 @@ T_autoupd_l	./kons.h	/^	T_autoupd_l,$/;"	e	enum:Tkons_
 T_bearbeiten_sehen	./kons.h	/^	T_bearbeiten_sehen,$/;"	e	enum:Tkons_
 T_beenden	./kons.h	/^  T_beenden,$/;"	e	enum:Tkons_
 T_bei	./kons.h	/^	T_bei,$/;"	e	enum:Tkons_
-T_belassen	./kons.h	/^	T_belassen,$/;"	e	enum:Tkons_
 T_cm_k	./kons.h	/^	T_cm_k,$/;"	e	enum:Tkons_
 T_confdat_lies_Datei	./kons.h	/^	T_confdat_lies_Datei,$/;"	e	enum:Tkons_
 T_confdat_lies_Erfolg	./kons.h	/^	T_confdat_lies_Erfolg,$/;"	e	enum:Tkons_
@@ -360,7 +362,6 @@ T_dt_k	./fbfax.h	/^	T_dt_k,$/;"	e	enum:T_
 T_eigene	./kons.h	/^	T_eigene,$/;"	e	enum:Tkons_
 T_einzutragen	./kons.h	/^	T_einzutragen,$/;"	e	enum:Tkons_
 T_enableggf	./kons.h	/^	T_enableggf,$/;"	e	enum:Tkons_
-T_entfernen	./kons.h	/^	T_entfernen,$/;"	e	enum:Tkons_
 T_erfolgreich_fuer	./kons.h	/^	T_erfolgreich_fuer,$/;"	e	enum:Tkons_
 T_ermoeglicht	./kons.h	/^	T_ermoeglicht,$/;"	e	enum:Tkons_
 T_erneute_Eingabe	./kons.h	/^  T_erneute_Eingabe,$/;"	e	enum:Tkons_
@@ -385,6 +386,7 @@ T_holsystemsprache	./kons.h	/^	T_holsystemsprache,$/;"	e	enum:Tkons_
 T_host_k	./fbfax.h	/^	T_host_k,$/;"	e	enum:T_
 T_host_l	./fbfax.h	/^	T_host_l,$/;"	e	enum:T_
 T_in_main_pidv_am_Schluss	./kons.h	/^	T_in_main_pidv_am_Schluss,$/;"	e	enum:Tkons_
+T_in_pvirtfuehraus	./fbfax.h	/^	T_in_pvirtfuehraus,$/;"	e	enum:T_
 T_info_k	./kons.h	/^	T_info_k,$/;"	e	enum:Tkons_
 T_j_af	./kons.h	/^	T_j_af,$/;"	e	enum:Tkons_
 T_j_k	./kons.h	/^  T_j_k,$/;"	e	enum:Tkons_
@@ -403,9 +405,12 @@ T_konfdatei_l	./kons.h	/^	T_konfdatei_l,$/;"	e	enum:Tkons_
 T_konfzeiglang_l	./kons.h	/^  T_konfzeiglang_l,$/;"	e	enum:Tkons_
 T_konsMAX	./kons.h	/^	T_konsMAX$/;"	e	enum:Tkons_
 T_krf_k	./kons.h	/^	T_krf_k,$/;"	e	enum:Tkons_
+T_ks_k	./kons.h	/^	T_ks_k,$/;"	e	enum:Tkons_
+T_kschreib_l	./kons.h	/^	T_kschreib_l,$/;"	e	enum:Tkons_
 T_kuerze_logdatei	./kons.h	/^  T_kuerze_logdatei,$/;"	e	enum:Tkons_
 T_l_k	./kons.h	/^	T_l_k,$/;"	e	enum:Tkons_
 T_laeuft_jetzt	./kons.h	/^	T_laeuft_jetzt,$/;"	e	enum:Tkons_
+T_laeuft_noch	./kons.h	/^	T_laeuft_noch,$/;"	e	enum:Tkons_
 T_laeuft_schon_einmal_seit	./kons.h	/^  T_laeuft_schon_einmal_seit,$/;"	e	enum:Tkons_
 T_lang_k	./kons.h	/^	T_lang_k,$/;"	e	enum:Tkons_
 T_language_l	./kons.h	/^	T_language_l,$/;"	e	enum:Tkons_
@@ -454,6 +459,7 @@ T_nicht_gefunden_soll_ich_es_erstellen	./kons.h	/^  T_nicht_gefunden_soll_ich_es
 T_nicht_gefunden_versuche_ihn_einzurichten	./kons.h	/^  T_nicht_gefunden_versuche_ihn_einzurichten,$/;"	e	enum:Tkons_
 T_nicht_geladen	./kons.h	/^  T_nicht_geladen,$/;"	e	enum:Tkons_
 T_nicht_geloescht_war_eh_nicht_mehr_da	./kons.h	/^  T_nicht_geloescht_war_eh_nicht_mehr_da,$/;"	e	enum:Tkons_
+T_nicht_mehr_da	./kons.h	/^	T_nicht_mehr_da,$/;"	e	enum:Tkons_
 T_nicht_mit_fopen_zum_Anhaengen_oeffnen	./kons.h	/^  T_nicht_mit_fopen_zum_Anhaengen_oeffnen,$/;"	e	enum:Tkons_
 T_nicht_mit_fopen_zum_Lesen_oeffnen	./kons.h	/^  T_nicht_mit_fopen_zum_Lesen_oeffnen,$/;"	e	enum:Tkons_
 T_nicht_mit_fopen_zum_Schreiben_oeffnen	./kons.h	/^  T_nicht_mit_fopen_zum_Schreiben_oeffnen,$/;"	e	enum:Tkons_
@@ -525,6 +531,7 @@ T_verwendet_fuer_die_Fritzbox_das_Passwort_string	./fbfax.h	/^	T_verwendet_fuer_
 T_verwendet_fuer_die_Fritzbox_den_Benutzer_string_anstatt	./fbfax.h	/^	T_verwendet_fuer_die_Fritzbox_den_Benutzer_string_anstatt,$/;"	e	enum:T_
 T_verwendet_wird	./kons.h	/^	T_verwendet_wird,$/;"	e	enum:Tkons_
 T_verzeichnisse	./fbfax.h	/^	T_verzeichnisse,$/;"	e	enum:T_
+T_vgMAX	./vgb.cpp	/^  T_vgMAX,$/;"	e	enum:Txvg_	file:
 T_vi_k	./kons.h	/^	T_vi_k,$/;"	e	enum:Tkons_
 T_vi_l	./kons.h	/^	T_vi_l,$/;"	e	enum:Tkons_
 T_virtMusterVorgb	./fbfax.h	/^	T_virtMusterVorgb,$/;"	e	enum:T_
@@ -571,6 +578,7 @@ Tippzahl	./kons.cpp	/^string Tippzahl(const string& frage, const string *const v
 Tkons_	./kons.h	/^enum Tkons_ $/;"	g
 TxB	./kons.cpp	/^TxB::TxB(const char* const* const* const *TCp):TCp(TCp)$/;"	f	class:TxB
 TxB	./kons.h	/^class TxB \/\/ Text-Basisklasse$/;"	c
+Txvg_	./vgb.cpp	/^enum Txvg_ {$/;"	g	file:
 USE_ISDN_MUTEX	./faxophone.h	67;"	d
 USE_PRINTER_SPOOLER	./config.h	154;"	d
 Ubuntu	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
@@ -588,7 +596,7 @@ _AppObjectClass	./appobject.h	/^struct _AppObjectClass {$/;"	s
 _AppObjectPrivate	./appobject.c	/^struct _AppObjectPrivate {$/;"	s	file:
 _CRT_SECURE_NO_WARNINGS	./kons.h	2;"	d
 _DPROG	./kons.cpp	/^string _DPROG;$/;"	v
-_access	./kons.cpp	53;"	d	file:
+_access	./kons.cpp	54;"	d	file:
 _blau	./kons.cpp	/^const char *_drot=drot, *_rot=rot, *_schwarz=schwarz, *_blau=blau, *_gelb=gelb, *_tuerkis=tuerkis, *_hgrau=hgrau;$/;"	v
 _blau	./kons.h	/^inline std::ostream& _blau(std::ostream &s){$/;"	f	class:std
 _drot	./kons.cpp	/^const char *_drot=drot, *_rot=rot, *_schwarz=schwarz, *_blau=blau, *_gelb=gelb, *_tuerkis=tuerkis, *_hgrau=hgrau;$/;"	v
@@ -618,7 +626,7 @@ akonfdt	./kons.h	/^    string akonfdt; \/\/ name der Konfigurationsdatei$/;"	m	c
 aktprogverz	./kons.cpp	/^string aktprogverz()$/;"	f
 alaw2linear	./isdn-convert.c	/^static short alaw2linear(unsigned char alaw_byte)$/;"	f	file:
 alaw_get_sign_mag	./isdn-convert.c	/^static inline void alaw_get_sign_mag(short sample, unsigned *sign, unsigned *mag)$/;"	f	file:
-altfind	./kons.h	111;"	d
+altfind	./kons.h	112;"	d
 an	./fbfax.h	/^		string an; \/\/ Zielfaxnr$/;"	m	class:hhcl
 aname	./kons.h	/^ string aname;$/;"	m	struct:absch
 anfgg	./kons.cpp	/^void anfgg(const string& datei, const string& inhalt, const string& comment, int obverb\/*=0*\/, int oblog\/*=0*\/)$/;"	f
@@ -716,8 +724,8 @@ capi_send_dtmf_code	./faxophone.c	/^void capi_send_dtmf_code(struct capi_connect
 capi_set_free	./faxophone.c	/^static int capi_set_free(struct capi_connection *connection)$/;"	f	file:
 capi_thread	./faxophone.c	/^static GThread *capi_thread = NULL;$/;"	v	file:
 caseersetze	./kons.cpp	/^string caseersetze(const string& u, const char* const alt, const char* const neu) $/;"	f
-caus	./kons.cpp	17;"	d	file:
-caus	./kons.h	137;"	d
+caus	./kons.cpp	18;"	d	file:
+caus	./kons.h	138;"	d
 cgid	./kons.h	/^		gid_t cgid;$/;"	m	class:cuscl
 charersetze	./kons.cpp	/^char* charersetze(char *u, const char alt, const char neu) $/;"	f
 chersetze	./kons.cpp	/^void chersetze(string str, string *wsRet, const string& from, const char to) $/;"	f
@@ -838,7 +846,7 @@ elem2	./kons.h	/^    elem2(){};$/;"	f	struct:elem2
 elem2	./kons.h	/^struct elem2$/;"	s
 elem3	./kons.h	/^    elem3(string pfad, const struct stat *sbp, int& tflag, const struct FTW *ftwp, string lnk,const struct stat& lst):$/;"	f	struct:elem3
 elem3	./kons.h	/^struct elem3$/;"	s
-elemzahl	./kons.h	494;"	d
+elemzahl	./kons.h	498;"	d
 elemzahlT	./kons.h	/^template<typename T> size_t elemzahlT(T& v){return sizeof(v)\/sizeof(*v);}$/;"	f
 emit_authenticate	./appobject-emit.c	/^void emit_authenticate(struct auth_data *auth_data)$/;"	f
 emit_connection_established	./appobject-emit.c	/^void emit_connection_established(struct capi_connection *connection)$/;"	f
@@ -877,7 +885,7 @@ ersetzAllezu	./kons.cpp	/^string ersetzAllezu(string *quelle, const char* const 
 ersetze	./kons.cpp	/^string ersetze(const char *const u, const char *const alt, const char *const neu) $/;"	f
 ersetzefuerdatei	./kons.cpp	/^string ersetzefuerdatei(const string& u) $/;"	f
 ersetzeprog	./kons.cpp	/^const string linst_cl::ersetzeprog(const string& prog) const$/;"	f	class:linst_cl
-exitt	./kons.h	138;"	d
+exitt	./kons.h	139;"	d
 exportvars	./configure	/^exportvars() {$/;"	f
 fLog	./kons.cpp	/^int fLog(const string& text, const short screen\/*=1*\/, const short file\/*=1*\/, const bool oberr\/*=0*\/, const short klobverb\/*=0*\/)$/;"	f
 falsch	./kons.h	/^enum binaer:uchar {falsch,wahr};$/;"	e	enum:binaer
@@ -907,7 +915,7 @@ file	./faxophone.h	/^	SNDFILE *file;$/;"	m	struct:recorder
 file_load	./file.c	/^gchar *file_load(gchar *name, gsize *size)$/;"	f
 file_name	./faxophone.h	/^	char *file_name;$/;"	m	struct:recorder
 file_save	./file.c	/^void file_save(gchar *name, const gchar *data, gsize len)$/;"	f
-fileno	./kons.h	49;"	d
+fileno	./kons.h	50;"	d
 find2cl	./kons.cpp	/^find2cl::find2cl(int _obverb\/*=0*\/,int _oblog\/*=0*\/,find2cl *stamm\/*=0*\/):obverb(_obverb),oblog(_oblog)$/;"	f	class:find2cl
 find2cl	./kons.h	/^class find2cl: elem2$/;"	c
 find3cl	./kons.cpp	/^find3cl::find3cl(int _obverb\/*=0*\/,int _oblog\/*=0*\/):obverb(_obverb),oblog(_oblog)$/;"	f	class:find3cl
@@ -1021,7 +1029,7 @@ ionicepf	./kons.h	/^ string ionicepf; \/\/ Pfad zu ionice$/;"	m	struct:linst_cl
 ipr	./kons.h	/^ instprog ipr=keinp; \/\/ installiertes Program$/;"	m	struct:linst_cl
 irfind	./kons.cpp	/^size_t irfind(const string& wo, const string& was)$/;"	f
 is_connected	./net_monitor.h	/^	gboolean is_connected;$/;"	m	struct:net_event
-isatty	./kons.h	50;"	d
+isatty	./kons.h	51;"	d
 isdn_lock	./faxophone.c	58;"	d	file:
 isdn_lock	./faxophone.c	61;"	d	file:
 isdn_lock	./faxophone.c	64;"	d	file:
@@ -1055,6 +1063,7 @@ kons_H_DRIN	./kons.h	6;"	d
 kons_T	./kons.cpp	/^const char *kons_T[T_konsMAX+1][SprachZahl]=$/;"	v
 kopier	./kons.cpp	/^int kopier(const string& quel, const string& ziel, int obverb, int oblog)$/;"	f
 kopierm	./kons.cpp	/^void kopierm(const string *quelle, const string *ziel)$/;"	f
+kschreib	./kons.h	/^		uchar kschreib=0; \/\/ Konfigurationsdatei schreiben$/;"	m	class:hcl
 ktage	./fbfax.cpp	/^const unsigned ktage=1; \/\/ kurzes Intervall fuer Faxtabellenkorrektur, 1 Tag$/;"	v
 kuerzelogdatei	./kons.cpp	/^int kuerzelogdatei(const char* logdatei,int obverb)$/;"	f
 kuerzevtz	./kons.cpp	/^void kuerzevtz(string *vzp)$/;"	f
@@ -1100,7 +1109,7 @@ logvneu	./kons.h	/^    uchar logvneu=0;    \/\/ Logverzeichnis geaendert$/;"	m	c
 logvz	./kons.h	/^    string logvz; \/\/ nur das Verzeichnis \/var\/log$/;"	m	class:hcl
 lookup	./contact.h	/^	gboolean lookup;$/;"	m	struct:contact
 lst	./kons.h	/^    const struct stat lst={0};$/;"	m	struct:elem3	typeref:struct:elem3::stat
-lstat	./kons.h	61;"	d
+lstat	./kons.h	62;"	d
 lsys	./kons.cpp	/^class lsyscl lsys;$/;"	v	typeref:class:lsyscl
 lsyscl	./kons.h	/^class lsyscl$/;"	c
 lsysen	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	g
@@ -1141,8 +1150,9 @@ mfolge	./fbfax.h	/^		string mfolge; \/\/ kommagetrennte Minutenfolge der Sendeve
 microsec_time	./phone.c	/^guint64 microsec_time(void)$/;"	f
 mitcron	./kons.h	/^		const uchar mitcron; \/\/ ob Programm auch in Cron eingetragen werden kann; kann im Konstruktor angegeben werden$/;"	m	class:hcl
 mitpids	./kons.h	/^		uchar mitpids=0; \/\/ mehrere pids$/;"	m	class:hcl
-mitset	./kons.h	113;"	d
+mitset	./kons.h	114;"	d
 mitvtz	./kons.h	/^inline std::string mitvtz(std::string const& vz)$/;"	f
+mntpunkt	./kons.cpp	/^int mntpunkt(const char* mntpfad) {$/;"	f
 modem	./fax.h	/^	gchar modem;$/;"	m	struct:fax_status
 monatsaufr	./kons.h	/^		ulong monatsaufr=0; \/\/ Zahl der bisherigen Programmaufrufe heute$/;"	m	class:hcl
 mpfad	./kons.h	/^    string mpfad;  \/\/ meinpfad()$/;"	m	class:hcl
@@ -1185,7 +1195,7 @@ net_shutdown	./network.c	/^void net_shutdown(void)$/;"	f
 net_state	./net_monitor.c	/^static inline gchar *net_state(gboolean state)$/;"	f	file:
 network_authenticate	./network.c	/^void network_authenticate(gboolean auth_set, struct auth_data *auth_data)$/;"	f
 network_authenticate_cb	./network.c	/^static void network_authenticate_cb(SoupSession *session, SoupMessage *msg, SoupAuth *auth, gboolean retrying, gpointer user_data)$/;"	f	file:
-neufind	./kons.h	110;"	d
+neufind	./kons.h	111;"	d
 neurf	./fbfax.cpp	/^void hhcl::neurf()$/;"	f	class:hhcl
 ngvz	./fbfax.h	/^		string ngvz; \/\/ Nichtgefaxt-Verzeichnis (Gescheiterte)$/;"	m	class:hhcl
 nicepf	./kons.h	/^ string nicepf; \/\/ Pfad zu nice$/;"	m	struct:linst_cl
@@ -1204,7 +1214,7 @@ oausgeb	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::oausgeb(const char
 obenabled	./kons.h	/^		int obenabled=0;$/;"	m	class:servc
 oberreicht	./kons.cpp	/^int perfcl::oberreicht(unsigned long sek)$/;"	f	class:perfcl
 obfehlt	./kons.cpp	/^int linst_cl::obfehlt(const string& prog,int obverb,int oblog)$/;"	f	class:linst_cl
-obfstream	./kons.h	1047;"	d
+obfstream	./kons.h	1051;"	d
 obgelesen	./kons.h	/^	uchar obgelesen;$/;"	m	struct:confdcl
 obhilfe	./kons.h	/^    uchar obhilfe=0;      \/\/ Hilfe anzeigen: 1=kurze Hilfe, 2=lange Hilfe, 3=Standardhilfe$/;"	m	class:hcl
 oblgschreib	./kons.h	/^    uchar oblgschreib=0; \/\/ Konfigurationsdatei seitens der Sprache voraussichtlich schreiben$/;"	m	class:hcl
@@ -1337,6 +1347,7 @@ ptr	./direkt.c	/^string *ptr;$/;"	v
 puchar	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	e	enum:par_t
 pverz	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	e	enum:par_t
 pvirtVorgbSpeziell	./fbfax.cpp	/^void hhcl::pvirtVorgbSpeziell()$/;"	f	class:hhcl
+pvirtVorgbSpeziell	./vgb.cpp	/^void hhcl::pvirtVorgbSpeziell()$/;"	f	class:hhcl
 pvirtfuehraus	./fbfax.cpp	/^void hhcl::pvirtfuehraus() \/\/α$/;"	f	class:hhcl
 pvirtmacherkl	./fbfax.cpp	/^void hhcl::pvirtmacherkl()$/;"	f	class:hhcl
 pvirtvorpruefggfmehrfach	./fbfax.cpp	/^void hhcl::pvirtvorpruefggfmehrfach()$/;"	f	class:hhcl
@@ -1375,7 +1386,7 @@ retry	./network.h	/^	gboolean retry;$/;"	m	struct:auth_data
 richtige	./kons.h	/^	size_t richtige;$/;"	m	struct:confdcl
 right	./kons.h	/^inline std::string right(std::string const& source, size_t const length)$/;"	f
 ring	./faxophone.h	/^	void (*ring)(struct capi_connection *connection);$/;"	m	struct:session_handlers_st
-rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon1
+rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon4
 rmcl	./routermanager.c	/^rmcl::rmcl(gboolean debug, GError **error)$/;"	f	class:rmcl
 rmcl	./routermanager.h	/^struct rmcl$/;"	s
 rot	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
@@ -1432,7 +1443,7 @@ sinit	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::sinit(vector<shared_
 size	./kons.h	/^ inline size_t size(){return schl.size();}$/;"	f	class:schAcl
 smbdt	./kons.h	/^		static const char* const smbdt;\/\/ "\/etc\/samba\/smb.conf"$/;"	m	class:hcl
 sname	./kons.h	/^    string sname,ename; \/\/ Dienstname, Exename$/;"	m	class:servc
-snprintf	./kons.h	79;"	d
+snprintf	./kons.h	80;"	d
 soup_session	./network.c	/^SoupSession *soup_session = NULL;$/;"	v
 source	./faxophone.h	/^	char *source;$/;"	m	struct:capi_connection
 spandsp_close	./fax.c	/^gint spandsp_close(fax_state_t *fax_state)$/;"	f
@@ -1511,7 +1522,7 @@ type	./faxophone.h	/^	enum session_type type;$/;"	m	struct:capi_connection	typer
 uchar	./kons.h	/^typedef unsigned char uchar; \/\/ 1 Byte$/;"	t
 udpr	./kons.h	/^ string udpr;   \/\/ Befehl zum direkten Deinstallieren$/;"	m	struct:linst_cl
 uebers	./kons.h	/^		stringstream uebers; \/\/ Ueberschrift fuer Verarbeitungslauf$/;"	m	class:hcl
-uebersichtlich	./kons.cpp	5656;"	d	file:
+uebersichtlich	./kons.cpp	5658;"	d	file:
 uint16_t	./faxophone.h	/^typedef unsigned short uint16_t;$/;"	t
 uint32_t	./faxophone.h	/^typedef unsigned int uint32_t;$/;"	t
 ull	./kons.h	/^typedef unsigned long long ull;$/;"	t
@@ -1531,7 +1542,7 @@ usr	./fbfax.h	/^		string usr;$/;"	m	class:hhcl
 usr_lib64_vz	./kons.h	/^		string usr_lib64_vz;$/;"	m	class:lsyscl
 usys	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	e	enum:lsysen
 uypr	./kons.h	/^ string uypr;   \/\/ Befehl zum Deinstallieren ueber das Installationssystem ohne Rueckfrage$/;"	m	struct:linst_cl
-vagenau	./kons.cpp	1386;"	d	file:
+vagenau	./kons.cpp	1387;"	d	file:
 vector_incl	./kons.h	32;"	d
 verarbeit	./kons.cpp	/^int find3cl::verarbeit(const char *fpath, const struct stat *sb, int tflag, struct FTW *ftwbuf)$/;"	f	class:find3cl
 verarbeitkonf	./kons.cpp	/^void hcl::verarbeitkonf()$/;"	f	class:hcl
@@ -1592,7 +1603,7 @@ vznp	./kons.h	/^  set<string> *vznp=0; $/;"	m	class:find2cl
 waehle	./direkt.c	/^void fbcl::waehle(string nr)$/;"	f	class:fbcl
 wahr	./kons.h	/^enum binaer:uchar {falsch,wahr};$/;"	e	enum:binaer
 wait	./kons.cpp	/^inline void wait () $/;"	f
-wartaufpids	./kons.cpp	/^int wartaufpids(pidvec *pidv,const ulong runden\/*=0*\/,const int obverb\/*=0*\/,const int oblog\/*=0*\/,const string& wo\/*=string()*\/)$/;"	f
+wartaufpids	./kons.cpp	/^int wartaufpids(pidvec *pidtb,const ulong runden\/*=0*\/,const int obverb\/*=0*\/,const int oblog\/*=0*\/,const string& wo\/*=string()*\/,const time_t maxsec\/*0*\/)$/;"	f
 weiss	./kons.cpp	/^      *const tuerkis="\\e[0;36m", *const htuerkis="\\e[1;36m", *const hgrau="\\e[0;37m", *const weiss="\\e[1;37m", *const umgek="\\e[7m";$/;"	v
 weiszu	./kons.cpp	/^void find2cl::weiszu()$/;"	f	class:find2cl
 wele	./kons.h	/^    wele(const string& pfad=nix, const long& maxd=-1):pfad(pfad),maxd(maxd){}$/;"	f	struct:wele

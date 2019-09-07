@@ -134,6 +134,12 @@ char const *DPROG_T[T_MAX+1][SprachZahl]=
 	{"minfolge","minsequence"},
 	// T_kommagetrennte_Minutenfolge_der_Sendeversuche,
 	{"kommagetrennte Minutenfolge der Sendeversuche","comma-separated sequence of minutes of the send tries"},
+	// T_maxsec_k,
+	{"msec","msec"},
+	// T_maxsec_l,
+	{"maxsec","maxsec"},
+	// T_Zahl_der_Sekunden_fuer_ein_fax
+	{"Zahl der Sekunden fuer ein Fax","no of seconds for a fax"},
 	// T_dt_k,
 	{"dt","fl"},
 	// T_datei_l,
@@ -160,6 +166,10 @@ char const *DPROG_T[T_MAX+1][SprachZahl]=
 	{"Spoolverzeichnisse wie ","show spool directories like "},
   // T_anzeigen_,
   {"anzeigen",""},
+	// T_Gabelung_zu_dmain_misslungen,
+	{"Gabelung zu dmain() misslungen","fork to dmain() failed"},
+	// T_in_pvirtfuehraus
+	{"in pvirtfuehraus()","in pvirtfuehraus()"},
 	{"",""} //α
 }; // char const *DPROG_T[T_MAX+1][SprachZahl]=
 
@@ -215,6 +225,7 @@ void hhcl::virtinitopt()
 	opn<<new optcl(/*pname*/"absnr",/*pptr*/&absnr,/*art*/pstri,T_absnr_k,T_absnr_l,/*TxBp*/&Tx,/*Txi*/T_auf_Fax_angegebene_Absendernummer,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!msn.empty(),T_auf_Fax_angegebene_Absendernummer);
 	opn<<new optcl(/*pname*/"absdr",/*pptr*/&absdr,/*art*/pstri,T_absdr_k,T_absdr_l,/*TxBp*/&Tx,/*Txi*/T_auf_Fax_angegebener_Absender,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!absdr.empty(),T_auf_Fax_angegebener_Absender);
 	opn<<new optcl(/*pname*/"mfolge",/*pptr*/&mfolge,/*art*/pstri,T_mfolge_k,T_mfolge_l,/*TxBp*/&Tx,/*Txi*/T_kommagetrennte_Minutenfolge_der_Sendeversuche,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!mfolge.empty(),T_kommagetrennte_Minutenfolge_der_Sendeversuche);
+	opn<<new optcl(/*pname*/"maxsec",/*pptr*/&maxsec,/*art*/pint,T_maxsec_k,T_maxsec_l,/*TxBp*/&Tx,/*Txi*/T_Zahl_der_Sekunden_fuer_ein_fax,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!maxsec,T_Zahl_der_Sekunden_fuer_ein_fax);
 	opn<<new optcl(/*pptr*/&datei,/*art*/pstri,T_dt_k,T_datei_l,/*TxBp*/&Tx,/*Txi*/T_zu_faxende_Datei,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&an,/*art*/pstri,T_an_k,T_an_l,/*TxBp*/&Tx,/*Txi*/T_Zielfaxnr,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&nurrein,/*art*/puchar,T_nr_k,T_nurrein_l,/*TxBp*/&Tx,/*Txi*/T_stellt_Faxe_nur_rein,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/1,/*woher*/1);
@@ -289,6 +300,7 @@ void hhcl::virtrueckfragen()
 		absnr=Tippstr(Tx[T_auf_Fax_angegebene_Absendernummer],&absnr);
 		absdr=Tippstr(Tx[T_auf_Fax_angegebener_Absender],&absdr);
 		mfolge=Tippstr(Tx[T_kommagetrennte_Minutenfolge_der_Sendeversuche],&mfolge);
+		maxsec=Tippzahl(Tx[T_Zahl_der_Sekunden_fuer_ein_fax],maxsec);
 	} // if (rzf) //α
 	hcl::virtrueckfragen();
 	//// opn.oausgeb(rot);
@@ -356,8 +368,8 @@ void hhcl::pvirtvorpruefggfmehrfach()
 					dart=aktart+1;
 					break;
 				}
-			}
-		}
+			} // 			for(size_t aktart=0;aktart<elemzahl(darten);aktart++)
+		} // 		if (datei.length()>=4)
 		// wenn die gewünschte Datei existiert
 		if (dart && !lstat(datei.c_str(),&dstat) && dstat.st_size) {
 			// Nummer ermitteln
@@ -387,7 +399,7 @@ void hhcl::pvirtvorpruefggfmehrfach()
         if (nstumm) fLog("nr: "+blaus+ltoan(nr)+schwarz,1,oblog);
 				fil.close();
 				break;
-			}
+			} // 			for(int runde=0;runde<100000;runde++)
 			if (nr) {
 				const string dname{wvz+"/dt"+nrz+".tif"},
 							vname{wvz+"/dt"+nrz+".vw"};
@@ -484,8 +496,21 @@ void hhcl::pvirtfuehraus() //α
           if (nstumm) fLog(tuerkiss+" jetzt >= zpab "+schwarz,1,oblog);
 					//					const gchar *ptr[6]; // die Aktionen nach Faxen müssen auch in dmain, genauer fax_connection_status_cb geschehen, da oft danach Crash
 					string ptr[/*14*/]{DPROG,tifd,msn,ziel,absnr,absdr,dtn[i],gfvz,ngvz,rest,ltoan(zpab),ursp,versz,gesz};
-					retu=dmain(sizeof ptr/sizeof *ptr,ptr,&vwdt,usr,pwd,host,obverb);
-//					caus<<"retu: "<<retu<<endl;
+          pidvec pidw;
+					pid_t pid{fork()};
+          if (pid<0) {
+						fLog(rots+Tx[T_Gabelung_zu_dmain_misslungen]+schwarz,1,oblog);
+						exitt(1);
+					} else if (!pid) {
+						retu=dmain(sizeof ptr/sizeof *ptr,ptr,&vwdt,usr,pwd,host,obverb);
+						exitt(retu);
+					} else {
+						pidcl phier(pid,"dmain"); // Elternprozess
+						pidw<<phier;
+						retu=wartaufpids(&pidw,0,obverb,oblog,Tx[T_in_pvirtfuehraus],maxsec/*Sekunden maximal warten pro fax*/); // wird also nur vom Hauptthread aus aufgerufen
+						//// caus<<"retu: "<<retu<<endl;
+					}
+					//					caus<<"retu: "<<retu<<endl;
 					/*
 					if (!retu) {
 						vwdt.close(); // Faxen erfolgreich, Dateien nach gfvz verschieben
@@ -508,12 +533,12 @@ void hhcl::pvirtfuehraus() //α
 					// wenn aufgebraucht, in nichtgefaxt verschieben
 				} else {
           if (nstumm) fLog(tuerkiss+" jetzt <= zpab "+schwarz,1,oblog);
-				}
+				} // 				if (jetzt>=zpab) else
 				break;
-			}
+			} // 			while (1)
       if (nstumm) fLog(string(),1,oblog);
-		}
-	}
+		} // 		if (vwdt.is_open())
+	} // 	for(size_t i=0;i<dtn.size();i++)
 } // void hhcl::pvirtfuehraus  //α
 
 // wird aufgerufen in lauf

@@ -65,6 +65,9 @@ enum T_
 	T_mfolge_k,
 	T_mfolge_l,
 	T_kommagetrennte_Minutenfolge_der_Sendeversuche,
+	T_maxsec_k,
+	T_maxsec_l,
+	T_Zahl_der_Sekunden_fuer_ein_fax,
 	T_dt_k,
 	T_datei_l,
 	T_zu_faxende_Datei,
@@ -78,6 +81,8 @@ enum T_
 	T_zgvz_l,
 	T_Spoolverzeichnisse_wie,
 	T_anzeigen_,
+	T_Gabelung_zu_dmain_misslungen,
+	T_in_pvirtfuehraus,
 	T_MAX //α
 }; // enum T_ //ω
 //α
@@ -105,6 +110,7 @@ class hhcl:public hcl
 		string absnr; // auf Fax angegebene Absendernummer
 		string absdr; // auf Fax angegebener Absender
 		string mfolge; // kommagetrennte Minutenfolge der Sendeversuche
+		int maxsec; // Zahl der Sekunden bis zum timeout
 		string datei; // zu faxende (in Spool zu stellende) Datei
 		string an; // Zielfaxnr
 	public: //α //ω
