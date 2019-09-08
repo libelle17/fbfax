@@ -83,6 +83,7 @@ enum T_
 	T_anzeigen_,
 	T_Gabelung_zu_dmain_misslungen,
 	T_in_pvirtfuehraus,
+	T_holtif,
 	T_MAX //α
 }; // enum T_ //ω
 //α
@@ -139,6 +140,8 @@ class hhcl:public hcl
 		void pvirtvorpruefggfmehrfach();
 		void virtpruefweiteres();
 		void virtzeigueberschrift();
+		int holtif(const string& datei,ulong *seitenp=0,struct tm *tmp=0,struct stat *elogp=0,
+		           string *absdrp=0,string *tsidp=0,string *calleridp=0,string *devnamep=0);
 		void pvirtfuehraus();
 		void virtschlussanzeige();
 		void zeigdienste(); //ω

@@ -1140,7 +1140,6 @@ maxd	./kons.h	/^    const long maxd;$/;"	m	struct:wele
 maxdepth	./kons.h	/^    long maxdepth=-1;$/;"	m	struct:find3cl
 maxdepthp	./kons.cpp	/^long *find3cl::maxdepthp;$/;"	m	class:find3cl	file:
 maxdepthp	./kons.h	/^    static long *maxdepthp;$/;"	m	struct:find3cl
-maxsec	./fbfax.h	/^		int maxsec; \/\/ Zahl der Sekunden bis zum timeout$/;"	m	class:hhcl
 mbis	./kons.h	/^    time_t mab,mbis;$/;"	m	struct:find3cl
 mbisp	./kons.cpp	/^time_t *find3cl::mabp,*find3cl::mbisp;$/;"	m	class:find3cl	file:
 mbisp	./kons.h	/^    static time_t *mabp,*mbisp;$/;"	m	struct:find3cl
@@ -1150,7 +1149,6 @@ meinname	./kons.h	/^    string meinname; \/\/ base_name(meinpfad()) \/\/ argv[0]
 meinpfad	./kons.cpp	/^string meinpfad() $/;"	f
 message	./appobject.h	/^	void (*message)(gchar *title, gchar *message);$/;"	m	struct:_AppObjectClass
 message_number	./faxophone.h	/^	int message_number;$/;"	m	struct:session
-mfolge	./fbfax.h	/^		string mfolge; \/\/ kommagetrennte Minutenfolge der Sendeversuche$/;"	m	class:hhcl
 microsec_time	./phone.c	/^guint64 microsec_time(void)$/;"	f
 mitcron	./kons.h	/^		const uchar mitcron; \/\/ ob Programm auch in Cron eingetragen werden kann; kann im Konstruktor angegeben werden$/;"	m	class:hcl
 mitpids	./kons.h	/^		uchar mitpids=0; \/\/ mehrere pids$/;"	m	class:hcl

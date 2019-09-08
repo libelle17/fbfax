@@ -170,6 +170,8 @@ char const *DPROG_T[T_MAX+1][SprachZahl]=
 	{"Gabelung zu dmain() misslungen","fork to dmain() failed"},
 	// T_in_pvirtfuehraus
 	{"in pvirtfuehraus()","in pvirtfuehraus()"},
+	// T_holtif
+	{"holtif()","gettif()"},
 	{"",""} //α
 }; // char const *DPROG_T[T_MAX+1][SprachZahl]=
 
@@ -438,9 +440,93 @@ void hhcl::pvirtvorpruefggfmehrfach()
 } // void hhcl::pvirtvorpruefggfmehrfach //α
 //ω
 
+int hhcl::holtif(const string& datei,ulong *seitenp,struct tm *tmp,struct stat *elogp, 
+		string *absdrp,string *tsidp,string *calleridp,string *devnamep)
+{
+	hLog(violetts+Tx[T_holtif]+schwarz);
+	int erg{1};
+	vector<string> tok; // fuer imagedescription
+	if (tmp) {
+		////			memset(tmp, 0, sizeof(*tmp)); // schon bei Initialisierung
+		if (elogp) {
+			////				memset(elogp,0,sizeof *elogp); // schon bei Initialisierung
+			if (!lstat(datei.c_str(),elogp))  {
+				////					if (chmod(datei.c_str(),S_IRWXU|S_IRWXG|S_IRWXO)) systemrueck(sudc+"chmod +r \""+datei+"\"",obverb,oblog);
+				pthread_mutex_lock(&timemutex);
+				memcpy(tmp, localtime(&elogp->st_mtime),sizeof(*tmp));
+				pthread_mutex_unlock(&timemutex);
+				//// char buf[100];
+				//// strftime(buf, sizeof(buf), "%d.%m.%Y %H.%M.%S", tmp);
+				//// <<"Buf: "<<buf<<endl;
+			} //     if (!lstat(datei.c_str(),elogp)) 
+		} // if (elogp)
+	} // if (tmp)
+	setfaclggf(dir_name(datei),obverb>0?obverb-1:0,oblog,/*obunter=*/falsch,/*mod=*/7);
+	setfaclggf(datei,obverb>0?obverb-1:0,oblog,/*obunter=*/falsch,/*mod=*/4,/*obimmer=*/0,/*faclbak=*/0);
+	if (TIFF* tif = TIFFOpen(datei.c_str(), "r")) {
+		erg=0;
+		char *rdesc{0};
+		if (tmp) {
+			if (TIFFGetField(tif, TIFFTAG_DATETIME, &rdesc)) {
+				//// <<"Datetime: \n"<<rdesc<<endl;
+				strptime(rdesc,"%Y:%m:%d %T",tmp);
+				//// char buf[100];
+				//// strftime(buf, sizeof(buf), "%d.%m.%Y %H.%M.%S", tmp);
+				//// <<"Buf (2): "<<buf<<endl;
+			} // if (TIFFGetField(tif, TIFFTAG_DATETIME, &rdesc))
+		} // if (tmp)
+		if (seitenp) *seitenp=TIFFNumberOfDirectories(tif);
+		rdesc=0;
+		if (TIFFGetField(tif, TIFFTAG_IMAGEDESCRIPTION, &rdesc)) {
+			////          printf("Beschreibung: %s\n",beschreib);
+			////  out<<"Beschreibung: \n"<<rdesc<<endl;
+			tok.clear();
+			aufSplit(&tok,rdesc,'\n');
+			if (tok.size()) {
+				if (tok.size()>1) {
+					//// <<gruen<<"tok[0]: "<<schwarz<<tok[0]<<endl;
+					if (calleridp) *calleridp=tok[0];
+					//// <<gruen<<"tok[1]: "<<schwarz<<tok[1]<<endl;
+					*tsidp=tok[1];
+					if (tok.size()>2) if (absdrp) *absdrp=tok[2];
+				} else {
+					if (istelnr(tok[0])) {
+						//// <<gruen<<"tok[0] b: "<<schwarz<<tok[0]<<endl;
+						if (calleridp) *calleridp=tok[0]; 
+					} else { 
+						//// <<gruen<<"tok[0] c: "<<schwarz<<tok[0]<<endl;
+						if (absdrp) *absdrp=tok[0];
+					} // 					if (istelnr(tok[0]))
+				} //           if (tok.size()>1)  else
+			} // if (tok.size()) 
+		} // if (TIFFGetField(tif, TIFFTAG_IMAGEDESCRIPTION, &rdesc)) 
+		//// rdesc=0;
+		//// if (TIFFGetField(tif, TIFFTAG_MODEL, &rdesc))
+		rdesc=0;
+		uchar obdev{0};
+		if (calleridp) {if (calleridp->empty()) obdev=1;} else obdev=1;
+		if (obdev) if (!devnamep) obdev=0;
+		if (obdev) {
+			if (TIFFGetField(tif, TIFFTAG_MAKE, &rdesc)) {
+				////          printf("Beschreibung: %s\n",beschreib);
+				//// <<gruen<<"rdesc: "<<schwarz<<rdesc<<endl;
+				if (rdesc) {
+					*devnamep+=", ";
+					*devnamep+=rdesc;
+				} // 				if (rdesc)
+			} // if (TIFFGetField(tif, TIFFTAG_MAKE, &rdesc)) 
+		} // if (calleridp->empty()) 
+		TIFFClose(tif);
+	} // if (TIFF* tif = TIFFOpen(datei.c_str(), "r")) 
+	hLog(violetts+Txk[T_Ende]+Tx[T_holtif]+schwarz);
+	return erg;
+} // int hhcl::holtif(string& datei,struct tm *tmp,ulong *seitenp,string *calleridp,string *devnamep)
+
+
 void hhcl::pvirtfuehraus() //α
 { 
 	hLog(violetts+Tx[T_pvirtfuehraus]+schwarz); //ω
+	static uchar tifungeprueft{1};
 	svec dtn;
 	systemrueck("find "+wvz+" -maxdepth 1 -size +0c -name 'dt*.vw'",obverb,oblog,&dtn);
 	for(size_t i=0;i<dtn.size();i++) {
@@ -496,6 +582,17 @@ void hhcl::pvirtfuehraus() //α
           if (nstumm) fLog(tuerkiss+" jetzt >= zpab "+schwarz,1,oblog);
 					//					const gchar *ptr[6]; // die Aktionen nach Faxen müssen auch in dmain, genauer fax_connection_status_cb geschehen, da oft danach Crash
 					string ptr[/*14*/]{DPROG,tifd,msn,ziel,absnr,absdr,dtn[i],gfvz,ngvz,rest,ltoan(zpab),ursp,versz,gesz};
+					if (tifungeprueft) {
+						prueftif(TIFFGetVersion());
+						tifungeprueft=0;
+					}
+					ulong seiten{0};
+					holtif(tifd, &seiten,0,0,0,0,0,0);
+					if (seiten) {
+						maxsec=(seiten+1)*60; // fuers Verbindungerstellen und fuer jede Seite eine Minute
+////						caus<<"maxsec: "<<maxsec<<endl;
+					}
+					// wenn z.B. die Faxfunktion nicht eingerichtet ist, dann verlaesst das Programm dmain nicht mehr freiwillig => Abbruch mit timeout nach maxsec
           pidvec pidw;
 					pid_t pid{fork()};
           if (pid<0) {
