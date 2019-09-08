@@ -1,5 +1,5 @@
 .br
-                                                                                                                                                           \fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10344 \fR
+                                                                                                                                                                                      \fRProgramm: \fB/home/schade/fbfax/fbfax\fR, V: \fB0.10345 \fR
 .br
 \fBOptionen, die nicht gespeichert werden (aktueller Wert in Klammern): \fR
 .br
@@ -61,9 +61,9 @@
 .br
 \fB -abs, --absender <string>\fR: auf Fax angegebener Absendername ('\fB\fR')
 .br
-\fB -mfg, --minfolge <string>\fR: kommagetrennte Minutenfolge der Sendeversuche ('\fB\fR')
+\fB -mfg, --minfolge <string>\fR: kommagetrennte Minutenfolge der Sendeversuche ('\fB2,2,3,3,3,5,5,10,10,60,60,60,120,120,720,1440\fR')
 .br
-\fB -msec, --maxsec <zahl>\fR: Zahl der Sekunden fuer ein Fax (\fB1\fR)
+\fB -msec, --maxsec <zahl>\fR: Zahl der Sekunden fuer ein Fax (\fB900\fR)
 .br
 \fB -sp, --sprache <string>\fR: Language/Sprache/Lingue/Lingua [\fBd\fReutsch,\fBe\fRnglisch] ('\fBd\fR')
 .br

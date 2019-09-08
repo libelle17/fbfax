@@ -1,5 +1,5 @@
 .br
-                                                                                                                                                           \fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10344 \fR
+                                                                                                                                                                                      \fRProgramm: \fB/home/schade/fbfax/fbfax\fR, V: \fB0.10345 \fR
 .br
 \fBOptions which are not saved (current value in parentheses): \fR
 .br
@@ -61,9 +61,9 @@
 .br
 \fB -sdr, --sender <string>\fR: sender name on fax ('\fB\fR')
 .br
-\fB -msq, --minsequence <string>\fR: comma-separated sequence of minutes of the send tries ('\fB\fR')
+\fB -msq, --minsequence <string>\fR: comma-separated sequence of minutes of the send tries ('\fB2,2,3,3,3,5,5,10,10,60,60,60,120,120,720,1440\fR')
 .br
-\fB -msec, --maxsec <zahl>\fR: no of seconds for a fax (\fB1\fR)
+\fB -msec, --maxsec <zahl>\fR: no of seconds for a fax (\fB900\fR)
 .br
 \fB -lg, --language <string>\fR: Language/Sprache/Lingue/Lingua [\fBd\fReutsch,\fBe\fRnglisch] ('\fBe\fR')
 .br

@@ -109,8 +109,8 @@ class hhcl:public hcl
 		string msn; 
 		string absnr; // auf Fax angegebene Absendernummer
 		string absdr; // auf Fax angegebener Absender
-		string mfolge; // kommagetrennte Minutenfolge der Sendeversuche
-		int maxsec; // Zahl der Sekunden bis zum timeout
+		string mfolge{"2,2,3,3,3,5,5,10,10,60,60,60,120,120,720,1440"}; // kommagetrennte Minutenfolge der Sendeversuche
+		int maxsec{900}; // Zahl der Sekunden bis zum timeout
 		string datei; // zu faxende (in Spool zu stellende) Datei
 		string an; // Zielfaxnr
 	public: //α //ω
