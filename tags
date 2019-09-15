@@ -34,15 +34,15 @@ B_FIFO	./kons.h	124;"	d
 B_Link	./kons.h	125;"	d
 B_Sock	./kons.h	126;"	d
 B_Verzn	./kons.h	121;"	d
-CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon1
-CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon1
-CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon1
-CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon1
-CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon1
-CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon1
-CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon1
-CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon1
-CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon1
+CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon4
+CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon4
+CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon4
+CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon4
+CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon4
+CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon4
+CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon4
+CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon4
+CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon4
 CAPI_BCHANNELS	./faxophone.h	65;"	d
 CAPI_BUFFERCNT	./faxophone.h	63;"	d
 CAPI_CONNECTIONS	./faxophone.h	59;"	d
@@ -152,9 +152,9 @@ RECORDING_REMOTE	./faxophone.h	/^	RECORDING_REMOTE$/;"	e	enum:recording
 REGFEHLER	./kons.h	/^  REGFEHLER=997,$/;"	e	enum:__anon2
 RM_ERROR	./fax_phone.c	51;"	d	file:
 RM_ERROR	./routermanager.h	40;"	d
-RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon4
-RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon4
-RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon4
+RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon1
+RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon1
+RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon1
 ROUTERMANAGER_PATH	./routermanager.h	38;"	d
 ROUTERMANAGER_SCHEME	./routermanager.h	34;"	d
 ROUTERMANAGER_SCHEME_PROFILE	./routermanager.h	35;"	d
@@ -384,6 +384,7 @@ T_h_k	./kons.h	/^	T_h_k,$/;"	e	enum:Tkons_
 T_hcl_hcl	./kons.h	/^	T_hcl_hcl,$/;"	e	enum:Tkons_
 T_hilfe_l	./kons.h	/^	T_hilfe_l,$/;"	e	enum:Tkons_
 T_holsystemsprache	./kons.h	/^	T_holsystemsprache,$/;"	e	enum:Tkons_
+T_holtif	./fbfax.h	/^	T_holtif,$/;"	e	enum:T_
 T_host_k	./fbfax.h	/^	T_host_k,$/;"	e	enum:T_
 T_host_l	./fbfax.h	/^	T_host_l,$/;"	e	enum:T_
 T_in_main_pidv_am_Schluss	./kons.h	/^	T_in_main_pidv_am_Schluss,$/;"	e	enum:Tkons_
@@ -1001,6 +1002,7 @@ holbefz0	./kons.cpp	/^void hcl::holbefz0(const int argc, const char *const *cons
 hold	./faxophone.h	/^	int hold;$/;"	m	struct:capi_connection
 holraus	./tr64.cpp	/^size_t holraus(const std::string xml,std::string item,std::string *ergp,size_t anf\/*=0*\/)$/;"	f
 holsystemsprache	./kons.cpp	/^string holsystemsprache(int obverb\/*=0*\/)$/;"	f
+holtif	./fbfax.cpp	/^int hhcl::holtif(const string& datei,ulong *seitenp,struct tm *tmp,struct stat *elogp, $/;"	f	class:hhcl
 holurl	./tr64.cpp	/^int holurl(const std::string url, std::string* bufp)$/;"	f
 holvomnetz	./kons.cpp	/^int hcl::holvomnetz(const string& datei,const string& vors\/*=defvors*\/,const string& nachs\/*=defnachs*\/)$/;"	f	class:hcl
 host	./direkt.h	/^    const std::string host;$/;"	m	class:fbcl
@@ -1388,7 +1390,7 @@ retry	./network.h	/^	gboolean retry;$/;"	m	struct:auth_data
 richtige	./kons.h	/^	size_t richtige;$/;"	m	struct:confdcl
 right	./kons.h	/^inline std::string right(std::string const& source, size_t const length)$/;"	f
 ring	./faxophone.h	/^	void (*ring)(struct capi_connection *connection);$/;"	m	struct:session_handlers_st
-rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon4
+rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon1
 rmcl	./routermanager.c	/^rmcl::rmcl(gboolean debug, GError **error)$/;"	f	class:rmcl
 rmcl	./routermanager.h	/^struct rmcl$/;"	s
 rot	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
@@ -1524,7 +1526,7 @@ type	./faxophone.h	/^	enum session_type type;$/;"	m	struct:capi_connection	typer
 uchar	./kons.h	/^typedef unsigned char uchar; \/\/ 1 Byte$/;"	t
 udpr	./kons.h	/^ string udpr;   \/\/ Befehl zum direkten Deinstallieren$/;"	m	struct:linst_cl
 uebers	./kons.h	/^		stringstream uebers; \/\/ Ueberschrift fuer Verarbeitungslauf$/;"	m	class:hcl
-uebersichtlich	./kons.cpp	5658;"	d	file:
+uebersichtlich	./kons.cpp	5660;"	d	file:
 uint16_t	./faxophone.h	/^typedef unsigned short uint16_t;$/;"	t
 uint32_t	./faxophone.h	/^typedef unsigned int uint32_t;$/;"	t
 ull	./kons.h	/^typedef unsigned long long ull;$/;"	t
