@@ -21,6 +21,7 @@ LSPAN::=spandsp-devel
 LGLIB::=glib-2.0
 LSOUP::=libsoup-devel
 LSND::=libsndfile-devel
+QPDF::=
 LTERM::=termcap
 LGSSDP::=libgssdp-devel
 LCAPI::=libcapi20-3
