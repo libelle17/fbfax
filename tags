@@ -34,15 +34,15 @@ B_FIFO	./kons.h	124;"	d
 B_Link	./kons.h	125;"	d
 B_Sock	./kons.h	126;"	d
 B_Verzn	./kons.h	121;"	d
-CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon4
-CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon4
-CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon4
-CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon4
-CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon4
-CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon4
-CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon4
-CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon4
-CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon4
+CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon1
+CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon1
+CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon1
+CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon1
+CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon1
+CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon1
+CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon1
+CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon1
+CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon1
 CAPI_BCHANNELS	./faxophone.h	65;"	d
 CAPI_BUFFERCNT	./faxophone.h	63;"	d
 CAPI_CONNECTIONS	./faxophone.h	59;"	d
@@ -152,9 +152,9 @@ RECORDING_REMOTE	./faxophone.h	/^	RECORDING_REMOTE$/;"	e	enum:recording
 REGFEHLER	./kons.h	/^  REGFEHLER=997,$/;"	e	enum:__anon2
 RM_ERROR	./fax_phone.c	51;"	d	file:
 RM_ERROR	./routermanager.h	40;"	d
-RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon1
-RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon1
-RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon1
+RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon4
+RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon4
+RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon4
 ROUTERMANAGER_PATH	./routermanager.h	38;"	d
 ROUTERMANAGER_SCHEME	./routermanager.h	34;"	d
 ROUTERMANAGER_SCHEME_PROFILE	./routermanager.h	35;"	d
@@ -240,6 +240,7 @@ T_Fertig_mit_Parsen_der_Befehlszeile	./kons.h	/^	T_Fertig_mit_Parsen_der_Befehls
 T_Fertige_Faxe_werden_hier_gesammelt_anstatt_in	./fbfax.h	/^	T_Fertige_Faxe_werden_hier_gesammelt_anstatt_in,$/;"	e	enum:T_
 T_Firewallport	./kons.h	/^	T_Firewallport,$/;"	e	enum:Tkons_
 T_Folge	./kons.h	/^	T_Folge,$/;"	e	enum:Tkons_
+T_Frage_ab	./kons.h	/^	T_Frage_ab,$/;"	e	enum:Tkons_
 T_Freie_Software	./kons.h	/^	T_Freie_Software,$/;"	e	enum:Tkons_
 T_Fuege_ein	./fbfax.h	/^	T_Fuege_ein, \/\/ω$/;"	e	enum:T_
 T_Fuehre_aus	./kons.h	/^  T_Fuehre_aus,$/;"	e	enum:Tkons_
@@ -252,7 +253,6 @@ T_Hostadresse_der_Fritzbox	./fbfax.h	/^	T_Hostadresse_der_Fritzbox,$/;"	e	enum:T
 T_Hostadresse_der_Fritzbox_	./fbfax.h	/^	T_Hostadresse_der_Fritzbox_,$/;"	e	enum:T_
 T_Ins_Deinstallationsprogramm_wird_eingetragen	./kons.h	/^	T_Ins_Deinstallationsprogramm_wird_eingetragen,$/;"	e	enum:Tkons_
 T_Installationsverzeichnis	./kons.h	/^	T_Installationsverzeichnis,$/;"	e	enum:Tkons_
-T_Intervall_Minuten	./kons.h	/^	T_Intervall_Minuten,$/;"	e	enum:Tkons_
 T_Kann_Datei	./kons.h	/^  T_Kann_Datei,$/;"	e	enum:Tkons_
 T_Kein_cron_gesetzt_nicht_zu_setzen	./kons.h	/^	T_Kein_cron_gesetzt_nicht_zu_setzen,$/;"	e	enum:Tkons_
 T_Kompiliert	./kons.h	/^	T_Kompiliert,$/;"	e	enum:Tkons_
@@ -486,6 +486,8 @@ T_optausg	./kons.h	/^	T_optausg,$/;"	e	enum:Tkons_
 T_or	./kons.h	/^	T_or,$/;"	e	enum:Tkons_
 T_parsecl	./kons.h	/^	T_parsecl,$/;"	e	enum:Tkons_
 T_pfad	./kons.h	/^  T_pfad,$/;"	e	enum:Tkons_
+T_pptr_darf_nicht_null_sein_bei	./kons.h	/^	T_pptr_darf_nicht_null_sein_bei,$/;"	e	enum:Tkons_
+T_pptr_gefunden	./kons.h	/^	T_pptr_gefunden,$/;"	e	enum:Tkons_
 T_protokolliert_ausfuehrlich_in_Datei	./kons.h	/^	T_protokolliert_ausfuehrlich_in_Datei,$/;"	e	enum:Tkons_
 T_pruefberecht	./kons.h	/^	T_pruefberecht,$/;"	e	enum:Tkons_
 T_pruefcron	./kons.h	/^	T_pruefcron,$/;"	e	enum:Tkons_
@@ -495,12 +497,13 @@ T_pruefsamba	./kons.h	/^	T_pruefsamba,$/;"	e	enum:Tkons_
 T_prueftif	./kons.h	/^	T_prueftif,$/;"	e	enum:Tkons_
 T_pvirtVorgbSpeziell	./fbfax.h	/^	T_pvirtVorgbSpeziell,$/;"	e	enum:T_
 T_pvirtfuehraus	./fbfax.h	/^	T_pvirtfuehraus,$/;"	e	enum:T_
-T_pvirtvorpruefggfmehrfach	./fbfax.h	/^	T_pvirtvorpruefggfmehrfach,$/;"	e	enum:T_
+T_pvirtnachrueckfragen	./fbfax.h	/^	T_pvirtnachrueckfragen,$/;"	e	enum:T_
 T_pvirtvorrueckfragen	./fbfax.h	/^	T_pvirtvorrueckfragen,$/;"	e	enum:T_
 T_pwd	./fbfax.h	/^	T_pwd,$/;"	e	enum:T_
 T_pwd_k	./fbfax.h	/^	T_pwd_k,$/;"	e	enum:T_
 T_pwd_l	./fbfax.h	/^	T_pwd_l,$/;"	e	enum:T_
 T_rf_k	./kons.h	/^	T_rf_k,$/;"	e	enum:Tkons_
+T_rueckfragen	./kons.h	/^	T_rueckfragen,$/;"	e	enum:Tkons_
 T_rueckfragen_l	./kons.h	/^	T_rueckfragen_l,$/;"	e	enum:Tkons_
 T_rueckzufragen	./kons.h	/^	T_rueckzufragen,$/;"	e	enum:Tkons_
 T_rueckzufragen_wegen	./kons.h	/^	T_rueckzufragen_wegen,$/;"	e	enum:Tkons_
@@ -582,6 +585,7 @@ Tippzahl	./kons.cpp	/^string Tippzahl(const string& frage, const string *const v
 Tkons_	./kons.h	/^enum Tkons_ $/;"	g
 TxB	./kons.cpp	/^TxB::TxB(const char* const* const* const *TCp):TCp(TCp)$/;"	f	class:TxB
 TxB	./kons.h	/^class TxB \/\/ Text-Basisklasse$/;"	c
+Txtrf	./kons.h	/^		const string Txtrf;$/;"	m	struct:optcl
 Txvg_	./vgb.cpp	/^enum Txvg_ {$/;"	g	file:
 USE_ISDN_MUTEX	./faxophone.h	67;"	d
 USE_PRINTER_SPOOLER	./config.h	154;"	d
@@ -850,7 +854,7 @@ elem2	./kons.h	/^    elem2(){};$/;"	f	struct:elem2
 elem2	./kons.h	/^struct elem2$/;"	s
 elem3	./kons.h	/^    elem3(string pfad, const struct stat *sbp, int& tflag, const struct FTW *ftwp, string lnk,const struct stat& lst):$/;"	f	struct:elem3
 elem3	./kons.h	/^struct elem3$/;"	s
-elemzahl	./kons.h	498;"	d
+elemzahl	./kons.h	501;"	d
 elemzahlT	./kons.h	/^template<typename T> size_t elemzahlT(T& v){return sizeof(v)\/sizeof(*v);}$/;"	f
 emit_authenticate	./appobject-emit.c	/^void emit_authenticate(struct auth_data *auth_data)$/;"	f
 emit_connection_established	./appobject-emit.c	/^void emit_connection_established(struct capi_connection *connection)$/;"	f
@@ -930,6 +934,8 @@ findfile	./kons.cpp	/^void findfile(svec *qrueckp,uchar findv,int obverb\/*=0*\/
 flags	./kons.h	/^    int flags = 0;$/;"	m	struct:find3cl
 fmt	./kons.h	/^		const char* const fmt;$/;"	m	class:ztacl
 fname	./kons.h	/^	string fname; \/\/ Dateiname$/;"	m	struct:confdcl
+fnhcliztyp	./kons.h	/^typedef int (hcl::*fnhcliztyp)();$/;"	t
+fnhclztyp	./kons.h	/^typedef void (hcl::*fnhclztyp)();$/;"	t
 folge	./kons.h	/^    int folge=0;$/;"	m	struct:find3cl
 folgep	./kons.cpp	/^int *find3cl::folgep;$/;"	m	class:find3cl	file:
 folgep	./kons.h	/^    static int *folgep;$/;"	m	struct:find3cl
@@ -938,6 +944,28 @@ free_auth_data	./network.c	/^static void free_auth_data(struct auth_data *auth_d
 frisch	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::frisch()$/;"	f	class:schAcl
 ftw	./kons.h	/^    const struct FTW ftw={0};$/;"	m	struct:elem3	typeref:struct:elem3::FTW
 fuersamba	./kons.cpp	/^void fuersamba(string& roh)$/;"	f
+fui0	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fui1	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fui10	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fui2	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fui3	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fui4	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fui5	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fui6	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fui7	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fui8	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fui9	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fuv0	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
+fuv1	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
+fuv10	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
+fuv2	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
+fuv3	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
+fuv4	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
+fuv5	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
+fuv6	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
+fuv7	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
+fuv8	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
+fuv9	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
 g_debug	./connection.c	25;"	d	file:
 g_debug	./connection.c	26;"	d	file:
 g_debug	./direkt.c	30;"	d	file:
@@ -1218,7 +1246,8 @@ oausgeb	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::oausgeb(const char
 obenabled	./kons.h	/^		int obenabled=0;$/;"	m	class:servc
 oberreicht	./kons.cpp	/^int perfcl::oberreicht(unsigned long sek)$/;"	f	class:perfcl
 obfehlt	./kons.cpp	/^int linst_cl::obfehlt(const string& prog,int obverb,int oblog)$/;"	f	class:linst_cl
-obfstream	./kons.h	1051;"	d
+obfragz	./kons.h	/^		const uchar* obfragz; \/\/ Zeiger auf Variable, die ggf. mit 1 bezeichnet, dass Option in rueckfragen abgefragt werden soll;$/;"	m	struct:optcl
+obfstream	./kons.h	1062;"	d
 obgelesen	./kons.h	/^	uchar obgelesen;$/;"	m	struct:confdcl
 obhilfe	./kons.h	/^    uchar obhilfe=0;      \/\/ Hilfe anzeigen: 1=kurze Hilfe, 2=lange Hilfe, 3=Standardhilfe$/;"	m	class:hcl
 oblgschreib	./kons.h	/^    uchar oblgschreib=0; \/\/ Konfigurationsdatei seitens der Sprache voraussichtlich schreiben$/;"	m	class:hcl
@@ -1354,7 +1383,7 @@ pvirtVorgbSpeziell	./fbfax.cpp	/^void hhcl::pvirtVorgbSpeziell()$/;"	f	class:hhc
 pvirtVorgbSpeziell	./vgb.cpp	/^void hhcl::pvirtVorgbSpeziell()$/;"	f	class:hhcl
 pvirtfuehraus	./fbfax.cpp	/^void hhcl::pvirtfuehraus() \/\/α$/;"	f	class:hhcl
 pvirtmacherkl	./fbfax.cpp	/^void hhcl::pvirtmacherkl()$/;"	f	class:hhcl
-pvirtvorpruefggfmehrfach	./fbfax.cpp	/^void hhcl::pvirtvorpruefggfmehrfach()$/;"	f	class:hhcl
+pvirtnachrueckfragen	./fbfax.cpp	/^void hhcl::pvirtnachrueckfragen()$/;"	f	class:hhcl
 pvirtvorrueckfragen	./fbfax.cpp	/^void hhcl::pvirtvorrueckfragen()$/;"	f	class:hhcl
 pvirtvorzaehler	./fbfax.cpp	/^void hhcl::pvirtvorzaehler()$/;"	f	class:hhcl
 pwd	./direkt.h	/^    const std::string pwd;$/;"	m	class:fbcl
@@ -1390,7 +1419,7 @@ retry	./network.h	/^	gboolean retry;$/;"	m	struct:auth_data
 richtige	./kons.h	/^	size_t richtige;$/;"	m	struct:confdcl
 right	./kons.h	/^inline std::string right(std::string const& source, size_t const length)$/;"	f
 ring	./faxophone.h	/^	void (*ring)(struct capi_connection *connection);$/;"	m	struct:session_handlers_st
-rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon1
+rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon4
 rmcl	./routermanager.c	/^rmcl::rmcl(gboolean debug, GError **error)$/;"	f	class:rmcl
 rmcl	./routermanager.h	/^struct rmcl$/;"	s
 rot	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
@@ -1399,6 +1428,7 @@ rottxt	./kons.h	/^    const string rottxt; \/\/ ggf rot zu markierender Text zwi
 routermanager_audio_register	./audio.c	/^void routermanager_audio_register(struct audio *audio)$/;"	f
 rtrim	./kons.h	/^inline std::string *rtrim(std::string *str) {$/;"	f	class:std
 rtrim	./kons.h	/^inline void rtrim(char* str,size_t size) {$/;"	f
+rueckfragen	./kons.cpp	/^void hcl::rueckfragen()$/;"	f	class:hcl
 rzf	./kons.h	/^    uchar rzf=0; \/\/ rueckzufragen$/;"	m	class:hcl
 save_password_callback	./network.c	/^static void save_password_callback(SoupMessage* msg, struct auth_data *auth_data)$/;"	f	file:
 sb	./kons.h	/^    const struct stat sb={0};$/;"	m	struct:elem3	typeref:struct:elem3::stat
@@ -1513,6 +1543,7 @@ tucronschreib	./kons.cpp	/^void hcl::tucronschreib(const string& zsauf,const uch
 tuerkis	./kons.cpp	/^      *const tuerkis="\\e[0;36m", *const htuerkis="\\e[1;36m", *const hgrau="\\e[0;37m", *const weiss="\\e[1;37m", *const umgek="\\e[7m";$/;"	v
 tuerkis	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
 tuloeschen	./kons.cpp	/^int tuloeschen(const string& zuloe,const string& cuser\/*=string()*\/, int obverb\/*=0*\/, int oblog\/*=0*\/,stringstream *ausgp\/*=0*\/)$/;"	f
+turueckfrage	./kons.cpp	/^void hcl::turueckfrage(shared_ptr<optcl>& omit)$/;"	f	class:hcl
 tusetzstr	./kons.cpp	/^int wpgcl::tusetzstr(const char* const neuw,uchar *const tuschreibp,const uchar ausDatei\/*=0*\/,const uchar keineprio\/*=0*\/)$/;"	f	class:wpgcl
 typ	./kons.h	/^  string typ;$/;"	m	class:find2cl
 typbit	./kons.h	/^    int typbit;$/;"	m	struct:find3cl
@@ -1526,7 +1557,7 @@ type	./faxophone.h	/^	enum session_type type;$/;"	m	struct:capi_connection	typer
 uchar	./kons.h	/^typedef unsigned char uchar; \/\/ 1 Byte$/;"	t
 udpr	./kons.h	/^ string udpr;   \/\/ Befehl zum direkten Deinstallieren$/;"	m	struct:linst_cl
 uebers	./kons.h	/^		stringstream uebers; \/\/ Ueberschrift fuer Verarbeitungslauf$/;"	m	class:hcl
-uebersichtlich	./kons.cpp	5660;"	d	file:
+uebersichtlich	./kons.cpp	5741;"	d	file:
 uint16_t	./faxophone.h	/^typedef unsigned short uint16_t;$/;"	t
 uint32_t	./faxophone.h	/^typedef unsigned int uint32_t;$/;"	t
 ull	./kons.h	/^typedef unsigned long long ull;$/;"	t
@@ -1546,7 +1577,7 @@ usr	./fbfax.h	/^		string usr;$/;"	m	class:hhcl
 usr_lib64_vz	./kons.h	/^		string usr_lib64_vz;$/;"	m	class:lsyscl
 usys	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	e	enum:lsysen
 uypr	./kons.h	/^ string uypr;   \/\/ Befehl zum Deinstallieren ueber das Installationssystem ohne Rueckfrage$/;"	m	struct:linst_cl
-vagenau	./kons.cpp	1387;"	d	file:
+vagenau	./kons.cpp	1393;"	d	file:
 vector_incl	./kons.h	32;"	d
 verarbeit	./kons.cpp	/^int find3cl::verarbeit(const char *fpath, const struct stat *sb, int tflag, struct FTW *ftwbuf)$/;"	f	class:find3cl
 verarbeitkonf	./kons.cpp	/^void hcl::verarbeitkonf()$/;"	f	class:hcl
@@ -1582,8 +1613,8 @@ virtoausgeb	./kons.cpp	/^void optcl::virtoausgeb() const$/;"	f	class:optcl
 virtoausgeb	./kons.cpp	/^void wpgcl::virtoausgeb() const$/;"	f	class:wpgcl
 virtpruefweiteres	./fbfax.cpp	/^void hhcl::virtpruefweiteres()$/;"	f	class:hhcl
 virtpruefweiteres	./kons.cpp	/^void hcl::virtpruefweiteres()$/;"	f	class:hcl
+virtrueckfrage	./kons.cpp	/^void hcl::virtrueckfrage(shared_ptr<optcl>& omit)$/;"	f	class:hcl
 virtrueckfragen	./fbfax.cpp	/^void hhcl::virtrueckfragen()$/;"	f	class:hhcl
-virtrueckfragen	./kons.cpp	/^void hcl::virtrueckfragen()$/;"	f	class:hcl
 virtschlussanzeige	./fbfax.cpp	/^void hhcl::virtschlussanzeige()$/;"	f	class:hhcl
 virtschlussanzeige	./kons.cpp	/^void hcl::virtschlussanzeige()$/;"	f	class:hcl
 virttesterg	./fbfax.cpp	/^void hhcl::virttesterg()$/;"	f	class:hhcl

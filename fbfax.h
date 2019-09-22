@@ -21,7 +21,7 @@ enum T_
 	T_dszahl_l,
 	T_Zahl_der_aufzulistenden_Datensaetze_ist_zahl_statt,
 	T_Datenbank_nicht_initialisierbar_breche_ab,
-	T_pvirtvorpruefggfmehrfach,
+	T_pvirtnachrueckfragen,
 	T_pvirtfuehraus,
 	T_virttesterg,
 	T_virtzeigversion,
@@ -135,9 +135,8 @@ class hhcl:public hcl
 		void pvirtvorzaehler();
 		void virtzeigversion(const string& ltiffv=string());
 		void pvirtvorrueckfragen();
-		void virtrueckfragen();
 		void neurf();
-		void pvirtvorpruefggfmehrfach();
+		void pvirtnachrueckfragen();
 		void virtpruefweiteres();
 		void virtzeigueberschrift();
 		int holtif(const string& datei,ulong *seitenp=0,struct tm *tmp=0,struct stat *elogp=0,

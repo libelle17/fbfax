@@ -46,8 +46,8 @@ char const *DPROG_T[T_MAX+1][SprachZahl]=
 	{"Zahl der aufzulistenden Datensaetze = <zahl> statt","No. of listed entries = <no> instead of"},
 	// T_Datenbank_nicht_initialisierbar_breche_ab
 	{"Datenbank nicht initialisierbar, breche ab","database init failed, stopping"},
-	// T_pvirtvorpruefggfmehrfach,
-	{"pvirtvorpruefggfmehrfach()","pvirtbeforecheckmultiple()"},
+	// T_pvirtnachrueckfragen,
+	{"pvirtnachrueckfragen()","pvirtnachrueckfragen()"},
 	// T_pvirtfuehraus,
 	{"pvirtfuehraus()","pvirtexecute()"},
 	// T_virttesterg,
@@ -215,19 +215,21 @@ void hhcl::pvirtVorgbSpeziell()
 void hhcl::virtinitopt()
 {
 	hLog(violetts+"virtinitopt()"+schwarz); //ω
+	// Kopiervorlage:
+	// opn<<new optcl(/*pname*/"pname",/*pptr*/pptr,/*art*/pstri,/*kurzi*/T_kurz_k,/*langi*/T_lang_l,/*TxBp*/&Tx,/*Txi*/T_Option_erklaert,/*wi*/1,/*Txi2*/T_Option_Nachtext,/*rottxt*/nix,/*wert*/1,/*woher*/!pname.empty(),/*Txtrf*/{},/*obno*/1,/*refstr*/0,/*obfragz*/0,/*fnobfragz*/0,/*fnnachhz*/&hcl::fu1,/*fnvorhz*/0,/*sonderrf*/0);
 	opn<<new optcl(/*pptr*/&anhl,/*art*/puchar,T_st_k,T_stop_l,/*TxBp*/&Tx,/*Txi*/T_DPROG_anhalten,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/1,/*woher*/1); //α //ω
 	opn<<new optcl(/*pptr*/&dszahl,/*art*/pdez,T_n_k,T_dszahl_l,/*TxBp*/&Tx,/*Txi*/T_Zahl_der_aufzulistenden_Datensaetze_ist_zahl_statt,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1); //α //ω
-	opn<<new optcl(/*pname*/"wartevz",/*pptr*/&wvz,/*art*/pverz,T_wvz_k,T_wartevz_l,/*TxBp*/&Tx,/*Txi*/T_Dateien_warten_in_pfad_anstatt,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!wvz.empty(),T_Verzeichnis_mit_wartenden_Dateien);
-	opn<<new optcl(/*pname*/"gefaxtvz",/*pptr*/&gfvz,/*art*/pverz,T_gfvz_k,T_gefaxtvz_l,/*TxBp*/&Tx,/*Txi*/T_Fertige_Faxe_werden_hier_gesammelt_anstatt_in,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!wvz.empty(),T_Verzeichnis_mit_gefaxten_Dateien);
-	opn<<new optcl(/*pname*/"nichtgefaxtvz",/*pptr*/&ngvz,/*art*/pverz,T_ngvz_k,T_nichtgefaxtvz_l,/*TxBp*/&Tx,/*Txi*/T_Gescheiterte_Faxe_werden_hier_gesammelt_anstatt_in,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!ngvz.empty(),T_Verzeichnis_mit_gescheiterten_Dateien);
-	opn<<new optcl(/*pname*/"usr",/*pptr*/&usr,/*part*/pstri,T_usr_k,T_usr_l,/*TxBp*/&Tx,/*Txi*/T_verwendet_fuer_die_Fritzbox_den_Benutzer_string_anstatt,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!usr.empty(),T_Benutzer_fuer_Fritzbox);
-	opn<<new optcl(/*pname*/"pwd",/*pptr*/&pwd,/*part*/ppwd,T_pwd_k,T_pwd_l,/*TxBp*/&Tx,/*Txi*/T_verwendet_fuer_die_Fritzbox_das_Passwort_string,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!pwd.empty(),T_Passwort_fuer_Fritzbox);
-	opn<<new optcl(/*pname*/"host",/*pptr*/&host,/*part*/pstri,T_host_k,T_host_l,/*TxBp*/&Tx,/*Txi*/T_Hostadresse_der_Fritzbox,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!host.empty(),T_Hostadresse_der_Fritzbox_);
-	opn<<new optcl(/*pname*/"msn",/*pptr*/&msn,/*art*/pstri,T_msn_k,T_msn_l,/*TxBp*/&Tx,/*Txi*/T_MSN_zum_Faxen,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!msn.empty(),T_MSN_zum_Faxen);
-	opn<<new optcl(/*pname*/"absnr",/*pptr*/&absnr,/*art*/pstri,T_absnr_k,T_absnr_l,/*TxBp*/&Tx,/*Txi*/T_auf_Fax_angegebene_Absendernummer,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!msn.empty(),T_auf_Fax_angegebene_Absendernummer);
-	opn<<new optcl(/*pname*/"absdr",/*pptr*/&absdr,/*art*/pstri,T_absdr_k,T_absdr_l,/*TxBp*/&Tx,/*Txi*/T_auf_Fax_angegebener_Absender,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!absdr.empty(),T_auf_Fax_angegebener_Absender);
-	opn<<new optcl(/*pname*/"mfolge",/*pptr*/&mfolge,/*art*/pstri,T_mfolge_k,T_mfolge_l,/*TxBp*/&Tx,/*Txi*/T_kommagetrennte_Minutenfolge_der_Sendeversuche,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!mfolge.empty(),T_kommagetrennte_Minutenfolge_der_Sendeversuche);
-	opn<<new optcl(/*pname*/"maxsec",/*pptr*/&maxsec,/*art*/pint,T_maxsec_k,T_maxsec_l,/*TxBp*/&Tx,/*Txi*/T_Zahl_der_Sekunden_fuer_ein_fax,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!maxsec,T_Zahl_der_Sekunden_fuer_ein_fax);
+	opn<<new optcl(/*pname*/"wartevz",/*pptr*/&wvz,/*art*/pverz,T_wvz_k,T_wartevz_l,/*TxBp*/&Tx,/*Txi*/T_Dateien_warten_in_pfad_anstatt,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!wvz.empty(),Tx[T_Verzeichnis_mit_wartenden_Dateien]);
+	opn<<new optcl(/*pname*/"gefaxtvz",/*pptr*/&gfvz,/*art*/pverz,T_gfvz_k,T_gefaxtvz_l,/*TxBp*/&Tx,/*Txi*/T_Fertige_Faxe_werden_hier_gesammelt_anstatt_in,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!wvz.empty(),Tx[T_Verzeichnis_mit_gefaxten_Dateien]);
+	opn<<new optcl(/*pname*/"nichtgefaxtvz",/*pptr*/&ngvz,/*art*/pverz,T_ngvz_k,T_nichtgefaxtvz_l,/*TxBp*/&Tx,/*Txi*/T_Gescheiterte_Faxe_werden_hier_gesammelt_anstatt_in,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!ngvz.empty(),Tx[T_Verzeichnis_mit_gescheiterten_Dateien]);
+	opn<<new optcl(/*pname*/"usr",/*pptr*/&usr,/*part*/pstri,T_usr_k,T_usr_l,/*TxBp*/&Tx,/*Txi*/T_verwendet_fuer_die_Fritzbox_den_Benutzer_string_anstatt,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!usr.empty(),Tx[T_Benutzer_fuer_Fritzbox]);
+	opn<<new optcl(/*pname*/"pwd",/*pptr*/&pwd,/*part*/ppwd,T_pwd_k,T_pwd_l,/*TxBp*/&Tx,/*Txi*/T_verwendet_fuer_die_Fritzbox_das_Passwort_string,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!pwd.empty(),Tx[T_Passwort_fuer_Fritzbox],/*obno*/0,/*refstr*/&usr);
+	opn<<new optcl(/*pname*/"host",/*pptr*/&host,/*part*/pstri,T_host_k,T_host_l,/*TxBp*/&Tx,/*Txi*/T_Hostadresse_der_Fritzbox,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!host.empty(),Tx[T_Hostadresse_der_Fritzbox_]);
+	opn<<new optcl(/*pname*/"msn",/*pptr*/&msn,/*art*/pstri,T_msn_k,T_msn_l,/*TxBp*/&Tx,/*Txi*/T_MSN_zum_Faxen,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!msn.empty(),Tx[T_MSN_zum_Faxen]);
+	opn<<new optcl(/*pname*/"absnr",/*pptr*/&absnr,/*art*/pstri,T_absnr_k,T_absnr_l,/*TxBp*/&Tx,/*Txi*/T_auf_Fax_angegebene_Absendernummer,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!msn.empty(),Tx[T_auf_Fax_angegebene_Absendernummer]);
+	opn<<new optcl(/*pname*/"absdr",/*pptr*/&absdr,/*art*/pstri,T_absdr_k,T_absdr_l,/*TxBp*/&Tx,/*Txi*/T_auf_Fax_angegebener_Absender,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!absdr.empty(),Tx[T_auf_Fax_angegebener_Absender]);
+	opn<<new optcl(/*pname*/"mfolge",/*pptr*/&mfolge,/*art*/pstri,T_mfolge_k,T_mfolge_l,/*TxBp*/&Tx,/*Txi*/T_kommagetrennte_Minutenfolge_der_Sendeversuche,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!mfolge.empty(),Tx[T_kommagetrennte_Minutenfolge_der_Sendeversuche]);
+	opn<<new optcl(/*pname*/"maxsec",/*pptr*/&maxsec,/*art*/pint,T_maxsec_k,T_maxsec_l,/*TxBp*/&Tx,/*Txi*/T_Zahl_der_Sekunden_fuer_ein_fax,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/!maxsec,Tx[T_Zahl_der_Sekunden_fuer_ein_fax]);
 	opn<<new optcl(/*pptr*/&datei,/*art*/pstri,T_dt_k,T_datei_l,/*TxBp*/&Tx,/*Txi*/T_zu_faxende_Datei,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&an,/*art*/pstri,T_an_k,T_an_l,/*TxBp*/&Tx,/*Txi*/T_Zielfaxnr,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/-1,/*woher*/1);
 	opn<<new optcl(/*pptr*/&nurrein,/*art*/puchar,T_nr_k,T_nurrein_l,/*TxBp*/&Tx,/*Txi*/T_stellt_Faxe_nur_rein,/*wi*/1,/*Txi2*/-1,/*rottxt*/nix,/*wert*/1,/*woher*/1);
@@ -267,6 +269,7 @@ void hhcl::virtzeigversion(const string& ltiffv/*=string()*/)
 void hhcl::pvirtvorrueckfragen()
 {
 	hLog(violetts+Tx[T_pvirtvorrueckfragen]+schwarz); //ω
+		if (absnr.empty()) absnr=msn;
 } // void hhcl::pvirtvorrueckfragen //α
 
 
@@ -274,40 +277,13 @@ void hhcl::neurf()
 {
 	for(auto omit=opn.schl.end();omit!=opn.schl.begin();) {
 		omit--;
-		if ((*omit)->Txrf!=-1) {
-		 const char* const text=(*(*omit)->TxBp)[(*omit)->Txrf];
-		cout<<text<<endl;
+		if (!(*omit)->Txtrf.empty()) {
+			const char* const text=(*omit)->Txtrf.c_str();
+			cout<<text<<endl;
 		}
 	}
 } // void hhcl::neurf
  //ω
-// wird aufgerufen in lauf //α
-void hhcl::virtrueckfragen()
-{
-	hLog(violetts+Tx[T_virtrueckfragen]+", rzf: "+blau+ltoan(rzf)+schwarz);
-	if (rzf) { //ω
-		wvz=Tippverz(Tx[T_Verzeichnis_mit_wartenden_Dateien],&wvz);
-		gfvz=Tippverz(Tx[T_Verzeichnis_mit_gefaxten_Dateien],&gfvz);
-		ngvz=Tippverz(Tx[T_Verzeichnis_mit_gescheiterten_Dateien],&ngvz);
-		usr=Tippstr(Tx[T_Benutzer_fuer_Fritzbox],&usr);
-		string pwd2;
-		pwd.clear();
-		do {
-			pwd= Tippstr(string(Tx[T_pwd])+Txk[T_fuer_Benutzer]+dblau+usr+schwarz+"'"/*,&smtppwd*/);
-			pwd2=Tippstr(string(Tx[T_pwd])+Txk[T_fuer_Benutzer]+dblau+usr+schwarz+"'"+" ("+Txk[T_erneute_Eingabe]+")"/*,&mpw2*/);
-		} while (pwd!=pwd2);
-		host=Tippstr(Tx[T_Hostadresse_der_Fritzbox],&host);
-		msn=Tippstr(Tx[T_MSN_zum_Faxen],&msn);
-		if (absnr.empty()) absnr=msn;
-		absnr=Tippstr(Tx[T_auf_Fax_angegebene_Absendernummer],&absnr);
-		absdr=Tippstr(Tx[T_auf_Fax_angegebener_Absender],&absdr);
-		mfolge=Tippstr(Tx[T_kommagetrennte_Minutenfolge_der_Sendeversuche],&mfolge);
-		maxsec=Tippzahl(Tx[T_Zahl_der_Sekunden_fuer_ein_fax],maxsec);
-	} // if (rzf) //α
-	hcl::virtrueckfragen();
-	//// opn.oausgeb(rot);
-} // void hhcl::virtrueckfragen
-//ω
 //α
 // wird aufgerufen in lauf
 void hhcl::virtpruefweiteres()
@@ -356,9 +332,9 @@ void hhcl::anhalten()
 } // void hhcl::anhalten() //α
 //ω
 //α
-void hhcl::pvirtvorpruefggfmehrfach()
+void hhcl::pvirtnachrueckfragen()
 {
-	hLog(violetts+Tx[T_pvirtvorpruefggfmehrfach]+schwarz);
+	hLog(violetts+Tx[T_pvirtnachrueckfragen]+schwarz);
 	// if (initDB()) exit(schluss(10,Tx[T_Datenbank_nicht_initialisierbar_breche_ab]));  //ω
 	if (!an.empty()) {
 		struct stat dstat{0};
@@ -437,7 +413,7 @@ void hhcl::pvirtvorpruefggfmehrfach()
 		} // 		if (dart && !lstat(datei.c_str(),&dstat) && dstat.st_size)
 	} // 	if (!an.empty())
   if (nurrein) keineverarbeitung=1; // wenn von autofax faxe reingestellt werden, sollen die aus Zeitgruenden nicht gleich verarbeitet werden 
-} // void hhcl::pvirtvorpruefggfmehrfach //α
+} // void hhcl::pvirtnachrueckfragen //α
 //ω
 
 int hhcl::holtif(const string& datei,ulong *seitenp,struct tm *tmp,struct stat *elogp, 
