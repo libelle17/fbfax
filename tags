@@ -1168,7 +1168,6 @@ aname	./kons.h	/^ string aname;$/;"	m	struct:absch
 anfgg	./kons.cpp	/^void anfgg(const string& datei, const string& inhalt, const string& comment, int obverb\/*=0*\/, int oblog\/*=0*\/)$/;"	f
 anfgw	./kons.cpp	/^void anfgw(const string& datei, const string& udpr, const string& inhalt, const string& comment, int obverb\/*=0*\/, int oblog\/*=0*\/)$/;"	f
 anfzweg	./kons.cpp	/^string* anfzweg(string *quelp) {$/;"	f
-anhalten	./fbfax.cpp	/^void hhcl::anhalten()$/;"	f	class:hhcl
 aocl	./appobject.c	/^aocl::aocl()$/;"	f	class:aocl
 aocl	./appobject.h	/^struct aocl$/;"	s
 app_marshal_VOID__POINTER_POINTER	./appobject.c	/^void app_marshal_VOID__POINTER_POINTER(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)$/;"	f
@@ -1606,7 +1605,6 @@ holbefz0	./kons.cpp	/^void hcl::holbefz0(const int argc, const char *const *cons
 hold	./faxophone.h	/^	int hold;$/;"	m	struct:capi_connection
 holraus	./tr64.cpp	/^size_t holraus(const std::string xml,std::string item,std::string *ergp,size_t anf\/*=0*\/)$/;"	f
 holsystemsprache	./kons.cpp	/^string holsystemsprache(int obverb\/*=0*\/)$/;"	f
-holtif	./fbfax.cpp	/^int hhcl::holtif(const string& datei,ulong *seitenp,struct tm *tmp,struct stat *elogp, $/;"	f	class:hhcl
 holurl	./tr64.cpp	/^int holurl(const std::string url, std::string* bufp)$/;"	f
 holvomnetz	./kons.cpp	/^int hcl::holvomnetz(const string& datei,const string& vors\/*=defvors*\/,const string& nachs\/*=defnachs*\/)$/;"	f	class:hcl
 host	./direkt.h	/^    const std::string host;$/;"	m	class:fbcl
@@ -1743,7 +1741,6 @@ mabp	./kons.cpp	/^time_t *find3cl::mabp,*find3cl::mbisp;$/;"	m	class:find3cl	fil
 mabp	./kons.h	/^    static time_t *mabp,*mbisp;$/;"	m	struct:find3cl
 machfit	./kons.cpp	/^int servc::machfit(int obverb\/*=0*\/,int oblog\/*=0*\/, binaer nureinmal\/*=falsch*\/)$/;"	f	class:servc
 machvers	./Makefile	/^define machvers	 $/;"	m
-main	./fbfax.cpp	/^int main(int argc,char** argv) \/\/α$/;"	f
 main_loop	./direkt.c	/^GMainLoop *main_loop = NULL;$/;"	v
 manges	./Makefile	/^define manges$/;"	m
 manu	./faxophone.h	/^	uint32_t manu[5];$/;"	m	struct:capi_profile
@@ -1986,9 +1983,7 @@ puchar	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint
 pverz	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	e	enum:par_t
 pvirtVorgbSpeziell	./fbfax.cpp	/^void hhcl::pvirtVorgbSpeziell()$/;"	f	class:hhcl
 pvirtVorgbSpeziell	./vgb.cpp	/^void hhcl::pvirtVorgbSpeziell()$/;"	f	class:hhcl
-pvirtfuehraus	./fbfax.cpp	/^void hhcl::pvirtfuehraus() \/\/α$/;"	f	class:hhcl
 pvirtmacherkl	./fbfax.cpp	/^void hhcl::pvirtmacherkl()$/;"	f	class:hhcl
-pvirtnachrueckfragen	./fbfax.cpp	/^void hhcl::pvirtnachrueckfragen()$/;"	f	class:hhcl
 pvirtvorrueckfragen	./fbfax.cpp	/^void hhcl::pvirtvorrueckfragen()$/;"	f	class:hhcl
 pvirtvorzaehler	./fbfax.cpp	/^void hhcl::pvirtvorzaehler()$/;"	f	class:hhcl
 pwd	./direkt.h	/^    const std::string pwd;$/;"	m	class:fbcl
@@ -2190,7 +2185,6 @@ verarbeit	./kons.cpp	/^int find3cl::verarbeit(const char *fpath, const struct st
 verarbeitkonf	./kons.cpp	/^void hcl::verarbeitkonf()$/;"	f	class:hcl
 versnr	./fbfax.cpp	/^const double& versnr= \/\/α$/;"	v
 verszuzahl	./kons.cpp	/^double verszuzahl(const string& vers)$/;"	f
-verzeichnisse	./fbfax.cpp	/^void hhcl::verzeichnisse()$/;"	f	class:hhcl
 verzneu	./kons.h	/^		int eingefuegt, verzneu;$/;"	m	struct:find2cl
 viadd	./kons.cpp	/^void viadd(string* const cmdp,string* const zeigp, const string& datei,const uchar ro\/*=0*\/,const uchar hinten\/*=0*\/, const uchar unten\/*=0*\/)$/;"	f
 violett	./kons.cpp	/^			*const dblau="\\e[0;34;1;47m", *const blau="\\e[1;34m", *const violett="\\e[0;35m", *const hviolett="\\e[1;35m",$/;"	v
@@ -2198,7 +2192,6 @@ virtMusterVorgb	./fbfax.cpp	/^void hhcl::virtMusterVorgb()$/;"	f	class:hhcl
 virtMusterVorgb	./kons.cpp	/^void hcl::virtMusterVorgb()$/;"	f	class:hcl
 virtVorgbAllg	./fbfax.cpp	/^void hhcl::virtVorgbAllg()$/;"	f	class:hhcl
 virtVorgbAllg	./kons.cpp	/^void hcl::virtVorgbAllg()$/;"	f	class:hcl
-virtautokonfschreib	./fbfax.cpp	/^void hhcl::virtautokonfschreib()$/;"	f	class:hhcl
 virtautokonfschreib	./kons.cpp	/^void hcl::virtautokonfschreib()$/;"	f	class:hcl
 virteinzutragen	./kons.cpp	/^const uchar optcl::virteinzutragen(\/*schAcl<optcl>**\/void* schlp,int obverb)$/;"	f	class:optcl
 virteinzutragen	./kons.cpp	/^const uchar wpgcl::virteinzutragen(void *schlp,int obverb)$/;"	f	class:wpgcl
@@ -2210,7 +2203,6 @@ virtholstr	./kons.cpp	/^string wpgcl::virtholstr() const$/;"	f	class:wpgcl
 virtinitopt	./fbfax.cpp	/^void hhcl::virtinitopt()$/;"	f	class:hhcl
 virtinitopt	./kons.cpp	/^void hcl::virtinitopt()$/;"	f	class:hcl
 virtlgnzuw	./kons.cpp	/^void hcl::virtlgnzuw()$/;"	f	class:hcl
-virtlieskonfein	./fbfax.cpp	/^void hhcl::virtlieskonfein()$/;"	f	class:hhcl
 virtlieskonfein	./kons.cpp	/^void hcl::virtlieskonfein()$/;"	f	class:hcl
 virtloeschomaps	./kons.cpp	/^void optcl::virtloeschomaps(schAcl<optcl> *schlp)$/;"	f	class:optcl
 virtmachbemerk	./kons.cpp	/^const string& optcl::virtmachbemerk(const Sprache lg,const binaer obfarbe\/*=wahr*\/)$/;"	f	class:optcl
@@ -2221,14 +2213,11 @@ virtoausgeb	./kons.cpp	/^void wpgcl::virtoausgeb() const$/;"	f	class:wpgcl
 virtpruefweiteres	./fbfax.cpp	/^void hhcl::virtpruefweiteres()$/;"	f	class:hhcl
 virtpruefweiteres	./kons.cpp	/^void hcl::virtpruefweiteres()$/;"	f	class:hcl
 virtrueckfrage	./kons.cpp	/^void hcl::virtrueckfrage(shared_ptr<optcl>& omit)$/;"	f	class:hcl
-virtschlussanzeige	./fbfax.cpp	/^void hhcl::virtschlussanzeige()$/;"	f	class:hhcl
 virtschlussanzeige	./kons.cpp	/^void hcl::virtschlussanzeige()$/;"	f	class:hcl
-virttesterg	./fbfax.cpp	/^void hhcl::virttesterg()$/;"	f	class:hhcl
 virttusetzbemerkwoher	./kons.cpp	/^void optcl::virttusetzbemerkwoher(const string& ibemerk,const uchar vwoher)$/;"	f	class:optcl
 virttusetzbemerkwoher	./kons.cpp	/^void wpgcl::virttusetzbemerkwoher(const string& ibemerk, const uchar vwoher)$/;"	f	class:wpgcl
 virtweisomapzu	./kons.cpp	/^void optcl::virtweisomapzu(void *schlp)$/;"	f	class:optcl
 virtweisomapzu	./kons.cpp	/^void wpgcl::virtweisomapzu(void *optp)$/;"	f	class:wpgcl
-virtzeigueberschrift	./fbfax.cpp	/^void hhcl::virtzeigueberschrift()$/;"	f	class:hhcl
 virtzeigueberschrift	./kons.cpp	/^void hcl::virtzeigueberschrift()$/;"	f	class:hcl
 virtzeigversion	./fbfax.cpp	/^void hhcl::virtzeigversion(const string& ltiffv\/*=string()*\/)$/;"	f	class:hhcl
 virtzeigversion	./kons.cpp	/^void hcl::virtzeigversion(const string& ltiffv\/*=string()*\/)$/;"	f	class:hcl
@@ -2292,7 +2281,6 @@ zypper	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	e	enum:i
 ~fbcl	./direkt.c	/^fbcl::~fbcl()$/;"	f	class:fbcl
 ~find2cl	./kons.cpp	/^find2cl::~find2cl()$/;"	f	class:find2cl
 ~hcl	./kons.cpp	/^hcl::~hcl()$/;"	f	class:hcl
-~hhcl	./fbfax.cpp	/^hhcl::~hhcl() $/;"	f	class:hhcl
 ~ic_cl	./kons.cpp	/^ic_cl::~ic_cl() { $/;"	f	class:ic_cl
 ~optcl	./kons.cpp	/^optcl::~optcl()$/;"	f	class:optcl
 ~rmcl	./routermanager.c	/^rmcl::~rmcl()$/;"	f	class:rmcl

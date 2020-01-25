@@ -471,3 +471,37 @@ update-alternatives: using /usr/bin/ctags-exuberant to provide /usr/bin/ctags (c
 
 
 IP: ''
+
+Rueckmeldung bei einricht global:
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'global-6.6.1-lp151.2.3.x86_64' aus Repository 'openSUSE-Leap-15.1-1' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Die folgenden 5 NEUEN Pakete werden installiert:
+  global idutils idutils-lang libpython2_7-1_0 python-base
+
+Die folgenden 2 empfohlenen Pakete wurden automatisch gewählt:
+  idutils idutils-lang
+
+5 neue Pakete zu installieren.
+Gesamtgröße des Downloads: 7,5 MiB. Bereits im Cache gespeichert: 0 B. Nach der Operation werden zusätzlich 30,6 MiB belegt.
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Paket idutils-4.6-lp151.2.3.x86_64 abrufen (1/5), 145,3 KiB (896,0 KiB entpackt)
+Abrufen: idutils-4.6-lp151.2.3.x86_64.rpm [fertig]
+Paket idutils-lang-4.6-lp151.2.3.noarch abrufen (2/5),  54,2 KiB (285,8 KiB entpackt)
+Abrufen: idutils-lang-4.6-lp151.2.3.noarch.rpm [.fertig]
+Paket libpython2_7-1_0-2.7.14-lp151.10.13.2.x86_64 abrufen (3/5), 818,8 KiB (  2,1 MiB entpackt)
+Abrufen: libpython2_7-1_0-2.7.14-lp151.10.13.2.x86_64.rpm [fertig]
+Paket python-base-2.7.14-lp151.10.13.2.x86_64 abrufen (4/5),   5,6 MiB ( 23,2 MiB entpackt)
+Abrufen: python-base-2.7.14-lp151.10.13.2.x86_64.rpm [.fertig (5,3 MiB/s)]
+Paket global-6.6.1-lp151.2.3.x86_64 abrufen (5/5), 849,6 KiB (  4,1 MiB entpackt)
+Abrufen: global-6.6.1-lp151.2.3.x86_64.rpm [fertig]
+
+Überprüfung auf Dateikonflikte läuft: [........fertig]
+(1/5) Installieren: idutils-4.6-lp151.2.3.x86_64 [............fertig]
+(2/5) Installieren: idutils-lang-4.6-lp151.2.3.noarch [..........fertig]
+(3/5) Installieren: libpython2_7-1_0-2.7.14-lp151.10.13.2.x86_64 [............fertig]
+(4/5) Installieren: python-base-2.7.14-lp151.10.13.2.x86_64 [............fertig]
+(5/5) Installieren: global-6.6.1-lp151.2.3.x86_64 [............fertig]
+IP: ''

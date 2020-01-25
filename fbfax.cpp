@@ -291,6 +291,7 @@ void hhcl::virtpruefweiteres()
 	hLog(violetts+Tx[T_virtpruefweiteres]+schwarz); //ω
 	// if (initDB()) exit(schluss(10,Tx[T_Datenbank_nicht_initialisierbar_breche_ab])); //α //ω
 	verzeichnisse();
+	__attribute__((unused)) const uchar capi4linuxda{!linstp->doggfinst("capi4linux",obverb,oblog)};
 	hcl::virtpruefweiteres(); // z.Zt. leer //α
 } // void hhcl::virtpruefweiteres
 
