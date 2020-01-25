@@ -176,9 +176,6 @@ ifneq ($(LGSSDP),)
 #	LDFLAGS::=$(LDFLAGS) -lgssdp-1.0
 	LDFLAGS::=$(LDFLAGS) $(shell pkg-config --libs $(shell grep -l 'Cflags.*gssdp' $(PCFILES)|tail -n1))
 endif
-ifneq ($(LCAP2),)
-	LDFLAGS::=$(LDFLAGS) -lcapi20
-endif
 ifneq ($(LCAPI),)
 	LDFLAGS::=$(LDFLAGS) -lcapi20
 endif
@@ -435,7 +432,6 @@ endif
 	-@[ "$(LSND)" ]&&{ [ -f /usr/include/sndfile.h ]|| sh configure inst _ "$(LSND)" verbose;}||:
 	-@[ "$(QPDF)" ]&&{ [ -f /usr/include/qpdf/QPDF.hh ]|| sh configure inst _ "$(QPDF)" verbose;}||:
 	-@[ "$(LGSSDP)" ]&&{ grep -qlm1 'Cflags.*gssdp' $(PCFILES)||sh configure inst _ "$(LGSSDP)" verbose;}||:
-	-@[ "$(LCAP2)" ]&&{ grep -qlm1 'capi20.h' $(PCFILES)||sh configure inst _ "$(LCAP2)" verbose;}||:
 	-@[ "$(LCAPI)" ]&&{ grep -qlm1 'capi20' $(PCFILES)||sh configure inst _ "$(LCAPI)" verbose;}||:
 	-@[ "$(LBOOST)" ]&&{ $(SPR) $(LBOOST) $(KR)|| sh configure inst _ "$(LBOOST)" verbose;}||:
 	-@[ "$(LBIO)" ]&&{ $(SPR) "$(LBIO)" $(KR)||sh configure inst _ "$(LBIO)" verbose;}||:
