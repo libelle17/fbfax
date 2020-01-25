@@ -95,6 +95,7 @@ getIPR() {
 			LT=${_LT}-${dev};
 			CTAGS=exuberant-ctags;
 			LCURS="$(apt-cache search 'libncurses[0-9]+-dev$'|sort -r|head -n1|cut -d'-' -f1) $(apt-cache search 'libncursesw[0-9]+-dev$'|sort -r|head -n1|cut -d'-' -f1)";
+      LCERR=comerr-${dev};
 		} 
 	} || 
 	{ [ $OSNR = 5 ]&&
@@ -180,6 +181,7 @@ getIPR() {
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include[ ]*<term.h>" "$A" &&break;done ||LTERM=;
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do grep -qm1 '^[[:space:]]*[^/].*\(gchar\|gboolean\|gint\)' "$A" &&break;done ||LGSSDP=;
 	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do grep -qim1 '^[[:space:]]*[^/].*\(capi20_isinstalled\)' "$A" &&break;done ||LCAPI=;
+	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include[ ].*com_err.h>" "$A" &&break;done ||LCERR=;
 	IPR="${SUDC}$IdPR";
 	DTN="`find . -maxdepth 1 -name ${DPROG}.cpp -printf '%f '`\
 		   `find . -maxdepth 1 -name ${DPROG}.c -printf '%f '`\
@@ -192,7 +194,7 @@ getIPR() {
 
 exportvars() {
 	rm -f vars;
-	for v in OSNR IPR IP_R UPR UDPR SPR UNROH UNF AUNF ILOG PGROFF LT LT5 LBOOST LBIO LBLO LACL LCURL LCURS LSPAN LGLIB LSOUP LSND QPDF LTERM LGSSDP LCAPI LM18 dev libmdb REPOS UREPO COMP GITV DTN DPROG; do
+	for v in OSNR IPR IP_R UPR UDPR SPR UNROH UNF AUNF ILOG PGROFF LT LT5 LBOOST LBIO LBLO LACL LCURL LCURS LSPAN LGLIB LSOUP LSND QPDF LTERM LGSSDP LCAPI LCERR LM18 dev libmdb REPOS UREPO COMP GITV DTN DPROG; do
 		eval nv=\$$v; 
 		printf "$v::=$nv\n" >>vars; 
 	done;
@@ -332,6 +334,7 @@ QPDF=qpdf-${dev};
 LTERM=termcap;
 LGSSDP=libgssdp-${dev};
 LCAPI=libcapi20-3;
+LCERR=libcom_err-${dev};
 Z=""
 [ "$(id -u)" -ne "0" ]&&SUDC="sudo "
 if test "$ICH" != install.sh -a "$ICH" != ${DPROG}_inst.sh -a "$ICH" != transfer; then

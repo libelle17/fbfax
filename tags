@@ -5,27 +5,47 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	Development	//
 -output	./Makefile	/^	-@df --output=ipcent \/ |tail -n1|grep - && $(SUDC)pkill postdrop;:$/;"	m
-ACB_AUTHENTICATE	./appobject.h	/^	ACB_AUTHENTICATE,$/;"	e	enum:__anon3
-ACB_CONNECTION_ESTABLISHED	./appobject.h	/^	ACB_CONNECTION_ESTABLISHED,$/;"	e	enum:__anon3
-ACB_CONNECTION_NOTIFY	./appobject.h	/^	ACB_CONNECTION_NOTIFY,$/;"	e	enum:__anon3
-ACB_CONNECTION_STATUS	./appobject.h	/^	ACB_CONNECTION_STATUS,$/;"	e	enum:__anon3
-ACB_CONNECTION_TERMINATED	./appobject.h	/^	ACB_CONNECTION_TERMINATED,$/;"	e	enum:__anon3
-ACB_CONTACTS_CHANGED	./appobject.h	/^	ACB_CONTACTS_CHANGED,$/;"	e	enum:__anon3
-ACB_CONTACT_PROCESS	./appobject.h	/^	ACB_CONTACT_PROCESS,$/;"	e	enum:__anon3
-ACB_FAX_PROCESS	./appobject.h	/^	ACB_FAX_PROCESS,$/;"	e	enum:__anon3
-ACB_JOURNAL_LOADED	./appobject.h	/^	ACB_JOURNAL_LOADED,$/;"	e	enum:__anon3
-ACB_MAX	./appobject.h	/^	ACB_MAX$/;"	e	enum:__anon3
-ACB_MESSAGE	./appobject.h	/^	ACB_MESSAGE,$/;"	e	enum:__anon3
+ACB_AUTHENTICATE	./appobject.h	/^	ACB_AUTHENTICATE,$/;"	e	enum:__anon2
+ACB_CONNECTION_ESTABLISHED	./appobject.h	/^	ACB_CONNECTION_ESTABLISHED,$/;"	e	enum:__anon2
+ACB_CONNECTION_NOTIFY	./appobject.h	/^	ACB_CONNECTION_NOTIFY,$/;"	e	enum:__anon2
+ACB_CONNECTION_STATUS	./appobject.h	/^	ACB_CONNECTION_STATUS,$/;"	e	enum:__anon2
+ACB_CONNECTION_TERMINATED	./appobject.h	/^	ACB_CONNECTION_TERMINATED,$/;"	e	enum:__anon2
+ACB_CONTACTS_CHANGED	./appobject.h	/^	ACB_CONTACTS_CHANGED,$/;"	e	enum:__anon2
+ACB_CONTACT_PROCESS	./appobject.h	/^	ACB_CONTACT_PROCESS,$/;"	e	enum:__anon2
+ACB_FAX_PROCESS	./appobject.h	/^	ACB_FAX_PROCESS,$/;"	e	enum:__anon2
+ACB_JOURNAL_LOADED	./appobject.h	/^	ACB_JOURNAL_LOADED,$/;"	e	enum:__anon2
+ACB_MAX	./appobject.h	/^	ACB_MAX$/;"	e	enum:__anon2
+ACB_MESSAGE	./appobject.h	/^	ACB_MESSAGE,$/;"	e	enum:__anon2
+ALERT_CONF_INFO	./capiutils.h	401;"	d
+ALERT_CONF_PLCI	./capiutils.h	399;"	d
+ALERT_REQ_ADDITIONALINFO	./capiutils.h	387;"	d
+ALERT_REQ_BCHANNELINFORMATION	./capiutils.h	389;"	d
+ALERT_REQ_FACILITYDATAARRAY	./capiutils.h	394;"	d
+ALERT_REQ_HEADER	./capiutils.h	944;"	d
+ALERT_REQ_KEYPADFACILITY	./capiutils.h	390;"	d
+ALERT_REQ_PLCI	./capiutils.h	385;"	d
+ALERT_REQ_USERUSERDATA	./capiutils.h	392;"	d
 APP_OBJECT	./appobject.h	48;"	d
 APP_OBJECT_CLASS	./appobject.h	49;"	d
 APP_OBJECT_TYPE	./appobject.h	47;"	d
 AUDIO_INPUT	./audio.h	28;"	d
 AUDIO_OUTPUT	./audio.h	27;"	d
 Abschn_auswert	./kons.cpp	/^void confdcl::Abschn_auswert(int obverb\/*=0*\/, const char tz\/*='='*\/)$/;"	f	class:confdcl
-AppCallbackId	./appobject.h	/^} AppCallbackId;$/;"	t	typeref:enum:__anon3
+AdditionalInfo	./capiutils.h	/^	_cmstruct AdditionalInfo;$/;"	m	struct:__anon6
+AppCallbackId	./appobject.h	/^} AppCallbackId;$/;"	t	typeref:enum:__anon2
 AppObject	./appobject.h	/^typedef struct _AppObject AppObject;$/;"	t	typeref:struct:_AppObject
 AppObjectClass	./appobject.h	/^typedef struct _AppObjectClass AppObjectClass;$/;"	t	typeref:struct:_AppObjectClass
 AppObjectPrivate	./appobject.c	/^typedef struct _AppObjectPrivate AppObjectPrivate;$/;"	t	typeref:struct:_AppObjectPrivate	file:
+ApplId	./capiutils.h	/^	_cword ApplId;$/;"	m	struct:__anon6
+B1configuration	./capiutils.h	/^	_cstruct B1configuration;$/;"	m	struct:__anon6
+B1protocol	./capiutils.h	/^	_cword B1protocol;$/;"	m	struct:__anon6
+B2configuration	./capiutils.h	/^	_cstruct B2configuration;$/;"	m	struct:__anon6
+B2protocol	./capiutils.h	/^	_cword B2protocol;$/;"	m	struct:__anon6
+B3configuration	./capiutils.h	/^	_cstruct B3configuration;$/;"	m	struct:__anon6
+B3protocol	./capiutils.h	/^	_cword B3protocol;$/;"	m	struct:__anon6
+BC	./capiutils.h	/^	_cstruct BC;$/;"	m	struct:__anon6
+BChannelinformation	./capiutils.h	/^	_cstruct BChannelinformation;$/;"	m	struct:__anon6
+BProtocol	./capiutils.h	/^	_cmstruct BProtocol;$/;"	m	struct:__anon6
 B_Alle	./kons.h	127;"	d
 B_Block	./kons.h	123;"	d
 B_Chdev	./kons.h	122;"	d
@@ -43,42 +63,370 @@ CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon4
 CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon4
 CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon4
 CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon4
+CAPI20_GET_MANUFACTURER	./capiutils.h	54;"	d
+CAPI20_GET_MESSAGE	./capiutils.h	52;"	d
+CAPI20_GET_PROFILE	./capiutils.h	57;"	d
+CAPI20_GET_SERIAL_NUMBER	./capiutils.h	56;"	d
+CAPI20_GET_VERSION	./capiutils.h	55;"	d
+CAPI20_ISINSTALLED	./capiutils.h	58;"	d
+CAPI20_PUT_MESSAGE	./capiutils.h	51;"	d
+CAPI20_REGISTER	./capiutils.h	49;"	d
+CAPI20_RELEASE	./capiutils.h	50;"	d
+CAPI20_WaitforMessage	./capiutils.h	53;"	d
+CAPICMD	./capicmd.h	44;"	d
+CAPIMSG_APPID	./capiutils.h	164;"	d
+CAPIMSG_BASELEN	./capiutils.h	158;"	d
+CAPIMSG_CMD	./capiutils.h	167;"	d
+CAPIMSG_COMMAND	./capiutils.h	165;"	d
+CAPIMSG_CONTROL	./capiutils.h	170;"	d
+CAPIMSG_CONTROLLER	./capiutils.h	169;"	d
+CAPIMSG_DATALEN	./capiutils.h	172;"	d
+CAPIMSG_LEN	./capiutils.h	163;"	d
+CAPIMSG_MSGID	./capiutils.h	168;"	d
+CAPIMSG_NCCI	./capiutils.h	171;"	d
+CAPIMSG_SETAPPID	./capiutils.h	206;"	d
+CAPIMSG_SETCOMMAND	./capiutils.h	207;"	d
+CAPIMSG_SETCONTROL	./capiutils.h	210;"	d
+CAPIMSG_SETDATALEN	./capiutils.h	211;"	d
+CAPIMSG_SETLEN	./capiutils.h	205;"	d
+CAPIMSG_SETMSGID	./capiutils.h	209;"	d
+CAPIMSG_SETSUBCOMMAND	./capiutils.h	208;"	d
+CAPIMSG_SUBCOMMAND	./capiutils.h	166;"	d
+CAPIMSG_U16	./capiutils.h	160;"	d
+CAPIMSG_U32	./capiutils.h	161;"	d
+CAPIMSG_U64	./capiutils.h	162;"	d
+CAPIMSG_U8	./capiutils.h	159;"	d
+CAPI_ALERT	./capicmd.h	19;"	d
+CAPI_ALERT	./capiutils.h	90;"	d
+CAPI_ALERT_CONF	./capicmd.h	52;"	d
+CAPI_ALERT_REQ	./capicmd.h	51;"	d
 CAPI_BCHANNELS	./faxophone.h	65;"	d
 CAPI_BUFFERCNT	./faxophone.h	63;"	d
+CAPI_CMSG_HEADER	./capiutils.h	322;"	d
+CAPI_COMPOSE	./capiutils.h	/^typedef enum { CAPI_COMPOSE = 0, CAPI_DEFAULT = 1 } _cmstruct;$/;"	e	enum:__anon5
+CAPI_CONF	./capicmd.h	38;"	d
+CAPI_CONF	./capiutils.h	109;"	d
+CAPI_CONNECT	./capicmd.h	20;"	d
+CAPI_CONNECT	./capiutils.h	91;"	d
 CAPI_CONNECTIONS	./faxophone.h	59;"	d
+CAPI_CONNECT_ACTIVE	./capicmd.h	21;"	d
+CAPI_CONNECT_ACTIVE	./capiutils.h	92;"	d
+CAPI_CONNECT_ACTIVE_CONF	./capicmd.h	60;"	d
+CAPI_CONNECT_ACTIVE_IND	./capicmd.h	61;"	d
+CAPI_CONNECT_ACTIVE_REQ	./capicmd.h	59;"	d
+CAPI_CONNECT_ACTIVE_RESP	./capicmd.h	62;"	d
+CAPI_CONNECT_B3	./capicmd.h	23;"	d
+CAPI_CONNECT_B3	./capiutils.h	94;"	d
+CAPI_CONNECT_B3_ACTIVE	./capicmd.h	22;"	d
+CAPI_CONNECT_B3_ACTIVE	./capiutils.h	93;"	d
+CAPI_CONNECT_B3_ACTIVE_CONF	./capicmd.h	68;"	d
+CAPI_CONNECT_B3_ACTIVE_IND	./capicmd.h	69;"	d
+CAPI_CONNECT_B3_ACTIVE_REQ	./capicmd.h	67;"	d
+CAPI_CONNECT_B3_ACTIVE_RESP	./capicmd.h	70;"	d
+CAPI_CONNECT_B3_CONF	./capicmd.h	73;"	d
+CAPI_CONNECT_B3_IND	./capicmd.h	74;"	d
+CAPI_CONNECT_B3_REQ	./capicmd.h	72;"	d
+CAPI_CONNECT_B3_RESP	./capicmd.h	75;"	d
+CAPI_CONNECT_B3_T90_ACTIVE	./capicmd.h	24;"	d
+CAPI_CONNECT_B3_T90_ACTIVE	./capiutils.h	95;"	d
+CAPI_CONNECT_B3_T90_ACTIVE_IND	./capicmd.h	78;"	d
+CAPI_CONNECT_B3_T90_ACTIVE_RESP	./capicmd.h	79;"	d
+CAPI_CONNECT_CONF	./capicmd.h	55;"	d
+CAPI_CONNECT_IND	./capicmd.h	56;"	d
+CAPI_CONNECT_REQ	./capicmd.h	54;"	d
+CAPI_CONNECT_RESP	./capicmd.h	57;"	d
+CAPI_DATA_B3	./capicmd.h	25;"	d
+CAPI_DATA_B3	./capiutils.h	96;"	d
+CAPI_DATA_B3_CONF	./capicmd.h	82;"	d
+CAPI_DATA_B3_IND	./capicmd.h	83;"	d
+CAPI_DATA_B3_REQ	./capicmd.h	81;"	d
+CAPI_DATA_B3_REQ_LEN	./capicmd.h	15;"	d
+CAPI_DATA_B3_RESP	./capicmd.h	84;"	d
+CAPI_DATA_B3_RESP_LEN	./capicmd.h	16;"	d
+CAPI_DEFAULT	./capiutils.h	/^typedef enum { CAPI_COMPOSE = 0, CAPI_DEFAULT = 1 } _cmstruct;$/;"	e	enum:__anon5
+CAPI_DISCONNECT	./capicmd.h	27;"	d
+CAPI_DISCONNECT	./capiutils.h	98;"	d
+CAPI_DISCONNECT_B3	./capicmd.h	26;"	d
+CAPI_DISCONNECT_B3	./capiutils.h	97;"	d
+CAPI_DISCONNECT_B3_CONF	./capicmd.h	87;"	d
+CAPI_DISCONNECT_B3_IND	./capicmd.h	88;"	d
+CAPI_DISCONNECT_B3_REQ	./capicmd.h	86;"	d
+CAPI_DISCONNECT_B3_RESP	./capicmd.h	89;"	d
+CAPI_DISCONNECT_CONF	./capicmd.h	47;"	d
+CAPI_DISCONNECT_IND	./capicmd.h	48;"	d
+CAPI_DISCONNECT_REQ	./capicmd.h	46;"	d
+CAPI_DISCONNECT_RESP	./capicmd.h	49;"	d
+CAPI_FACILITY	./capicmd.h	28;"	d
+CAPI_FACILITY	./capiutils.h	99;"	d
+CAPI_FACILITY_CONF	./capicmd.h	105;"	d
+CAPI_FACILITY_IND	./capicmd.h	106;"	d
+CAPI_FACILITY_REQ	./capicmd.h	104;"	d
+CAPI_FACILITY_RESP	./capicmd.h	107;"	d
+CAPI_GET_CMSG	./capiutils.h	344;"	d
+CAPI_IND	./capicmd.h	39;"	d
+CAPI_IND	./capiutils.h	110;"	d
+CAPI_INFO	./capicmd.h	29;"	d
+CAPI_INFO	./capiutils.h	100;"	d
+CAPI_INFO_CONF	./capicmd.h	110;"	d
+CAPI_INFO_IND	./capicmd.h	111;"	d
+CAPI_INFO_REQ	./capicmd.h	109;"	d
+CAPI_INFO_RESP	./capicmd.h	112;"	d
+CAPI_LISTEN	./capicmd.h	30;"	d
+CAPI_LISTEN	./capiutils.h	101;"	d
+CAPI_LISTEN_CONF	./capicmd.h	97;"	d
+CAPI_LISTEN_REQ	./capicmd.h	96;"	d
+CAPI_MANUFACTURER	./capicmd.h	31;"	d
+CAPI_MANUFACTURER	./capiutils.h	102;"	d
+CAPI_MANUFACTURER_CONF	./capicmd.h	100;"	d
+CAPI_MANUFACTURER_IND	./capicmd.h	101;"	d
+CAPI_MANUFACTURER_REQ	./capicmd.h	99;"	d
+CAPI_MANUFACTURER_RESP	./capicmd.h	102;"	d
+CAPI_MESSAGE	./capiutils.h	/^typedef unsigned char *CAPI_MESSAGE;$/;"	t
+CAPI_MSG_BASELEN	./capicmd.h	14;"	d
 CAPI_PACKETS	./faxophone.h	61;"	d
+CAPI_PUT_CMSG	./capiutils.h	354;"	d
+CAPI_REGISTER_ERROR	./capiutils.h	61;"	d
+CAPI_REQ	./capicmd.h	37;"	d
+CAPI_REQ	./capiutils.h	108;"	d
+CAPI_RESET_B3	./capicmd.h	32;"	d
+CAPI_RESET_B3	./capiutils.h	103;"	d
+CAPI_RESET_B3_CONF	./capicmd.h	92;"	d
+CAPI_RESET_B3_IND	./capicmd.h	93;"	d
+CAPI_RESET_B3_REQ	./capicmd.h	91;"	d
+CAPI_RESET_B3_RESP	./capicmd.h	94;"	d
+CAPI_RESP	./capicmd.h	40;"	d
+CAPI_RESP	./capiutils.h	111;"	d
+CAPI_SELECT_B_PROTOCOL	./capicmd.h	33;"	d
+CAPI_SELECT_B_PROTOCOL	./capiutils.h	104;"	d
+CAPI_SELECT_B_PROTOCOL_CONF	./capicmd.h	65;"	d
+CAPI_SELECT_B_PROTOCOL_REQ	./capicmd.h	64;"	d
+CIPValue	./capiutils.h	/^	_cword CIPValue;$/;"	m	struct:__anon6
+CIPmask	./capiutils.h	/^	_cdword CIPmask;$/;"	m	struct:__anon6
+CIPmask2	./capiutils.h	/^	_cdword CIPmask2;$/;"	m	struct:__anon6
 CONNECT	./fax.h	/^	CONNECT = 1,$/;"	e	enum:fax_phase
 CONNECTION_TYPE_CONNECT	./connection.h	29;"	d
 CONNECTION_TYPE_DISCONNECT	./connection.h	30;"	d
 CONNECTION_TYPE_INCOMING	./connection.h	27;"	d
 CONNECTION_TYPE_MISSED	./connection.h	31;"	d
 CONNECTION_TYPE_OUTGOING	./connection.h	28;"	d
+CONNECT_ACTIVE_IND_CONNECTEDNUMBER	./capiutils.h	549;"	d
+CONNECT_ACTIVE_IND_CONNECTEDSUBADDRESS	./capiutils.h	551;"	d
+CONNECT_ACTIVE_IND_LLC	./capiutils.h	553;"	d
+CONNECT_ACTIVE_IND_PLCI	./capiutils.h	547;"	d
+CONNECT_ACTIVE_RESP_HEADER	./capiutils.h	970;"	d
+CONNECT_ACTIVE_RESP_PLCI	./capiutils.h	555;"	d
+CONNECT_B3_ACTIVE_IND_NCCI	./capiutils.h	557;"	d
+CONNECT_B3_ACTIVE_IND_NCPI	./capiutils.h	559;"	d
+CONNECT_B3_ACTIVE_RESP_HEADER	./capiutils.h	972;"	d
+CONNECT_B3_ACTIVE_RESP_NCCI	./capiutils.h	561;"	d
+CONNECT_B3_CONF_INFO	./capiutils.h	569;"	d
+CONNECT_B3_CONF_NCCI	./capiutils.h	567;"	d
+CONNECT_B3_IND_NCCI	./capiutils.h	576;"	d
+CONNECT_B3_IND_NCPI	./capiutils.h	578;"	d
+CONNECT_B3_REQ_HEADER	./capiutils.h	948;"	d
+CONNECT_B3_REQ_NCPI	./capiutils.h	565;"	d
+CONNECT_B3_REQ_PLCI	./capiutils.h	563;"	d
+CONNECT_B3_RESP_HEADER	./capiutils.h	974;"	d
+CONNECT_B3_RESP_NCCI	./capiutils.h	580;"	d
+CONNECT_B3_RESP_NCPI	./capiutils.h	585;"	d
+CONNECT_B3_RESP_REJECT	./capiutils.h	582;"	d
+CONNECT_B3_T90_ACTIVE_IND_NCCI	./capiutils.h	587;"	d
+CONNECT_B3_T90_ACTIVE_IND_NCPI	./capiutils.h	589;"	d
+CONNECT_B3_T90_ACTIVE_RESP_HEADER	./capiutils.h	976;"	d
+CONNECT_B3_T90_ACTIVE_RESP_NCCI	./capiutils.h	591;"	d
+CONNECT_CONF_INFO	./capiutils.h	456;"	d
+CONNECT_CONF_PLCI	./capiutils.h	454;"	d
+CONNECT_IND_ADDITIONALINFO	./capiutils.h	487;"	d
+CONNECT_IND_BC	./capiutils.h	481;"	d
+CONNECT_IND_BCHANNELINFORMATION	./capiutils.h	489;"	d
+CONNECT_IND_CALLEDPARTYNUMBER	./capiutils.h	473;"	d
+CONNECT_IND_CALLEDPARTYSUBADDRESS	./capiutils.h	477;"	d
+CONNECT_IND_CALLINGPARTYNUMBER	./capiutils.h	475;"	d
+CONNECT_IND_CALLINGPARTYSUBADDRESS	./capiutils.h	479;"	d
+CONNECT_IND_CIPVALUE	./capiutils.h	471;"	d
+CONNECT_IND_FACILITYDATAARRAY	./capiutils.h	494;"	d
+CONNECT_IND_HLC	./capiutils.h	485;"	d
+CONNECT_IND_KEYPADFACILITY	./capiutils.h	490;"	d
+CONNECT_IND_LLC	./capiutils.h	483;"	d
+CONNECT_IND_PLCI	./capiutils.h	469;"	d
+CONNECT_IND_USERUSERDATA	./capiutils.h	492;"	d
+CONNECT_REQ_ADDITIONALINFO	./capiutils.h	442;"	d
+CONNECT_REQ_B1CONFIGURATION	./capiutils.h	426;"	d
+CONNECT_REQ_B1PROTOCOL	./capiutils.h	420;"	d
+CONNECT_REQ_B2CONFIGURATION	./capiutils.h	428;"	d
+CONNECT_REQ_B2PROTOCOL	./capiutils.h	422;"	d
+CONNECT_REQ_B3CONFIGURATION	./capiutils.h	430;"	d
+CONNECT_REQ_B3PROTOCOL	./capiutils.h	424;"	d
+CONNECT_REQ_BC	./capiutils.h	436;"	d
+CONNECT_REQ_BCHANNELINFORMATION	./capiutils.h	444;"	d
+CONNECT_REQ_BPROTOCOL	./capiutils.h	418;"	d
+CONNECT_REQ_CALLEDPARTYNUMBER	./capiutils.h	410;"	d
+CONNECT_REQ_CALLEDPARTYSUBADDRESS	./capiutils.h	414;"	d
+CONNECT_REQ_CALLINGPARTYNUMBER	./capiutils.h	412;"	d
+CONNECT_REQ_CALLINGPARTYSUBADDRESS	./capiutils.h	416;"	d
+CONNECT_REQ_CIPVALUE	./capiutils.h	408;"	d
+CONNECT_REQ_CONTROLLER	./capiutils.h	407;"	d
+CONNECT_REQ_FACILITYDATAARRAY	./capiutils.h	449;"	d
+CONNECT_REQ_GLOBALCONFIGURATION	./capiutils.h	433;"	d
+CONNECT_REQ_HEADER	./capiutils.h	946;"	d
+CONNECT_REQ_HLC	./capiutils.h	440;"	d
+CONNECT_REQ_KEYPADFACILITY	./capiutils.h	445;"	d
+CONNECT_REQ_LLC	./capiutils.h	438;"	d
+CONNECT_REQ_USERUSERDATA	./capiutils.h	447;"	d
+CONNECT_RESP_ADDITIONALINFO	./capiutils.h	535;"	d
+CONNECT_RESP_B1CONFIGURATION	./capiutils.h	519;"	d
+CONNECT_RESP_B1PROTOCOL	./capiutils.h	513;"	d
+CONNECT_RESP_B2CONFIGURATION	./capiutils.h	521;"	d
+CONNECT_RESP_B2PROTOCOL	./capiutils.h	515;"	d
+CONNECT_RESP_B3CONFIGURATION	./capiutils.h	523;"	d
+CONNECT_RESP_B3PROTOCOL	./capiutils.h	517;"	d
+CONNECT_RESP_BCHANNELINFORMATION	./capiutils.h	537;"	d
+CONNECT_RESP_BPROTOCOL	./capiutils.h	511;"	d
+CONNECT_RESP_CONNECTEDNUMBER	./capiutils.h	529;"	d
+CONNECT_RESP_CONNECTEDSUBADDRESS	./capiutils.h	531;"	d
+CONNECT_RESP_FACILITYDATAARRAY	./capiutils.h	542;"	d
+CONNECT_RESP_GLOBALCONFIGURATION	./capiutils.h	526;"	d
+CONNECT_RESP_HEADER	./capiutils.h	968;"	d
+CONNECT_RESP_KEYPADFACILITY	./capiutils.h	538;"	d
+CONNECT_RESP_LLC	./capiutils.h	533;"	d
+CONNECT_RESP_PLCI	./capiutils.h	499;"	d
+CONNECT_RESP_REJECT	./capiutils.h	501;"	d
+CONNECT_RESP_USERUSERDATA	./capiutils.h	540;"	d
 CREATE_THREAD	./faxophone.h	77;"	d
 CREATE_THREAD	./faxophone.h	78;"	d
+CalledPartyNumber	./capiutils.h	/^	_cstruct CalledPartyNumber;$/;"	m	struct:__anon6
+CalledPartySubaddress	./capiutils.h	/^	_cstruct CalledPartySubaddress;$/;"	m	struct:__anon6
+CallingPartyNumber	./capiutils.h	/^	_cstruct CallingPartyNumber;$/;"	m	struct:__anon6
+CallingPartySubaddress	./capiutils.h	/^	_cstruct CallingPartySubaddress;$/;"	m	struct:__anon6
+CapiAnzLogConnNotSupported	./capiutils.h	25;"	d
+CapiBuffExeceeds64k	./capiutils.h	23;"	d
+CapiIllAppNr	./capiutils.h	35;"	d
+CapiIllCmdOrSubcmdOrMsgToSmall	./capiutils.h	36;"	d
+CapiLogBlkSizeToSmall	./capiutils.h	22;"	d
+CapiMsgBufSizeToSmall	./capiutils.h	24;"	d
+CapiMsgBusy	./capiutils.h	41;"	d
+CapiMsgCtrlerNotSupportExtEquip	./capiutils.h	44;"	d
+CapiMsgCtrlerOnlySupportExtEquip	./capiutils.h	45;"	d
+CapiMsgNotInstalled	./capiutils.h	43;"	d
+CapiMsgOSResourceErr	./capiutils.h	42;"	d
+CapiNoError	./capiutils.h	34;"	d
+CapiReceiveOverflow	./capiutils.h	39;"	d
+CapiReceiveQueueEmpty	./capiutils.h	38;"	d
+CapiRegBusy	./capiutils.h	27;"	d
+CapiRegCtrlerNotSupportExtEquip	./capiutils.h	30;"	d
+CapiRegCtrlerOnlySupportExtEquip	./capiutils.h	31;"	d
+CapiRegNotInstalled	./capiutils.h	29;"	d
+CapiRegOSResourceErr	./capiutils.h	28;"	d
+CapiRegReserved	./capiutils.h	26;"	d
+CapiSendQueueFull	./capiutils.h	37;"	d
+CapiToManyAppls	./capiutils.h	21;"	d
+CapiUnknownNotPar	./capiutils.h	40;"	d
+Class	./capiutils.h	/^	_cdword Class;$/;"	m	struct:__anon6
+Command	./capiutils.h	/^	_cbyte Command;$/;"	m	struct:__anon6
+ConnectedNumber	./capiutils.h	/^	_cstruct ConnectedNumber;$/;"	m	struct:__anon6
+ConnectedSubaddress	./capiutils.h	/^	_cstruct ConnectedSubaddress;$/;"	m	struct:__anon6
+DATA_B3_CONF_DATAHANDLE	./capiutils.h	609;"	d
+DATA_B3_CONF_INFO	./capiutils.h	611;"	d
+DATA_B3_CONF_NCCI	./capiutils.h	607;"	d
+DATA_B3_IND_DATA	./capiutils.h	621;"	d
+DATA_B3_IND_DATAHANDLE	./capiutils.h	625;"	d
+DATA_B3_IND_DATALENGTH	./capiutils.h	623;"	d
+DATA_B3_IND_FLAGS	./capiutils.h	627;"	d
+DATA_B3_IND_NCCI	./capiutils.h	619;"	d
+DATA_B3_REQ_DATA	./capiutils.h	595;"	d
+DATA_B3_REQ_DATAHANDLE	./capiutils.h	599;"	d
+DATA_B3_REQ_DATALENGTH	./capiutils.h	597;"	d
+DATA_B3_REQ_FLAGS	./capiutils.h	601;"	d
+DATA_B3_REQ_HEADER	./capiutils.h	950;"	d
+DATA_B3_REQ_NCCI	./capiutils.h	593;"	d
+DATA_B3_RESP_DATAHANDLE	./capiutils.h	636;"	d
+DATA_B3_RESP_HEADER	./capiutils.h	978;"	d
+DATA_B3_RESP_NCCI	./capiutils.h	634;"	d
 DEBUG	./Makefile	/^debug debugnew debugneu: DEBUG=-g $/;"	m
 DEPFLAGS	./Makefile	/^DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)\/$*.Td -DGLIB_COMPILATION$/;"	m
-DIRFEHLER	./kons.h	/^  DIRFEHLER=998, $/;"	e	enum:__anon2
+DIRFEHLER	./kons.h	/^  DIRFEHLER=998, $/;"	e	enum:__anon1
+DISCONNECT_B3_CONF_INFO	./capiutils.h	644;"	d
+DISCONNECT_B3_CONF_NCCI	./capiutils.h	642;"	d
+DISCONNECT_B3_IND_NCCI	./capiutils.h	651;"	d
+DISCONNECT_B3_IND_NCPI	./capiutils.h	659;"	d
+DISCONNECT_B3_IND_REASON_B3	./capiutils.h	653;"	d
+DISCONNECT_B3_REQ_HEADER	./capiutils.h	952;"	d
+DISCONNECT_B3_REQ_NCCI	./capiutils.h	638;"	d
+DISCONNECT_B3_REQ_NCPI	./capiutils.h	640;"	d
+DISCONNECT_B3_RESP_HEADER	./capiutils.h	980;"	d
+DISCONNECT_B3_RESP_NCCI	./capiutils.h	661;"	d
+DISCONNECT_CONF_INFO	./capiutils.h	679;"	d
+DISCONNECT_CONF_PLCI	./capiutils.h	677;"	d
+DISCONNECT_IND_PLCI	./capiutils.h	684;"	d
+DISCONNECT_IND_REASON	./capiutils.h	686;"	d
+DISCONNECT_REQ_ADDITIONALINFO	./capiutils.h	665;"	d
+DISCONNECT_REQ_BCHANNELINFORMATION	./capiutils.h	667;"	d
+DISCONNECT_REQ_FACILITYDATAARRAY	./capiutils.h	672;"	d
+DISCONNECT_REQ_HEADER	./capiutils.h	954;"	d
+DISCONNECT_REQ_KEYPADFACILITY	./capiutils.h	668;"	d
+DISCONNECT_REQ_PLCI	./capiutils.h	663;"	d
+DISCONNECT_REQ_USERUSERDATA	./capiutils.h	670;"	d
+DISCONNECT_RESP_HEADER	./capiutils.h	982;"	d
+DISCONNECT_RESP_PLCI	./capiutils.h	693;"	d
 DPROG	./fbfax.h	1;"	d
 DPROG	./kons.h	/^		const char* const DPROG;$/;"	m	struct:hcl
 DPROG_T	./fbfax.cpp	/^char const *DPROG_T[T_MAX+1][SprachZahl]=$/;"	v
+Data	./capiutils.h	/^	unsigned char *Data;$/;"	m	struct:__anon6
+Data32	./capiutils.h	/^	_cdword Data32;$/;"	m	struct:__anon6
+Data64	./capiutils.h	/^	_cqword Data64;$/;"	m	struct:__anon6
+DataHandle	./capiutils.h	/^	_cword DataHandle;$/;"	m	struct:__anon6
+DataLength	./capiutils.h	/^	_cword DataLength;$/;"	m	struct:__anon6
 Debian	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
 EMPTY_STRING	./direkt.h	3;"	d
 EMPTY_STRING	./gstring.h	26;"	d
 ENABLE_NLS	./config.h	5;"	d
+ERROR_TABLE_BASE_prof	./profile.h	347;"	d
+FACILITY_CONF_CONTROLLER	./capiutils.h	705;"	d
+FACILITY_CONF_FACILITYCONFIRMATIONPARAMETER	./capiutils.h	719;"	d
+FACILITY_CONF_FACILITYSELECTOR	./capiutils.h	715;"	d
+FACILITY_CONF_INFO	./capiutils.h	709;"	d
+FACILITY_CONF_NCCI	./capiutils.h	707;"	d
+FACILITY_CONF_PLCI	./capiutils.h	706;"	d
+FACILITY_IND_CONTROLLER	./capiutils.h	721;"	d
+FACILITY_IND_FACILITYINDICATIONPARAMETER	./capiutils.h	729;"	d
+FACILITY_IND_FACILITYSELECTOR	./capiutils.h	725;"	d
+FACILITY_IND_NCCI	./capiutils.h	723;"	d
+FACILITY_IND_PLCI	./capiutils.h	722;"	d
+FACILITY_REQ_CONTROLLER	./capiutils.h	695;"	d
+FACILITY_REQ_FACILITYREQUESTPARAMETER	./capiutils.h	703;"	d
+FACILITY_REQ_FACILITYSELECTOR	./capiutils.h	699;"	d
+FACILITY_REQ_HEADER	./capiutils.h	956;"	d
+FACILITY_REQ_NCCI	./capiutils.h	697;"	d
+FACILITY_REQ_PLCI	./capiutils.h	696;"	d
+FACILITY_RESP_CONTROLLER	./capiutils.h	731;"	d
+FACILITY_RESP_FACILITYSELECTOR	./capiutils.h	735;"	d
+FACILITY_RESP_HEADER	./capiutils.h	984;"	d
+FACILITY_RESP_NCCI	./capiutils.h	733;"	d
+FACILITY_RESP_PLCI	./capiutils.h	732;"	d
 FAXOPHONE_H	./faxophone.h	26;"	d
 FAXOPHONE_PHONE_H	./phone.h	26;"	d
 FAX_CIP	./fax.h	33;"	d
 FAX_H	./fax.h	26;"	d
 FB	./tr64.h	/^		string FB;$/;"	m	class:tr64cl
 FERTIG	./Makefile	/^FERTIG=$(error transfer finished\/ Fertig mit Transfer!)$/;"	m
+FacilityConfirmationParameter	./capiutils.h	/^	_cstruct FacilityConfirmationParameter;$/;"	m	struct:__anon6
+FacilityIndicationParameter	./capiutils.h	/^	_cstruct FacilityIndicationParameter;$/;"	m	struct:__anon6
+FacilityRequestParameter	./capiutils.h	/^	_cstruct FacilityRequestParameter;$/;"	m	struct:__anon6
+FacilityResponseParameters	./capiutils.h	/^	_cstruct FacilityResponseParameters;$/;"	m	struct:__anon6
+FacilitySelector	./capiutils.h	/^	_cword FacilitySelector;$/;"	m	struct:__anon6
+Facilitydataarray	./capiutils.h	/^	_cstruct Facilitydataarray;$/;"	m	struct:__anon6
 Fedora	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
 Fedoraalt	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
+Flags	./capiutils.h	/^	_cword Flags;$/;"	m	struct:__anon6
 Fol_Dat	./kons.h	128;"	d
 Fol_Mus	./kons.h	130;"	d
 Fol_Ver	./kons.h	129;"	d
+Function	./capiutils.h	/^	_cdword Function;$/;"	m	struct:__anon6
 GDK_VERSION_MAX_ALLOWED	./config.h	8;"	d
 GDK_VERSION_MIN_REQUIRED	./config.h	11;"	d
 GETTEXT_PACKAGE	./config.h	14;"	d
+Globalconfiguration	./capiutils.h	/^	_cstruct Globalconfiguration;$/;"	m	struct:__anon6
+HAS_UINT8_T	./capiutils.h	68;"	d
 HAVE_BIND_TEXTDOMAIN_CODESET	./config.h	20;"	d
 HAVE_CAPI_36	./config.h	23;"	d
 HAVE_DCGETTEXT	./config.h	34;"	d
@@ -105,10 +453,60 @@ HAVE_SYS_TYPES_H	./config.h	109;"	d
 HAVE_SYS_UTSNAME_H	./config.h	112;"	d
 HAVE_TIFFIO_H	./config.h	115;"	d
 HAVE_UNISTD_H	./config.h	118;"	d
+HLC	./capiutils.h	/^	_cstruct HLC;$/;"	m	struct:__anon6
 IDLE	./fax.h	/^	IDLE = -1,$/;"	e	enum:fax_phase
+INFO_CONF_INFO	./capiutils.h	761;"	d
+INFO_CONF_PLCI	./capiutils.h	759;"	d
+INFO_IND_CONTROLLER	./capiutils.h	767;"	d
+INFO_IND_INFOELEMENT	./capiutils.h	772;"	d
+INFO_IND_INFONUMBER	./capiutils.h	770;"	d
+INFO_IND_PLCI	./capiutils.h	768;"	d
+INFO_REQ_ADDITIONALINFO	./capiutils.h	747;"	d
+INFO_REQ_BCHANNELINFORMATION	./capiutils.h	749;"	d
+INFO_REQ_CALLEDPARTYNUMBER	./capiutils.h	745;"	d
+INFO_REQ_CONTROLLER	./capiutils.h	742;"	d
+INFO_REQ_FACILITYDATAARRAY	./capiutils.h	754;"	d
+INFO_REQ_HEADER	./capiutils.h	958;"	d
+INFO_REQ_KEYPADFACILITY	./capiutils.h	750;"	d
+INFO_REQ_PLCI	./capiutils.h	743;"	d
+INFO_REQ_USERUSERDATA	./capiutils.h	752;"	d
+INFO_RESP_CONTROLLER	./capiutils.h	774;"	d
+INFO_RESP_HEADER	./capiutils.h	986;"	d
+INFO_RESP_PLCI	./capiutils.h	775;"	d
 ISDN_CONVERT_H	./isdn-convert.h	26;"	d
+IS_ALERT_CONF	./capiutils.h	928;"	d
 IS_APP_OBJECT	./appobject.h	50;"	d
 IS_APP_OBJECT_CLASS	./appobject.h	51;"	d
+IS_CONNECT_ACTIVE_IND	./capiutils.h	917;"	d
+IS_CONNECT_B3_ACTIVE_IND	./capiutils.h	918;"	d
+IS_CONNECT_B3_CONF	./capiutils.h	930;"	d
+IS_CONNECT_B3_IND	./capiutils.h	919;"	d
+IS_CONNECT_B3_T90_ACTIVE_IND	./capiutils.h	920;"	d
+IS_CONNECT_CONF	./capiutils.h	929;"	d
+IS_CONNECT_IND	./capiutils.h	916;"	d
+IS_DATA_B3_CONF	./capiutils.h	931;"	d
+IS_DATA_B3_IND	./capiutils.h	921;"	d
+IS_DISCONNECT_B3_CONF	./capiutils.h	932;"	d
+IS_DISCONNECT_B3_IND	./capiutils.h	922;"	d
+IS_DISCONNECT_CONF	./capiutils.h	933;"	d
+IS_DISCONNECT_IND	./capiutils.h	923;"	d
+IS_FACILITY_CONF	./capiutils.h	934;"	d
+IS_FACILITY_IND	./capiutils.h	924;"	d
+IS_INFO_CONF	./capiutils.h	935;"	d
+IS_INFO_IND	./capiutils.h	925;"	d
+IS_LISTEN_CONF	./capiutils.h	936;"	d
+IS_MANUFACTURER_CONF	./capiutils.h	937;"	d
+IS_MANUFACTURER_IND	./capiutils.h	926;"	d
+IS_RESET_B3_CONF	./capiutils.h	938;"	d
+IS_RESET_B3_IND	./capiutils.h	927;"	d
+IS_SELECT_B_PROTOCOL_CONF	./capiutils.h	939;"	d
+Info	./capiutils.h	/^	_cword Info;$/;"	m	struct:__anon6
+InfoElement	./capiutils.h	/^	_cstruct InfoElement;$/;"	m	struct:__anon6
+InfoMask	./capiutils.h	/^	_cdword InfoMask;$/;"	m	struct:__anon6
+InfoNumber	./capiutils.h	/^	_cword InfoNumber;$/;"	m	struct:__anon6
+KRB5_CALLCONV	./profile.h	20;"	d
+KRB5_CALLCONV_C	./profile.h	21;"	d
+Keypadfacility	./capiutils.h	/^	_cstruct Keypadfacility;$/;"	m	struct:__anon6
 LIBROUTERMANAGER_APPOBJECT_EMIT_H	./appobject-emit.h	21;"	d
 LIBROUTERMANAGER_APPOBJECT_H	./appobject.h	21;"	d
 LIBROUTERMANAGER_AUDIO_H	./audio.h	21;"	d
@@ -122,10 +520,47 @@ LIBROUTERMANAGER_LOGGING_H	./logging.h	21;"	d
 LIBROUTERMANAGER_NETWORK_H	./network.h	21;"	d
 LIBROUTERMANAGER_NET_MONITOR_H	./net_monitor.h	21;"	d
 LIBROUTERMANAGER_ROUTERMANAGER_H	./routermanager.h	21;"	d
+LISTEN_CONF_CONTROLLER	./capiutils.h	821;"	d
+LISTEN_CONF_INFO	./capiutils.h	822;"	d
+LISTEN_REQ_CALLINGPARTYNUMBER	./capiutils.h	817;"	d
+LISTEN_REQ_CALLINGPARTYSUBADDRESS	./capiutils.h	819;"	d
+LISTEN_REQ_CIPMASK	./capiutils.h	788;"	d
+LISTEN_REQ_CIPMASK2	./capiutils.h	815;"	d
+LISTEN_REQ_CONTROLLER	./capiutils.h	777;"	d
+LISTEN_REQ_HEADER	./capiutils.h	960;"	d
+LISTEN_REQ_INFOMASK	./capiutils.h	778;"	d
+LLC	./capiutils.h	/^	_cstruct LLC;$/;"	m	struct:__anon6
 LT_OBJDIR	./config.h	121;"	d
+MANUFACTURER_CONF_CLASS	./capiutils.h	839;"	d
+MANUFACTURER_CONF_CONTROLLER	./capiutils.h	835;"	d
+MANUFACTURER_CONF_FUNCTION	./capiutils.h	840;"	d
+MANUFACTURER_CONF_MANUDATA	./capiutils.h	841;"	d
+MANUFACTURER_CONF_MANUID	./capiutils.h	836;"	d
+MANUFACTURER_IND_CLASS	./capiutils.h	847;"	d
+MANUFACTURER_IND_CONTROLLER	./capiutils.h	843;"	d
+MANUFACTURER_IND_FUNCTION	./capiutils.h	848;"	d
+MANUFACTURER_IND_MANUDATA	./capiutils.h	849;"	d
+MANUFACTURER_IND_MANUID	./capiutils.h	844;"	d
+MANUFACTURER_REQ_CLASS	./capiutils.h	831;"	d
+MANUFACTURER_REQ_CONTROLLER	./capiutils.h	827;"	d
+MANUFACTURER_REQ_FUNCTION	./capiutils.h	832;"	d
+MANUFACTURER_REQ_HEADER	./capiutils.h	962;"	d
+MANUFACTURER_REQ_MANUDATA	./capiutils.h	833;"	d
+MANUFACTURER_REQ_MANUID	./capiutils.h	828;"	d
+MANUFACTURER_RESP_CLASS	./capiutils.h	855;"	d
+MANUFACTURER_RESP_CONTROLLER	./capiutils.h	851;"	d
+MANUFACTURER_RESP_FUNCTION	./capiutils.h	856;"	d
+MANUFACTURER_RESP_HEADER	./capiutils.h	988;"	d
+MANUFACTURER_RESP_MANUDATA	./capiutils.h	857;"	d
+MANUFACTURER_RESP_MANUID	./capiutils.h	852;"	d
+MESSAGE_EXCHANGE_ERROR	./capiutils.h	62;"	d
 Mageia	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
 Manjaro	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
+ManuData	./capiutils.h	/^	_cstruct ManuData;$/;"	m	struct:__anon6
+ManuID	./capiutils.h	/^	_cdword ManuID;$/;"	m	struct:__anon6
+Messagenumber	./capiutils.h	/^	_cword Messagenumber;$/;"	m	struct:__anon6
 Mint	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
+NCPI	./capiutils.h	/^	_cstruct NCPI;$/;"	m	struct:__anon6
 NUMBER_FORMAT_INTERNATIONAL	./call.h	/^	NUMBER_FORMAT_INTERNATIONAL,$/;"	e	enum:number_format
 NUMBER_FORMAT_INTERNATIONAL_PLUS	./call.h	/^	NUMBER_FORMAT_INTERNATIONAL_PLUS$/;"	e	enum:number_format
 NUMBER_FORMAT_LOCAL	./call.h	/^	NUMBER_FORMAT_LOCAL,$/;"	e	enum:number_format
@@ -144,21 +579,88 @@ PHASE_B	./fax.h	/^	PHASE_B = 2,$/;"	e	enum:fax_phase
 PHASE_D	./fax.h	/^	PHASE_D = 3,$/;"	e	enum:fax_phase
 PHASE_E	./fax.h	/^	PHASE_E = 4,$/;"	e	enum:fax_phase
 PHONE_CIP	./phone.h	28;"	d
-REALPATHFEHLER	./kons.h	/^  REALPATHFEHLER=999$/;"	e	enum:__anon2
+PROFILE_INIT_ALLOW_MODULE	./profile.h	27;"	d
+PROFILE_ITER_LIST_SECTION	./profile.h	32;"	d
+PROFILE_ITER_RELATIONS_ONLY	./profile.h	34;"	d
+PROFILE_ITER_SECTIONS_ONLY	./profile.h	33;"	d
+PROF_ADD_NOT_SECTION	./profile.h	307;"	d
+PROF_BAD_BOOLEAN	./profile.h	331;"	d
+PROF_BAD_GROUP_LVL	./profile.h	310;"	d
+PROF_BAD_INTEGER	./profile.h	332;"	d
+PROF_BAD_LINK_LIST	./profile.h	309;"	d
+PROF_BAD_NAMESET	./profile.h	326;"	d
+PROF_BAD_PARENT_PTR	./profile.h	311;"	d
+PROF_EINVAL	./profile.h	314;"	d
+PROF_END_OF_SECTIONS	./profile.h	325;"	d
+PROF_EXISTS	./profile.h	330;"	d
+PROF_EXTRA_CBRACE	./profile.h	319;"	d
+PROF_FAIL_INCLUDE_DIR	./profile.h	335;"	d
+PROF_FAIL_INCLUDE_FILE	./profile.h	334;"	d
+PROF_FAIL_OPEN	./profile.h	329;"	d
+PROF_INVALID_SECTION	./profile.h	324;"	d
+PROF_MAGIC_FILE	./profile.h	328;"	d
+PROF_MAGIC_FILE_DATA	./profile.h	333;"	d
+PROF_MAGIC_ITERATOR	./profile.h	312;"	d
+PROF_MAGIC_NODE	./profile.h	304;"	d
+PROF_MAGIC_NODE_ITERATOR	./profile.h	337;"	d
+PROF_MAGIC_PROFILE	./profile.h	321;"	d
+PROF_MAGIC_SECTION	./profile.h	322;"	d
+PROF_MISSING_OBRACE	./profile.h	320;"	d
+PROF_MODULE	./profile.h	338;"	d
+PROF_MODULE_INVALID	./profile.h	340;"	d
+PROF_MODULE_SYNTAX	./profile.h	339;"	d
+PROF_NO_PROFILE	./profile.h	327;"	d
+PROF_NO_RELATION	./profile.h	306;"	d
+PROF_NO_SECTION	./profile.h	305;"	d
+PROF_READ_ONLY	./profile.h	315;"	d
+PROF_RELATION_SYNTAX	./profile.h	318;"	d
+PROF_SECTION_NOTOP	./profile.h	316;"	d
+PROF_SECTION_SYNTAX	./profile.h	317;"	d
+PROF_SECTION_WITH_VALUE	./profile.h	308;"	d
+PROF_SET_SECTION_VALUE	./profile.h	313;"	d
+PROF_TOPSECTION_ITER_NOSUPP	./profile.h	323;"	d
+PROF_UNSUPPORTED	./profile.h	336;"	d
+PROF_VERSION	./profile.h	303;"	d
+REALPATHFEHLER	./kons.h	/^  REALPATHFEHLER=999$/;"	e	enum:__anon1
 RECORDING_BUFSIZE	./faxophone.h	103;"	d
 RECORDING_JITTER	./faxophone.h	104;"	d
 RECORDING_LOCAL	./faxophone.h	/^	RECORDING_LOCAL,$/;"	e	enum:recording
 RECORDING_REMOTE	./faxophone.h	/^	RECORDING_REMOTE$/;"	e	enum:recording
-REGFEHLER	./kons.h	/^  REGFEHLER=997,$/;"	e	enum:__anon2
+REGFEHLER	./kons.h	/^  REGFEHLER=997,$/;"	e	enum:__anon1
+RESET_B3_CONF_INFO	./capiutils.h	865;"	d
+RESET_B3_CONF_NCCI	./capiutils.h	863;"	d
+RESET_B3_IND_NCCI	./capiutils.h	873;"	d
+RESET_B3_IND_NCPI	./capiutils.h	875;"	d
+RESET_B3_REQ_HEADER	./capiutils.h	964;"	d
+RESET_B3_REQ_NCCI	./capiutils.h	859;"	d
+RESET_B3_REQ_NCPI	./capiutils.h	861;"	d
+RESET_B3_RESP_HEADER	./capiutils.h	990;"	d
+RESET_B3_RESP_NCCI	./capiutils.h	877;"	d
 RM_ERROR	./fax_phone.c	51;"	d	file:
 RM_ERROR	./routermanager.h	40;"	d
-RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon1
-RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon1
-RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon1
+RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon3
+RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon3
+RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon3
 ROUTERMANAGER_PATH	./routermanager.h	38;"	d
 ROUTERMANAGER_SCHEME	./routermanager.h	34;"	d
 ROUTERMANAGER_SCHEME_PROFILE	./routermanager.h	35;"	d
 ROUTERMANAGER_SCHEME_PROFILE_ACTION	./routermanager.h	36;"	d
+Reason	./capiutils.h	/^	_cword Reason;$/;"	m	struct:__anon6
+Reason_B3	./capiutils.h	/^	_cword Reason_B3;$/;"	m	struct:__anon6
+Reject	./capiutils.h	/^	_cword Reject;$/;"	m	struct:__anon6
+SELECT_B_PROTOCOL_CONF_INFO	./capiutils.h	901;"	d
+SELECT_B_PROTOCOL_CONF_PLCI	./capiutils.h	899;"	d
+SELECT_B_PROTOCOL_REQ_B1CONFIGURATION	./capiutils.h	889;"	d
+SELECT_B_PROTOCOL_REQ_B1PROTOCOL	./capiutils.h	883;"	d
+SELECT_B_PROTOCOL_REQ_B2CONFIGURATION	./capiutils.h	891;"	d
+SELECT_B_PROTOCOL_REQ_B2PROTOCOL	./capiutils.h	885;"	d
+SELECT_B_PROTOCOL_REQ_B3CONFIGURATION	./capiutils.h	893;"	d
+SELECT_B_PROTOCOL_REQ_B3PROTOCOL	./capiutils.h	887;"	d
+SELECT_B_PROTOCOL_REQ_BPROTOCOL	./capiutils.h	881;"	d
+SELECT_B_PROTOCOL_REQ_GLOBALCONFIGURATION	./capiutils.h	896;"	d
+SELECT_B_PROTOCOL_REQ_HEADER	./capiutils.h	966;"	d
+SELECT_B_PROTOCOL_REQ_PLCI	./capiutils.h	879;"	d
+SEND_BUFSIZ	./capi20.h	29;"	d
 SESSION_FAX	./faxophone.h	/^	SESSION_FAX,$/;"	e	enum:session_type
 SESSION_NONE	./faxophone.h	/^	SESSION_NONE,$/;"	e	enum:session_type
 SESSION_PHONE	./faxophone.h	/^	SESSION_PHONE,$/;"	e	enum:session_type
@@ -182,8 +684,10 @@ STATE_MAXSTATE	./faxophone.h	/^	STATE_MAXSTATE$/;"	e	enum:state
 STATE_RINGING	./faxophone.h	/^	STATE_RINGING,$/;"	e	enum:state
 STDC_HEADERS	./config.h	148;"	d
 Schschreib	./kons.cpp	/^int Schschreib(const char *fname, Schluessel *conf, size_t csize)$/;"	f
+SendingComplete	./capiutils.h	/^	_cstruct SendingComplete;$/;"	m	struct:__anon6
 SprachZahl	./kons.h	/^enum Sprache {deutsch,englisch,SprachZahl};$/;"	e	enum:Sprache
 Sprache	./kons.h	/^enum Sprache {deutsch,englisch,SprachZahl};$/;"	g
+Subcommand	./capiutils.h	/^	_cbyte Subcommand;$/;"	m	struct:__anon6
 Suse	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
 TCp	./kons.h	/^  const char * const * const * const *TCp;$/;"	m	struct:TxB
 TCtp	./kons.h	/^typedef const char * const * const TCtp[SprachZahl];$/;"	t
@@ -590,6 +1094,7 @@ Txvg_	./vgb.cpp	/^enum Txvg_ {$/;"	g	file:
 USE_ISDN_MUTEX	./faxophone.h	67;"	d
 USE_PRINTER_SPOOLER	./config.h	154;"	d
 Ubuntu	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
+Useruserdata	./capiutils.h	/^	_cstruct Useruserdata;$/;"	m	struct:__anon6
 VERSION	./config.h	157;"	d
 VOMHAUPTCODE	./fbfax.cpp	8;"	d	file:
 VerzeichnisGibts	./kons.cpp	/^uchar VerzeichnisGibts(const char* vname)$/;"	f
@@ -604,9 +1109,27 @@ _AppObjectClass	./appobject.h	/^struct _AppObjectClass {$/;"	s
 _AppObjectPrivate	./appobject.c	/^struct _AppObjectPrivate {$/;"	s	file:
 _CRT_SECURE_NO_WARNINGS	./kons.h	2;"	d
 _DPROG	./kons.cpp	/^string _DPROG;$/;"	v
+_KRB5_PROFILE_H	./profile.h	6;"	d
+__CAPI20_H__	./capi20.h	19;"	d
+__CAPICMD_H__	./capicmd.h	12;"	d
+__CAPIUTILS_H__	./capiutils.h	2;"	d
 _access	./kons.cpp	54;"	d	file:
 _blau	./kons.cpp	/^const char *_drot=drot, *_rot=rot, *_schwarz=schwarz, *_blau=blau, *_gelb=gelb, *_tuerkis=tuerkis, *_hgrau=hgrau;$/;"	v
 _blau	./kons.h	/^inline std::ostream& _blau(std::ostream &s){$/;"	f	class:std
+_capimsg_getu16	./capiutils.h	/^static inline _cword _capimsg_getu16(void *m, int off)$/;"	f
+_capimsg_getu32	./capiutils.h	/^static inline _cdword _capimsg_getu32(void *m, int off)$/;"	f
+_capimsg_getu64	./capiutils.h	/^static inline _cqword _capimsg_getu64(void *m, int off)$/;"	f
+_cbyte	./capiutils.h	/^typedef uint8_t   _cbyte;$/;"	t
+_cbyte	./capiutils.h	/^typedef unsigned char      _cbyte;$/;"	t
+_cdword	./capiutils.h	/^typedef uint32_t  _cdword;$/;"	t
+_cdword	./capiutils.h	/^typedef unsigned long      _cdword;$/;"	t
+_cmsg	./capiutils.h	/^} _cmsg;$/;"	t	typeref:struct:__anon6
+_cmstruct	./capiutils.h	/^typedef enum { CAPI_COMPOSE = 0, CAPI_DEFAULT = 1 } _cmstruct;$/;"	t	typeref:enum:__anon5
+_cqword	./capiutils.h	/^typedef uint64_t  _cqword;$/;"	t
+_cqword	./capiutils.h	/^typedef unsigned long long _cqword;$/;"	t
+_cstruct	./capiutils.h	/^typedef CAPI_MESSAGE   _cstruct;$/;"	t
+_cword	./capiutils.h	/^typedef uint16_t  _cword;$/;"	t
+_cword	./capiutils.h	/^typedef unsigned short     _cword;$/;"	t
 _drot	./kons.cpp	/^const char *_drot=drot, *_rot=rot, *_schwarz=schwarz, *_blau=blau, *_gelb=gelb, *_tuerkis=tuerkis, *_hgrau=hgrau;$/;"	v
 _drot	./kons.h	/^inline std::ostream& _drot(std::ostream &s){$/;"	f	class:std
 _gelb	./kons.cpp	/^const char *_drot=drot, *_rot=rot, *_schwarz=schwarz, *_blau=blau, *_gelb=gelb, *_tuerkis=tuerkis, *_hgrau=hgrau;$/;"	v
@@ -628,7 +1151,12 @@ abschv	./kons.h	/^	vector<absch> abschv;$/;"	m	struct:confdcl
 absdr	./fbfax.h	/^		string absdr; \/\/ auf Fax angegebener Absender$/;"	m	class:hhcl
 absnr	./fbfax.h	/^		string absnr; \/\/ auf Fax angegebene Absendernummer$/;"	m	class:hhcl
 active_capi_connection	./fax_phone.c	/^struct capi_connection *active_capi_connection = NULL;$/;"	v	typeref:struct:
+add_relation	./profile.h	/^    profile_add_relation_fn add_relation;$/;"	m	struct:profile_vtable
 addresses	./contact.h	/^	GSList *addresses;$/;"	m	struct:contact
+adr	./capiutils.h	/^	} adr;$/;"	m	struct:__anon6	typeref:union:__anon6::__anon7
+adrController	./capiutils.h	/^		_cdword adrController;$/;"	m	union:__anon6::__anon7
+adrNCCI	./capiutils.h	/^		_cdword adrNCCI;$/;"	m	union:__anon6::__anon7
+adrPLCI	./capiutils.h	/^		_cdword adrPLCI;$/;"	m	union:__anon6::__anon7
 agef	./kons.h	/^ uchar agef=0; \/\/ dieser wurde gefunden$/;"	m	struct:argcl
 akonfdt	./kons.h	/^    string akonfdt; \/\/ name der Konfigurationsdatei$/;"	m	struct:hcl
 aktprogverz	./kons.cpp	/^string aktprogverz()$/;"	f
@@ -696,6 +1224,7 @@ bitrate	./fax.h	/^	gint bitrate;$/;"	m	struct:fax_status
 blau	./kons.cpp	/^			*const dblau="\\e[0;34;1;47m", *const blau="\\e[1;34m", *const violett="\\e[0;35m", *const hviolett="\\e[1;35m",$/;"	v
 blau	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
 braun	./kons.cpp	/^			*const gruen="\\e[0;32m", *const hgruen="\\e[1;32m", *const braun="\\e[0;33m", *const gelb="\\e[1;33m",$/;"	v
+buf	./capiutils.h	/^	_cbyte buf[180];$/;"	m	struct:__anon6
 buffer	./faxophone.h	/^	short buffer[RECORDING_BUFSIZE];$/;"	m	struct:record_channel
 buffers	./faxophone.h	/^	int buffers;$/;"	m	struct:capi_connection
 bytes_received	./fax.h	/^	gint bytes_received;$/;"	m	struct:fax_status
@@ -703,8 +1232,19 @@ bytes_sent	./fax.h	/^	gint bytes_sent;$/;"	m	struct:fax_status
 bytes_total	./fax.h	/^	gint bytes_total;$/;"	m	struct:fax_status
 call	./call.h	/^struct call {$/;"	s
 call_by_call_entry	./call.h	/^struct call_by_call_entry {$/;"	s
+capi20_cmd2str	./capiutils.h	370;"	d
+capi20_cmsg2message	./capiutils.h	306;"	d
+capi20_cmsg2str	./capiutils.h	377;"	d
+capi20_cmsg_answer	./capiutils.h	331;"	d
+capi20_cmsg_header	./capiutils.h	323;"	d
+capi20_get_cmsg	./capiutils.h	345;"	d
+capi20_info2str	./capiutils.h	367;"	d
+capi20_message2cmsg	./capiutils.h	313;"	d
+capi20_message2str	./capiutils.h	380;"	d
+capi20_put_cmsg	./capiutils.h	355;"	d
 capi_call	./faxophone.c	/^struct capi_connection *capi_call($/;"	f
 capi_close	./faxophone.c	/^static int capi_close(void)$/;"	f	file:
+capi_cmsg_answer	./capiutils.h	/^static inline void capi_cmsg_answer(_cmsg * cmsg)$/;"	f
 capi_confirmation	./faxophone.c	/^static void capi_confirmation(_cmsg capi_message)$/;"	f	file:
 capi_connection	./faxophone.h	/^struct capi_connection {$/;"	s
 capi_connection_established_cb	./direkt.c	/^static void capi_connection_established_cb(AppObject *object, struct capi_connection *connection, gpointer user_data)$/;"	f	file:
@@ -712,6 +1252,30 @@ capi_connection_set_type	./faxophone.c	/^static int capi_connection_set_type(str
 capi_connection_terminated_cb	./direkt.c	/^static void capi_connection_terminated_cb(AppObject *object, struct capi_connection *connection, gpointer user_data)$/;"	f	file:
 capi_enable_dtmf	./faxophone.c	/^static void capi_enable_dtmf(struct capi_connection *connection)$/;"	f	file:
 capi_error	./faxophone.c	/^static void capi_error(long error)$/;"	f	file:
+capi_fill_ALERT_REQ	./capiutils.h	/^static inline void capi_fill_ALERT_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_CONNECT_ACTIVE_RESP	./capiutils.h	/^static inline void capi_fill_CONNECT_ACTIVE_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_CONNECT_B3_ACTIVE_RESP	./capiutils.h	/^static inline void capi_fill_CONNECT_B3_ACTIVE_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_CONNECT_B3_REQ	./capiutils.h	/^static inline void capi_fill_CONNECT_B3_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_CONNECT_B3_RESP	./capiutils.h	/^static inline void capi_fill_CONNECT_B3_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_CONNECT_B3_T90_ACTIVE_RESP	./capiutils.h	/^static inline void capi_fill_CONNECT_B3_T90_ACTIVE_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_CONNECT_REQ	./capiutils.h	/^static inline void capi_fill_CONNECT_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_CONNECT_RESP	./capiutils.h	/^static inline void capi_fill_CONNECT_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_DATA_B3_REQ	./capiutils.h	/^static inline void capi_fill_DATA_B3_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_DATA_B3_RESP	./capiutils.h	/^static inline void capi_fill_DATA_B3_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_DISCONNECT_B3_REQ	./capiutils.h	/^static inline void capi_fill_DISCONNECT_B3_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_DISCONNECT_B3_RESP	./capiutils.h	/^static inline void capi_fill_DISCONNECT_B3_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_DISCONNECT_REQ	./capiutils.h	/^static inline void capi_fill_DISCONNECT_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_DISCONNECT_RESP	./capiutils.h	/^static inline void capi_fill_DISCONNECT_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_FACILITY_REQ	./capiutils.h	/^static inline void capi_fill_FACILITY_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_FACILITY_RESP	./capiutils.h	/^static inline void capi_fill_FACILITY_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_INFO_REQ	./capiutils.h	/^static inline void capi_fill_INFO_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_INFO_RESP	./capiutils.h	/^static inline void capi_fill_INFO_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_LISTEN_REQ	./capiutils.h	/^static inline void capi_fill_LISTEN_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_MANUFACTURER_REQ	./capiutils.h	/^static inline void capi_fill_MANUFACTURER_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_MANUFACTURER_RESP	./capiutils.h	/^static inline void capi_fill_MANUFACTURER_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_RESET_B3_REQ	./capiutils.h	/^static inline void capi_fill_RESET_B3_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_RESET_B3_RESP	./capiutils.h	/^static inline void capi_fill_RESET_B3_RESP(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
+capi_fill_SELECT_B_PROTOCOL_REQ	./capiutils.h	/^static inline void capi_fill_SELECT_B_PROTOCOL_REQ(_cmsg * cmsg, _cword ApplId, _cword Messagenumber,$/;"	f
 capi_find_ncci	./faxophone.c	/^static struct capi_connection *capi_find_ncci(int ncci)$/;"	f	file:
 capi_find_new	./faxophone.c	/^static struct capi_connection *capi_find_new(void)$/;"	f	file:
 capi_find_plci	./faxophone.c	/^static struct capi_connection *capi_find_plci(int plci)$/;"	f	file:
@@ -731,6 +1295,10 @@ capi_send_display_message	./faxophone.c	/^void capi_send_display_message(struct 
 capi_send_dtmf_code	./faxophone.c	/^void capi_send_dtmf_code(struct capi_connection *connection, unsigned char dtmf)$/;"	f
 capi_set_free	./faxophone.c	/^static int capi_set_free(struct capi_connection *connection)$/;"	f	file:
 capi_thread	./faxophone.c	/^static GThread *capi_thread = NULL;$/;"	v	file:
+capimsg_setu16	./capiutils.h	/^static inline void capimsg_setu16(void *m, int off, _cword val)$/;"	f
+capimsg_setu32	./capiutils.h	/^static inline void capimsg_setu32(void *m, int off, _cdword val)$/;"	f
+capimsg_setu64	./capiutils.h	/^static inline void capimsg_setu64(void *m, int off, _cqword val)$/;"	f
+capimsg_setu8	./capiutils.h	/^static inline void capimsg_setu8(void *m, int off, _cbyte val)$/;"	f
 caseersetze	./kons.cpp	/^string caseersetze(const string& u, const char* const alt, const char* const neu) $/;"	f
 caus	./kons.cpp	18;"	d	file:
 caus	./kons.h	138;"	d
@@ -741,6 +1309,7 @@ city	./contact.h	/^	gchar *city;$/;"	m	struct:contact
 city	./contact.h	/^	gchar *city;$/;"	m	struct:contact_address
 cl	./kons.h	/^		string cl; \/\/ comandline$/;"	m	struct:hcl
 clean	./faxophone.h	/^	void (*clean)(struct capi_connection *connection);$/;"	m	struct:capi_connection
+cleanup	./profile.h	/^    profile_cleanup_fn cleanup;$/;"	m	struct:profile_vtable
 clear	./kons.cpp	/^void absch::clear()$/;"	f	class:absch
 close	./audio.h	/^	gboolean (*close)(gpointer priv);$/;"	m	struct:audio
 cmd	./kons.h	/^    string cmd; \/\/ string fuer command fuer Betriebssystembefehle$/;"	m	struct:hcl
@@ -779,6 +1348,8 @@ connection_status	./fax_phone.c	/^void connection_status(struct capi_connection 
 connection_terminated	./appobject.h	/^	void (*connection_terminated)(struct capi_connection *connection);$/;"	m	struct:_AppObjectClass
 connection_terminated	./fax_phone.c	/^void connection_terminated(struct capi_connection *connection)$/;"	f
 connection_terminated_idle	./fax_phone.c	/^gboolean connection_terminated_idle(gpointer data)$/;"	f
+const_profile_filespec_list_t	./profile.h	/^typedef const char * const_profile_filespec_list_t;	\/* list of : separated paths, C string *\/$/;"	t
+const_profile_filespec_t	./profile.h	/^typedef const char * const_profile_filespec_t;	\/* path as C string *\/$/;"	t
 contact	./contact.h	/^struct contact {$/;"	s
 contact_address	./contact.h	/^struct contact_address {$/;"	s
 contact_process	./appobject.h	/^	void (*contact_process)(struct contact *contact);$/;"	m	struct:_AppObjectClass
@@ -788,6 +1359,7 @@ controller	./faxophone.h	/^	unsigned int controller;$/;"	m	struct:capi_connectio
 convert	./kons.cpp	/^char *ic_cl::convert(string& eing,size_t ab\/*=0*\/) {$/;"	f	class:ic_cl
 convert_audio_to_isdn	./isdn-convert.c	/^void convert_audio_to_isdn(struct capi_connection *connection, unsigned char *in_buf, unsigned int in_buf_len, unsigned char *out_buf, unsigned int *out_buf_len, short *rec_buf)$/;"	f
 convert_isdn_to_audio	./isdn-convert.c	/^void convert_isdn_to_audio(struct capi_connection *connection, unsigned char *in_buf, unsigned int in_buf_len, unsigned char *out_buf, unsigned int *out_buf_len, short *rec_buf)$/;"	f
+copy	./profile.h	/^    profile_copy_fn copy;$/;"	m	struct:profile_vtable
 country_code	./call.h	/^	gchar *country_code;$/;"	m	struct:call_by_call_entry
 cppschreib	./kons.cpp	/^int cppschreib(const string& fname, WPcl *conf, size_t csize)$/;"	f
 cpt	./kons.h	/^    char cpt[255];$/;"	m	struct:hcl
@@ -932,6 +1504,7 @@ finde	./kons.cpp	/^int find2cl::finde(svec *wovp,const string& muster\/*=string(
 finde	./kons.cpp	/^int find3cl::finde(svec *wovp,const string& muster\/*=string()*\/,long tiefe\/*=-1*\/,$/;"	f	class:find3cl
 findfile	./kons.cpp	/^void findfile(svec *qrueckp,uchar findv,int obverb\/*=0*\/,int oblog\/*=0*\/,uchar anteil\/*=0*\/,$/;"	f
 flags	./kons.h	/^    int flags = 0;$/;"	m	struct:find3cl
+flush	./profile.h	/^    profile_flush_fn flush;$/;"	m	struct:profile_vtable
 fmt	./kons.h	/^		const char* const fmt;$/;"	m	struct:ztacl
 fname	./kons.h	/^	string fname; \/\/ Dateiname$/;"	m	struct:confdcl
 fnhcliztyp	./kons.h	/^typedef int (hcl::*fnhcliztyp)();$/;"	t
@@ -941,6 +1514,8 @@ folgep	./kons.cpp	/^int *find3cl::folgep;$/;"	m	class:find3cl	file:
 folgep	./kons.h	/^    static int *folgep;$/;"	m	struct:find3cl
 fragurl	./tr64.cpp	/^int tr64cl::fragurl(const std::string zurl, const std::string zservT, const std::string action, std::string* bufp,const vector<string>* iname\/*=0*\/,const vector<string>* ival\/*=0*\/)$/;"	f	class:tr64cl
 free_auth_data	./network.c	/^static void free_auth_data(struct auth_data *auth_data)$/;"	f	file:
+free_string	./profile.h	/^    profile_free_string_fn free_string;$/;"	m	struct:profile_vtable
+free_values	./profile.h	/^    profile_free_values_fn free_values;$/;"	m	struct:profile_vtable
 frisch	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::frisch()$/;"	f	class:schAcl
 ftw	./kons.h	/^    const struct FTW ftw={0};$/;"	m	struct:elem3	typeref:struct:elem3::FTW
 fuersamba	./kons.cpp	/^void fuersamba(string& roh)$/;"	f
@@ -999,6 +1574,7 @@ get_devices	./audio.h	/^	GSList *(*get_devices)(void);$/;"	m	struct:audio
 get_line_level_in	./isdn-convert.c	/^double get_line_level_in(struct capi_connection *connection)$/;"	f
 get_line_level_out	./isdn-convert.c	/^double get_line_level_out(struct capi_connection *connection)$/;"	f
 get_tiff_total_pages	./fax.c	/^static int get_tiff_total_pages(const char *file)$/;"	f	file:
+get_values	./profile.h	/^    profile_get_values_fn get_values;$/;"	m	struct:profile_vtable
 getcols	./kons.cpp	/^int getcols() $/;"	f
 gethome	./kons.cpp	/^string gethome()$/;"	f
 getlib64	./kons.cpp	/^string& lsyscl::getlib64(int obverb\/*=0*\/,int oblog\/*=0*\/)$/;"	f	class:lsyscl
@@ -1052,6 +1628,7 @@ init	./kons.cpp	/^void elem2::init(const string& vmutter, const string& name) {$
 init	./kons.cpp	/^void find2cl::init(const string& mutter, const string& name, regex_t *reg, const int folge,const long maxdepth, const int& typbit,$/;"	f	class:find2cl
 init	./routermanager.c	/^gboolean rmcl::init(GError **error)$/;"	f	class:rmcl
 init_data	./faxophone.h	/^	void (*init_data)(struct capi_connection *connection);$/;"	m	struct:capi_connection
+init_prof_err_tbl	./profile.h	350;"	d
 input_thread_state	./faxophone.h	/^	int input_thread_state;$/;"	m	struct:session
 instp	./kons.h	/^ string instp; \/\/ Befehl zum Installieren ueber das Installationnssystem$/;"	m	struct:linst_cl
 instprog	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	g
@@ -1082,6 +1659,9 @@ it	./kons.cpp	/^set<wele>::iterator find3cl::it;$/;"	m	class:find3cl	file:
 it	./kons.h	/^    static set<wele>::iterator it;$/;"	m	struct:find3cl
 it2	./kons.cpp	/^el2set::iterator it2;$/;"	v
 it3	./kons.cpp	/^set<elem3>::iterator it3;$/;"	v
+iterator	./profile.h	/^    profile_iterator_fn iterator;$/;"	m	struct:profile_vtable
+iterator_create	./profile.h	/^    profile_iterator_create_fn iterator_create;$/;"	m	struct:profile_vtable
+iterator_free	./profile.h	/^    profile_iterator_free_fn iterator_free;$/;"	m	struct:profile_vtable
 iwert	./kons.h	/^    int iwert; \/\/ Wert, der pptr zugewiesen wird, falls dieser Parameter gewaehlt wird; -1= Wert steht im nächsten Parameter, 1=pro Nennung in der Kommandozeile wert um 1 erhöhen$/;"	m	struct:optcl
 journal_loaded	./appobject.h	/^	void (*journal_loaded)(GSList *journal);$/;"	m	struct:_AppObjectClass
 kauswert	./kons.cpp	/^template <typename SCL> void confdcl::kauswert(schAcl<SCL> *sA, int obverb,const uchar mitclear\/*=1*\/)$/;"	f	class:confdcl
@@ -1100,6 +1680,7 @@ kschreib	./kons.h	/^		uchar kschreib=0; \/\/ Konfigurationsdatei schreiben$/;"	m
 ktage	./fbfax.cpp	/^const unsigned ktage=1; \/\/ kurzes Intervall fuer Faxtabellenkorrektur, 1 Tag$/;"	v
 kuerzelogdatei	./kons.cpp	/^int kuerzelogdatei(const char* logdatei,int obverb)$/;"	f
 kuerzevtz	./kons.cpp	/^void kuerzevtz(string *vzp)$/;"	f
+l	./capiutils.h	/^	_cword l;$/;"	m	struct:__anon6
 laeuft	./kons.cpp	/^int servc::laeuft()$/;"	f	class:servc
 langu	./kons.h	/^    string langu; \/\/ Sprache (Anfangsbuchstabe)$/;"	m	struct:hcl
 last_write	./faxophone.h	/^	gint64 last_write;$/;"	m	struct:recorder
@@ -1154,6 +1735,7 @@ lut_a2s	./isdn-convert.c	/^static short *lut_a2s = NULL;$/;"	v	file:
 lut_analyze	./isdn-convert.c	/^static unsigned char *lut_analyze = NULL;$/;"	v	file:
 lut_in	./isdn-convert.c	/^static unsigned char *lut_in = NULL;$/;"	v	file:
 lut_out	./isdn-convert.c	/^static unsigned char *lut_out = NULL;$/;"	v	file:
+m	./capiutils.h	/^	_cbyte *m;$/;"	m	struct:__anon6
 mFERTIG	./Makefile	/^mFERTIG=$(error mitzieh finished\/ Fertig mit mitzieh!)$/;"	m
 m_color	./kons.h	/^  WORD m_color;$/;"	m	struct:color
 mab	./kons.h	/^    time_t mab,mbis;$/;"	m	struct:find3cl
@@ -1180,12 +1762,14 @@ meinpfad	./kons.cpp	/^string meinpfad() $/;"	f
 message	./appobject.h	/^	void (*message)(gchar *title, gchar *message);$/;"	m	struct:_AppObjectClass
 message_number	./faxophone.h	/^	int message_number;$/;"	m	struct:session
 microsec_time	./phone.c	/^guint64 microsec_time(void)$/;"	f
+minor_ver	./profile.h	/^    int minor_ver;              \/* Set to structure minor version (currently 1)$/;"	m	struct:profile_vtable
 mitcron	./kons.h	/^		const uchar mitcron; \/\/ ob Programm auch in Cron eingetragen werden kann; kann im Konstruktor angegeben werden$/;"	m	struct:hcl
 mitpids	./kons.h	/^		uchar mitpids=0; \/\/ mehrere pids$/;"	m	struct:hcl
 mitset	./kons.h	114;"	d
 mitvtz	./kons.h	/^inline std::string mitvtz(std::string const& vz)$/;"	f
 mntpunkt	./kons.cpp	/^int mntpunkt(const char* mntpfad) {$/;"	f
 modem	./fax.h	/^	gchar modem;$/;"	m	struct:fax_status
+modified	./profile.h	/^    profile_modified_fn modified;$/;"	m	struct:profile_vtable
 monatsaufr	./kons.h	/^		ulong monatsaufr=0; \/\/ Zahl der bisherigen Programmaufrufe heute$/;"	m	struct:hcl
 mpfad	./kons.h	/^    string mpfad;  \/\/ meinpfad()$/;"	m	struct:hcl
 mpwd	./kons.h	/^		string mpwd;  \/\/ Passwort fuer Mysql\/MariaDB \/\/ω$/;"	m	struct:hcl
@@ -1295,6 +1879,7 @@ optcl	./kons.cpp	/^optcl::optcl(const void* pptr,const par_t part, const int kur
 optcl	./kons.h	/^struct optcl:wpgcl$/;"	s
 opts	./kons.h	/^    vector<optioncl> opts;$/;"	m	struct:hcl
 optslsz	./kons.h	/^    size_t optslsz=0; \/\/ last opts.size()$/;"	m	struct:hcl
+p	./capiutils.h	/^	unsigned p;$/;"	m	struct:__anon6
 p1	./fbfax.h	/^		string p1;$/;"	m	class:hhcl
 p2	./fbfax.h	/^		int p2;$/;"	m	class:hhcl
 p3	./fbfax.h	/^		string p3;$/;"	m	class:hhcl
@@ -1305,6 +1890,7 @@ paare	./kons.h	/^	vector<paarcl> paare;$/;"	m	struct:confdcl
 pac	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	e	enum:instprog
 page_current	./fax.h	/^	gint page_current;$/;"	m	struct:fax_status
 page_total	./fax.h	/^	gint page_total;$/;"	m	struct:fax_status
+par	./capiutils.h	/^	unsigned char *par;$/;"	m	struct:__anon6
 par_t	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	g
 parent	./appobject.h	/^	GObject parent;$/;"	m	struct:_AppObject
 parent_class	./appobject.h	/^	GObjectClass parent_class;$/;"	m	struct:_AppObjectClass
@@ -1362,6 +1948,26 @@ priv	./connection.h	/^	void *priv;$/;"	m	struct:connection
 priv	./contact.h	/^	gpointer priv;$/;"	m	struct:contact
 priv	./faxophone.h	/^	void *priv;$/;"	m	struct:capi_connection
 priv_html	./Makefile	/^define priv_html$/;"	m
+prof_err_base	./profile.h	351;"	d
+profile_add_relation_fn	./profile.h	/^(*profile_add_relation_fn)(void *cbdata, const char **names,$/;"	t
+profile_cleanup_fn	./profile.h	/^(*profile_cleanup_fn)(void *cbdata);$/;"	t
+profile_copy_fn	./profile.h	/^(*profile_copy_fn)(void *cbdata, void **ret_cbdata);$/;"	t
+profile_filespec_list_t	./profile.h	/^typedef char* profile_filespec_list_t;	\/* list of : separated paths, C string *\/$/;"	t
+profile_filespec_t	./profile.h	/^typedef char* profile_filespec_t;	\/* path as C string *\/$/;"	t
+profile_flush_fn	./profile.h	/^(*profile_flush_fn)(void *cbdata);$/;"	t
+profile_free_string_fn	./profile.h	/^(*profile_free_string_fn)(void *cbdata, char *string);$/;"	t
+profile_free_values_fn	./profile.h	/^(*profile_free_values_fn)(void *cbdata, char **values);$/;"	t
+profile_get_values_fn	./profile.h	/^(*profile_get_values_fn)(void *cbdata, const char *const *names,$/;"	t
+profile_iterator_create_fn	./profile.h	/^(*profile_iterator_create_fn)(void *cbdata, const char *const *names,$/;"	t
+profile_iterator_fn	./profile.h	/^(*profile_iterator_fn)(void *cbdata, void *iter, char **ret_name,$/;"	t
+profile_iterator_free_fn	./profile.h	/^(*profile_iterator_free_fn)(void *cbdata, void *iter);$/;"	t
+profile_modified_fn	./profile.h	/^(*profile_modified_fn)(void *cbdata, int *modified);$/;"	t
+profile_module_init_fn	./profile.h	/^(*profile_module_init_fn)(const char *residual, struct profile_vtable *vtable,$/;"	t
+profile_rename_section_fn	./profile.h	/^(*profile_rename_section_fn)(void *cbdata, const char **names,$/;"	t
+profile_t	./profile.h	/^typedef struct _profile_t *profile_t;$/;"	t	typeref:struct:
+profile_update_relation_fn	./profile.h	/^(*profile_update_relation_fn)(void *cbdata, const char **names,$/;"	t
+profile_vtable	./profile.h	/^struct profile_vtable {$/;"	s
+profile_writable_fn	./profile.h	/^(*profile_writable_fn)(void *cbdata, int *writable);$/;"	t
 progress_status	./fax.h	/^	gboolean progress_status;$/;"	m	struct:fax_status
 progvers	./kons.cpp	/^double hcl::progvers(const string& prog,string *ergptr\/*0*\/)$/;"	f	class:hcl
 pruefberecht	./kons.cpp	/^int pruefberecht(const string& datei,const string& benutzer,const mode_t mod\/*=01*\/,int obverb\/*=0*\/)$/;"	f
@@ -1410,6 +2016,7 @@ remote	./call.h	/^	struct contact *remote;$/;"	m	struct:call	typeref:struct:call
 remote	./faxophone.h	/^	struct record_channel remote;$/;"	m	struct:recorder	typeref:struct:recorder::record_channel
 remote_ident	./fax.h	/^	gchar remote_ident[64];$/;"	m	struct:fax_status
 remote_number	./connection.h	/^	gchar *remote_number;$/;"	m	struct:connection
+rename_section	./profile.h	/^    profile_rename_section_fn rename_section;$/;"	m	struct:profile_vtable
 repos	./kons.h	/^ string repos; \/\/ Befehl zum Hinzufuegen des Repositories fuer den Compiler$/;"	m	struct:linst_cl
 reserve	./kons.h	/^								 reserve=4*grenze;$/;"	m	struct:ic_cl
 reserved	./faxophone.h	/^	uint32_t reserved[6];$/;"	m	struct:capi_profile
@@ -1418,7 +2025,7 @@ retry	./network.h	/^	gboolean retry;$/;"	m	struct:auth_data
 richtige	./kons.h	/^	size_t richtige;$/;"	m	struct:confdcl
 right	./kons.h	/^inline std::string right(std::string const& source, size_t const length)$/;"	f
 ring	./faxophone.h	/^	void (*ring)(struct capi_connection *connection);$/;"	m	struct:session_handlers_st
-rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon1
+rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon3
 rmcl	./routermanager.c	/^rmcl::rmcl(gboolean debug, GError **error)$/;"	f	class:rmcl
 rmcl	./routermanager.h	/^struct rmcl$/;"	s
 rot	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
@@ -1564,6 +2171,7 @@ umgek	./kons.cpp	/^      *const tuerkis="\\e[0;36m", *const htuerkis="\\e[1;36m"
 unbek	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
 untersuser	./kons.cpp	/^int untersuser(const string& uname,__uid_t *uidp\/*=0*\/, __gid_t *gidp\/*=0*\/,vector<gid_t> *gids\/*=0*\/,struct passwd* ustr\/*=0*\/)$/;"	f
 upd	./kons.h	/^ string upd;    \/\/ Befehl zum Systemupdate$/;"	m	struct:linst_cl
+update_relation	./profile.h	/^    profile_update_relation_fn update_relation;$/;"	m	struct:profile_vtable
 upr	./kons.h	/^ string upr;   \/\/ Befehl zum Deinstallieren ueber das Installationssystem$/;"	m	struct:linst_cl
 url	./tr64.h	/^		string url;$/;"	m	class:tr64cl
 urlvs	./tr64.h	/^		string urlvs;$/;"	m	class:tr64cl
@@ -1646,6 +2254,7 @@ wert	./kons.h	/^    string wert;$/;"	m	struct:WPcl
 wertp	./kons.h	/^   const string *wertp;$/;"	m	struct:aScl
 wpgcl	./kons.cpp	/^wpgcl::wpgcl(const string& pname,const void* pptr,par_t part):pname(pname),pptr(pptr),part(part),eingetragen(0)$/;"	f	class:wpgcl
 wpgcl	./kons.h	/^struct wpgcl $/;"	s
+writable	./profile.h	/^    profile_writable_fn writable;$/;"	m	struct:profile_vtable
 write	./audio.h	/^	gsize (*write)(gpointer priv, guchar *buffer, gsize len);$/;"	m	struct:audio
 writer	./tr64.cpp	/^static int writer(char *data, size_t size, size_t nmemb, std::string *writerData)$/;"	f	file:
 wurz	./kons.h	/^    set<wele> wurz,fertige;$/;"	m	struct:find3cl

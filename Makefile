@@ -129,7 +129,7 @@ endif
 ifeq ($(shell expr $(OSNR) \<\= 4),1)
 	COMP::=$(COMP) $(CCInst)
 endif
-CFLAGS::=-c -Wall
+CFLAGS::=-c -Wall -I.
 LDFLAGS::=
 PCFILES::=$(shell find $(shell pkg-config --variable pc_path pkg-config|tr ':' ' ') -name "*.pc" 2>/dev/null)
 ifneq ($(libmdb),)
@@ -432,7 +432,8 @@ endif
 	-@[ "$(LSND)" ]&&{ [ -f /usr/include/sndfile.h ]|| sh configure inst _ "$(LSND)" verbose;}||:
 	-@[ "$(QPDF)" ]&&{ [ -f /usr/include/qpdf/QPDF.hh ]|| sh configure inst _ "$(QPDF)" verbose;}||:
 	-@[ "$(LGSSDP)" ]&&{ grep -qlm1 'Cflags.*gssdp' $(PCFILES)||sh configure inst _ "$(LGSSDP)" verbose;}||:
-	-@[ "$(LCAPI)" ]&&{ grep -qlm1 'capi20' $(PCFILES)||sh configure inst _ "$(LCAPI)" verbose;}||:
+	-@[ "$(LCAPI)" ]&&{ grep -qlm1 'capi20' $(PCFILES)||find /usr/lib64 /usr/lib /usr/local/lib64 /usr/local/lib -maxdepth 2 -type l -xtype f -name "libcapi20.so.3" -print -quit $(KF)|grep '' $(KR)||{ sh configure inst _ "$(LCAPI)" verbose;[ -f /usr/lib64/libcapi20.so ]||ln -s /usr/lib64/libcapi20.so.3 /usr/lib64/libcapi20.so;};}||:
+	-@[ "$(LCERR)" ]&&{ [ -f /usr/include/et/com_err.h ]|| sh configure inst _ "$(LCERR)" verbose;}||:
 	-@[ "$(LBOOST)" ]&&{ $(SPR) $(LBOOST) $(KR)|| sh configure inst _ "$(LBOOST)" verbose;}||:
 	-@[ "$(LBIO)" ]&&{ $(SPR) "$(LBIO)" $(KR)||sh configure inst _ "$(LBIO)" verbose;}||:
 	-@[ "$(LBLO)" ]&&{ $(SPR) "$(LBLO)" $(KR)||sh configure inst _ "$(LBLO)" verbose;}||:
