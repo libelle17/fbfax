@@ -34,15 +34,15 @@ B_FIFO	./kons.h	124;"	d
 B_Link	./kons.h	125;"	d
 B_Sock	./kons.h	126;"	d
 B_Verzn	./kons.h	121;"	d
-CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon1
-CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon1
-CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon1
-CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon1
-CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon1
-CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon1
-CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon1
-CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon1
-CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon1
+CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon4
+CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon4
+CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon4
+CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon4
+CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon4
+CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon4
+CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon4
+CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon4
+CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon4
 CAPI_BCHANNELS	./faxophone.h	65;"	d
 CAPI_BUFFERCNT	./faxophone.h	63;"	d
 CAPI_CONNECTIONS	./faxophone.h	59;"	d
@@ -59,7 +59,7 @@ DEBUG	./Makefile	/^debug debugnew debugneu: DEBUG=-g $/;"	m
 DEPFLAGS	./Makefile	/^DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)\/$*.Td -DGLIB_COMPILATION$/;"	m
 DIRFEHLER	./kons.h	/^  DIRFEHLER=998, $/;"	e	enum:__anon2
 DPROG	./fbfax.h	1;"	d
-DPROG	./kons.h	/^		const char* const DPROG;$/;"	m	class:hcl
+DPROG	./kons.h	/^		const char* const DPROG;$/;"	m	struct:hcl
 DPROG_T	./fbfax.cpp	/^char const *DPROG_T[T_MAX+1][SprachZahl]=$/;"	v
 Debian	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
 EMPTY_STRING	./direkt.h	3;"	d
@@ -152,9 +152,9 @@ RECORDING_REMOTE	./faxophone.h	/^	RECORDING_REMOTE$/;"	e	enum:recording
 REGFEHLER	./kons.h	/^  REGFEHLER=997,$/;"	e	enum:__anon2
 RM_ERROR	./fax_phone.c	51;"	d	file:
 RM_ERROR	./routermanager.h	40;"	d
-RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon4
-RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon4
-RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon4
+RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon1
+RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon1
+RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon1
 ROUTERMANAGER_PATH	./routermanager.h	38;"	d
 ROUTERMANAGER_SCHEME	./routermanager.h	34;"	d
 ROUTERMANAGER_SCHEME_PROFILE	./routermanager.h	35;"	d
@@ -185,7 +185,7 @@ Schschreib	./kons.cpp	/^int Schschreib(const char *fname, Schluessel *conf, size
 SprachZahl	./kons.h	/^enum Sprache {deutsch,englisch,SprachZahl};$/;"	e	enum:Sprache
 Sprache	./kons.h	/^enum Sprache {deutsch,englisch,SprachZahl};$/;"	g
 Suse	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
-TCp	./kons.h	/^  const char * const * const * const *TCp;$/;"	m	class:TxB
+TCp	./kons.h	/^  const char * const * const * const *TCp;$/;"	m	struct:TxB
 TCtp	./kons.h	/^typedef const char * const * const TCtp[SprachZahl];$/;"	t
 T_	./fbfax.h	/^enum T_      $/;"	g
 T_Aktiviere_Dienst	./kons.h	/^  T_Aktiviere_Dienst,$/;"	e	enum:Tkons_
@@ -584,7 +584,7 @@ Tippzahl	./kons.cpp	/^string Tippzahl(const char *const frage, const string *con
 Tippzahl	./kons.cpp	/^string Tippzahl(const string& frage, const string *const vorgabe)$/;"	f
 Tkons_	./kons.h	/^enum Tkons_ $/;"	g
 TxB	./kons.cpp	/^TxB::TxB(const char* const* const* const *TCp):TCp(TCp)$/;"	f	class:TxB
-TxB	./kons.h	/^class TxB \/\/ Text-Basisklasse$/;"	c
+TxB	./kons.h	/^struct TxB \/\/ Text-Basisklasse$/;"	s
 Txtrf	./kons.h	/^		const string Txtrf;$/;"	m	struct:optcl
 Txvg_	./vgb.cpp	/^enum Txvg_ {$/;"	g	file:
 USE_ISDN_MUTEX	./faxophone.h	67;"	d
@@ -629,8 +629,8 @@ absdr	./fbfax.h	/^		string absdr; \/\/ auf Fax angegebener Absender$/;"	m	class:
 absnr	./fbfax.h	/^		string absnr; \/\/ auf Fax angegebene Absendernummer$/;"	m	class:hhcl
 active_capi_connection	./fax_phone.c	/^struct capi_connection *active_capi_connection = NULL;$/;"	v	typeref:struct:
 addresses	./contact.h	/^	GSList *addresses;$/;"	m	struct:contact
-agef	./kons.h	/^ uchar agef=0; \/\/ dieser wurde gefunden$/;"	m	class:argcl
-akonfdt	./kons.h	/^    string akonfdt; \/\/ name der Konfigurationsdatei$/;"	m	class:hcl
+agef	./kons.h	/^ uchar agef=0; \/\/ dieser wurde gefunden$/;"	m	struct:argcl
+akonfdt	./kons.h	/^    string akonfdt; \/\/ name der Konfigurationsdatei$/;"	m	struct:hcl
 aktprogverz	./kons.cpp	/^string aktprogverz()$/;"	f
 alaw2linear	./isdn-convert.c	/^static short alaw2linear(unsigned char alaw_byte)$/;"	f	file:
 alaw_get_sign_mag	./isdn-convert.c	/^static inline void alaw_get_sign_mag(short sample, unsigned *sign, unsigned *mag)$/;"	f	file:
@@ -650,9 +650,9 @@ app_object_init	./appobject.c	/^static void app_object_init(AppObject *self)$/;"
 appl_id	./faxophone.h	/^	int appl_id;$/;"	m	struct:session
 apt	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	e	enum:instprog
 argcl	./kons.cpp	/^argcl::argcl(const int i,const char *const *const argv):argcs(argv[i])$/;"	f	class:argcl
-argcl	./kons.h	/^class argcl$/;"	c
-argcmv	./kons.h	/^		vector<argcl> argcmv; \/\/ class member vector$/;"	m	class:hcl
-argcs	./kons.h	/^ const char *argcs;  \/\/ Zeiger auf einen Commandline-Parameter$/;"	m	class:argcl
+argcl	./kons.h	/^struct argcl$/;"	s
+argcmv	./kons.h	/^		vector<argcl> argcmv; \/\/ struct member vector$/;"	m	struct:hcl
+argcs	./kons.h	/^ const char *argcs;  \/\/ Zeiger auf einen Commandline-Parameter$/;"	m	struct:argcl
 attrangleich	./kons.cpp	/^int attrangleich(const string& zu, const string& gemaess,const string* const zeitvondtp\/*=0*\/, int obverb\/*=0*\/, int oblog\/*=0*\/)$/;"	f
 audio	./audio.h	/^struct audio {$/;"	s
 audio	./faxophone.h	/^	gpointer audio;$/;"	m	struct:capi_connection
@@ -673,7 +673,7 @@ aufSplit	./kons.cpp	/^void aufSplit(vector<string> *tokens, const char* const te
 aufSplit	./kons.cpp	/^void aufSplit(vector<string> *tokens, const string& text, const char sep\/*=' '*\/,bool auchleer\/*=1*\/)$/;"	f
 aufSplit	./kons.cpp	/^void aufSplit(vector<string> *tokens, const string& text, const char* const sep, bool auchleer\/*=1*\/)$/;"	f
 aufiSplit	./kons.cpp	/^void aufiSplit(vector<string> *tokens, const string& text, const string& sep,bool nichtmehrfach\/*=1*\/,int obverb\/*=0*\/,int oblog\/*=0*\/,int ohneanfz\/*=0*\/) $/;"	f
-aufrufe	./kons.h	/^		ulong aufrufe=0; \/\/ Zahl der bisherigen Programmaufrufe$/;"	m	class:hcl
+aufrufe	./kons.h	/^		ulong aufrufe=0; \/\/ Zahl der bisherigen Programmaufrufe$/;"	m	struct:hcl
 ausgab1000	./kons.cpp	/^void perfcl::ausgab1000(const string& stelle)$/;"	f	class:perfcl
 ausgeb	./kons.cpp	/^int find3cl::ausgeb()$/;"	f	class:find3cl
 ausgeb	./kons.cpp	/^void find2cl::ausgeb()$/;"	f	class:find2cl
@@ -682,14 +682,14 @@ ausricht	./configure	/^ausricht() {$/;"	f
 auth	./network.h	/^	SoupAuth *auth;$/;"	m	struct:auth_data
 auth_data	./network.h	/^struct auth_data {$/;"	s
 authenticate	./appobject.h	/^	void (*authenticate)(struct auth_data *auth_data);$/;"	m	struct:_AppObjectClass
-autoupd	./kons.h	/^		int autoupd=-1;  \/\/ 1=Programm automatisch updadaten$/;"	m	class:hcl
+autoupd	./kons.h	/^		int autoupd=-1;  \/\/ 1=Programm automatisch updadaten$/;"	m	struct:hcl
 av	./kons.h	/^ vector<aScl> av;$/;"	m	struct:absch
-azaehlerdt	./kons.h	/^		string azaehlerdt; \/\/ akonfdt+".zaehl"$/;"	m	class:hcl
+azaehlerdt	./kons.h	/^		string azaehlerdt; \/\/ akonfdt+".zaehl"$/;"	m	struct:hcl
 bad_rows	./fax.h	/^	gint bad_rows;$/;"	m	struct:fax_status
 base_name	./kons.cpp	/^string base_name(const string& path)$/;"	f
 bemerk	./kons.h	/^	string bemerk;$/;"	m	struct:paarcl
 bemerk	./kons.h	/^    string bemerk;$/;"	m	struct:wpgcl
-benutzer	./kons.h	/^		vector<string> benutzer; \/\/ Benutzer aus \/etc\/passwd, bearbeitet durch setzbenutzer(&user)$/;"	m	class:hcl
+benutzer	./kons.h	/^		vector<string> benutzer; \/\/ Benutzer aus \/etc\/passwd, bearbeitet durch setzbenutzer(&user)$/;"	m	struct:hcl
 binaer	./kons.h	/^enum binaer:uchar {falsch,wahr};$/;"	g
 bit_inverse	./isdn-convert.h	/^static inline guchar bit_inverse(guchar chr)$/;"	f
 bitrate	./fax.h	/^	gint bitrate;$/;"	m	struct:fax_status
@@ -734,17 +734,17 @@ capi_thread	./faxophone.c	/^static GThread *capi_thread = NULL;$/;"	v	file:
 caseersetze	./kons.cpp	/^string caseersetze(const string& u, const char* const alt, const char* const neu) $/;"	f
 caus	./kons.cpp	18;"	d	file:
 caus	./kons.h	138;"	d
-cgid	./kons.h	/^		gid_t cgid;$/;"	m	class:cuscl
+cgid	./kons.h	/^		gid_t cgid;$/;"	m	struct:cuscl
 charersetze	./kons.cpp	/^char* charersetze(char *u, const char alt, const char neu) $/;"	f
 chersetze	./kons.cpp	/^void chersetze(string str, string *wsRet, const string& from, const char to) $/;"	f
 city	./contact.h	/^	gchar *city;$/;"	m	struct:contact
 city	./contact.h	/^	gchar *city;$/;"	m	struct:contact_address
-cl	./kons.h	/^		string cl; \/\/ comandline$/;"	m	class:hcl
+cl	./kons.h	/^		string cl; \/\/ comandline$/;"	m	struct:hcl
 clean	./faxophone.h	/^	void (*clean)(struct capi_connection *connection);$/;"	m	struct:capi_connection
 clear	./kons.cpp	/^void absch::clear()$/;"	f	class:absch
 close	./audio.h	/^	gboolean (*close)(gpointer priv);$/;"	m	struct:audio
-cmd	./kons.h	/^    string cmd; \/\/ string fuer command fuer Betriebssystembefehle$/;"	m	class:hcl
-cmeingegeben	./kons.h	/^		uchar cmeingegeben=0; \/\/ cron-Minuten eingegeben$/;"	m	class:hcl
+cmd	./kons.h	/^    string cmd; \/\/ string fuer command fuer Betriebssystembefehle$/;"	m	struct:hcl
+cmeingegeben	./kons.h	/^		uchar cmeingegeben=0; \/\/ cron-Minuten eingegeben$/;"	m	struct:hcl
 cmpmem	./kons.cpp	/^long cmpmem( char* feld, const char* search, int len_feld) \/\/\/\/ , int len_search$/;"	f
 code	./faxophone.h	/^	void (*code)(struct capi_connection *connection, int code);$/;"	m	struct:session_handlers_st
 color	./kons.h	/^  color(WORD attribute):m_color(attribute){};$/;"	f	struct:color
@@ -790,37 +790,37 @@ convert_audio_to_isdn	./isdn-convert.c	/^void convert_audio_to_isdn(struct capi_
 convert_isdn_to_audio	./isdn-convert.c	/^void convert_isdn_to_audio(struct capi_connection *connection, unsigned char *in_buf, unsigned int in_buf_len, unsigned char *out_buf, unsigned int *out_buf_len, short *rec_buf)$/;"	f
 country_code	./call.h	/^	gchar *country_code;$/;"	m	struct:call_by_call_entry
 cppschreib	./kons.cpp	/^int cppschreib(const string& fname, WPcl *conf, size_t csize)$/;"	f
-cpt	./kons.h	/^    char cpt[255];$/;"	m	class:hcl
-cpt	./kons.h	/^    char cpt[MAXHOSTNAMELEN]; $/;"	m	class:hcl
-cptlen	./kons.h	/^    size_t cptlen;$/;"	m	class:hcl
+cpt	./kons.h	/^    char cpt[255];$/;"	m	struct:hcl
+cpt	./kons.h	/^    char cpt[MAXHOSTNAMELEN]; $/;"	m	struct:hcl
+cptlen	./kons.h	/^    size_t cptlen;$/;"	m	struct:hcl
 create_table_buffer	./isdn-convert.c	/^void create_table_buffer(void)$/;"	f
 cred	./tr64.h	/^		string cred;$/;"	m	class:tr64cl
-crongeprueft	./kons.h	/^		uchar crongeprueft=0;$/;"	m	class:hcl
-cronminut	./kons.h	/^    string cronminut; \/\/ Minuten fuer crontab; 0 = kein Crontab-Eintrag$/;"	m	class:hcl
-cronzuplanen	./kons.h	/^		uchar cronzuplanen;$/;"	m	class:hcl
+crongeprueft	./kons.h	/^		uchar crongeprueft=0;$/;"	m	struct:hcl
+cronminut	./kons.h	/^    string cronminut; \/\/ Minuten fuer crontab; 0 = kein Crontab-Eintrag$/;"	m	struct:hcl
+cronzuplanen	./kons.h	/^		uchar cronzuplanen;$/;"	m	struct:hcl
 ctx	./direkt.c	/^GMainContext *ctx;$/;"	v
-cuid	./kons.h	/^		uid_t cuid;$/;"	m	class:cuscl
+cuid	./kons.h	/^		uid_t cuid;$/;"	m	struct:cuscl
 cus	./kons.cpp	/^cuscl cus; \/\/ globales Objekt$/;"	v
 cuscl	./kons.cpp	/^cuscl::cuscl()$/;"	f	class:cuscl
-cuscl	./kons.h	/^class cuscl$/;"	c
-cusstr	./kons.h	/^		string cusstr;$/;"	m	class:cuscl
+cuscl	./kons.h	/^struct cuscl$/;"	s
+cusstr	./kons.h	/^		string cusstr;$/;"	m	struct:cuscl
 daemon_reload	./kons.cpp	/^void servc::daemon_reload(int obverb\/*=0*\/, int oblog\/*=0*\/)$/;"	f	class:servc
 data	./faxophone.h	/^	void (*data)(struct capi_connection *connection, _cmsg capi_message);$/;"	m	struct:capi_connection
 date_time	./call.h	/^	gchar *date_time;$/;"	m	struct:call
 datei	./fbfax.h	/^		string datei; \/\/ zu faxende (in Spool zu stellende) Datei$/;"	m	class:hhcl
 dateivgl	./kons.cpp	/^int dateivgl(const string& d1, const string& d2,uchar obzeit\/*=0*\/)$/;"	f
 dblau	./kons.cpp	/^			*const dblau="\\e[0;34;1;47m", *const blau="\\e[1;34m", *const violett="\\e[0;35m", *const hviolett="\\e[1;35m",$/;"	v
-dcpt	./kons.h	/^    DWORD dcpt;$/;"	m	class:hcl
+dcpt	./kons.h	/^    DWORD dcpt;$/;"	m	struct:hcl
 deb	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	e	enum:lsysen
 debug	./direkt.c	/^static gboolean debug = FALSE;$/;"	v	file:
 deinit	./audio.h	/^	gboolean (*deinit)(void);$/;"	m	struct:audio
-dent	./kons.h	/^  struct dirent *dent;$/;"	m	class:find2cl	typeref:struct:find2cl::
+dent	./kons.h	/^		struct dirent *dent;$/;"	m	struct:find2cl	typeref:struct:find2cl::
 deutsch	./kons.h	/^enum Sprache {deutsch,englisch,SprachZahl};$/;"	e	enum:Sprache
 dev	./kons.h	/^ string dev; \/\/ Anhaengsel fuer die development-Versionen ("-dev" oder "-devel")$/;"	m	struct:linst_cl
 dgrau	./kons.cpp	/^const char *const schwarz="\\e[0m", *const dgrau="\\e[1;30m", *const drot="\\e[0;31m", *const rot="\\e[1;31m",$/;"	v
 dir	./kons.cpp	/^const char *const dir = "dir ";$/;"	v
 dir	./kons.cpp	/^const char *const dir = "ls -l ";$/;"	v
-dir	./kons.h	/^  DIR *dir;$/;"	m	class:find2cl
+dir	./kons.h	/^		DIR *dir;$/;"	m	struct:find2cl
 dir_name	./kons.cpp	/^string dir_name(const string& path)$/;"	f
 disconnect	./net_monitor.h	/^	net_disconnect_func disconnect;$/;"	m	struct:net_event
 disconnected	./faxophone.h	/^	void (*disconnected)(struct capi_connection *connection);$/;"	m	struct:session_handlers_st
@@ -842,8 +842,8 @@ dummy	./appobject.c	/^	gchar dummy;$/;"	m	struct:_AppObjectPrivate	file:
 duration	./call.h	/^	gchar *duration;$/;"	m	struct:call
 early_b3	./faxophone.h	/^	int early_b3;$/;"	m	struct:capi_connection
 ecm	./fax.h	/^	gchar ecm;$/;"	m	struct:fax_status
-edit	./kons.h	/^		static const string edit;$/;"	m	class:hcl
-eingefuegt	./kons.h	/^  int eingefuegt, verzneu;$/;"	m	class:find2cl
+edit	./kons.h	/^		static const string edit;$/;"	m	struct:hcl
+eingefuegt	./kons.h	/^		int eingefuegt, verzneu;$/;"	m	struct:find2cl
 einricht	./configure	/^einricht() {$/;"	f
 eintrinit	./kons.cpp	/^template <> void schAcl<WPcl>::eintrinit()$/;"	f	class:schAcl
 eintrinit	./kons.cpp	/^template <> void schAcl<optcl>::eintrinit()$/;"	f	class:schAcl
@@ -854,7 +854,7 @@ elem2	./kons.h	/^    elem2(){};$/;"	f	struct:elem2
 elem2	./kons.h	/^struct elem2$/;"	s
 elem3	./kons.h	/^    elem3(string pfad, const struct stat *sbp, int& tflag, const struct FTW *ftwp, string lnk,const struct stat& lst):$/;"	f	struct:elem3
 elem3	./kons.h	/^struct elem3$/;"	s
-elemzahl	./kons.h	501;"	d
+elemzahl	./kons.h	499;"	d
 elemzahlT	./kons.h	/^template<typename T> size_t elemzahlT(T& v){return sizeof(v)\/sizeof(*v);}$/;"	f
 emit_authenticate	./appobject-emit.c	/^void emit_authenticate(struct auth_data *auth_data)$/;"	f
 emit_connection_established	./appobject-emit.c	/^void emit_connection_established(struct capi_connection *connection)$/;"	f
@@ -867,18 +867,18 @@ emit_fax_process	./appobject-emit.c	/^void emit_fax_process(const gchar *filenam
 emit_journal_loaded	./appobject-emit.c	/^void emit_journal_loaded(GSList *journal)$/;"	f
 emit_message	./appobject-emit.c	/^void emit_message(gchar *title, gchar *message)$/;"	f
 enableggf	./kons.cpp	/^int servc::enableggf(int obverb\/*=0*\/,int oblog\/*=0*\/)$/;"	f	class:servc
-ename	./kons.h	/^    string sname,ename; \/\/ Dienstname, Exename$/;"	m	class:servc
+ename	./kons.h	/^    string sname,ename; \/\/ Dienstname, Exename$/;"	m	struct:servc
 encoding	./fax.h	/^	gint encoding;$/;"	m	struct:fax_status
 englisch	./kons.h	/^enum Sprache {deutsch,englisch,SprachZahl};$/;"	e	enum:Sprache
 eprog	./kons.h	/^ string eprog; \/\/ ersetztes Programm$/;"	m	struct:linst_cl
 erg	./kons.h	/^    set<elem3> erg;$/;"	m	struct:find3cl
-ergcont	./kons.h	/^	char ergcont[reserve],$/;"	m	class:ic_cl
-ergdyn	./kons.h	/^			 *ergdyn=0;$/;"	m	class:ic_cl
-ergebnis	./kons.h	/^	char *ergebnis;$/;"	m	class:ic_cl
+ergcont	./kons.h	/^		char ergcont[reserve],$/;"	m	struct:ic_cl
+ergdyn	./kons.h	/^		*ergdyn=0;$/;"	m	struct:ic_cl
+ergebnis	./kons.h	/^		char *ergebnis;$/;"	m	struct:ic_cl
 ergp	./kons.cpp	/^set<elem3> *find3cl::ergp;$/;"	m	class:find3cl	file:
+ergp	./kons.h	/^		el2set *ergp=0;$/;"	m	struct:find2cl
 ergp	./kons.h	/^    static set<elem3> *ergp;$/;"	m	struct:find3cl
-ergp	./kons.h	/^  el2set *ergp=0;$/;"	m	class:find2cl
-erkl	./kons.h	/^		stringstream erkl; \/\/ Erklärung für die Hilfe$/;"	m	class:hcl
+erkl	./kons.h	/^		stringstream erkl; \/\/ Erklärung für die Hilfe$/;"	m	struct:hcl
 errmsgcl	./kons.h	/^		errmsgcl(int errnr,const string& msg):errnr(errnr),msg(msg){}$/;"	f	struct:errmsgcl
 errmsgcl	./kons.h	/^struct errmsgcl$/;"	s
 errnr	./kons.h	/^		int errnr;$/;"	m	struct:errmsgcl
@@ -917,7 +917,7 @@ faxophone_reconnect	./faxophone.c	/^static void faxophone_reconnect(struct sessi
 fbcl	./direkt.c	/^fbcl::fbcl(const string usr,const string pwd,const string host)$/;"	f	class:fbcl
 fbcl	./direkt.h	/^class fbcl$/;"	c
 fed	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	e	enum:lsysen
-fehler	./kons.h	/^    int fehler=0; \/\/ Exit-Code der Exe-Datei$/;"	m	class:servc
+fehler	./kons.h	/^    int fehler=0; \/\/ Exit-Code der Exe-Datei$/;"	m	struct:servc
 fertige	./kons.h	/^    set<wele> wurz,fertige;$/;"	m	struct:find3cl
 file	./faxophone.h	/^	SNDFILE *file;$/;"	m	struct:recorder
 file_load	./file.c	/^gchar *file_load(gchar *name, gsize *size)$/;"	f
@@ -925,14 +925,14 @@ file_name	./faxophone.h	/^	char *file_name;$/;"	m	struct:recorder
 file_save	./file.c	/^void file_save(gchar *name, const gchar *data, gsize len)$/;"	f
 fileno	./kons.h	50;"	d
 find2cl	./kons.cpp	/^find2cl::find2cl(int _obverb\/*=0*\/,int _oblog\/*=0*\/,find2cl *stamm\/*=0*\/):obverb(_obverb),oblog(_oblog)$/;"	f	class:find2cl
-find2cl	./kons.h	/^class find2cl: elem2$/;"	c
+find2cl	./kons.h	/^struct find2cl: elem2$/;"	s
 find3cl	./kons.cpp	/^find3cl::find3cl(int _obverb\/*=0*\/,int _oblog\/*=0*\/):obverb(_obverb),oblog(_oblog)$/;"	f	class:find3cl
 find3cl	./kons.h	/^struct find3cl$/;"	s
 finde	./kons.cpp	/^int find2cl::finde(svec *wovp,const string& muster\/*=string()*\/,const long tiefe\/*=-1*\/,int typbit\/*=B_Alle*\/,int folge\/*=Fol_Dat*\/,$/;"	f	class:find2cl
 finde	./kons.cpp	/^int find3cl::finde(svec *wovp,const string& muster\/*=string()*\/,long tiefe\/*=-1*\/,$/;"	f	class:find3cl
 findfile	./kons.cpp	/^void findfile(svec *qrueckp,uchar findv,int obverb\/*=0*\/,int oblog\/*=0*\/,uchar anteil\/*=0*\/,$/;"	f
 flags	./kons.h	/^    int flags = 0;$/;"	m	struct:find3cl
-fmt	./kons.h	/^		const char* const fmt;$/;"	m	class:ztacl
+fmt	./kons.h	/^		const char* const fmt;$/;"	m	struct:ztacl
 fname	./kons.h	/^	string fname; \/\/ Dateiname$/;"	m	struct:confdcl
 fnhcliztyp	./kons.h	/^typedef int (hcl::*fnhcliztyp)();$/;"	t
 fnhclztyp	./kons.h	/^typedef void (hcl::*fnhclztyp)();$/;"	t
@@ -1010,15 +1010,15 @@ gibaus	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::gibaus(const int nr
 gibomapaus	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::gibomapaus()$/;"	f	class:schAcl
 gitpull	./kons.cpp	/^void hcl::gitpull(const string& DPROG)$/;"	f	class:hcl
 goptions	./faxophone.h	/^	uint32_t goptions;$/;"	m	struct:capi_profile
-grenze	./kons.h	/^	static const size_t grenze=500, $/;"	m	class:ic_cl
-groupdt	./kons.h	/^		static const string passwddt, groupdt, sudoersdt;$/;"	m	class:hcl
+grenze	./kons.h	/^		static const size_t grenze=500, $/;"	m	struct:ic_cl
+groupdt	./kons.h	/^		static const string passwddt, groupdt, sudoersdt;$/;"	m	struct:hcl
 gruen	./kons.cpp	/^			*const gruen="\\e[0;32m", *const hgruen="\\e[1;32m", *const braun="\\e[0;33m", *const gelb="\\e[1;33m",$/;"	v
 gtrim	./kons.h	/^inline std::string *gtrim(std::string *str) {$/;"	f	class:std
 hLog	./kons.cpp	/^int hcl::hLog(const string& text,const bool oberr\/*=0*\/,const short klobverb\/*=0*\/) const$/;"	f	class:hcl
 handlers	./faxophone.h	/^	struct session_handlers_st *handlers;$/;"	m	struct:session	typeref:struct:session::
-hccd	./kons.h	/^		confdcl hccd;$/;"	m	class:hcl
+hccd	./kons.h	/^		confdcl hccd;$/;"	m	struct:hcl
 hcl	./kons.cpp	/^hcl::hcl(const int argc, const char *const *const argv,const char* const DPROG,const uchar mitcron,const uchar parstreng\/*=1*\/):DPROG(DPROG),mitcron(mitcron),parstreng(parstreng)$/;"	f	class:hcl
-hcl	./kons.h	/^class hcl$/;"	c
+hcl	./kons.h	/^struct hcl$/;"	s
 header	./fax.h	/^	gchar header[64];$/;"	m	struct:fax_status
 hgrau	./kons.cpp	/^      *const tuerkis="\\e[0;36m", *const htuerkis="\\e[1;36m", *const hgrau="\\e[0;37m", *const weiss="\\e[1;37m", *const umgek="\\e[7m";$/;"	v
 hgrau	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
@@ -1038,8 +1038,8 @@ host	./fbfax.h	/^		string host;$/;"	m	class:hhcl
 htuerkis	./kons.cpp	/^      *const tuerkis="\\e[0;36m", *const htuerkis="\\e[1;36m", *const hgrau="\\e[0;37m", *const weiss="\\e[1;37m", *const umgek="\\e[7m";$/;"	v
 hviolett	./kons.cpp	/^			*const dblau="\\e[0;34;1;47m", *const blau="\\e[1;34m", *const violett="\\e[0;35m", *const hviolett="\\e[1;35m",$/;"	v
 ic_cl	./kons.cpp	/^ic_cl::ic_cl(const char* nach, const char* von) $/;"	f	class:ic_cl
-ic_cl	./kons.h	/^class ic_cl $/;"	c
-ict	./kons.h	/^	iconv_t ict;$/;"	m	class:ic_cl
+ic_cl	./kons.h	/^struct ic_cl $/;"	s
+ict	./kons.h	/^		iconv_t ict;$/;"	m	struct:ic_cl
 id	./connection.h	/^	guint id;$/;"	m	struct:connection
 id	./faxophone.c	/^static unsigned int id = 0;$/;"	v	file:
 id	./faxophone.h	/^	unsigned int id;$/;"	m	struct:capi_connection
@@ -1085,10 +1085,10 @@ it3	./kons.cpp	/^set<elem3>::iterator it3;$/;"	v
 iwert	./kons.h	/^    int iwert; \/\/ Wert, der pptr zugewiesen wird, falls dieser Parameter gewaehlt wird; -1= Wert steht im nächsten Parameter, 1=pro Nennung in der Kommandozeile wert um 1 erhöhen$/;"	m	struct:optcl
 journal_loaded	./appobject.h	/^	void (*journal_loaded)(GSList *journal);$/;"	m	struct:_AppObjectClass
 kauswert	./kons.cpp	/^template <typename SCL> void confdcl::kauswert(schAcl<SCL> *sA, int obverb,const uchar mitclear\/*=1*\/)$/;"	f	class:confdcl
-keineverarbeitung	./kons.h	/^		uchar keineverarbeitung=0; \/\/ wenn cronminuten geaendert werden sollen, vorher abkuerzen$/;"	m	class:hcl
+keineverarbeitung	./kons.h	/^		uchar keineverarbeitung=0; \/\/ wenn cronminuten geaendert werden sollen, vorher abkuerzen$/;"	m	struct:hcl
 keinp	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	e	enum:instprog
 kf	./configure	/^kf() {$/;"	f
-kfzg	./kons.h	/^    uchar kfzg=0; \/\/ Konfigurationsdatei-Namen ausgeben$/;"	m	class:hcl
+kfzg	./kons.h	/^    uchar kfzg=0; \/\/ Konfigurationsdatei-Namen ausgeben$/;"	m	struct:hcl
 kompilbase	./kons.cpp	/^int hcl::kompilbase(const string& was, const string& endg)$/;"	f	class:hcl
 kompilfort	./kons.cpp	/^int hcl::kompilfort(const string& was,const string& vorcfg\/*=string()*\/, const string& cfgbismake\/*==s_dampand*\/,uchar ohneconf\/*=0*\/)$/;"	f	class:hcl
 kompiliere	./kons.cpp	/^int hcl::kompiliere(const string& was,const string& endg, const string& vorcfg\/*=string()*\/, const string& cfgbismake\/*==s_dampand*\/)$/;"	f	class:hcl
@@ -1096,19 +1096,19 @@ kons_H_DRIN	./kons.h	6;"	d
 kons_T	./kons.cpp	/^const char *kons_T[T_konsMAX+1][SprachZahl]=$/;"	v
 kopier	./kons.cpp	/^int kopier(const string& quel, const string& ziel, int obverb, int oblog)$/;"	f
 kopierm	./kons.cpp	/^void kopierm(const string *quelle, const string *ziel)$/;"	f
-kschreib	./kons.h	/^		uchar kschreib=0; \/\/ Konfigurationsdatei schreiben$/;"	m	class:hcl
+kschreib	./kons.h	/^		uchar kschreib=0; \/\/ Konfigurationsdatei schreiben$/;"	m	struct:hcl
 ktage	./fbfax.cpp	/^const unsigned ktage=1; \/\/ kurzes Intervall fuer Faxtabellenkorrektur, 1 Tag$/;"	v
 kuerzelogdatei	./kons.cpp	/^int kuerzelogdatei(const char* logdatei,int obverb)$/;"	f
 kuerzevtz	./kons.cpp	/^void kuerzevtz(string *vzp)$/;"	f
 laeuft	./kons.cpp	/^int servc::laeuft()$/;"	f	class:servc
-langu	./kons.h	/^    string langu; \/\/ Sprache (Anfangsbuchstabe)$/;"	m	class:hcl
+langu	./kons.h	/^    string langu; \/\/ Sprache (Anfangsbuchstabe)$/;"	m	struct:hcl
 last_write	./faxophone.h	/^	gint64 last_write;$/;"	m	struct:recorder
 lauf	./kons.cpp	/^void hcl::lauf()$/;"	f	class:hcl
-laufrtag	./kons.h	/^		struct tm laufrtag={0}; \/\/ Tag des letztes Aufrufs$/;"	m	class:hcl	typeref:struct:hcl::tm
+laufrtag	./kons.h	/^		struct tm laufrtag={0}; \/\/ Tag des letztes Aufrufs$/;"	m	struct:hcl	typeref:struct:hcl::tm
 law_2_linear16	./isdn-convert.c	/^unsigned short law_2_linear16[256];$/;"	v
 leise	./configure	/^leise() {$/;"	f
-letzter	./kons.h	/^ inline shared_ptr<SCL> letzter() {return schl[schl.size()-1];} $/;"	f	class:schAcl
-lgn	./kons.h	/^  Sprache lgn; \/\/ Sprache numerisch$/;"	m	class:TxB
+letzter	./kons.h	/^ inline shared_ptr<SCL> letzter() {return schl[schl.size()-1];} $/;"	f	struct:schAcl
+lgn	./kons.h	/^  Sprache lgn; \/\/ Sprache numerisch$/;"	m	struct:TxB
 libs	./kons.h	/^ string libs; \/\/ alle lib-Verzeichnisse, fuer find ..$/;"	m	struct:linst_cl
 lief	./kons.cpp	/^int servc::lief()$/;"	f	class:servc
 lies	./kons.cpp	/^int confdcl::lies(const string& vfname, int obverb, const char tz\/*='='*\/)$/;"	f	class:confdcl
@@ -1132,19 +1132,19 @@ log_level	./logging.c	/^static GLogLevelFlags log_level = G_LOG_LEVEL_DEBUG;$/;"
 log_save_data	./logging.c	/^void log_save_data(gchar *name, const gchar *data, gsize len)$/;"	f
 log_set_level	./logging.c	/^void log_set_level(GLogLevelFlags level)$/;"	f
 log_shutdown	./logging.c	/^void log_shutdown(void)$/;"	f
-logdateineu	./kons.h	/^    uchar logdateineu=0; \/\/ logdt vorher loeschen$/;"	m	class:hcl
-logdname	./kons.h	/^    string logdname; \/\/ Logdatei-Name ohne Pfad <DPROG>.log$/;"	m	class:hcl
-logdneu	./kons.h	/^    uchar logdneu=0;    \/\/ Logdatei geaendert$/;"	m	class:hcl
+logdateineu	./kons.h	/^    uchar logdateineu=0; \/\/ logdt vorher loeschen$/;"	m	struct:hcl
+logdname	./kons.h	/^    string logdname; \/\/ Logdatei-Name ohne Pfad <DPROG>.log$/;"	m	struct:hcl
+logdneu	./kons.h	/^    uchar logdneu=0;    \/\/ Logdatei geaendert$/;"	m	struct:hcl
 logdt	./fbfax.cpp	/^const char *logdt="\/var\/log\/" DPROG "vorgabe.log";\/\/darauf wird in kons.h verwiesen;$/;"	v
-loggespfad	./kons.h	/^    string loggespfad; \/\/ Gesamtpfad, auf den dann die in kons.h verwiesene und oben definierte Variable logdt zeigt$/;"	m	class:hcl
+loggespfad	./kons.h	/^    string loggespfad; \/\/ Gesamtpfad, auf den dann die in kons.h verwiesene und oben definierte Variable logdt zeigt$/;"	m	struct:hcl
 logging	./fax.c	/^static void (*logging)(gint level, const gchar *text) = NULL;$/;"	v	file:
-logvneu	./kons.h	/^    uchar logvneu=0;    \/\/ Logverzeichnis geaendert$/;"	m	class:hcl
-logvz	./kons.h	/^    string logvz; \/\/ nur das Verzeichnis \/var\/log$/;"	m	class:hcl
+logvneu	./kons.h	/^    uchar logvneu=0;    \/\/ Logverzeichnis geaendert$/;"	m	struct:hcl
+logvz	./kons.h	/^    string logvz; \/\/ nur das Verzeichnis \/var\/log$/;"	m	struct:hcl
 lookup	./contact.h	/^	gboolean lookup;$/;"	m	struct:contact
 lst	./kons.h	/^    const struct stat lst={0};$/;"	m	struct:elem3	typeref:struct:elem3::stat
 lstat	./kons.h	62;"	d
-lsys	./kons.cpp	/^class lsyscl lsys;$/;"	v	typeref:class:lsyscl
-lsyscl	./kons.h	/^class lsyscl$/;"	c
+lsys	./kons.cpp	/^struct lsyscl lsys;$/;"	v	typeref:struct:lsyscl
+lsyscl	./kons.h	/^struct lsyscl$/;"	s
 lsysen	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	g
 ltage	./fbfax.cpp	/^const unsigned ltage=73000; \/\/ langes Intervall fuer Faxtabellenkorrektur, 200 Jahre$/;"	v
 ltoa_	./kons.cpp	/^char* ltoa_(long value, char* result, int base\/*=10*\/) $/;"	f
@@ -1174,34 +1174,34 @@ mbis	./kons.h	/^    time_t mab,mbis;$/;"	m	struct:find3cl
 mbisp	./kons.cpp	/^time_t *find3cl::mabp,*find3cl::mbisp;$/;"	m	class:find3cl	file:
 mbisp	./kons.h	/^    static time_t *mabp,*mbisp;$/;"	m	struct:find3cl
 mdatei	./kons.cpp	/^mdatei::mdatei(const string& name, ios_base::openmode modus\/*=ios_base::in|ios_base::out*\/,uchar faclbak\/*=1*\/,int obverb\/*=0*\/, int oblog\/*=0*\/)$/;"	f	class:mdatei
-mdatei	./kons.h	/^class mdatei: public fstream$/;"	c
-meinname	./kons.h	/^    string meinname; \/\/ base_name(meinpfad()) \/\/ argv[0] \/\/ <DPROG>$/;"	m	class:hcl
+mdatei	./kons.h	/^struct mdatei: fstream$/;"	s
+meinname	./kons.h	/^    string meinname; \/\/ base_name(meinpfad()) \/\/ argv[0] \/\/ <DPROG>$/;"	m	struct:hcl
 meinpfad	./kons.cpp	/^string meinpfad() $/;"	f
 message	./appobject.h	/^	void (*message)(gchar *title, gchar *message);$/;"	m	struct:_AppObjectClass
 message_number	./faxophone.h	/^	int message_number;$/;"	m	struct:session
 microsec_time	./phone.c	/^guint64 microsec_time(void)$/;"	f
-mitcron	./kons.h	/^		const uchar mitcron; \/\/ ob Programm auch in Cron eingetragen werden kann; kann im Konstruktor angegeben werden$/;"	m	class:hcl
-mitpids	./kons.h	/^		uchar mitpids=0; \/\/ mehrere pids$/;"	m	class:hcl
+mitcron	./kons.h	/^		const uchar mitcron; \/\/ ob Programm auch in Cron eingetragen werden kann; kann im Konstruktor angegeben werden$/;"	m	struct:hcl
+mitpids	./kons.h	/^		uchar mitpids=0; \/\/ mehrere pids$/;"	m	struct:hcl
 mitset	./kons.h	114;"	d
 mitvtz	./kons.h	/^inline std::string mitvtz(std::string const& vz)$/;"	f
 mntpunkt	./kons.cpp	/^int mntpunkt(const char* mntpfad) {$/;"	f
 modem	./fax.h	/^	gchar modem;$/;"	m	struct:fax_status
-monatsaufr	./kons.h	/^		ulong monatsaufr=0; \/\/ Zahl der bisherigen Programmaufrufe heute$/;"	m	class:hcl
-mpfad	./kons.h	/^    string mpfad;  \/\/ meinpfad()$/;"	m	class:hcl
-mpwd	./kons.h	/^		string mpwd;  \/\/ Passwort fuer Mysql\/MariaDB \/\/ω$/;"	m	class:hcl
+monatsaufr	./kons.h	/^		ulong monatsaufr=0; \/\/ Zahl der bisherigen Programmaufrufe heute$/;"	m	struct:hcl
+mpfad	./kons.h	/^    string mpfad;  \/\/ meinpfad()$/;"	m	struct:hcl
+mpwd	./kons.h	/^		string mpwd;  \/\/ Passwort fuer Mysql\/MariaDB \/\/ω$/;"	m	struct:hcl
 msg	./kons.h	/^		string msg;$/;"	m	struct:errmsgcl
 msg	./network.h	/^	SoupMessage *msg;$/;"	m	struct:auth_data
 msn	./fbfax.h	/^		string msn; $/;"	m	class:hhcl
 mtage	./fbfax.cpp	/^const unsigned mtage=30; \/\/ mittleres Intervall fuer Faxtabellenkorrektur, 1 Monat$/;"	v
 multischlschreib	./kons.cpp	/^template<typename SCL> int multischlschreib(const string& fname, schAcl<SCL> *const *const mcnfApp, const size_t cszahl,const string& mpfad)$/;"	f
-muser	./kons.h	/^		string muser; \/\/ Benutzer fuer Mysql\/MariaDB$/;"	m	class:hcl
+muser	./kons.h	/^		string muser; \/\/ Benutzer fuer Mysql\/MariaDB$/;"	m	struct:hcl
 mute	./faxophone.h	/^	int mute;$/;"	m	struct:capi_connection
 nFERTIG	./Makefile	/^nFERTIG=$(error newproj finished\/ Fertig mit neuproj!)$/;"	m
 name	./audio.h	/^	const gchar *name;$/;"	m	struct:audio
 name	./audio.h	/^	gchar *name;$/;"	m	struct:audio_device
 name	./contact.h	/^	gchar *name;$/;"	m	struct:contact
-name	./kons.h	/^	string name;$/;"	m	class:schAcl
 name	./kons.h	/^	string name;$/;"	m	struct:paarcl
+name	./kons.h	/^	string name;$/;"	m	struct:schAcl
 name	./kons.h	/^   const string name;$/;"	m	struct:aScl
 name	./kons.h	/^ string name;$/;"	m	struct:pidcl
 nbchannel	./faxophone.h	/^	uint16_t nbchannel;$/;"	m	struct:capi_profile
@@ -1232,10 +1232,10 @@ neurf	./fbfax.cpp	/^void hhcl::neurf()$/;"	f	class:hhcl
 ngvz	./fbfax.h	/^		string ngvz; \/\/ Nichtgefaxt-Verzeichnis (Gescheiterte)$/;"	m	class:hhcl
 nicepf	./kons.h	/^ string nicepf; \/\/ Pfad zu nice$/;"	m	struct:linst_cl
 nix	./kons.cpp	/^const string nix;$/;"	v
-nochkeincron	./kons.h	/^		uchar nochkeincron;$/;"	m	class:hcl
+nochkeincron	./kons.h	/^		uchar nochkeincron;$/;"	m	struct:hcl
 notification	./connection.h	/^	void *notification;$/;"	m	struct:connection
-nr	./kons.h	/^ unsigned long nr=0;$/;"	m	class:perfcl
-nrp	./kons.h	/^  ull *nrp=0;$/;"	m	class:find2cl
+nr	./kons.h	/^	unsigned long nr=0;$/;"	m	struct:perfcl
+nrp	./kons.h	/^		ull *nrp=0;$/;"	m	struct:find2cl
 number	./contact.h	/^	gchar *number;$/;"	m	struct:contact
 number_format	./call.h	/^enum number_format {$/;"	g
 numbers	./contact.h	/^	GSList *numbers;$/;"	m	struct:contact
@@ -1243,38 +1243,37 @@ nurexec	./kons.h	/^		int nurexec;$/;"	m	struct:find3cl
 nurexecp	./kons.cpp	/^int *find3cl::nurexecp;$/;"	m	class:find3cl	file:
 nurexecp	./kons.h	/^		static int *nurexecp;$/;"	m	struct:find3cl
 oausgeb	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::oausgeb(const char* const farbe,int obverb\/*=0*\/,int oblog\/*=0*\/)$/;"	f	class:schAcl
-obenabled	./kons.h	/^		int obenabled=0;$/;"	m	class:servc
+obenabled	./kons.h	/^		int obenabled=0;$/;"	m	struct:servc
 oberreicht	./kons.cpp	/^int perfcl::oberreicht(unsigned long sek)$/;"	f	class:perfcl
 obfehlt	./kons.cpp	/^int linst_cl::obfehlt(const string& prog,int obverb,int oblog)$/;"	f	class:linst_cl
 obfragz	./kons.h	/^		const uchar* obfragz; \/\/ Zeiger auf Variable, die ggf. mit 1 bezeichnet, dass Option in rueckfragen abgefragt werden soll;$/;"	m	struct:optcl
-obfstream	./kons.h	1062;"	d
+obfstream	./kons.h	1058;"	d
 obgelesen	./kons.h	/^	uchar obgelesen;$/;"	m	struct:confdcl
-obhilfe	./kons.h	/^    uchar obhilfe=0;      \/\/ Hilfe anzeigen: 1=kurze Hilfe, 2=lange Hilfe, 3=Standardhilfe$/;"	m	class:hcl
-oblgschreib	./kons.h	/^    uchar oblgschreib=0; \/\/ Konfigurationsdatei seitens der Sprache voraussichtlich schreiben$/;"	m	class:hcl
-oblog	./kons.h	/^		int oblog=0;  \/\/ mehr Protokollieren$/;"	m	class:hcl
+obhilfe	./kons.h	/^    uchar obhilfe=0;      \/\/ Hilfe anzeigen: 1=kurze Hilfe, 2=lange Hilfe, 3=Standardhilfe$/;"	m	struct:hcl
+oblgschreib	./kons.h	/^    uchar oblgschreib=0; \/\/ Konfigurationsdatei seitens der Sprache voraussichtlich schreiben$/;"	m	struct:hcl
+oblog	./kons.h	/^		int oblog=0;  \/\/ mehr Protokollieren$/;"	m	struct:hcl
+oblog	./kons.h	/^		int obverb,oblog;$/;"	m	struct:find2cl
 oblog	./kons.h	/^		int obverb=0, oblog=0;$/;"	m	struct:find3cl
-oblog	./kons.h	/^	int obverb,oblog;$/;"	m	class:find2cl
 oblogp	./kons.cpp	/^int *find3cl::obverbp, *find3cl::oblogp;$/;"	m	class:find3cl	file:
 oblogp	./kons.h	/^		static int *obverbp, *oblogp;$/;"	m	struct:find3cl
 obnmr	./kons.h	/^ uchar obnmr=1;$/;"	m	struct:linst_cl
-oboffen	./kons.h	/^  int oboffen=0;$/;"	m	class:mdatei
 obprogda	./kons.cpp	/^int obprogda(const string& prog, int obverb\/*=0*\/, int oblog\/*=0*\/, string *pfad\/*=0*\/,const int keinsu\/*=0*\/)$/;"	f
-obsetz	./kons.h	/^		uchar obsetz=1; \/\/ setzzaehler$/;"	m	class:hcl
-obsotiff	./kons.h	/^		uchar obsotiff=0; \/\/ 1 = tiff wird von der source verwendet$/;"	m	class:hcl
+obsetz	./kons.h	/^		uchar obsetz=1; \/\/ setzzaehler$/;"	m	struct:hcl
+obsotiff	./kons.h	/^		uchar obsotiff=0; \/\/ 1 = tiff wird von der source verwendet$/;"	m	struct:hcl
 obsvfeh	./kons.cpp	/^int servc::obsvfeh(int obverb\/*=0*\/,int oblog\/*=0*\/) \/\/ ob service einrichtungs fehler$/;"	f	class:servc
+obverb	./kons.h	/^		int obverb,oblog;$/;"	m	struct:find2cl
 obverb	./kons.h	/^		int obverb=0, oblog=0;$/;"	m	struct:find3cl
-obverb	./kons.h	/^		int obverb=0; \/\/ verbose$/;"	m	class:hcl
-obverb	./kons.h	/^	int obverb,oblog;$/;"	m	class:find2cl
+obverb	./kons.h	/^		int obverb=0; \/\/ verbose$/;"	m	struct:hcl
 obverbp	./kons.cpp	/^int *find3cl::obverbp, *find3cl::oblogp;$/;"	m	class:find3cl	file:
 obverbp	./kons.h	/^		static int *obverbp, *oblogp;$/;"	m	struct:find3cl
-obvi	./kons.h	/^		uchar obvi=0; \/\/ ob Konfigurationsdatei editiert werden soll$/;"	m	class:hcl
-obvs	./kons.h	/^		uchar obvs=0;   \/\/ ob Quelldateien bearbeitet werden sollen$/;"	m	class:hcl
+obvi	./kons.h	/^		uchar obvi=0; \/\/ ob Konfigurationsdatei editiert werden soll$/;"	m	struct:hcl
+obvs	./kons.h	/^		uchar obvs=0;   \/\/ ob Quelldateien bearbeitet werden sollen$/;"	m	struct:hcl
 obzuschreib	./kons.h	/^	uchar obzuschreib;$/;"	m	struct:confdcl
 oeffne	./kons.cpp	/^oeffne(const string& datei, uchar oart, uchar* erfolg,int obverb\/*=0*\/, int oblog\/*=0*\/,uchar faclbak\/*=1*\/)$/;"	f
-okmap	./kons.h	/^ map<const char* const,SCL const*> okmap; \/\/ map der Optionen, sortiert nach Tx[<kurzi>]$/;"	m	class:schAcl
-olmap	./kons.h	/^ map<const char* const,SCL const*> olmap; \/\/ map der Optionen, sortiert nach Tx[<langi>]$/;"	m	class:schAcl
-omap	./kons.h	/^ map<string,SCL*> omap; \/\/ map der Optionen$/;"	m	class:schAcl
-omit	./kons.h	/^ typename map<string,SCL*>::iterator omit; \/\/ Optionen-Iterator$/;"	m	class:schAcl
+okmap	./kons.h	/^ map<const char* const,SCL const*> okmap; \/\/ map der Optionen, sortiert nach Tx[<kurzi>]$/;"	m	struct:schAcl
+olmap	./kons.h	/^ map<const char* const,SCL const*> olmap; \/\/ map der Optionen, sortiert nach Tx[<langi>]$/;"	m	struct:schAcl
+omap	./kons.h	/^ map<string,SCL*> omap; \/\/ map der Optionen$/;"	m	struct:schAcl
+omit	./kons.h	/^ typename map<string,SCL*>::iterator omit; \/\/ Optionen-Iterator$/;"	m	struct:schAcl
 open	./audio.h	/^	gpointer (*open)(void);$/;"	m	struct:audio
 operator ()	./kons.cpp	/^ostream &ztacl::operator()(std::ostream& out) const {$/;"	f	class:ztacl
 operator <	./kons.cpp	/^const bool elem2::operator<(const elem2& el) const {return (this->pfad<el.pfad);}$/;"	f	class:elem2
@@ -1286,16 +1285,16 @@ operator <<	./kons.cpp	/^template<typename SCL> schAcl<SCL>& schAcl<SCL>::operat
 operator <<	./kons.cpp	/^template<typename SCL> schAcl<SCL>& schAcl<SCL>::operator<<(shared_ptr<SCL> schp)$/;"	f	class:schAcl
 operator <<	./kons.h	/^	inline aSvec& operator<<(const aScl& aS) {$/;"	f	struct:aSvec
 operator <<	./kons.h	/^	inline svec& operator<<(const std::string& str) {$/;"	f	struct:svec
-operator <<	./kons.h	/^    inline tsvec<T>& operator<<(const T& str) {$/;"	f	class:tsvec
+operator <<	./kons.h	/^    inline tsvec<T>& operator<<(const T& str) {$/;"	f	struct:tsvec
 operator <<	./kons.h	/^ inline pidvec& operator<<(const pidcl& pd) {$/;"	f	struct:pidvec
-operator []	./kons.h	/^	inline const char* const operator[](long const& nr) const {$/;"	f	class:TxB
-operator []	./kons.h	/^ inline const shared_ptr<const SCL> operator[](size_t const& nr) const { return schl[nr];}$/;"	f	class:schAcl
-operator []	./kons.h	/^ inline shared_ptr<SCL> operator[](size_t const& nr) { return schl[nr];} \/\/ fuer hilfezeile, virtmachbemerk$/;"	f	class:schAcl
-optcl	./kons.cpp	/^optcl::optcl(const string& pname,const void* pptr,const par_t part, const int kurzi, const int langi, TxB* TxBp, const long Txi,$/;"	f	class:optcl
+operator []	./kons.h	/^	inline const char* const operator[](long const& nr) const {$/;"	f	struct:TxB
+operator []	./kons.h	/^ inline const shared_ptr<const SCL> operator[](size_t const& nr) const { return schl[nr];}$/;"	f	struct:schAcl
+operator []	./kons.h	/^ inline shared_ptr<SCL> operator[](size_t const& nr) { return schl[nr];} \/\/ fuer hilfezeile, virtmachbemerk$/;"	f	struct:schAcl
+optcl	./kons.cpp	/^optcl::optcl(const string& pname,const void* pptr,const par_t part, const int kurzi, const int langi, TxB* TxBp, const long Txi, const uchar wi, const long Txi2, const string rottxt, const int iwert,const uchar woher, const string& Txtrf\/*={}*\/,const uchar obno\/*=(uchar)-1*\/,const string* refstr\/*=0*\/,const uchar* obfragz\/*=0*\/,fnhcliztyp fnobfragz\/*=0*\/,fnhclztyp fnnachhz\/*=0*\/,fnhclztyp fnvorhz\/*=0*\/,uchar sonderrf\/*=0*\/,fnhcliztyp fngueltigz\/*=0*\/):$/;"	f	class:optcl
 optcl	./kons.cpp	/^optcl::optcl(const void* pptr,const par_t part, const int kurzi, const int langi, TxB* TxBp, const long Txi,$/;"	f	class:optcl
 optcl	./kons.h	/^struct optcl:wpgcl$/;"	s
-opts	./kons.h	/^    vector<optioncl> opts;$/;"	m	class:hcl
-optslsz	./kons.h	/^    size_t optslsz=0; \/\/ last opts.size()$/;"	m	class:hcl
+opts	./kons.h	/^    vector<optioncl> opts;$/;"	m	struct:hcl
+optslsz	./kons.h	/^    size_t optslsz=0; \/\/ last opts.size()$/;"	m	struct:hcl
 p1	./fbfax.h	/^		string p1;$/;"	m	class:hhcl
 p2	./fbfax.h	/^		int p2;$/;"	m	class:hhcl
 p3	./fbfax.h	/^		string p3;$/;"	m	class:hhcl
@@ -1310,16 +1309,16 @@ par_t	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,
 parent	./appobject.h	/^	GObject parent;$/;"	m	struct:_AppObject
 parent_class	./appobject.h	/^	GObjectClass parent_class;$/;"	m	struct:_AppObjectClass
 parsecl	./kons.cpp	/^void hcl::parsecl()$/;"	f	class:hcl
-parstreng	./kons.h	/^		const uchar parstreng; \/\/ breche Programm ab, wenn Parameter nicht gefunden$/;"	m	class:hcl
+parstreng	./kons.h	/^		const uchar parstreng; \/\/ breche Programm ab, wenn Parameter nicht gefunden$/;"	m	struct:hcl
 part	./kons.h	/^    par_t part=pstri; \/\/ Parameterart$/;"	m	struct:wpgcl
-passwd	./kons.h	/^		struct passwd *passwd;$/;"	m	class:cuscl	typeref:struct:cuscl::
-passwddt	./kons.h	/^		static const string passwddt, groupdt, sudoersdt;$/;"	m	class:hcl
+passwd	./kons.h	/^		struct passwd *passwd;$/;"	m	struct:cuscl	typeref:struct:cuscl::
+passwddt	./kons.h	/^		static const string passwddt, groupdt, sudoersdt;$/;"	m	struct:hcl
 password	./network.h	/^	gchar *password;$/;"	m	struct:auth_data
 pbin	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	e	enum:par_t
 pdat	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	e	enum:par_t
 pdez	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	e	enum:par_t
 perfcl	./kons.cpp	/^perfcl::perfcl(const string& vvonwo): vonwo(vvonwo)$/;"	f	class:perfcl
-perfcl	./kons.h	/^class perfcl$/;"	c
+perfcl	./kons.h	/^struct perfcl$/;"	s
 pfad	./kons.h	/^    const string pfad;$/;"	m	struct:wele
 pfad	./kons.h	/^    string pfad;$/;"	m	struct:elem2
 pfad	./kons.h	/^    string pfad;$/;"	m	struct:elem3
@@ -1344,7 +1343,7 @@ phsession	./faxophone.c	/^static struct session *phsession = NULL;$/;"	v	typeref
 pid	./kons.h	/^ pid_t pid;$/;"	m	struct:pidcl
 pidcl	./kons.h	/^ pidcl(const pid_t pid,const string& name):pid(pid),name(name){}$/;"	f	struct:pidcl
 pidcl	./kons.h	/^struct pidcl$/;"	s
-pidv	./kons.h	/^		pidvec pidv;$/;"	m	class:hcl
+pidv	./kons.h	/^		pidvec pidv;$/;"	m	struct:hcl
 pidvec	./kons.h	/^struct pidvec: public vector<pidcl>$/;"	s
 pidw	./fbfax.cpp	/^pidvec pidw;$/;"	v
 pint	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	e	enum:par_t
@@ -1412,14 +1411,14 @@ remote	./faxophone.h	/^	struct record_channel remote;$/;"	m	struct:recorder	type
 remote_ident	./fax.h	/^	gchar remote_ident[64];$/;"	m	struct:fax_status
 remote_number	./connection.h	/^	gchar *remote_number;$/;"	m	struct:connection
 repos	./kons.h	/^ string repos; \/\/ Befehl zum Hinzufuegen des Repositories fuer den Compiler$/;"	m	struct:linst_cl
-reserve	./kons.h	/^							 reserve=4*grenze;$/;"	m	class:ic_cl
+reserve	./kons.h	/^								 reserve=4*grenze;$/;"	m	struct:ic_cl
 reserved	./faxophone.h	/^	uint32_t reserved[6];$/;"	m	struct:capi_profile
 restart	./kons.cpp	/^int servc::restart(int obverb\/*=0*\/,int oblog\/*=0*\/)$/;"	f	class:servc
 retry	./network.h	/^	gboolean retry;$/;"	m	struct:auth_data
 richtige	./kons.h	/^	size_t richtige;$/;"	m	struct:confdcl
 right	./kons.h	/^inline std::string right(std::string const& source, size_t const length)$/;"	f
 ring	./faxophone.h	/^	void (*ring)(struct capi_connection *connection);$/;"	m	struct:session_handlers_st
-rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon4
+rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon1
 rmcl	./routermanager.c	/^rmcl::rmcl(gboolean debug, GError **error)$/;"	f	class:rmcl
 rmcl	./routermanager.h	/^struct rmcl$/;"	s
 rot	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
@@ -1429,15 +1428,15 @@ routermanager_audio_register	./audio.c	/^void routermanager_audio_register(struc
 rtrim	./kons.h	/^inline std::string *rtrim(std::string *str) {$/;"	f	class:std
 rtrim	./kons.h	/^inline void rtrim(char* str,size_t size) {$/;"	f
 rueckfragen	./kons.cpp	/^void hcl::rueckfragen()$/;"	f	class:hcl
-rzf	./kons.h	/^    uchar rzf=0; \/\/ rueckzufragen$/;"	m	class:hcl
+rzf	./kons.h	/^    uchar rzf=0; \/\/ rueckzufragen$/;"	m	struct:hcl
 save_password_callback	./network.c	/^static void save_password_callback(SoupMessage* msg, struct auth_data *auth_data)$/;"	f	file:
 sb	./kons.h	/^    const struct stat sb={0};$/;"	m	struct:elem3	typeref:struct:elem3::stat
 schAcl	./kons.cpp	/^template<> schAcl<WPcl>::schAcl(const string& name, vector<aScl> *v):name(name)$/;"	f	class:schAcl
 schAcl	./kons.cpp	/^template<> schAcl<WPcl>::schAcl(const string& name, vector<aScl> v):name(name)$/;"	f	class:schAcl
 schAcl	./kons.cpp	/^template<typename SCL> schAcl<SCL>::schAcl(const string& name):name(name)$/;"	f	class:schAcl
-schAcl	./kons.h	/^template <typename SCL> class schAcl {$/;"	c
+schAcl	./kons.h	/^template <typename SCL> struct schAcl {$/;"	s
 schAschreib	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::schAschreib(mdatei *const f,int obverb)$/;"	f	class:schAcl
-schl	./kons.h	/^	vector<shared_ptr<SCL>> schl; \/\/ Schlüsselklasse Schlüssel$/;"	m	class:schAcl
+schl	./kons.h	/^	vector<shared_ptr<SCL>> schl; \/\/ Schlüsselklasse Schlüssel$/;"	m	struct:schAcl
 schluss	./kons.cpp	/^int schluss(const int fnr,const string text,int oblog)$/;"	f
 schreibzaehler	./kons.cpp	/^void hcl::schreibzaehler()$/;"	f	class:hcl
 schwarz	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
@@ -1449,8 +1448,8 @@ sep	./fbfax.cpp	/^const char sep = 9; \/\/ geht auch: "[[:blank:]]"$/;"	v
 sersetze	./kons.cpp	/^string *sersetze(string* src, string const& target, string const& repl) $/;"	f
 servT	./tr64.h	/^		string servT;$/;"	m	class:tr64cl
 servc	./kons.cpp	/^servc::servc(const string& vsname,const string& vename,int obverb, int oblog): sname((vsname.empty()?vename:vsname)),ename(vename) $/;"	f	class:servc
-servc	./kons.h	/^    servc(const string& vsname,const string& vename): sname((vsname.empty()?vename:vsname)),ename(vename) {}$/;"	f	class:servc
-servc	./kons.h	/^class servc {$/;"	c
+servc	./kons.h	/^    servc(const string& vsname,const string& vename): sname((vsname.empty()?vename:vsname)),ename(vename) {}$/;"	f	struct:servc
+servc	./kons.h	/^struct servc {$/;"	s
 servs	./tr64.h	/^		string servs;$/;"	m	class:tr64cl
 session	./direkt.h	/^\/*static *\/struct session *session = NULL;$/;"	m	class:fbcl	typeref:struct:fbcl::
 session	./faxophone.h	/^struct session {$/;"	s
@@ -1474,9 +1473,9 @@ shpf	./kons.h	/^ string shpf; \/\/ Pfad zu sh$/;"	m	struct:linst_cl
 sinit	./kons.cpp	/^template <> void schAcl<WPcl>::sinit(size_t vzahl, ...)$/;"	f	class:schAcl
 sinit	./kons.cpp	/^template <> void schAcl<optcl>::sinit(size_t vzahl, ...)$/;"	f	class:schAcl
 sinit	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::sinit(vector<shared_ptr<SCL>> sqlvp)$/;"	f	class:schAcl
-size	./kons.h	/^ inline size_t size(){return schl.size();}$/;"	f	class:schAcl
-smbdt	./kons.h	/^		static const char* const smbdt;\/\/ "\/etc\/samba\/smb.conf"$/;"	m	class:hcl
-sname	./kons.h	/^    string sname,ename; \/\/ Dienstname, Exename$/;"	m	class:servc
+size	./kons.h	/^ inline size_t size(){return schl.size();}$/;"	f	struct:schAcl
+smbdt	./kons.h	/^		static const char* const smbdt;\/\/ "\/etc\/samba\/smb.conf"$/;"	m	struct:hcl
+sname	./kons.h	/^    string sname,ename; \/\/ Dienstname, Exename$/;"	m	struct:servc
 snprintf	./kons.h	80;"	d
 soup_session	./network.c	/^SoupSession *soup_session = NULL;$/;"	v
 source	./faxophone.h	/^	char *source;$/;"	m	struct:capi_connection
@@ -1488,7 +1487,7 @@ spandsp_tx	./fax.c	/^gint spandsp_tx(fax_state_t *fax_state, uint8_t *buf, size_
 spath	./kons.cpp	/^const string& spath=$/;"	v
 spruef	./kons.cpp	/^uchar servc::spruef(const string& sbez, uchar obfork, const string& parent, const string& sexec, const string& CondPath, const string& After, $/;"	f	class:servc
 src_no	./fax.h	/^	gchar src_no[64];$/;"	m	struct:fax_status
-stack	./kons.h	/^  vector<string> stack;$/;"	m	class:find2cl
+stack	./kons.h	/^		vector<string> stack;$/;"	m	struct:find2cl
 start	./kons.cpp	/^void servc::start(int obverb\/*=0*\/,int oblog\/*=0*\/)$/;"	f	class:servc
 start_time	./faxophone.h	/^	gint64 start_time;$/;"	m	struct:recorder
 startbar	./kons.cpp	/^int servc::startbar()$/;"	f	class:servc
@@ -1506,46 +1505,46 @@ stream	./logging.c	/^static GFileOutputStream *stream = NULL;$/;"	v	file:
 street	./contact.h	/^	gchar *street;$/;"	m	struct:contact
 street	./contact.h	/^	gchar *street;$/;"	m	struct:contact_address
 string_to_hex	./kons.cpp	/^std::string string_to_hex(const std::string& input)$/;"	f
-stumm	./kons.h	/^		int stumm=0; \/\/ gar keine Bildschirmausgabe$/;"	m	class:hcl
+stumm	./kons.h	/^		int stumm=0; \/\/ gar keine Bildschirmausgabe$/;"	m	struct:hcl
 success	./direkt.c	/^static gboolean success = FALSE;$/;"	v	file:
 suche	./kons.cpp	/^const string *const absch::suche(const char* const sname)$/;"	f	class:absch
 suche	./kons.cpp	/^const string *const absch::suche(const string& sname)$/;"	f	class:absch
-sudoersdt	./kons.h	/^		static const string passwddt, groupdt, sudoersdt;$/;"	m	class:hcl
+sudoersdt	./kons.h	/^		static const string passwddt, groupdt, sudoersdt;$/;"	m	struct:hcl
 support1	./faxophone.h	/^	uint32_t support1;$/;"	m	struct:capi_profile
 support2	./faxophone.h	/^	uint32_t support2;$/;"	m	struct:capi_profile
 support3	./faxophone.h	/^	uint32_t support3;$/;"	m	struct:capi_profile
 sus	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	e	enum:lsysen
-svec	./kons.h	/^struct svec: public vector<std::string>$/;"	s
-svf0	./kons.h	/^		int svf0=-1; \/\/ Einstellung nach erstem Ablauf von obsvfeh$/;"	m	class:servc
-svfeh	./kons.h	/^    int svfeh=-1; \/\/ Ausgangseinstellung$/;"	m	class:servc
-sys	./kons.h	/^    lsysen sys=usys; $/;"	m	class:lsyscl
-systemd	./kons.h	/^		string systemd; \/\/ Dienst-Datei$/;"	m	class:servc
+svec	./kons.h	/^struct svec: vector<std::string>$/;"	s
+svf0	./kons.h	/^		int svf0=-1; \/\/ Einstellung nach erstem Ablauf von obsvfeh$/;"	m	struct:servc
+svfeh	./kons.h	/^    int svfeh=-1; \/\/ Ausgangseinstellung$/;"	m	struct:servc
+sys	./kons.h	/^    lsysen sys=usys; $/;"	m	struct:lsyscl
+systemd	./kons.h	/^		string systemd; \/\/ Dienst-Datei$/;"	m	struct:servc
 systemrueck	./kons.cpp	/^int systemrueck(const string& cmd, int obverb\/*=0*\/, int oblog\/*=0*\/, vector<string> *rueck\/*=0*\/, const uchar obsudc\/*=0*\/,$/;"	f
-t0	./kons.h	/^ time_t t0=0, t1;$/;"	m	class:perfcl
-t1	./kons.h	/^ time_t t0=0, t1;$/;"	m	class:perfcl
-tagesaufr	./kons.h	/^		ulong tagesaufr=0; \/\/ Zahl der bisherigen Programmaufrufe heute$/;"	m	class:hcl
+t0	./kons.h	/^	time_t t0=0, t1;$/;"	m	struct:perfcl
+t1	./kons.h	/^	time_t t0=0, t1;$/;"	m	struct:perfcl
+tagesaufr	./kons.h	/^		ulong tagesaufr=0; \/\/ Zahl der bisherigen Programmaufrufe heute$/;"	m	struct:hcl
 target	./faxophone.h	/^	char *target;$/;"	m	struct:capi_connection
-tende	./kons.h	/^    double tstart, tende;$/;"	m	class:hcl
+tende	./kons.h	/^    double tstart, tende;$/;"	m	struct:hcl
 tflag	./kons.h	/^    int tflag;$/;"	m	struct:elem3
 thr_strftime	./kons.cpp	/^size_t thr_strftime(const struct tm* const timeptr,string *const ziel,const char* const format\/*="%d.%m.%Y %H.%M.%S"*\/)$/;"	f
 tiff_file	./fax.h	/^	gchar tiff_file[256];$/;"	m	struct:fax_status
 timemutex	./kons.cpp	/^pthread_mutex_t printf_mutex, getmutex, timemutex;$/;"	v
-tmloc	./kons.h	/^		tm tmloc;$/;"	m	class:ztacl
-tmmoelen	./kons.h	/^		unsigned tmmoelen;$/;"	m	class:hcl
-tmpcron	./kons.h	/^		string tmpcron; \/\/ fuer crontab$/;"	m	class:hcl
+tmloc	./kons.h	/^		tm tmloc;$/;"	m	struct:ztacl
+tmmoelen	./kons.h	/^		unsigned tmmoelen;$/;"	m	struct:hcl
+tmpcron	./kons.h	/^		string tmpcron; \/\/ fuer crontab$/;"	m	struct:hcl
 touch	./kons.cpp	/^int touch(const string& pfad,int obverb\/*=0*\/,int oblog\/*=0*\/)$/;"	f
 tr64cl	./tr64.cpp	/^tr64cl::tr64cl(std::string fbusr,std::string fbpwd):$/;"	f	class:tr64cl
 tr64cl	./tr64.h	/^class tr64cl {$/;"	c
 trg_no	./fax.h	/^	gchar trg_no[64];$/;"	m	struct:fax_status
-tstart	./kons.h	/^    double tstart, tende;$/;"	m	class:hcl
-tsvec	./kons.h	/^class tsvec: public vector<T>$/;"	c
+tstart	./kons.h	/^    double tstart, tende;$/;"	m	struct:hcl
+tsvec	./kons.h	/^struct tsvec: vector<T>$/;"	s
 tucronschreib	./kons.cpp	/^void hcl::tucronschreib(const string& zsauf,const uchar cronzuplanen,const string& cbef)$/;"	f	class:hcl
 tuerkis	./kons.cpp	/^      *const tuerkis="\\e[0;36m", *const htuerkis="\\e[1;36m", *const hgrau="\\e[0;37m", *const weiss="\\e[1;37m", *const umgek="\\e[7m";$/;"	v
 tuerkis	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
 tuloeschen	./kons.cpp	/^int tuloeschen(const string& zuloe,const string& cuser\/*=string()*\/, int obverb\/*=0*\/, int oblog\/*=0*\/,stringstream *ausgp\/*=0*\/)$/;"	f
 turueckfrage	./kons.cpp	/^void hcl::turueckfrage(shared_ptr<optcl>& omit)$/;"	f	class:hcl
 tusetzstr	./kons.cpp	/^int wpgcl::tusetzstr(const char* const neuw,uchar *const tuschreibp,const uchar ausDatei\/*=0*\/,const uchar keineprio\/*=0*\/)$/;"	f	class:wpgcl
-typ	./kons.h	/^  string typ;$/;"	m	class:find2cl
+typ	./kons.h	/^		string typ;$/;"	m	struct:find2cl
 typbit	./kons.h	/^    int typbit;$/;"	m	struct:find3cl
 typbitp	./kons.cpp	/^int *find3cl::typbitp;$/;"	m	class:find3cl	file:
 typbitp	./kons.h	/^    static int *typbitp;$/;"	m	struct:find3cl
@@ -1556,8 +1555,8 @@ type	./contact.h	/^	gint type;$/;"	m	struct:contact_address
 type	./faxophone.h	/^	enum session_type type;$/;"	m	struct:capi_connection	typeref:enum:capi_connection::session_type
 uchar	./kons.h	/^typedef unsigned char uchar; \/\/ 1 Byte$/;"	t
 udpr	./kons.h	/^ string udpr;   \/\/ Befehl zum direkten Deinstallieren$/;"	m	struct:linst_cl
-uebers	./kons.h	/^		stringstream uebers; \/\/ Ueberschrift fuer Verarbeitungslauf$/;"	m	class:hcl
-uebersichtlich	./kons.cpp	5741;"	d	file:
+uebers	./kons.h	/^		stringstream uebers; \/\/ Ueberschrift fuer Verarbeitungslauf$/;"	m	struct:hcl
+uebersichtlich	./kons.cpp	5758;"	d	file:
 uint16_t	./faxophone.h	/^typedef unsigned short uint16_t;$/;"	t
 uint32_t	./faxophone.h	/^typedef unsigned int uint32_t;$/;"	t
 ull	./kons.h	/^typedef unsigned long long ull;$/;"	t
@@ -1574,7 +1573,7 @@ user_data	./net_monitor.h	/^	gpointer user_data;$/;"	m	struct:net_event
 username	./network.h	/^	gchar *username;$/;"	m	struct:auth_data
 usr	./direkt.h	/^    const std::string usr;$/;"	m	class:fbcl
 usr	./fbfax.h	/^		string usr;$/;"	m	class:hhcl
-usr_lib64_vz	./kons.h	/^		string usr_lib64_vz;$/;"	m	class:lsyscl
+usr_lib64_vz	./kons.h	/^		string usr_lib64_vz;$/;"	m	struct:lsyscl
 usys	./kons.h	/^enum lsysen:uchar {usys,sus,deb,fed};$/;"	e	enum:lsysen
 uypr	./kons.h	/^ string uypr;   \/\/ Befehl zum Deinstallieren ueber das Installationssystem ohne Rueckfrage$/;"	m	struct:linst_cl
 vagenau	./kons.cpp	1393;"	d	file:
@@ -1584,7 +1583,7 @@ verarbeitkonf	./kons.cpp	/^void hcl::verarbeitkonf()$/;"	f	class:hcl
 versnr	./fbfax.cpp	/^const double& versnr= \/\/α$/;"	v
 verszuzahl	./kons.cpp	/^double verszuzahl(const string& vers)$/;"	f
 verzeichnisse	./fbfax.cpp	/^void hhcl::verzeichnisse()$/;"	f	class:hhcl
-verzneu	./kons.h	/^  int eingefuegt, verzneu;$/;"	m	class:find2cl
+verzneu	./kons.h	/^		int eingefuegt, verzneu;$/;"	m	struct:find2cl
 viadd	./kons.cpp	/^void viadd(string* const cmdp,string* const zeigp, const string& datei,const uchar ro\/*=0*\/,const uchar hinten\/*=0*\/, const uchar unten\/*=0*\/)$/;"	f
 violett	./kons.cpp	/^			*const dblau="\\e[0;34;1;47m", *const blau="\\e[1;34m", *const violett="\\e[0;35m", *const hviolett="\\e[1;35m",$/;"	v
 virtMusterVorgb	./fbfax.cpp	/^void hhcl::virtMusterVorgb()$/;"	f	class:hhcl
@@ -1614,7 +1613,6 @@ virtoausgeb	./kons.cpp	/^void wpgcl::virtoausgeb() const$/;"	f	class:wpgcl
 virtpruefweiteres	./fbfax.cpp	/^void hhcl::virtpruefweiteres()$/;"	f	class:hhcl
 virtpruefweiteres	./kons.cpp	/^void hcl::virtpruefweiteres()$/;"	f	class:hcl
 virtrueckfrage	./kons.cpp	/^void hcl::virtrueckfrage(shared_ptr<optcl>& omit)$/;"	f	class:hcl
-virtrueckfragen	./fbfax.cpp	/^void hhcl::virtrueckfragen()$/;"	f	class:hhcl
 virtschlussanzeige	./fbfax.cpp	/^void hhcl::virtschlussanzeige()$/;"	f	class:hhcl
 virtschlussanzeige	./kons.cpp	/^void hcl::virtschlussanzeige()$/;"	f	class:hcl
 virttesterg	./fbfax.cpp	/^void hhcl::virttesterg()$/;"	f	class:hhcl
@@ -1627,14 +1625,14 @@ virtzeigueberschrift	./kons.cpp	/^void hcl::virtzeigueberschrift()$/;"	f	class:h
 virtzeigversion	./fbfax.cpp	/^void hhcl::virtzeigversion(const string& ltiffv\/*=string()*\/)$/;"	f	class:hhcl
 virtzeigversion	./kons.cpp	/^void hcl::virtzeigversion(const string& ltiffv\/*=string()*\/)$/;"	f	class:hcl
 vischluss	./kons.cpp	/^void hcl::vischluss(string& erg,string& zeig)$/;"	f	class:hcl
-vonwo	./kons.h	/^ string vonwo;$/;"	m	class:perfcl
-vorcm	./kons.h	/^		string vorcm; \/\/ Vor-Cron-Minuten$/;"	m	class:hcl
+vonwo	./kons.h	/^	string vonwo;$/;"	m	struct:perfcl
+vorcm	./kons.h	/^		string vorcm; \/\/ Vor-Cron-Minuten$/;"	m	struct:hcl
 vtz	./kons.h	23;"	d
 vtz	./kons.h	26;"	d
 vtzs	./kons.h	24;"	d
 vtzs	./kons.h	27;"	d
 vwdtp	./direkt.c	/^fstream *vwdtp;$/;"	v
-vznp	./kons.h	/^  set<string> *vznp=0; $/;"	m	class:find2cl
+vznp	./kons.h	/^		set<string> *vznp=0; $/;"	m	struct:find2cl
 waehle	./direkt.c	/^void fbcl::waehle(string nr)$/;"	f	class:fbcl
 wahr	./kons.h	/^enum binaer:uchar {falsch,wahr};$/;"	e	enum:binaer
 wait	./kons.cpp	/^inline void wait () $/;"	f
@@ -1658,24 +1656,24 @@ xargspf	./kons.h	/^ string xargspf; \/\/ Pfad zu xargs$/;"	m	struct:linst_cl
 yLog	./kons.cpp	/^int yLog(const short screen,const short file, const bool oberr,const short klobverb, const char *format, ...)$/;"	f
 yum	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	e	enum:instprog
 zahlin	./kons.cpp	/^size_t zahlin(const string *const str, const char* const was) $/;"	f
-zcnfA	./kons.h	/^		schAcl<WPcl> zcnfA=schAcl<WPcl>("zcnfA"); \/\/ Zaehlkonfiguration$/;"	m	class:hcl
+zcnfA	./kons.h	/^		schAcl<WPcl> zcnfA=schAcl<WPcl>("zcnfA"); \/\/ Zaehlkonfiguration$/;"	m	struct:hcl
 zeighilfe	./kons.cpp	/^int hcl::zeighilfe(const stringstream *const erkl)$/;"	f	class:hcl
 zeigkonf	./kons.cpp	/^void hcl::zeigkonf()$/;"	f	class:hcl
 zeigschoen	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::zeigschoen()$/;"	f	class:schAcl
-zeigvers	./kons.h	/^    uchar zeigvers=0;  \/\/ Version anzeigen$/;"	m	class:hcl
+zeigvers	./kons.h	/^    uchar zeigvers=0;  \/\/ Version anzeigen$/;"	m	struct:hcl
 zgvz	./fbfax.h	/^    uchar zgvz=0; \/\/ zeig Verzeichnisse$/;"	m	class:hhcl
 ziehraus	./kons.cpp	/^void linst_cl::ziehraus(svec srueck, string *ustringp)$/;"	f	class:linst_cl
 zip	./contact.h	/^	gchar *zip;$/;"	m	struct:contact
 zip	./contact.h	/^	gchar *zip;$/;"	m	struct:contact_address
 zn	./kons.h	/^	svec zn;$/;"	m	struct:confdcl
-zp0	./kons.h	/^ clock_t zp0, zp1, zp1alt;$/;"	m	class:perfcl
-zp1	./kons.h	/^ clock_t zp0, zp1, zp1alt;$/;"	m	class:perfcl
-zp1alt	./kons.h	/^ clock_t zp0, zp1, zp1alt;$/;"	m	class:perfcl
-zt	./kons.h	/^		const time_t zt;$/;"	m	class:ztacl
+zp0	./kons.h	/^	clock_t zp0, zp1, zp1alt;$/;"	m	struct:perfcl
+zp1	./kons.h	/^	clock_t zp0, zp1, zp1alt;$/;"	m	struct:perfcl
+zp1alt	./kons.h	/^	clock_t zp0, zp1, zp1alt;$/;"	m	struct:perfcl
+zt	./kons.h	/^		const time_t zt;$/;"	m	struct:ztacl
 ztacl	./kons.cpp	/^ztacl::ztacl(const time_t &pzt,const char* const pfmt\/*="%d.%m.%Y %H.%M.%S"*\/):zt(pzt),fmt(pfmt)$/;"	f	class:ztacl
 ztacl	./kons.cpp	/^ztacl::ztacl(const tm *const tm,const char* const pfmt\/*="%d.%m.%Y %H.%M.%S %z %Z"*\/):tmloc(*tm),zt(mktime(&tmloc)),fmt(pfmt)$/;"	f	class:ztacl
-ztacl	./kons.h	/^class ztacl {$/;"	c
-zuloeschen	./kons.h	/^  int zuloeschen=1;$/;"	m	class:find2cl
+ztacl	./kons.h	/^struct ztacl $/;"	s
+zuloeschen	./kons.h	/^		int zuloeschen=1;$/;"	m	struct:find2cl
 zustr	./kons.h	/^inline string zustr(int _Val) $/;"	f
 zuvec	./kons.cpp	/^void find2cl::zuvec(svec *zu,uchar anteil\/*=0*\/)$/;"	f	class:find2cl
 zuvec	./kons.cpp	/^void find3cl::zuvec(svec *zu,uchar anteil\/*=0*\/)$/;"	f	class:find3cl
