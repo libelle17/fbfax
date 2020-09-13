@@ -32,3 +32,21 @@ printf "Loesche/Deleting /root/bin/cdir.sh...\n";rm -r /root/bin/cdir.sh;hash -r
 T=/home/schade/rootscrontab;rm -f $T;crontab -l|sed '/fbfax -noia/d' >$T; crontab $T;
 # sh -c 'T=/home/schade/rootscrontab;rm -f $T;crontab -l|sed '/fbfax -noia/d' >$T; echo "*/1 * * * * /usr/bin/ionice -c2 -n7 /usr/bin/nice -n19 /usr/bin/fbfax -noia -cf /home/schade/.config/fbfax.conf >/dev/null 2>&1" >>$T; crontab $T;'
 printf "(Inst: 2019-07-10 23:29:24): $blau%s$reset\n" "T=/home/schade/rootscrontab;rm -f $T;crontab -l|sed '/fbfax -noia/d' >$T; crontab $T;"
+/usr/bin/rpm -e --nodeps  libspandsp2 spandsp-devel
+# /usr/bin/zypper -n --gpg-auto-import-keys in -f spandsp-devel
+printf "(Inst: 2020-09-13 18:58:46): $blau%s$reset\n" "/usr/bin/rpm -e --nodeps  libspandsp2 spandsp-devel"
+/usr/bin/rpm -e --nodeps  libbrotli-devel libbrotlienc1 libpsl-devel libsoup-devel libxml2-devel readline-devel sqlite3-devel typelib-1_0-Soup-2_4 xz-devel
+# /usr/bin/zypper -n --gpg-auto-import-keys in -f libsoup-devel
+printf "(Inst: 2020-09-13 18:59:03): $blau%s$reset\n" "/usr/bin/rpm -e --nodeps  libbrotli-devel libbrotlienc1 libpsl-devel libsoup-devel libxml2-devel readline-devel sqlite3-devel typelib-1_0-Soup-2_4 xz-devel"
+/usr/bin/rpm -e --nodeps  libsndfile-devel
+# /usr/bin/zypper -n --gpg-auto-import-keys in -f libsndfile-devel
+printf "(Inst: 2020-09-13 18:59:07): $blau%s$reset\n" "/usr/bin/rpm -e --nodeps  libsndfile-devel"
+/usr/bin/rpm -e --nodeps  libgssdp-1_2-0 libgssdp-devel typelib-1_0-GSSDP-1_0
+# /usr/bin/zypper -n --gpg-auto-import-keys in -f libgssdp-devel
+printf "(Inst: 2020-09-13 18:59:11): $blau%s$reset\n" "/usr/bin/rpm -e --nodeps  libgssdp-1_2-0 libgssdp-devel typelib-1_0-GSSDP-1_0"
+/usr/bin/rpm -e --nodeps  libcapi20-3
+# /usr/bin/zypper -n --gpg-auto-import-keys in -f libcapi20-3
+printf "(Inst: 2020-09-13 18:59:15): $blau%s$reset\n" "/usr/bin/rpm -e --nodeps  libcapi20-3"
+/usr/bin/rpm -e --nodeps  libcom_err-devel
+# /usr/bin/zypper -n --gpg-auto-import-keys in -f libcom_err-devel
+printf "(Inst: 2020-09-13 18:59:19): $blau%s$reset\n" "/usr/bin/rpm -e --nodeps  libcom_err-devel"

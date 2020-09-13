@@ -1,15 +1,21 @@
-Repository-Daten werden geladen...
-Installierte Pakete werden gelesen...
-Installation von 'spandsp-devel-0.0.6-lp151.2.2.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
-Paketabhängigkeiten werden aufgelöst...
+Loading repository data...
+Reading installed packages...
+Forcing installation of 'spandsp-devel-0.0.6-lp152.3.6.x86_64' from repository 'openSUSE-Leap-15.2-1'.
+Resolving package dependencies...
 
-Das folgende NEUE Paket wird installiert:
-  spandsp-devel
+The following 2 NEW packages are going to be installed:
+  libspandsp2 spandsp-devel
 
-1 neues Paket zu installieren.
-Gesamtgröße des Downloads: 146,8 KiB. Bereits im Cache gespeichert: 0 B. Nach der Operation werden zusätzlich 843,7 KiB belegt.
-Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
-Paket spandsp-devel-0.0.6-lp151.2.2.x86_64 abrufen (1/1), 146,8 KiB (843,7 KiB entpackt)
-Abrufen: spandsp-devel-0.0.6-lp151.2.2.x86_64.rpm [.fertig]
-Überprüfung auf Dateikonflikte läuft: [....fertig]
-(1/1) Installieren: spandsp-devel-0.0.6-lp151.2.2.x86_64 [............fertig]
+2 new packages to install.
+Overall download size: 417.2 KiB. Already cached: 0 B. After the operation, additional 1.6 MiB will be used.
+Continue? [y/n/v/...? shows all options] (y): y
+Retrieving package libspandsp2-0.0.6-lp152.3.6.x86_64 (1/2), 270.4 KiB (796.7 KiB unpacked)
+Retrieving: libspandsp2-0.0.6-lp152.3.6.x86_64.rpm [...................................................................................................................................................................................................................error (10 B/s)]
+Retrying in 30 seconds...
+Retrieving: libspandsp2-0.0.6-lp152.3.6.x86_64.rpm [....done (1.7 KiB/s)]
+Retrieving package spandsp-devel-0.0.6-lp152.3.6.x86_64 (2/2), 146.8 KiB (843.7 KiB unpacked)
+Retrieving: spandsp-devel-0.0.6-lp152.3.6.x86_64.rpm [.done (166.4 KiB/s)]
+
+Checking for file conflicts: [....done]
+(1/2) Installing: libspandsp2-0.0.6-lp152.3.6.x86_64 [............done]
+(2/2) Installing: spandsp-devel-0.0.6-lp152.3.6.x86_64 [............done]

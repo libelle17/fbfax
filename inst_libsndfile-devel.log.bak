@@ -1,15 +1,16 @@
-Repository-Daten werden geladen...
-Installierte Pakete werden gelesen...
-Installation von 'libsndfile-devel-1.0.28-lp151.4.3.x86_64' aus Repository 'Haupt-Repository (OSS)' wird erzwungen.
-Paketabhängigkeiten werden aufgelöst...
+Loading repository data...
+Reading installed packages...
+Forcing installation of 'libsndfile-devel-1.0.28-lp152.5.5.x86_64' from repository 'openSUSE-Leap-15.2-1'.
+Resolving package dependencies...
 
-Das folgende NEUE Paket wird installiert:
+The following NEW package is going to be installed:
   libsndfile-devel
 
-1 neues Paket zu installieren.
-Gesamtgröße des Downloads: 163,3 KiB. Bereits im Cache gespeichert: 0 B. Nach der Operation werden zusätzlich 610,6 KiB belegt.
-Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
-Paket libsndfile-devel-1.0.28-lp151.4.3.x86_64 abrufen (1/1), 163,3 KiB (610,6 KiB entpackt)
-Abrufen: libsndfile-devel-1.0.28-lp151.4.3.x86_64.rpm [.fertig (600,4 KiB/s)]
-Überprüfung auf Dateikonflikte läuft: [.......fertig]
-(1/1) Installieren: libsndfile-devel-1.0.28-lp151.4.3.x86_64 [...........fertig]
+1 new package to install.
+Overall download size: 160.9 KiB. Already cached: 0 B. After the operation, additional 610.6 KiB will be used.
+Continue? [y/n/v/...? shows all options] (y): y
+Retrieving package libsndfile-devel-1.0.28-lp152.5.5.x86_64 (1/1), 160.9 KiB (610.6 KiB unpacked)
+Retrieving: libsndfile-devel-1.0.28-lp152.5.5.x86_64.rpm [..done (207.9 KiB/s)]
+
+Checking for file conflicts: [.......done]
+(1/1) Installing: libsndfile-devel-1.0.28-lp152.5.5.x86_64 [...........done]

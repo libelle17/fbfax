@@ -1,15 +1,16 @@
-Repository-Daten werden geladen...
-Installierte Pakete werden gelesen...
-Installation von 'libcapi20-3-2011.8.29-lp151.7.57.x86_64' aus Repository 'openSUSE-Leap-15.1-1' wird erzwungen.
-Paketabhängigkeiten werden aufgelöst...
+Loading repository data...
+Reading installed packages...
+Forcing installation of 'libcapi20-3-2011.8.29-lp152.8.37.x86_64' from repository 'openSUSE-Leap-15.2-1'.
+Resolving package dependencies...
 
-Das folgende NEUE Paket wird installiert:
+The following NEW package is going to be installed:
   libcapi20-3
 
-1 neues Paket zu installieren.
-Gesamtgröße des Downloads: 0 B. Bereits im Cache gespeichert: 26,0 KiB. Nach der Operation werden zusätzlich 50,6 KiB belegt.
-Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
-Im Cache libcapi20-3-2011.8.29-lp151.7.57.x86_64.rpm (1/1),  26,0 KiB ( 50,6 KiB entpackt)
+1 new package to install.
+Overall download size: 26.0 KiB. Already cached: 0 B. After the operation, additional 50.6 KiB will be used.
+Continue? [y/n/v/...? shows all options] (y): y
+Retrieving package libcapi20-3-2011.8.29-lp152.8.37.x86_64 (1/1),  26.0 KiB ( 50.6 KiB unpacked)
+Retrieving: libcapi20-3-2011.8.29-lp152.8.37.x86_64.rpm [done]
 
-Überprüfung auf Dateikonflikte läuft: [...fertig]
-(1/1) Installieren: libcapi20-3-2011.8.29-lp151.7.57.x86_64 [.....fertig]
+Checking for file conflicts: [...done]
+(1/1) Installing: libcapi20-3-2011.8.29-lp152.8.37.x86_64 [.....done]

@@ -204,8 +204,11 @@ static void app_object_class_init(AppObjectClass *klass)
 
 	g_object_class = G_OBJECT_CLASS(klass);
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"  
 	g_type_class_add_private(klass, sizeof(AppObjectPrivate));
 	app_object_create_signals(g_object_class);
+#pragma GCC diagnostic pop  
 //	printf("Ende app_object_class_init\n");
 }
 

@@ -83,8 +83,8 @@ static void network_authenticate_cb(SoupSession *session, SoupMessage *msg, Soup
 	struct auth_data *auth_data;
 	// Kommentar 4.1.18
 //	struct profile *profile = profile_get_active();
-	const gchar *user;
-	const gchar *password;
+	const gchar *user{0};
+	const gchar *password{0};
 
 	g_debug("%s(): retrying: %d, status code: %d == %d", __FUNCTION__, retrying, msg->status_code, SOUP_STATUS_UNAUTHORIZED);
 	if (msg->status_code != SOUP_STATUS_UNAUTHORIZED) {
