@@ -44,6 +44,7 @@ getOS() {
 
 getIPR() {
 	CTAGS=ctags;
+	QD=$(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');
 # openSUSE
 	{ [ $OSNR = 4 ]&&
 		{ 
@@ -62,17 +63,22 @@ getIPR() {
 			test -f vars && LBIO=$(grep LBIO vars|cut -d= -f2) ||LBIO=;
 			test -f vars && LBLO=$(grep LBLO vars|cut -d= -f2) ||LBLO=;
 			# der Aufruf `zypper se ...boost...` dauert so lang und sollte bei `make mitzieh` meist nicht noetig sein
-			if test "$ICH" != viall -a -z "$ohneboost"; then
+			if test "$ICH" != viall -a -z "$ohneboost" -a "$QD"; then
 			 if test -z "$PAR1" -o -z "$LBOOST" -o -z "$LBIO" -o -z "$LBLO"; then
   			# z.B. 'i+ | boost_1_65-devel |'
-				command="zypper se \"boost*-devel\" libboost_iostreams libboost_locale boost-license";
-				anz="rufe auf/calling: $command ...                   "
-				printf "$anz"
-				zse=$(eval "$command");
-				printf "\r${anz#}\r"
-  			LBOOST=$(echo "$zse"|grep ' | boost'|tail -n1|cut -d'|' -f2|sed -e 's/^[[:space:]]*//;s/[[:space:]]*$//');
-				LBIO=$(V=libboost_iostreams;echo "$zse" $V|grep "| $V"|tail -n1|cut -d'|' -f2|sed -e 's/^[[:space:]]*//;s/[[:space:]]*$//');
-				LBLO=$(V=libboost_locale;echo "$zse" $V|grep "| $V"|tail -n1|cut -d'|' -f2|sed -e 's/^[[:space:]]*//;s/[[:space:]]*$//');
+        if false; then
+          command="zypper se \"boost*-devel\" libboost_iostreams libboost_locale boost-license";
+          anz="rufe auf/calling: $command ...                   "
+          printf "$anz"
+          zse=$(eval "$command");
+          printf "\r${anz#}\r"
+          LBOOST=$(echo "$zse"|grep ' | boost'|tail -n1|cut -d'|' -f2|sed -e 's/^[[:space:]]*//;s/[[:space:]]*$//');
+          LBIO=$(V=libboost_iostreams;echo "$zse" $V|grep "| $V"|tail -n1|cut -d'|' -f2|sed -e 's/^[[:space:]]*//;s/[[:space:]]*$//');
+          LBLO=$(V=libboost_locale;echo "$zse" $V|grep "| $V"|tail -n1|cut -d'|' -f2|sed -e 's/^[[:space:]]*//;s/[[:space:]]*$//');
+        fi;
+        LBOOST=$(grep -s --no-filename "^boost_.*-devel" /var/cache/zypp/solv/*/solv.idx |cut -f1 | sort -r --unique|head -n1);
+        LBIO=$(grep -s --no-filename "^libboost_iostreams" /var/cache/zypp/solv/*/solv.idx |cut -f1 | sort -r --unique|head -n1);
+        LBLO=$(grep -s --no-filename "^libboost_locale" /var/cache/zypp/solv/*/solv.idx |cut -f1 | sort -r --unique|head -n1);
 				[ ! "$LBOOST" ]&&[ "$LBIO" ]&&[ "$LBLO" ]&& LBOOST=$(V=boost-license;echo "$zse" $V|grep "| $V"|tail -n1|cut -d'|' -f2|sed -e 's/^[[:space:]]*//;s/[[:space:]]*$//');
 			 fi;
 			fi;
@@ -95,7 +101,6 @@ getIPR() {
 			LT=${_LT}-${dev};
 			CTAGS=exuberant-ctags;
 			LCURS="$(apt-cache search 'libncurses[0-9]+-dev$'|sort -r|head -n1|cut -d'-' -f1) $(apt-cache search 'libncursesw[0-9]+-dev$'|sort -r|head -n1|cut -d'-' -f1)";
-      LCERR=comerr-${dev};
 		} 
 	} || 
 	{ [ $OSNR = 5 ]&&
@@ -167,21 +172,22 @@ getIPR() {
 			UDPR="${SUDC}$(which apt-get) -f install; ${SUDC}$(which dpkg) -r --force-depends ";
 		};
 	}
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include[ ]*<mysql.h>" "$A" &&break;done ||libmdb=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include[ ]*<boost" "$A" &&break;done ||LBOOST=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include[ ]*<tiffio.h>" "$A" &&break;done ||LT=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include .*acl.h>" "$A" &&break;done ||LACL=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include .*curl.h>" "$A" &&break;done ||LCURL=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include .*curses.h>" "$A" &&break;done ||LCURS=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include <spandsp.h>" "$A" &&break;done ||LSPAN=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include <glib.h>" "$A" &&break;done ||LGLIB=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include .*soup.h>" "$A" &&break;done ||LSOUP=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include <sndfile.h>" "$A" &&break;done ||LSND=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include .*QPDF.hh>" "$A" &&break;done ||QPDF=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include[ ]*<term.h>" "$A" &&break;done ||LTERM=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do grep -qm1 '^[[:space:]]*[^/].*\(gchar\|gboolean\|gint\)' "$A" &&break;done ||LGSSDP=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do grep -qim1 '^[[:space:]]*[^/].*\(capi20_isinstalled\)' "$A" &&break;done ||LCAPI=;
-	for A in $(find . -maxdepth 1 -regex '.*\.c\|.*\.h\|.*\.cpp');do [ -f "$A" ]&& grep -q "^#include[ ].*com_err.h>" "$A" &&break;done ||LCERR=;
+  E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include[ ]*<mysql.h>" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&libmdb=;
+	E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include[ ]*<boost" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&{ LBOOST=;LBIO=;LBLO=; }
+	E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include[ ]*<tiffio.h>" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&LT=;
+	E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include .*acl.h>" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&LACL=;
+	E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include .*curl.h>" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&LCURL=;
+	E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include[ ]*<term.h>" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&LTERM=;
+	[ "$LTERM" ]||{ 
+	 E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include .*curses.h>" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&LCURS=;
+	}
+	E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include <spandsp.h>" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&LSPAN=;
+	E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include <glib.h>" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&LGLIB=;
+	E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include .*soup.h>" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&LSOUP=;
+	E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include <sndfile.h>" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&LSND=;
+	E=1;for A in $QD;do [ -f "$A" ]&& grep -q "^#include .*QPDF.hh>" "$A" &&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&QPDF=;
+	E=1;for A in $QD;do [ "$A" ]&& grep -qm1 '^[[:space:]]*[^/].*\(gchar\|gboolean\|gint\)' "$A"&&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&LGSSDP=;
+	E=1;for A in $QD;do [ "$A" ]&& grep -qim1 '^[[:space:]]*[^/].*\(capi20_isinstalled\)' "$A"&&{ E=;break;};done;[ "$E" -o ! "$QD" ]&&LCAPI=;
 	IPR="${SUDC}$IdPR";
 	DTN="`find . -maxdepth 1 -name ${DPROG}.cpp -printf '%f '`\
 		   `find . -maxdepth 1 -name ${DPROG}.c -printf '%f '`\
@@ -190,11 +196,11 @@ getIPR() {
 			  man_?? Makefile configure \
 			 `find . -maxdepth 1 -name '*.sh' -printf '%f '`\
 			  shliste viall .exrc $UNF $ILOG"
-}
+} # getIPR
 
 exportvars() {
 	rm -f vars;
-	for v in OSNR IPR IP_R UPR UDPR SPR UNROH UNF AUNF ILOG PGROFF LT LT5 LBOOST LBIO LBLO LACL LCURL LCURS LSPAN LGLIB LSOUP LSND QPDF LTERM LGSSDP LCAPI LCERR LM18 dev libmdb REPOS UREPO COMP GITV DTN DPROG; do
+	for v in OSNR IPR IP_R UPR UDPR SPR UNROH UNF AUNF ILOG PGROFF LT LT5 LBOOST LBIO LBLO LACL LCURL LCURS LSPAN LGLIB LSOUP LSND QPDF LTERM LGSSDP LCAPI LM18 dev libmdb REPOS UREPO COMP GITV DTN DPROG; do
 		eval nv=\$$v; 
 		printf "$v::=$nv\n" >>vars; 
 	done;
@@ -333,8 +339,7 @@ LSND=libsndfile-${dev};
 QPDF=qpdf-${dev};
 LTERM=termcap;
 LGSSDP=libgssdp-${dev};
-LCAPI=libcapi20-3;
-LCERR=libcom_err-${dev};
+LCAPI="libcapi20-3 libcapifax-${dev}";
 Z=""
 [ "$(id -u)" -ne "0" ]&&SUDC="sudo "
 if test "$ICH" != install.sh -a "$ICH" != ${DPROG}_inst.sh -a "$ICH" != transfer; then
