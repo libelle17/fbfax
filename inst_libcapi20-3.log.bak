@@ -1,16 +1,5 @@
 Loading repository data...
 Reading installed packages...
-Forcing installation of 'libcapi20-3-2011.8.29-lp152.8.37.x86_64' from repository 'openSUSE-Leap-15.2-1'.
+Package 'libcapi20-3' is not available in your repositories. Cannot reinstall, upgrade, or downgrade.
 Resolving package dependencies...
-
-The following NEW package is going to be installed:
-  libcapi20-3
-
-1 new package to install.
-Overall download size: 26.0 KiB. Already cached: 0 B. After the operation, additional 50.6 KiB will be used.
-Continue? [y/n/v/...? shows all options] (y): y
-Retrieving package libcapi20-3-2011.8.29-lp152.8.37.x86_64 (1/1),  26.0 KiB ( 50.6 KiB unpacked)
-Retrieving: libcapi20-3-2011.8.29-lp152.8.37.x86_64.rpm [done]
-
-Checking for file conflicts: [...done]
-(1/1) Installing: libcapi20-3-2011.8.29-lp152.8.37.x86_64 [.....done]
+Nothing to do.
