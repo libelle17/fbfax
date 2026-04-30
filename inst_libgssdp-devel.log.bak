@@ -1,22 +1,31 @@
-Loading repository data...
-Reading installed packages...
-Forcing installation of 'libgssdp-devel-1.2.2-lp152.1.4.x86_64' from repository 'openSUSE-Leap-15.2-1'.
-Resolving package dependencies...
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libgssdp-devel-1.6.3-160000.2.2.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
 
-The following 3 NEW packages are going to be installed:
-  libgssdp-1_2-0 libgssdp-devel typelib-1_0-GSSDP-1_0
+Die folgenden 2 NEUEN Pakete werden installiert:
+  libgssdp-devel typelib-1_0-GSSDP-1_0
 
-3 new packages to install.
-Overall download size: 110.9 KiB. Already cached: 0 B. After the operation, additional 402.4 KiB will be used.
-Continue? [y/n/v/...? shows all options] (y): y
-Retrieving package libgssdp-1_2-0-1.2.2-lp152.1.4.x86_64 (1/3),  53.6 KiB (125.4 KiB unpacked)
-Retrieving: libgssdp-1_2-0-1.2.2-lp152.1.4.x86_64.rpm [done]
-Retrieving package typelib-1_0-GSSDP-1_0-1.2.2-lp152.1.4.x86_64 (2/3),  15.0 KiB (  6.8 KiB unpacked)
-Retrieving: typelib-1_0-GSSDP-1_0-1.2.2-lp152.1.4.x86_64.rpm [done]
-Retrieving package libgssdp-devel-1.2.2-lp152.1.4.x86_64 (3/3),  42.3 KiB (270.2 KiB unpacked)
-Retrieving: libgssdp-devel-1.2.2-lp152.1.4.x86_64.rpm [.done (78.4 KiB/s)]
+2 neue Pakete zu installieren.
 
-Checking for file conflicts: [.......done]
-(1/3) Installing: libgssdp-1_2-0-1.2.2-lp152.1.4.x86_64 [........done]
-(2/3) Installing: typelib-1_0-GSSDP-1_0-1.2.2-lp152.1.4.x86_64 [....done]
-(3/3) Installing: libgssdp-devel-1.2.2-lp152.1.4.x86_64 [...........done]
+Größe des Pakets zum Herunterladen:    65,7 KiB
+
+Änderung der Installationsgröße des Pakets:
+              |     118,2 KiB  erforderlich für Pakete, die installiert werden sollen
+   118,2 KiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Pakete vorladen [..
+Vorladen: libgssdp-devel-1.6.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: typelib-1_0-GSSDP-1_0-1.6.3-160000.2.2.x86_64.rpm [fertig]
+.fertig]
+Abrufen: typelib-1_0-GSSDP-1_0-1.6.3-160000.2.2.x86_64 (repo-oss (16.0)) (1/2),  27,5 KiB    
+Abrufen: libgssdp-devel-1.6.3-160000.2.2.x86_64 (repo-oss (16.0)) (2/2),  38,2 KiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/2) Installieren: typelib-1_0-GSSDP-1_0-1.6.3-160000.2.2.x86_64 [..fertig]
+(2/2) Installieren: libgssdp-devel-1.6.3-160000.2.2.x86_64 [..fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]

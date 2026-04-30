@@ -44,15 +44,16 @@ static uint16_t *_law_2_linear16 = &law_2_linear16[0];
 
 static gint log_level = 0;
 
-static void (*logging)(gint level, const gchar *text) = NULL;
+static void (*logging)(void *user_data, gint level, const gchar *text) = NULL;
 
 /**
  * \brief Dump spandsp messages
  * \param level spandsp loglevel
  * \param text message text
  */
-static void spandsp_msg_log(gint level, const gchar *text)
+static void spandsp_msg_log(void *user_data, gint level, const gchar *text)
 {
+	(void)user_data;
 	g_debug("%s", text);
 }
 
@@ -64,12 +65,13 @@ static void spandsp_msg_log(gint level, const gchar *text)
  * \param msg spandsp message
  * \param len len of frame
  */
-static void real_time_frame_handler(t30_state_t *state, void *user_data, gint direction, const uint8_t *msg, gint len)
+static void real_time_frame_handler(void *user_data, bool direction, const uint8_t *msg, gint len)
 {
 	struct capi_connection *connection = (struct capi_connection*)user_data;
 	struct fax_status *status = (struct fax_status*)connection->priv;
 	struct session *session = faxophone_get_session();
 	t30_stats_t stats;
+	t30_state_t *state = fax_get_t30_state(status->fax_state);
 
 	//g_debug("real_time_frame_handler() called (%d/%d/%d)", direction, len, msg[2]);
 	if (msg[2] == 6) {
@@ -95,17 +97,19 @@ static void real_time_frame_handler(t30_state_t *state, void *user_data, gint di
  * \param result result
  * \return error code
  */
-static gint phase_handler_b(t30_state_t *state, void *user_data, gint result)
+static gint phase_handler_b(void *user_data, gint result)
 {
 	struct capi_connection *connection = (struct capi_connection *)user_data;
 	struct fax_status *status = (struct fax_status *)connection->priv;
 	struct session *session = faxophone_get_session();
 	t30_stats_t stats;
 	t30_state_t *t30;
+	t30_state_t *state;
 	const gchar *ident;
 
-	t30_get_transfer_statistics(state, &stats);
 	t30 = fax_get_t30_state(status->fax_state);
+	state = t30;
+	t30_get_transfer_statistics(state, &stats);
 
 	g_debug("Phase B handler (0x%X) %s", result, t30_frametype(result));
 	g_debug(" - bit rate %d", stats.bit_rate);
@@ -137,7 +141,7 @@ static gint phase_handler_b(t30_state_t *state, void *user_data, gint result)
 	status->bytes_received = 0;
 	status->ecm = stats.error_correcting_mode;
 	status->bad_rows = stats.bad_rows;
-	status->encoding = stats.encoding;
+	status->encoding = 0; /* stats.encoding removed in newer spandsp */
 	status->bitrate = stats.bit_rate;
 	//status->page_total = stats.pages_in_file;
 	status->progress_status = 0;
@@ -156,12 +160,13 @@ static gint phase_handler_b(t30_state_t *state, void *user_data, gint result)
  * \param result result
  * \return error code
  */
-static gint phase_handler_d(t30_state_t *state, void *user_data, gint result)
+static gint phase_handler_d(void *user_data, gint result)
 {
 	struct capi_connection *connection = (struct capi_connection *)user_data;
 	struct fax_status *status = (struct fax_status *)connection->priv;
 	struct session *session = faxophone_get_session();
 	t30_stats_t stats;
+	t30_state_t *state = fax_get_t30_state(status->fax_state);
 
 	t30_get_transfer_statistics(state, &stats);
 
@@ -173,10 +178,10 @@ static gint phase_handler_d(t30_state_t *state, void *user_data, gint result)
 	g_debug(" - image size %d", stats.image_size);*/
 
 	status->phase = PHASE_D;
-	/*status->ecm = stats.error_correcting_mode;
-	status->bad_rows = stats.bad_rows;
-	status->encoding = stats.encoding;
-	status->bitrate = stats.bit_rate;*/
+	// status->ecm = stats.error_correcting_mode;
+	// status->bad_rows = stats.bad_rows;
+	// status->encoding = 0; // stats.encoding removed in newer spandsp
+	// status->bitrate = stats.bit_rate;
 
 	if (status->sending) {
 		status->page_current = (stats.pages_in_file >= stats.pages_tx + 1 ? stats.pages_tx + 1 : stats.pages_tx);
@@ -200,7 +205,7 @@ static gint phase_handler_d(t30_state_t *state, void *user_data, gint result)
  * \param user_data pointer to current capi connection
  * \param result result code
  */
-static void phase_handler_e(t30_state_t *state, void *user_data, gint result)
+static void phase_handler_e(void *user_data, gint result)
 {
 	struct capi_connection *connection = (struct capi_connection *)user_data;
 	struct fax_status *status = (struct fax_status *)connection->priv;
@@ -208,8 +213,11 @@ static void phase_handler_e(t30_state_t *state, void *user_data, gint result)
 	gint transferred = 0;
 	t30_stats_t stats;
 	t30_state_t *t30;
+	t30_state_t *state;
 	const gchar *ident;
 
+	t30 = fax_get_t30_state(status->fax_state);
+	state = t30;
 	t30_get_transfer_statistics(state, &stats);
 
 	g_debug("Phase E handler (0x%X) %s", result, t30_completion_code_to_str(result));
@@ -221,10 +229,10 @@ static void phase_handler_e(t30_state_t *state, void *user_data, gint result)
 	g_debug(" - coding method %s", t4_encoding_to_str(stats.encoding));*/
 
 	status->phase = PHASE_E;
-	/*status->ecm = stats.error_correcting_mode;
-	status->bad_rows = stats.bad_rows;
-	status->encoding = stats.encoding;
-	status->bitrate = stats.bit_rate;*/
+	// status->ecm = stats.error_correcting_mode;
+	// status->bad_rows = stats.bad_rows;
+	// status->encoding = 0; // stats.encoding removed in newer spandsp
+	// status->bitrate = stats.bit_rate;
 
 	status->page_current = (status->sending ? stats.pages_tx : stats.pages_rx);
 	//status->page_total = stats.pages_in_file;
@@ -284,8 +292,6 @@ gint spandsp_init(const gchar *tiff_file, gboolean sending, gchar modem, gchar e
 	static int spandsp2{0};
 	t30_state_t *t30;
 	logging_state_t *log_state;
-	gint supported_resolutions = 0;
-	gint supported_image_sizes = 0;
 	gint supported_modems = 0;
 	struct fax_status *status = (struct fax_status *)connection->priv;
 //	if (verbg) printf("Beginn spandsp_init\n");
@@ -301,30 +307,11 @@ gint spandsp_init(const gchar *tiff_file, gboolean sending, gchar modem, gchar e
 
 	t30 = fax_get_t30_state(status->fax_state);
 
-	/* Supported resolutions */
-	supported_resolutions = 0;
-	supported_resolutions |= T30_SUPPORT_STANDARD_RESOLUTION;
-	supported_resolutions |= T30_SUPPORT_FINE_RESOLUTION;
-	supported_resolutions |= T30_SUPPORT_SUPERFINE_RESOLUTION;
-	supported_resolutions |= T30_SUPPORT_R8_RESOLUTION;
-	supported_resolutions |= T30_SUPPORT_R16_RESOLUTION;
-	supported_resolutions |= T30_SUPPORT_300_300_RESOLUTION;
-	supported_resolutions |= T30_SUPPORT_400_400_RESOLUTION;
-	supported_resolutions |= T30_SUPPORT_600_600_RESOLUTION;
-	supported_resolutions |= T30_SUPPORT_1200_1200_RESOLUTION;
-	supported_resolutions |= T30_SUPPORT_300_600_RESOLUTION;
-	supported_resolutions |= T30_SUPPORT_400_800_RESOLUTION;
-	supported_resolutions |= T30_SUPPORT_600_1200_RESOLUTION;
+	/* Supported resolutions - API changed in newer spandsp, use t30_set_supported_colour_resolutions */
+	/* Old T30_SUPPORT_*_RESOLUTION constants removed, new API handles resolutions internally */
 
-	/* Supported image sizes */
-	supported_image_sizes = 0;
-	supported_image_sizes |= T30_SUPPORT_215MM_WIDTH;
-	supported_image_sizes |= T30_SUPPORT_255MM_WIDTH;
-	supported_image_sizes |= T30_SUPPORT_303MM_WIDTH;
-	supported_image_sizes |= T30_SUPPORT_UNLIMITED_LENGTH;
-	supported_image_sizes |= T30_SUPPORT_A4_LENGTH;
-	supported_image_sizes |= T30_SUPPORT_US_LETTER_LENGTH;
-	supported_image_sizes |= T30_SUPPORT_US_LEGAL_LENGTH;
+	/* Supported image sizes - API changed in newer spandsp */
+	/* Old T30_SUPPORT_*MM_WIDTH / T30_SUPPORT_*_LENGTH constants removed */
 
 	/* Supported modems */
 	supported_modems = 0;
@@ -349,17 +336,17 @@ gint spandsp_init(const gchar *tiff_file, gboolean sending, gchar modem, gchar e
 	if (ecm) {
 		/* Supported compressions */
 #if defined(SPANDSP_SUPPORT_T85)
-		t30_set_supported_compressions(t30, T30_SUPPORT_T4_1D_COMPRESSION | T30_SUPPORT_T4_2D_COMPRESSION | T30_SUPPORT_T6_COMPRESSION | T30_SUPPORT_T85_C
+		t30_set_supported_compressions(t30, T4_COMPRESSION_T4_1D | T4_COMPRESSION_T4_2D | T4_COMPRESSION_T6 | T4_COMPRESSION_T85);
 #else
-		t30_set_supported_compressions(t30, T30_SUPPORT_T4_1D_COMPRESSION | T30_SUPPORT_T4_2D_COMPRESSION | T30_SUPPORT_T6_COMPRESSION);
+		t30_set_supported_compressions(t30, T4_COMPRESSION_T4_1D | T4_COMPRESSION_T4_2D | T4_COMPRESSION_T6);
 #endif
 
 		t30_set_ecm_capability(t30, ecm);
 	}
 
 	t30_set_supported_t30_features(t30, T30_SUPPORT_IDENTIFICATION | T30_SUPPORT_SELECTIVE_POLLING | T30_SUPPORT_SUB_ADDRESSING);
-	t30_set_supported_resolutions(t30, supported_resolutions);
-	t30_set_supported_image_sizes(t30, supported_image_sizes);
+	t30_set_supported_colour_resolutions(t30, 0);  /* 0 = alle Standardauflösungen */
+	/* t30_set_supported_image_sizes entfernt in neuerer spandsp-Version */
 
 	/* spandsp loglevel */
 	if (log_level >= 1) {
@@ -370,7 +357,7 @@ gint spandsp_init(const gchar *tiff_file, gboolean sending, gchar modem, gchar e
 			logging = spandsp_msg_log;
 		}
 
-		span_log_set_message_handler(log_state, logging);
+		span_log_set_message_handler(log_state, spandsp_msg_log, NULL);
 	}
 
 	if (lsi) {

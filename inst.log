@@ -752,3 +752,521 @@ Loading repository data...
 Reading installed packages...
 'libcapifax-devel' not found in package names. Trying capabilities.
 IP: ''
+
+Rueckmeldung bei einricht termcap:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+'termcap' wurde in den Paketnamen nicht gefunden. Fähigkeiten werden durchsucht.
+IP: ''
+
+Rueckmeldung bei einricht spandsp-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'spandsp-devel-3.0.0+g57-160000.2.2.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende NEUE Paket wird installiert:
+  spandsp-devel
+
+1 neues Paket zu installieren.
+
+Größe des Pakets zum Herunterladen:   201,5 KiB
+
+Änderung der Installationsgröße des Pakets:
+              |       1,2 MiB  erforderlich für Pakete, die installiert werden sollen
+     1,2 MiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Pakete vorladen [..
+Vorladen: spandsp-devel-3.0.0+g57-160000.2.2.x86_64.rpm [fertig]
+.fertig]
+Abrufen: spandsp-devel-3.0.0+g57-160000.2.2.x86_64 (repo-oss (16.0)) (1/1), 201,5 KiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/1) Installieren: spandsp-devel-3.0.0+g57-160000.2.2.x86_64 [..fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Die folgenden 3 Pakete werden aktualisiert:
+  libsoup-3_0-0 libsoup-lang typelib-1_0-Soup-3_0
+
+Die folgenden 2 NEUEN Pakete werden installiert:
+  libsoup-devel sqlite3-devel
+
+3 Pakete werden aktualisiert, 2 neue.
+
+Größe des Pakets zum Herunterladen:     2,6 MiB
+
+Änderung der Installationsgröße des Pakets:
+              |       9,4 MiB  erforderlich für Pakete, die installiert werden sollen
+     8,3 MiB  |  -    1,1 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Pakete vorladen [..
+Vorladen: typelib-1_0-Soup-3_0-3.6.6-160000.1.1.x86_64.rpm [fertig]
+.
+Vorladen: libsoup-lang-3.6.6-160000.1.1.noarch.rpm [fertig]
+.
+Vorladen: sqlite3-devel-3.50.4-160000.1.2.x86_64.rpm [fertig]
+.
+Vorladen: libsoup-3_0-0-3.6.6-160000.1.1.x86_64.rpm [fertig]
+.
+Vorladen: libsoup-devel-3.6.6-160000.1.1.x86_64.rpm [fertig]
+.fertig]
+Abrufen: libsoup-3_0-0-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (1/5), 412,3 KiB    
+Abrufen: sqlite3-devel-3.50.4-160000.1.2.x86_64 (repo-oss (16.0)) (2/5), 299,6 KiB    
+Abrufen: typelib-1_0-Soup-3_0-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (3/5), 159,7 KiB    
+Abrufen: libsoup-lang-3.6.6-160000.1.1.noarch (repo-oss (16.0)) (4/5), 206,5 KiB    
+Abrufen: libsoup-devel-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (5/5),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/5) Installieren: libsoup-3_0-0-3.6.6-160000.1.1.x86_64 [...fertig]
+(2/5) Installieren: sqlite3-devel-3.50.4-160000.1.2.x86_64 [..fertig]
+(3/5) Installieren: typelib-1_0-Soup-3_0-3.6.6-160000.1.1.x86_64 [..fertig]
+(4/5) Installieren: libsoup-lang-3.6.6-160000.1.1.noarch [..fertig]
+(5/5) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [...fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+Es werden Programme ausgeführt, die immer noch die durch kürzliche Upgrades gelöschten oder aktualisierten Dateien oder Bibliotheken verwenden. Starten Sie die Programme neu, um die Aktualisierungen zu nutzen. Mit 'zypper ps -s' erhalten Sie eine Liste dieser Programme.
+ 
+IP: ''
+
+Rueckmeldung bei einricht libsndfile-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsndfile-devel-1.2.2-160000.3.2.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Die folgenden 8 NEUEN Pakete werden installiert:
+  flac-devel libFLAC++10 libogg-devel libopus-devel libsndfile-devel libvorbis-devel speex-devel speexdsp-devel
+
+8 neue Pakete zu installieren.
+
+Größe des Pakets zum Herunterladen:     1,6 MiB
+
+Änderung der Installationsgröße des Pakets:
+              |       7,5 MiB  erforderlich für Pakete, die installiert werden sollen
+     7,5 MiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Pakete vorladen [..
+Vorladen: libvorbis-devel-1.3.7-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: libopus-devel-1.5.2-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libFLAC++10-1.4.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libogg-devel-1.3.5-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: speexdsp-devel-1.2.1-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: flac-devel-1.4.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libsndfile-devel-1.2.2-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: speex-devel-1.2.1-160000.2.2.x86_64.rpm [fertig]
+.fertig]
+Abrufen: libFLAC++10-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (1/8),  71,0 KiB    
+Abrufen: libogg-devel-1.3.5-160000.3.2.x86_64 (repo-oss (16.0)) (2/8), 192,8 KiB    
+Abrufen: libopus-devel-1.5.2-160000.2.2.x86_64 (repo-oss (16.0)) (3/8),  44,8 KiB    
+Abrufen: speexdsp-devel-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (4/8), 420,4 KiB    
+Abrufen: libvorbis-devel-1.3.7-160000.3.2.x86_64 (repo-oss (16.0)) (5/8),  32,1 KiB    
+Abrufen: flac-devel-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (6/8), 376,3 KiB    
+Abrufen: speex-devel-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (7/8), 422,2 KiB    
+Abrufen: libsndfile-devel-1.2.2-160000.3.2.x86_64 (repo-oss (16.0)) (8/8), 118,7 KiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/8) Installieren: libFLAC++10-1.4.3-160000.2.2.x86_64 [..fertig]
+(2/8) Installieren: libogg-devel-1.3.5-160000.3.2.x86_64 [..fertig]
+(3/8) Installieren: libopus-devel-1.5.2-160000.2.2.x86_64 [..fertig]
+(4/8) Installieren: speexdsp-devel-1.2.1-160000.2.2.x86_64 [..fertig]
+(5/8) Installieren: libvorbis-devel-1.3.7-160000.3.2.x86_64 [..fertig]
+(6/8) Installieren: flac-devel-1.4.3-160000.2.2.x86_64 [..fertig]
+(7/8) Installieren: speex-devel-1.2.1-160000.2.2.x86_64 [..fertig]
+(8/8) Installieren: libsndfile-devel-1.2.2-160000.3.2.x86_64 [..fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libgssdp-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libgssdp-devel-1.6.3-160000.2.2.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Die folgenden 2 NEUEN Pakete werden installiert:
+  libgssdp-devel typelib-1_0-GSSDP-1_0
+
+2 neue Pakete zu installieren.
+
+Größe des Pakets zum Herunterladen:    65,7 KiB
+
+Änderung der Installationsgröße des Pakets:
+              |     118,2 KiB  erforderlich für Pakete, die installiert werden sollen
+   118,2 KiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Pakete vorladen [..
+Vorladen: libgssdp-devel-1.6.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: typelib-1_0-GSSDP-1_0-1.6.3-160000.2.2.x86_64.rpm [fertig]
+.fertig]
+Abrufen: typelib-1_0-GSSDP-1_0-1.6.3-160000.2.2.x86_64 (repo-oss (16.0)) (1/2),  27,5 KiB    
+Abrufen: libgssdp-devel-1.6.3-160000.2.2.x86_64 (repo-oss (16.0)) (2/2),  38,2 KiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/2) Installieren: typelib-1_0-GSSDP-1_0-1.6.3-160000.2.2.x86_64 [..fertig]
+(2/2) Installieren: libgssdp-devel-1.6.3-160000.2.2.x86_64 [..fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht boost_1_71_0-gnu-openmpi3-hpc-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+'boost_1_71_0-gnu-openmpi3-hpc-devel' wurde in den Paketnamen nicht gefunden. Fähigkeiten werden durchsucht.
+IP: ''
+
+Rueckmeldung bei einricht libboost_iostreams1_66_0-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+'libboost_iostreams1_66_0-devel' wurde in den Paketnamen nicht gefunden. Fähigkeiten werden durchsucht.
+IP: ''
+
+Rueckmeldung bei einricht libboost_locale1_66_0-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+'libboost_locale1_66_0-devel' wurde in den Paketnamen nicht gefunden. Fähigkeiten werden durchsucht.
+IP: ''
+
+Rueckmeldung bei einricht termcap:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+'termcap' wurde in den Paketnamen nicht gefunden. Fähigkeiten werden durchsucht.
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:     1,5 MiB
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Pakete vorladen [..
+Vorladen: libsoup-devel-3.6.6-160000.1.1.x86_64.rpm [fertig]
+.fertig]
+Abrufen: libsoup-devel-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [...fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht boost_1_71_0-gnu-openmpi3-hpc-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+'boost_1_71_0-gnu-openmpi3-hpc-devel' wurde in den Paketnamen nicht gefunden. Fähigkeiten werden durchsucht.
+IP: ''
+
+Rueckmeldung bei einricht libboost_iostreams1_66_0-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+'libboost_iostreams1_66_0-devel' wurde in den Paketnamen nicht gefunden. Fähigkeiten werden durchsucht.
+IP: ''
+
+Rueckmeldung bei einricht libboost_locale1_66_0-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+'libboost_locale1_66_0-devel' wurde in den Paketnamen nicht gefunden. Fähigkeiten werden durchsucht.
+IP: ''
+
+Rueckmeldung bei einricht termcap:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+'termcap' not found in package names. Trying capabilities.
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+Forcing installation of 'libsoup-devel-3.6.6-160000.1.1.x86_64' from repository 'repo-oss (16.0)'.
+Resolving package dependencies...
+
+The following package is going to be reinstalled:
+  libsoup-devel
+
+1 package to reinstall.
+
+Package download size:     1.5 MiB
+
+Package install size change:
+            |       7.6 MiB  required by packages that will be installed
+       0 B  |  -    7.6 MiB  released by packages that will be removed
+
+Backend:  classic_rpmtrans
+Continue? [y/n/v/...? shows all options] (y): y
+Preloading Packages [..
+Preloading: libsoup-devel-3.6.6-160000.1.1.x86_64.rpm [done]
+.done]
+Retrieving: libsoup-devel-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (1/1),   1.5 MiB    
+
+Checking for file conflicts: [..done]
+(1/1) Installing: libsoup-devel-3.6.6-160000.1.1.x86_64 [...done]
+Running post-transaction scripts [...done]
+IP: ' libsoup-devel'
+
+Rueckmeldung bei einricht boost_1_71_0-gnu-openmpi3-hpc-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+'boost_1_71_0-gnu-openmpi3-hpc-devel' not found in package names. Trying capabilities.
+IP: ''
+
+Rueckmeldung bei einricht libboost_iostreams1_66_0-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+'libboost_iostreams1_66_0-devel' not found in package names. Trying capabilities.
+IP: ''
+
+Rueckmeldung bei einricht libboost_locale1_66_0-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+'libboost_locale1_66_0-devel' not found in package names. Trying capabilities.
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+Forcing installation of 'libsoup-devel-3.6.6-160000.1.1.x86_64' from repository 'repo-oss (16.0)'.
+Resolving package dependencies...
+
+The following package is going to be reinstalled:
+  libsoup-devel
+
+1 package to reinstall.
+
+Package download size:     1.5 MiB
+
+Package install size change:
+            |       7.6 MiB  required by packages that will be installed
+       0 B  |  -    7.6 MiB  released by packages that will be removed
+
+Backend:  classic_rpmtrans
+Continue? [y/n/v/...? shows all options] (y): y
+Preloading Packages [..
+Preloading: libsoup-devel-3.6.6-160000.1.1.x86_64.rpm [done]
+.done]
+Retrieving: libsoup-devel-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (1/1),   1.5 MiB    
+
+Checking for file conflicts: [..done]
+(1/1) Installing: libsoup-devel-3.6.6-160000.1.1.x86_64 [...done]
+Running post-transaction scripts [...done]
+IP: ' libsoup-devel'
+
+Rueckmeldung bei einricht boost_1_71_0-gnu-openmpi3-hpc-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+'boost_1_71_0-gnu-openmpi3-hpc-devel' not found in package names. Trying capabilities.
+IP: ''
+
+Rueckmeldung bei einricht libboost_iostreams1_66_0-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+'libboost_iostreams1_66_0-devel' not found in package names. Trying capabilities.
+IP: ''
+
+Rueckmeldung bei einricht libboost_locale1_66_0-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+'libboost_locale1_66_0-devel' not found in package names. Trying capabilities.
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+Forcing installation of 'libsoup-devel-3.6.6-160000.1.1.x86_64' from repository 'repo-oss (16.0)'.
+Resolving package dependencies...
+
+The following package is going to be reinstalled:
+  libsoup-devel
+
+1 package to reinstall.
+
+Package download size:     1.5 MiB
+
+Package install size change:
+            |       7.6 MiB  required by packages that will be installed
+       0 B  |  -    7.6 MiB  released by packages that will be removed
+
+Backend:  classic_rpmtrans
+Continue? [y/n/v/...? shows all options] (y): y
+Preloading Packages [..
+Preloading: libsoup-devel-3.6.6-160000.1.1.x86_64.rpm [done]
+.done]
+Retrieving: libsoup-devel-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (1/1),   1.5 MiB    
+
+Checking for file conflicts: [..done]
+(1/1) Installing: libsoup-devel-3.6.6-160000.1.1.x86_64 [...done]
+Running post-transaction scripts [...done]
+IP: ' libsoup-devel'
+
+Rueckmeldung bei einricht libsoup-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+Forcing installation of 'libsoup-devel-3.6.6-160000.1.1.x86_64' from repository 'repo-oss (16.0)'.
+Resolving package dependencies...
+
+The following package is going to be reinstalled:
+  libsoup-devel
+
+1 package to reinstall.
+
+Package download size:     1.5 MiB
+
+Package install size change:
+            |       7.6 MiB  required by packages that will be installed
+       0 B  |  -    7.6 MiB  released by packages that will be removed
+
+Backend:  classic_rpmtrans
+Continue? [y/n/v/...? shows all options] (y): y
+Preloading Packages [..
+Preloading: libsoup-devel-3.6.6-160000.1.1.x86_64.rpm [done]
+.done]
+Retrieving: libsoup-devel-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (1/1),   1.5 MiB    
+
+Checking for file conflicts: [..done]
+(1/1) Installing: libsoup-devel-3.6.6-160000.1.1.x86_64 [...done]
+Running post-transaction scripts [...done]
+IP: ' libsoup-devel'
+
+Rueckmeldung bei einricht libsoup-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+Forcing installation of 'libsoup-devel-3.6.6-160000.1.1.x86_64' from repository 'repo-oss (16.0)'.
+Resolving package dependencies...
+
+The following package is going to be reinstalled:
+  libsoup-devel
+
+1 package to reinstall.
+
+Package download size:     1.5 MiB
+
+Package install size change:
+            |       7.6 MiB  required by packages that will be installed
+       0 B  |  -    7.6 MiB  released by packages that will be removed
+
+Backend:  classic_rpmtrans
+Continue? [y/n/v/...? shows all options] (y): y
+Preloading Packages [..
+Preloading: libsoup-devel-3.6.6-160000.1.1.x86_64.rpm [done]
+.done]
+Retrieving: libsoup-devel-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (1/1),   1.5 MiB    
+
+Checking for file conflicts: [..done]
+(1/1) Installing: libsoup-devel-3.6.6-160000.1.1.x86_64 [...done]
+Running post-transaction scripts [...done]
+IP: ' libsoup-devel'
+
+Rueckmeldung bei einricht libsoup-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+Forcing installation of 'libsoup-devel-3.6.6-160000.1.1.x86_64' from repository 'repo-oss (16.0)'.
+Resolving package dependencies...
+
+The following package is going to be reinstalled:
+  libsoup-devel
+
+1 package to reinstall.
+
+Package download size:     1.5 MiB
+
+Package install size change:
+            |       7.6 MiB  required by packages that will be installed
+       0 B  |  -    7.6 MiB  released by packages that will be removed
+
+Backend:  classic_rpmtrans
+Continue? [y/n/v/...? shows all options] (y): y
+Preloading Packages [..
+Preloading: libsoup-devel-3.6.6-160000.1.1.x86_64.rpm [done]
+.done]
+Retrieving: libsoup-devel-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (1/1),   1.5 MiB    
+
+Checking for file conflicts: [..done]
+(1/1) Installing: libsoup-devel-3.6.6-160000.1.1.x86_64 [...done]
+Running post-transaction scripts [...done]
+IP: ' libsoup-devel'
+
+Rueckmeldung bei einricht libsoup-devel:
+Refreshing service 'openSUSE'.
+Loading repository data...
+Reading installed packages...
+Forcing installation of 'libsoup-devel-3.6.6-160000.1.1.x86_64' from repository 'repo-oss (16.0)'.
+Resolving package dependencies...
+
+The following package is going to be reinstalled:
+  libsoup-devel
+
+1 package to reinstall.
+
+Package download size:     1.5 MiB
+
+Package install size change:
+            |       7.6 MiB  required by packages that will be installed
+       0 B  |  -    7.6 MiB  released by packages that will be removed
+
+Backend:  classic_rpmtrans
+Continue? [y/n/v/...? shows all options] (y): y
+Preloading Packages [..
+Preloading: libsoup-devel-3.6.6-160000.1.1.x86_64.rpm [done]
+.done]
+Retrieving: libsoup-devel-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (1/1),   1.5 MiB    
+
+Checking for file conflicts: [..done]
+(1/1) Installing: libsoup-devel-3.6.6-160000.1.1.x86_64 [...done]
+Running post-transaction scripts [...done]
+IP: ' libsoup-devel'
