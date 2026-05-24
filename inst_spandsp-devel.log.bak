@@ -4,24 +4,28 @@ Installierte Pakete werden gelesen...
 Installation von 'spandsp-devel-3.0.0+g57-160000.2.2.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
 Paketabhängigkeiten werden aufgelöst...
 
-Das folgende NEUE Paket wird installiert:
-  spandsp-devel
+Die folgenden 2 NEUEN Pakete werden installiert:
+  libspandsp3 spandsp-devel
 
-1 neues Paket zu installieren.
+2 neue Pakete zu installieren.
 
-Größe des Pakets zum Herunterladen:   201,5 KiB
+Größe des Pakets zum Herunterladen:   575,8 KiB
 
 Änderung der Installationsgröße des Pakets:
-              |       1,2 MiB  erforderlich für Pakete, die installiert werden sollen
-     1,2 MiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
+              |       2,1 MiB  erforderlich für Pakete, die installiert werden sollen
+     2,1 MiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
 
 Backend:  classic_rpmtrans
 Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
 Pakete vorladen [..
 Vorladen: spandsp-devel-3.0.0+g57-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libspandsp3-3.0.0+g57-160000.2.2.x86_64.rpm [fertig]
 .fertig]
-Abrufen: spandsp-devel-3.0.0+g57-160000.2.2.x86_64 (repo-oss (16.0)) (1/1), 201,5 KiB    
+Abrufen: libspandsp3-3.0.0+g57-160000.2.2.x86_64 (repo-oss (16.0)) (1/2), 374,4 KiB    
+Abrufen: spandsp-devel-3.0.0+g57-160000.2.2.x86_64 (repo-oss (16.0)) (2/2), 201,5 KiB    
 
 Überprüfung auf Dateikonflikte läuft: [..fertig]
-(1/1) Installieren: spandsp-devel-3.0.0+g57-160000.2.2.x86_64 [..fertig]
+(1/2) Installieren: libspandsp3-3.0.0+g57-160000.2.2.x86_64 [..fertig]
+(2/2) Installieren: spandsp-devel-3.0.0+g57-160000.2.2.x86_64 [..fertig]
 Nach-Transaktions-Skripte werden ausgeführt [...fertig]

@@ -4,52 +4,84 @@ Installierte Pakete werden gelesen...
 Installation von 'libsndfile-devel-1.2.2-160000.3.2.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
 Paketabhängigkeiten werden aufgelöst...
 
-Die folgenden 8 NEUEN Pakete werden installiert:
-  flac-devel libFLAC++10 libogg-devel libopus-devel libsndfile-devel libvorbis-devel speex-devel speexdsp-devel
+Die folgenden 16 NEUEN Pakete werden installiert:
+  flac-devel libFLAC++10 libFLAC++10-x86-64-v3 libFLAC12 libFLAC12-x86-64-v3 libogg-devel libopus-devel libsndfile1 libsndfile-devel libspeex1 libspeexdsp1 libvorbis-devel libvorbisfile3 libvorbisfile3-x86-64-v3 speex-devel speexdsp-devel
 
-8 neue Pakete zu installieren.
+16 neue Pakete zu installieren.
 
-Größe des Pakets zum Herunterladen:     1,6 MiB
+Größe des Pakets zum Herunterladen:     2,5 MiB
 
 Änderung der Installationsgröße des Pakets:
-              |       7,5 MiB  erforderlich für Pakete, die installiert werden sollen
-     7,5 MiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
+              |       9,2 MiB  erforderlich für Pakete, die installiert werden sollen
+     9,2 MiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
 
 Backend:  classic_rpmtrans
 Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
 Pakete vorladen [..
-Vorladen: libvorbis-devel-1.3.7-160000.3.2.x86_64.rpm [fertig]
-.
 Vorladen: libopus-devel-1.5.2-160000.2.2.x86_64.rpm [fertig]
 .
-Vorladen: libFLAC++10-1.4.3-160000.2.2.x86_64.rpm [fertig]
+Vorladen: libspeex1-1.2.1-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libspeexdsp1-1.2.1-160000.2.2.x86_64.rpm [fertig]
 .
 Vorladen: libogg-devel-1.3.5-160000.3.2.x86_64.rpm [fertig]
 .
-Vorladen: speexdsp-devel-1.2.1-160000.2.2.x86_64.rpm [fertig]
+Vorladen: libvorbisfile3-1.3.7-160000.3.2.x86_64.rpm [fertig]
 .
-Vorladen: flac-devel-1.4.3-160000.2.2.x86_64.rpm [fertig]
+Vorladen: libFLAC++10-1.4.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libsndfile1-1.2.2-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: libFLAC12-x86-64-v3-1.4.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libvorbisfile3-x86-64-v3-1.3.7-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: libvorbis-devel-1.3.7-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: libFLAC++10-x86-64-v3-1.4.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libFLAC12-1.4.3-160000.2.2.x86_64.rpm [fertig]
 .
 Vorladen: libsndfile-devel-1.2.2-160000.3.2.x86_64.rpm [fertig]
 .
 Vorladen: speex-devel-1.2.1-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: flac-devel-1.4.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: speexdsp-devel-1.2.1-160000.2.2.x86_64.rpm [fertig]
 .fertig]
-Abrufen: libFLAC++10-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (1/8),  71,0 KiB    
-Abrufen: libogg-devel-1.3.5-160000.3.2.x86_64 (repo-oss (16.0)) (2/8), 192,8 KiB    
-Abrufen: libopus-devel-1.5.2-160000.2.2.x86_64 (repo-oss (16.0)) (3/8),  44,8 KiB    
-Abrufen: speexdsp-devel-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (4/8), 420,4 KiB    
-Abrufen: libvorbis-devel-1.3.7-160000.3.2.x86_64 (repo-oss (16.0)) (5/8),  32,1 KiB    
-Abrufen: flac-devel-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (6/8), 376,3 KiB    
-Abrufen: speex-devel-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (7/8), 422,2 KiB    
-Abrufen: libsndfile-devel-1.2.2-160000.3.2.x86_64 (repo-oss (16.0)) (8/8), 118,7 KiB    
+Abrufen: libFLAC12-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (1/16), 230,6 KiB    
+Abrufen: libogg-devel-1.3.5-160000.3.2.x86_64 (repo-oss (16.0)) (2/16), 192,8 KiB    
+Abrufen: libopus-devel-1.5.2-160000.2.2.x86_64 (repo-oss (16.0)) (3/16),  44,8 KiB    
+Abrufen: libspeex1-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (4/16),  64,7 KiB    
+Abrufen: libspeexdsp1-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (5/16),  51,1 KiB    
+Abrufen: libvorbisfile3-1.3.7-160000.3.2.x86_64 (repo-oss (16.0)) (6/16),  35,0 KiB    
+Abrufen: libFLAC12-x86-64-v3-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (7/16), 214,6 KiB    
+Abrufen: libFLAC++10-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (8/16),  71,0 KiB    
+Abrufen: libsndfile1-1.2.2-160000.3.2.x86_64 (repo-oss (16.0)) (9/16), 216,0 KiB    
+Abrufen: speexdsp-devel-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (10/16), 420,4 KiB    
+Abrufen: libvorbisfile3-x86-64-v3-1.3.7-160000.3.2.x86_64 (repo-oss (16.0)) (11/16),  34,8 KiB    
+Abrufen: libvorbis-devel-1.3.7-160000.3.2.x86_64 (repo-oss (16.0)) (12/16),  32,1 KiB    
+Abrufen: libFLAC++10-x86-64-v3-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (13/16),  53,0 KiB    
+Abrufen: flac-devel-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (14/16), 376,3 KiB    
+Abrufen: speex-devel-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (15/16), 422,2 KiB    
+Abrufen: libsndfile-devel-1.2.2-160000.3.2.x86_64 (repo-oss (16.0)) (16/16), 118,7 KiB    
 
 Überprüfung auf Dateikonflikte läuft: [..fertig]
-(1/8) Installieren: libFLAC++10-1.4.3-160000.2.2.x86_64 [..fertig]
-(2/8) Installieren: libogg-devel-1.3.5-160000.3.2.x86_64 [..fertig]
-(3/8) Installieren: libopus-devel-1.5.2-160000.2.2.x86_64 [..fertig]
-(4/8) Installieren: speexdsp-devel-1.2.1-160000.2.2.x86_64 [..fertig]
-(5/8) Installieren: libvorbis-devel-1.3.7-160000.3.2.x86_64 [..fertig]
-(6/8) Installieren: flac-devel-1.4.3-160000.2.2.x86_64 [..fertig]
-(7/8) Installieren: speex-devel-1.2.1-160000.2.2.x86_64 [..fertig]
-(8/8) Installieren: libsndfile-devel-1.2.2-160000.3.2.x86_64 [..fertig]
+( 1/16) Installieren: libFLAC12-1.4.3-160000.2.2.x86_64 [..fertig]
+( 2/16) Installieren: libogg-devel-1.3.5-160000.3.2.x86_64 [..fertig]
+( 3/16) Installieren: libopus-devel-1.5.2-160000.2.2.x86_64 [..fertig]
+( 4/16) Installieren: libspeex1-1.2.1-160000.2.2.x86_64 [..fertig]
+( 5/16) Installieren: libspeexdsp1-1.2.1-160000.2.2.x86_64 [..fertig]
+( 6/16) Installieren: libvorbisfile3-1.3.7-160000.3.2.x86_64 [..fertig]
+( 7/16) Installieren: libFLAC12-x86-64-v3-1.4.3-160000.2.2.x86_64 [..fertig]
+( 8/16) Installieren: libFLAC++10-1.4.3-160000.2.2.x86_64 [..fertig]
+( 9/16) Installieren: libsndfile1-1.2.2-160000.3.2.x86_64 [..fertig]
+(10/16) Installieren: speexdsp-devel-1.2.1-160000.2.2.x86_64 [..fertig]
+(11/16) Installieren: libvorbisfile3-x86-64-v3-1.3.7-160000.3.2.x86_64 [..fertig]
+(12/16) Installieren: libvorbis-devel-1.3.7-160000.3.2.x86_64 [..fertig]
+(13/16) Installieren: libFLAC++10-x86-64-v3-1.4.3-160000.2.2.x86_64 [..fertig]
+(14/16) Installieren: flac-devel-1.4.3-160000.2.2.x86_64 [..fertig]
+(15/16) Installieren: speex-devel-1.2.1-160000.2.2.x86_64 [..fertig]
+(16/16) Installieren: libsndfile-devel-1.2.2-160000.3.2.x86_64 [..fertig]
 Nach-Transaktions-Skripte werden ausgeführt [...fertig]

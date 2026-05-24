@@ -5,17 +5,17 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	Development	//
 -output	./Makefile	/^	-@df --output=ipcent \/ |tail -n1|grep - && $(SUDC)pkill postdrop;:$/;"	m
-ACB_AUTHENTICATE	./appobject.h	/^	ACB_AUTHENTICATE,$/;"	e	enum:__anon2
-ACB_CONNECTION_ESTABLISHED	./appobject.h	/^	ACB_CONNECTION_ESTABLISHED,$/;"	e	enum:__anon2
-ACB_CONNECTION_NOTIFY	./appobject.h	/^	ACB_CONNECTION_NOTIFY,$/;"	e	enum:__anon2
-ACB_CONNECTION_STATUS	./appobject.h	/^	ACB_CONNECTION_STATUS,$/;"	e	enum:__anon2
-ACB_CONNECTION_TERMINATED	./appobject.h	/^	ACB_CONNECTION_TERMINATED,$/;"	e	enum:__anon2
-ACB_CONTACTS_CHANGED	./appobject.h	/^	ACB_CONTACTS_CHANGED,$/;"	e	enum:__anon2
-ACB_CONTACT_PROCESS	./appobject.h	/^	ACB_CONTACT_PROCESS,$/;"	e	enum:__anon2
-ACB_FAX_PROCESS	./appobject.h	/^	ACB_FAX_PROCESS,$/;"	e	enum:__anon2
-ACB_JOURNAL_LOADED	./appobject.h	/^	ACB_JOURNAL_LOADED,$/;"	e	enum:__anon2
-ACB_MAX	./appobject.h	/^	ACB_MAX$/;"	e	enum:__anon2
-ACB_MESSAGE	./appobject.h	/^	ACB_MESSAGE,$/;"	e	enum:__anon2
+ACB_AUTHENTICATE	./appobject.h	/^	ACB_AUTHENTICATE,$/;"	e	enum:__anon1
+ACB_CONNECTION_ESTABLISHED	./appobject.h	/^	ACB_CONNECTION_ESTABLISHED,$/;"	e	enum:__anon1
+ACB_CONNECTION_NOTIFY	./appobject.h	/^	ACB_CONNECTION_NOTIFY,$/;"	e	enum:__anon1
+ACB_CONNECTION_STATUS	./appobject.h	/^	ACB_CONNECTION_STATUS,$/;"	e	enum:__anon1
+ACB_CONNECTION_TERMINATED	./appobject.h	/^	ACB_CONNECTION_TERMINATED,$/;"	e	enum:__anon1
+ACB_CONTACTS_CHANGED	./appobject.h	/^	ACB_CONTACTS_CHANGED,$/;"	e	enum:__anon1
+ACB_CONTACT_PROCESS	./appobject.h	/^	ACB_CONTACT_PROCESS,$/;"	e	enum:__anon1
+ACB_FAX_PROCESS	./appobject.h	/^	ACB_FAX_PROCESS,$/;"	e	enum:__anon1
+ACB_JOURNAL_LOADED	./appobject.h	/^	ACB_JOURNAL_LOADED,$/;"	e	enum:__anon1
+ACB_MAX	./appobject.h	/^	ACB_MAX$/;"	e	enum:__anon1
+ACB_MESSAGE	./appobject.h	/^	ACB_MESSAGE,$/;"	e	enum:__anon1
 ALERT_CONF_INFO	./capiutils.h	401;"	d
 ALERT_CONF_PLCI	./capiutils.h	399;"	d
 ALERT_REQ_ADDITIONALINFO	./capiutils.h	387;"	d
@@ -31,21 +31,21 @@ APP_OBJECT_TYPE	./appobject.h	47;"	d
 AUDIO_INPUT	./audio.h	28;"	d
 AUDIO_OUTPUT	./audio.h	27;"	d
 Abschn_auswert	./kons.cpp	/^void confdcl::Abschn_auswert(int obverb\/*=0*\/, const char tz\/*='='*\/)$/;"	f	class:confdcl
-AdditionalInfo	./capiutils.h	/^	_cmstruct AdditionalInfo;$/;"	m	struct:__anon6
-AppCallbackId	./appobject.h	/^} AppCallbackId;$/;"	t	typeref:enum:__anon2
+AdditionalInfo	./capiutils.h	/^	_cmstruct AdditionalInfo;$/;"	m	struct:__anon4
+AppCallbackId	./appobject.h	/^} AppCallbackId;$/;"	t	typeref:enum:__anon1
 AppObject	./appobject.h	/^typedef struct _AppObject AppObject;$/;"	t	typeref:struct:_AppObject
 AppObjectClass	./appobject.h	/^typedef struct _AppObjectClass AppObjectClass;$/;"	t	typeref:struct:_AppObjectClass
 AppObjectPrivate	./appobject.c	/^typedef struct _AppObjectPrivate AppObjectPrivate;$/;"	t	typeref:struct:_AppObjectPrivate	file:
-ApplId	./capiutils.h	/^	_cword ApplId;$/;"	m	struct:__anon6
-B1configuration	./capiutils.h	/^	_cstruct B1configuration;$/;"	m	struct:__anon6
-B1protocol	./capiutils.h	/^	_cword B1protocol;$/;"	m	struct:__anon6
-B2configuration	./capiutils.h	/^	_cstruct B2configuration;$/;"	m	struct:__anon6
-B2protocol	./capiutils.h	/^	_cword B2protocol;$/;"	m	struct:__anon6
-B3configuration	./capiutils.h	/^	_cstruct B3configuration;$/;"	m	struct:__anon6
-B3protocol	./capiutils.h	/^	_cword B3protocol;$/;"	m	struct:__anon6
-BC	./capiutils.h	/^	_cstruct BC;$/;"	m	struct:__anon6
-BChannelinformation	./capiutils.h	/^	_cstruct BChannelinformation;$/;"	m	struct:__anon6
-BProtocol	./capiutils.h	/^	_cmstruct BProtocol;$/;"	m	struct:__anon6
+ApplId	./capiutils.h	/^	_cword ApplId;$/;"	m	struct:__anon4
+B1configuration	./capiutils.h	/^	_cstruct B1configuration;$/;"	m	struct:__anon4
+B1protocol	./capiutils.h	/^	_cword B1protocol;$/;"	m	struct:__anon4
+B2configuration	./capiutils.h	/^	_cstruct B2configuration;$/;"	m	struct:__anon4
+B2protocol	./capiutils.h	/^	_cword B2protocol;$/;"	m	struct:__anon4
+B3configuration	./capiutils.h	/^	_cstruct B3configuration;$/;"	m	struct:__anon4
+B3protocol	./capiutils.h	/^	_cword B3protocol;$/;"	m	struct:__anon4
+BC	./capiutils.h	/^	_cstruct BC;$/;"	m	struct:__anon4
+BChannelinformation	./capiutils.h	/^	_cstruct BChannelinformation;$/;"	m	struct:__anon4
+BProtocol	./capiutils.h	/^	_cmstruct BProtocol;$/;"	m	struct:__anon4
 B_Alle	./kons.h	127;"	d
 B_Block	./kons.h	123;"	d
 B_Chdev	./kons.h	122;"	d
@@ -54,15 +54,15 @@ B_FIFO	./kons.h	124;"	d
 B_Link	./kons.h	125;"	d
 B_Sock	./kons.h	126;"	d
 B_Verzn	./kons.h	121;"	d
-CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon4
-CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon4
-CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon4
-CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon4
-CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon4
-CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon4
-CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon4
-CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon4
-CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon4
+CALL_TYPE_ALL	./call.h	/^	CALL_TYPE_ALL,$/;"	e	enum:__anon2
+CALL_TYPE_BLOCKED	./call.h	/^	CALL_TYPE_BLOCKED$/;"	e	enum:__anon2
+CALL_TYPE_FAX	./call.h	/^	CALL_TYPE_FAX,$/;"	e	enum:__anon2
+CALL_TYPE_FAX_REPORT	./call.h	/^	CALL_TYPE_FAX_REPORT,$/;"	e	enum:__anon2
+CALL_TYPE_INCOMING	./call.h	/^	CALL_TYPE_INCOMING,$/;"	e	enum:__anon2
+CALL_TYPE_MISSED	./call.h	/^	CALL_TYPE_MISSED,$/;"	e	enum:__anon2
+CALL_TYPE_OUTGOING	./call.h	/^	CALL_TYPE_OUTGOING,$/;"	e	enum:__anon2
+CALL_TYPE_RECORD	./call.h	/^	CALL_TYPE_RECORD,$/;"	e	enum:__anon2
+CALL_TYPE_VOICE	./call.h	/^	CALL_TYPE_VOICE,$/;"	e	enum:__anon2
 CAPI20_GET_MANUFACTURER	./capiutils.h	54;"	d
 CAPI20_GET_MESSAGE	./capiutils.h	52;"	d
 CAPI20_GET_PROFILE	./capiutils.h	57;"	d
@@ -103,7 +103,7 @@ CAPI_ALERT_REQ	./capicmd.h	51;"	d
 CAPI_BCHANNELS	./faxophone.h	65;"	d
 CAPI_BUFFERCNT	./faxophone.h	63;"	d
 CAPI_CMSG_HEADER	./capiutils.h	322;"	d
-CAPI_COMPOSE	./capiutils.h	/^typedef enum { CAPI_COMPOSE = 0, CAPI_DEFAULT = 1 } _cmstruct;$/;"	e	enum:__anon5
+CAPI_COMPOSE	./capiutils.h	/^typedef enum { CAPI_COMPOSE = 0, CAPI_DEFAULT = 1 } _cmstruct;$/;"	e	enum:__anon3
 CAPI_CONF	./capicmd.h	38;"	d
 CAPI_CONF	./capiutils.h	109;"	d
 CAPI_CONNECT	./capicmd.h	20;"	d
@@ -143,7 +143,7 @@ CAPI_DATA_B3_REQ	./capicmd.h	81;"	d
 CAPI_DATA_B3_REQ_LEN	./capicmd.h	15;"	d
 CAPI_DATA_B3_RESP	./capicmd.h	84;"	d
 CAPI_DATA_B3_RESP_LEN	./capicmd.h	16;"	d
-CAPI_DEFAULT	./capiutils.h	/^typedef enum { CAPI_COMPOSE = 0, CAPI_DEFAULT = 1 } _cmstruct;$/;"	e	enum:__anon5
+CAPI_DEFAULT	./capiutils.h	/^typedef enum { CAPI_COMPOSE = 0, CAPI_DEFAULT = 1 } _cmstruct;$/;"	e	enum:__anon3
 CAPI_DISCONNECT	./capicmd.h	27;"	d
 CAPI_DISCONNECT	./capiutils.h	98;"	d
 CAPI_DISCONNECT_B3	./capicmd.h	26;"	d
@@ -200,9 +200,9 @@ CAPI_SELECT_B_PROTOCOL	./capicmd.h	33;"	d
 CAPI_SELECT_B_PROTOCOL	./capiutils.h	104;"	d
 CAPI_SELECT_B_PROTOCOL_CONF	./capicmd.h	65;"	d
 CAPI_SELECT_B_PROTOCOL_REQ	./capicmd.h	64;"	d
-CIPValue	./capiutils.h	/^	_cword CIPValue;$/;"	m	struct:__anon6
-CIPmask	./capiutils.h	/^	_cdword CIPmask;$/;"	m	struct:__anon6
-CIPmask2	./capiutils.h	/^	_cdword CIPmask2;$/;"	m	struct:__anon6
+CIPValue	./capiutils.h	/^	_cword CIPValue;$/;"	m	struct:__anon4
+CIPmask	./capiutils.h	/^	_cdword CIPmask;$/;"	m	struct:__anon4
+CIPmask2	./capiutils.h	/^	_cdword CIPmask2;$/;"	m	struct:__anon4
 CONNECT	./fax.h	/^	CONNECT = 1,$/;"	e	enum:fax_phase
 CONNECTION_TYPE_CONNECT	./connection.h	29;"	d
 CONNECTION_TYPE_DISCONNECT	./connection.h	30;"	d
@@ -294,10 +294,10 @@ CONNECT_RESP_REJECT	./capiutils.h	501;"	d
 CONNECT_RESP_USERUSERDATA	./capiutils.h	540;"	d
 CREATE_THREAD	./faxophone.h	77;"	d
 CREATE_THREAD	./faxophone.h	78;"	d
-CalledPartyNumber	./capiutils.h	/^	_cstruct CalledPartyNumber;$/;"	m	struct:__anon6
-CalledPartySubaddress	./capiutils.h	/^	_cstruct CalledPartySubaddress;$/;"	m	struct:__anon6
-CallingPartyNumber	./capiutils.h	/^	_cstruct CallingPartyNumber;$/;"	m	struct:__anon6
-CallingPartySubaddress	./capiutils.h	/^	_cstruct CallingPartySubaddress;$/;"	m	struct:__anon6
+CalledPartyNumber	./capiutils.h	/^	_cstruct CalledPartyNumber;$/;"	m	struct:__anon4
+CalledPartySubaddress	./capiutils.h	/^	_cstruct CalledPartySubaddress;$/;"	m	struct:__anon4
+CallingPartyNumber	./capiutils.h	/^	_cstruct CallingPartyNumber;$/;"	m	struct:__anon4
+CallingPartySubaddress	./capiutils.h	/^	_cstruct CallingPartySubaddress;$/;"	m	struct:__anon4
 CapiAnzLogConnNotSupported	./capiutils.h	25;"	d
 CapiBuffExeceeds64k	./capiutils.h	23;"	d
 CapiIllAppNr	./capiutils.h	35;"	d
@@ -321,10 +321,10 @@ CapiRegReserved	./capiutils.h	26;"	d
 CapiSendQueueFull	./capiutils.h	37;"	d
 CapiToManyAppls	./capiutils.h	21;"	d
 CapiUnknownNotPar	./capiutils.h	40;"	d
-Class	./capiutils.h	/^	_cdword Class;$/;"	m	struct:__anon6
-Command	./capiutils.h	/^	_cbyte Command;$/;"	m	struct:__anon6
-ConnectedNumber	./capiutils.h	/^	_cstruct ConnectedNumber;$/;"	m	struct:__anon6
-ConnectedSubaddress	./capiutils.h	/^	_cstruct ConnectedSubaddress;$/;"	m	struct:__anon6
+Class	./capiutils.h	/^	_cdword Class;$/;"	m	struct:__anon4
+Command	./capiutils.h	/^	_cbyte Command;$/;"	m	struct:__anon4
+ConnectedNumber	./capiutils.h	/^	_cstruct ConnectedNumber;$/;"	m	struct:__anon4
+ConnectedSubaddress	./capiutils.h	/^	_cstruct ConnectedSubaddress;$/;"	m	struct:__anon4
 DATA_B3_CONF_DATAHANDLE	./capiutils.h	609;"	d
 DATA_B3_CONF_INFO	./capiutils.h	611;"	d
 DATA_B3_CONF_NCCI	./capiutils.h	607;"	d
@@ -342,9 +342,9 @@ DATA_B3_REQ_NCCI	./capiutils.h	593;"	d
 DATA_B3_RESP_DATAHANDLE	./capiutils.h	636;"	d
 DATA_B3_RESP_HEADER	./capiutils.h	978;"	d
 DATA_B3_RESP_NCCI	./capiutils.h	634;"	d
-DEBUG	./Makefile	/^debug debugnew debugneu: DEBUG=-g $/;"	m
+DEBUG	./Makefile	/^debug debugnew debugneu: DEBUG=-g3 -O0 $/;"	m
 DEPFLAGS	./Makefile	/^DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)\/$*.Td -DGLIB_COMPILATION$/;"	m
-DIRFEHLER	./kons.h	/^  DIRFEHLER=998, $/;"	e	enum:__anon1
+DIRFEHLER	./kons.h	/^  DIRFEHLER=998, $/;"	e	enum:__anon6
 DISCONNECT_B3_CONF_INFO	./capiutils.h	644;"	d
 DISCONNECT_B3_CONF_NCCI	./capiutils.h	642;"	d
 DISCONNECT_B3_IND_NCCI	./capiutils.h	651;"	d
@@ -371,11 +371,11 @@ DISCONNECT_RESP_PLCI	./capiutils.h	693;"	d
 DPROG	./fbfax.h	1;"	d
 DPROG	./kons.h	/^		const char* const DPROG;$/;"	m	struct:hcl
 DPROG_T	./fbfax.cpp	/^char const *DPROG_T[T_MAX+1][SprachZahl]=$/;"	v
-Data	./capiutils.h	/^	unsigned char *Data;$/;"	m	struct:__anon6
-Data32	./capiutils.h	/^	_cdword Data32;$/;"	m	struct:__anon6
-Data64	./capiutils.h	/^	_cqword Data64;$/;"	m	struct:__anon6
-DataHandle	./capiutils.h	/^	_cword DataHandle;$/;"	m	struct:__anon6
-DataLength	./capiutils.h	/^	_cword DataLength;$/;"	m	struct:__anon6
+Data	./capiutils.h	/^	unsigned char *Data;$/;"	m	struct:__anon4
+Data32	./capiutils.h	/^	_cdword Data32;$/;"	m	struct:__anon4
+Data64	./capiutils.h	/^	_cqword Data64;$/;"	m	struct:__anon4
+DataHandle	./capiutils.h	/^	_cword DataHandle;$/;"	m	struct:__anon4
+DataLength	./capiutils.h	/^	_cword DataLength;$/;"	m	struct:__anon4
 Debian	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
 EMPTY_STRING	./direkt.h	3;"	d
 EMPTY_STRING	./gstring.h	26;"	d
@@ -409,23 +409,23 @@ FAX_CIP	./fax.h	33;"	d
 FAX_H	./fax.h	26;"	d
 FB	./tr64.h	/^		string FB;$/;"	m	class:tr64cl
 FERTIG	./Makefile	/^FERTIG=$(error transfer finished\/ Fertig mit Transfer!)$/;"	m
-FacilityConfirmationParameter	./capiutils.h	/^	_cstruct FacilityConfirmationParameter;$/;"	m	struct:__anon6
-FacilityIndicationParameter	./capiutils.h	/^	_cstruct FacilityIndicationParameter;$/;"	m	struct:__anon6
-FacilityRequestParameter	./capiutils.h	/^	_cstruct FacilityRequestParameter;$/;"	m	struct:__anon6
-FacilityResponseParameters	./capiutils.h	/^	_cstruct FacilityResponseParameters;$/;"	m	struct:__anon6
-FacilitySelector	./capiutils.h	/^	_cword FacilitySelector;$/;"	m	struct:__anon6
-Facilitydataarray	./capiutils.h	/^	_cstruct Facilitydataarray;$/;"	m	struct:__anon6
+FacilityConfirmationParameter	./capiutils.h	/^	_cstruct FacilityConfirmationParameter;$/;"	m	struct:__anon4
+FacilityIndicationParameter	./capiutils.h	/^	_cstruct FacilityIndicationParameter;$/;"	m	struct:__anon4
+FacilityRequestParameter	./capiutils.h	/^	_cstruct FacilityRequestParameter;$/;"	m	struct:__anon4
+FacilityResponseParameters	./capiutils.h	/^	_cstruct FacilityResponseParameters;$/;"	m	struct:__anon4
+FacilitySelector	./capiutils.h	/^	_cword FacilitySelector;$/;"	m	struct:__anon4
+Facilitydataarray	./capiutils.h	/^	_cstruct Facilitydataarray;$/;"	m	struct:__anon4
 Fedora	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
 Fedoraalt	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
-Flags	./capiutils.h	/^	_cword Flags;$/;"	m	struct:__anon6
+Flags	./capiutils.h	/^	_cword Flags;$/;"	m	struct:__anon4
 Fol_Dat	./kons.h	128;"	d
 Fol_Mus	./kons.h	130;"	d
 Fol_Ver	./kons.h	129;"	d
-Function	./capiutils.h	/^	_cdword Function;$/;"	m	struct:__anon6
+Function	./capiutils.h	/^	_cdword Function;$/;"	m	struct:__anon4
 GDK_VERSION_MAX_ALLOWED	./config.h	8;"	d
 GDK_VERSION_MIN_REQUIRED	./config.h	11;"	d
 GETTEXT_PACKAGE	./config.h	14;"	d
-Globalconfiguration	./capiutils.h	/^	_cstruct Globalconfiguration;$/;"	m	struct:__anon6
+Globalconfiguration	./capiutils.h	/^	_cstruct Globalconfiguration;$/;"	m	struct:__anon4
 HAS_UINT8_T	./capiutils.h	68;"	d
 HAVE_BIND_TEXTDOMAIN_CODESET	./config.h	20;"	d
 HAVE_CAPI_36	./config.h	23;"	d
@@ -453,7 +453,7 @@ HAVE_SYS_TYPES_H	./config.h	109;"	d
 HAVE_SYS_UTSNAME_H	./config.h	112;"	d
 HAVE_TIFFIO_H	./config.h	115;"	d
 HAVE_UNISTD_H	./config.h	118;"	d
-HLC	./capiutils.h	/^	_cstruct HLC;$/;"	m	struct:__anon6
+HLC	./capiutils.h	/^	_cstruct HLC;$/;"	m	struct:__anon4
 IDLE	./fax.h	/^	IDLE = -1,$/;"	e	enum:fax_phase
 INFO_CONF_INFO	./capiutils.h	761;"	d
 INFO_CONF_PLCI	./capiutils.h	759;"	d
@@ -500,13 +500,13 @@ IS_MANUFACTURER_IND	./capiutils.h	926;"	d
 IS_RESET_B3_CONF	./capiutils.h	938;"	d
 IS_RESET_B3_IND	./capiutils.h	927;"	d
 IS_SELECT_B_PROTOCOL_CONF	./capiutils.h	939;"	d
-Info	./capiutils.h	/^	_cword Info;$/;"	m	struct:__anon6
-InfoElement	./capiutils.h	/^	_cstruct InfoElement;$/;"	m	struct:__anon6
-InfoMask	./capiutils.h	/^	_cdword InfoMask;$/;"	m	struct:__anon6
-InfoNumber	./capiutils.h	/^	_cword InfoNumber;$/;"	m	struct:__anon6
+Info	./capiutils.h	/^	_cword Info;$/;"	m	struct:__anon4
+InfoElement	./capiutils.h	/^	_cstruct InfoElement;$/;"	m	struct:__anon4
+InfoMask	./capiutils.h	/^	_cdword InfoMask;$/;"	m	struct:__anon4
+InfoNumber	./capiutils.h	/^	_cword InfoNumber;$/;"	m	struct:__anon4
 KRB5_CALLCONV	./profile.h	20;"	d
 KRB5_CALLCONV_C	./profile.h	21;"	d
-Keypadfacility	./capiutils.h	/^	_cstruct Keypadfacility;$/;"	m	struct:__anon6
+Keypadfacility	./capiutils.h	/^	_cstruct Keypadfacility;$/;"	m	struct:__anon4
 LIBROUTERMANAGER_APPOBJECT_EMIT_H	./appobject-emit.h	21;"	d
 LIBROUTERMANAGER_APPOBJECT_H	./appobject.h	21;"	d
 LIBROUTERMANAGER_AUDIO_H	./audio.h	21;"	d
@@ -529,7 +529,7 @@ LISTEN_REQ_CIPMASK2	./capiutils.h	815;"	d
 LISTEN_REQ_CONTROLLER	./capiutils.h	777;"	d
 LISTEN_REQ_HEADER	./capiutils.h	960;"	d
 LISTEN_REQ_INFOMASK	./capiutils.h	778;"	d
-LLC	./capiutils.h	/^	_cstruct LLC;$/;"	m	struct:__anon6
+LLC	./capiutils.h	/^	_cstruct LLC;$/;"	m	struct:__anon4
 LT_OBJDIR	./config.h	121;"	d
 MANUFACTURER_CONF_CLASS	./capiutils.h	839;"	d
 MANUFACTURER_CONF_CONTROLLER	./capiutils.h	835;"	d
@@ -556,11 +556,11 @@ MANUFACTURER_RESP_MANUID	./capiutils.h	852;"	d
 MESSAGE_EXCHANGE_ERROR	./capiutils.h	62;"	d
 Mageia	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
 Manjaro	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
-ManuData	./capiutils.h	/^	_cstruct ManuData;$/;"	m	struct:__anon6
-ManuID	./capiutils.h	/^	_cdword ManuID;$/;"	m	struct:__anon6
-Messagenumber	./capiutils.h	/^	_cword Messagenumber;$/;"	m	struct:__anon6
+ManuData	./capiutils.h	/^	_cstruct ManuData;$/;"	m	struct:__anon4
+ManuID	./capiutils.h	/^	_cdword ManuID;$/;"	m	struct:__anon4
+Messagenumber	./capiutils.h	/^	_cword Messagenumber;$/;"	m	struct:__anon4
 Mint	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
-NCPI	./capiutils.h	/^	_cstruct NCPI;$/;"	m	struct:__anon6
+NCPI	./capiutils.h	/^	_cstruct NCPI;$/;"	m	struct:__anon4
 NUMBER_FORMAT_INTERNATIONAL	./call.h	/^	NUMBER_FORMAT_INTERNATIONAL,$/;"	e	enum:number_format
 NUMBER_FORMAT_INTERNATIONAL_PLUS	./call.h	/^	NUMBER_FORMAT_INTERNATIONAL_PLUS$/;"	e	enum:number_format
 NUMBER_FORMAT_LOCAL	./call.h	/^	NUMBER_FORMAT_LOCAL,$/;"	e	enum:number_format
@@ -621,12 +621,12 @@ PROF_SET_SECTION_VALUE	./profile.h	313;"	d
 PROF_TOPSECTION_ITER_NOSUPP	./profile.h	323;"	d
 PROF_UNSUPPORTED	./profile.h	336;"	d
 PROF_VERSION	./profile.h	303;"	d
-REALPATHFEHLER	./kons.h	/^  REALPATHFEHLER=999$/;"	e	enum:__anon1
+REALPATHFEHLER	./kons.h	/^  REALPATHFEHLER=999$/;"	e	enum:__anon6
 RECORDING_BUFSIZE	./faxophone.h	103;"	d
 RECORDING_JITTER	./faxophone.h	104;"	d
 RECORDING_LOCAL	./faxophone.h	/^	RECORDING_LOCAL,$/;"	e	enum:recording
 RECORDING_REMOTE	./faxophone.h	/^	RECORDING_REMOTE$/;"	e	enum:recording
-REGFEHLER	./kons.h	/^  REGFEHLER=997,$/;"	e	enum:__anon1
+REGFEHLER	./kons.h	/^  REGFEHLER=997,$/;"	e	enum:__anon6
 RESET_B3_CONF_INFO	./capiutils.h	865;"	d
 RESET_B3_CONF_NCCI	./capiutils.h	863;"	d
 RESET_B3_IND_NCCI	./capiutils.h	873;"	d
@@ -638,16 +638,16 @@ RESET_B3_RESP_HEADER	./capiutils.h	990;"	d
 RESET_B3_RESP_NCCI	./capiutils.h	877;"	d
 RM_ERROR	./fax_phone.c	51;"	d	file:
 RM_ERROR	./routermanager.h	40;"	d
-RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon3
-RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon3
-RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon3
+RM_ERROR_AUDIO	./routermanager.h	/^	RM_ERROR_AUDIO,$/;"	e	enum:__anon7
+RM_ERROR_FAX	./routermanager.h	/^	RM_ERROR_FAX,$/;"	e	enum:__anon7
+RM_ERROR_ROUTER	./routermanager.h	/^	RM_ERROR_ROUTER,$/;"	e	enum:__anon7
 ROUTERMANAGER_PATH	./routermanager.h	38;"	d
 ROUTERMANAGER_SCHEME	./routermanager.h	34;"	d
 ROUTERMANAGER_SCHEME_PROFILE	./routermanager.h	35;"	d
 ROUTERMANAGER_SCHEME_PROFILE_ACTION	./routermanager.h	36;"	d
-Reason	./capiutils.h	/^	_cword Reason;$/;"	m	struct:__anon6
-Reason_B3	./capiutils.h	/^	_cword Reason_B3;$/;"	m	struct:__anon6
-Reject	./capiutils.h	/^	_cword Reject;$/;"	m	struct:__anon6
+Reason	./capiutils.h	/^	_cword Reason;$/;"	m	struct:__anon4
+Reason_B3	./capiutils.h	/^	_cword Reason_B3;$/;"	m	struct:__anon4
+Reject	./capiutils.h	/^	_cword Reject;$/;"	m	struct:__anon4
 SELECT_B_PROTOCOL_CONF_INFO	./capiutils.h	901;"	d
 SELECT_B_PROTOCOL_CONF_PLCI	./capiutils.h	899;"	d
 SELECT_B_PROTOCOL_REQ_B1CONFIGURATION	./capiutils.h	889;"	d
@@ -684,10 +684,10 @@ STATE_MAXSTATE	./faxophone.h	/^	STATE_MAXSTATE$/;"	e	enum:state
 STATE_RINGING	./faxophone.h	/^	STATE_RINGING,$/;"	e	enum:state
 STDC_HEADERS	./config.h	148;"	d
 Schschreib	./kons.cpp	/^int Schschreib(const char *fname, Schluessel *conf, size_t csize)$/;"	f
-SendingComplete	./capiutils.h	/^	_cstruct SendingComplete;$/;"	m	struct:__anon6
+SendingComplete	./capiutils.h	/^	_cstruct SendingComplete;$/;"	m	struct:__anon4
 SprachZahl	./kons.h	/^enum Sprache {deutsch,englisch,SprachZahl};$/;"	e	enum:Sprache
 Sprache	./kons.h	/^enum Sprache {deutsch,englisch,SprachZahl};$/;"	g
-Subcommand	./capiutils.h	/^	_cbyte Subcommand;$/;"	m	struct:__anon6
+Subcommand	./capiutils.h	/^	_cbyte Subcommand;$/;"	m	struct:__anon4
 Suse	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
 TCp	./kons.h	/^  const char * const * const * const *TCp;$/;"	m	struct:TxB
 TCtp	./kons.h	/^typedef const char * const * const TCtp[SprachZahl];$/;"	t
@@ -1094,7 +1094,7 @@ Txvg_	./vgb.cpp	/^enum Txvg_ {$/;"	g	file:
 USE_ISDN_MUTEX	./faxophone.h	67;"	d
 USE_PRINTER_SPOOLER	./config.h	154;"	d
 Ubuntu	./kons.h	/^enum distroenum{unbek=-1,Mint,Ubuntu,Debian,Suse,Fedora,Fedoraalt,Mageia,Manjaro};$/;"	e	enum:distroenum
-Useruserdata	./capiutils.h	/^	_cstruct Useruserdata;$/;"	m	struct:__anon6
+Useruserdata	./capiutils.h	/^	_cstruct Useruserdata;$/;"	m	struct:__anon4
 VERSION	./config.h	157;"	d
 VOMHAUPTCODE	./fbfax.cpp	8;"	d	file:
 VerzeichnisGibts	./kons.cpp	/^uchar VerzeichnisGibts(const char* vname)$/;"	f
@@ -1123,8 +1123,8 @@ _cbyte	./capiutils.h	/^typedef uint8_t   _cbyte;$/;"	t
 _cbyte	./capiutils.h	/^typedef unsigned char      _cbyte;$/;"	t
 _cdword	./capiutils.h	/^typedef uint32_t  _cdword;$/;"	t
 _cdword	./capiutils.h	/^typedef unsigned long      _cdword;$/;"	t
-_cmsg	./capiutils.h	/^} _cmsg;$/;"	t	typeref:struct:__anon6
-_cmstruct	./capiutils.h	/^typedef enum { CAPI_COMPOSE = 0, CAPI_DEFAULT = 1 } _cmstruct;$/;"	t	typeref:enum:__anon5
+_cmsg	./capiutils.h	/^} _cmsg;$/;"	t	typeref:struct:__anon4
+_cmstruct	./capiutils.h	/^typedef enum { CAPI_COMPOSE = 0, CAPI_DEFAULT = 1 } _cmstruct;$/;"	t	typeref:enum:__anon3
 _cqword	./capiutils.h	/^typedef uint64_t  _cqword;$/;"	t
 _cqword	./capiutils.h	/^typedef unsigned long long _cqword;$/;"	t
 _cstruct	./capiutils.h	/^typedef CAPI_MESSAGE   _cstruct;$/;"	t
@@ -1153,10 +1153,10 @@ absnr	./fbfax.h	/^		string absnr; \/\/ auf Fax angegebene Absendernummer$/;"	m	c
 active_capi_connection	./fax_phone.c	/^struct capi_connection *active_capi_connection = NULL;$/;"	v	typeref:struct:
 add_relation	./profile.h	/^    profile_add_relation_fn add_relation;$/;"	m	struct:profile_vtable
 addresses	./contact.h	/^	GSList *addresses;$/;"	m	struct:contact
-adr	./capiutils.h	/^	} adr;$/;"	m	struct:__anon6	typeref:union:__anon6::__anon7
-adrController	./capiutils.h	/^		_cdword adrController;$/;"	m	union:__anon6::__anon7
-adrNCCI	./capiutils.h	/^		_cdword adrNCCI;$/;"	m	union:__anon6::__anon7
-adrPLCI	./capiutils.h	/^		_cdword adrPLCI;$/;"	m	union:__anon6::__anon7
+adr	./capiutils.h	/^	} adr;$/;"	m	struct:__anon4	typeref:union:__anon4::__anon5
+adrController	./capiutils.h	/^		_cdword adrController;$/;"	m	union:__anon4::__anon5
+adrNCCI	./capiutils.h	/^		_cdword adrNCCI;$/;"	m	union:__anon4::__anon5
+adrPLCI	./capiutils.h	/^		_cdword adrPLCI;$/;"	m	union:__anon4::__anon5
 agef	./kons.h	/^ uchar agef=0; \/\/ dieser wurde gefunden$/;"	m	struct:argcl
 akonfdt	./kons.h	/^    string akonfdt; \/\/ name der Konfigurationsdatei$/;"	m	struct:hcl
 aktprogverz	./kons.cpp	/^string aktprogverz()$/;"	f
@@ -1168,6 +1168,7 @@ aname	./kons.h	/^ string aname;$/;"	m	struct:absch
 anfgg	./kons.cpp	/^void anfgg(const string& datei, const string& inhalt, const string& comment, int obverb\/*=0*\/, int oblog\/*=0*\/)$/;"	f
 anfgw	./kons.cpp	/^void anfgw(const string& datei, const string& udpr, const string& inhalt, const string& comment, int obverb\/*=0*\/, int oblog\/*=0*\/)$/;"	f
 anfzweg	./kons.cpp	/^string* anfzweg(string *quelp) {$/;"	f
+anhalten	./fbfax.cpp	/^void hhcl::anhalten()$/;"	f	class:hhcl
 aocl	./appobject.c	/^aocl::aocl()$/;"	f	class:aocl
 aocl	./appobject.h	/^struct aocl$/;"	s
 app_marshal_VOID__POINTER_POINTER	./appobject.c	/^void app_marshal_VOID__POINTER_POINTER(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)$/;"	f
@@ -1223,7 +1224,7 @@ bitrate	./fax.h	/^	gint bitrate;$/;"	m	struct:fax_status
 blau	./kons.cpp	/^			*const dblau="\\e[0;34;1;47m", *const blau="\\e[1;34m", *const violett="\\e[0;35m", *const hviolett="\\e[1;35m",$/;"	v
 blau	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
 braun	./kons.cpp	/^			*const gruen="\\e[0;32m", *const hgruen="\\e[1;32m", *const braun="\\e[0;33m", *const gelb="\\e[1;33m",$/;"	v
-buf	./capiutils.h	/^	_cbyte buf[180];$/;"	m	struct:__anon6
+buf	./capiutils.h	/^	_cbyte buf[180];$/;"	m	struct:__anon4
 buffer	./faxophone.h	/^	short buffer[RECORDING_BUFSIZE];$/;"	m	struct:record_channel
 buffers	./faxophone.h	/^	int buffers;$/;"	m	struct:capi_connection
 bytes_received	./fax.h	/^	gint bytes_received;$/;"	m	struct:fax_status
@@ -1518,17 +1519,18 @@ free_values	./profile.h	/^    profile_free_values_fn free_values;$/;"	m	struct:p
 frisch	./kons.cpp	/^template<typename SCL> void schAcl<SCL>::frisch()$/;"	f	class:schAcl
 ftw	./kons.h	/^    const struct FTW ftw={0};$/;"	m	struct:elem3	typeref:struct:elem3::FTW
 fuersamba	./kons.cpp	/^void fuersamba(string& roh)$/;"	f
-fui0	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
-fui1	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
-fui10	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
-fui2	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
-fui3	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
-fui4	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
-fui5	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
-fui6	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
-fui7	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
-fui8	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
-fui9	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;};$/;"	f	class:hcl
+fui0	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
+fui1	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
+fui10	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
+fui11	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
+fui2	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
+fui3	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
+fui4	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
+fui5	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
+fui6	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
+fui7	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
+fui8	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
+fui9	./kons.cpp	/^int hcl::fui0(){return 0;}; int hcl::fui1(){return 0;}; int hcl::fui2(){return 0;}; int hcl::fui3(){return 0;}; int hcl::fui4(){return 0;}; int hcl::fui5(){return 0;}; int hcl::fui6(){return 0;}; int hcl::fui7(){return 0;}; int hcl::fui8(){return 0;}; int hcl::fui9(){return 0;}; int hcl::fui10(){return 0;}; int hcl::fui11(){return 0;};$/;"	f	class:hcl
 fuv0	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
 fuv1	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
 fuv10	./kons.cpp	/^void hcl::fuv0(){}; void hcl::fuv1(){}; void hcl::fuv2(){}; void hcl::fuv3(){}; void hcl::fuv4(){}; void hcl::fuv5(){}; void hcl::fuv6(){}; void hcl::fuv7(){}; void hcl::fuv8(){}; void hcl::fuv9(){}; void hcl::fuv10(){};$/;"	f	class:hcl
@@ -1554,8 +1556,8 @@ g_debug	./logging.c	26;"	d	file:
 g_debug	./logging.c	27;"	d	file:
 g_debug	./net_monitor.c	24;"	d	file:
 g_debug	./net_monitor.c	25;"	d	file:
-g_debug	./network.c	26;"	d	file:
-g_debug	./network.c	27;"	d	file:
+g_debug	./network.c	24;"	d	file:
+g_debug	./network.c	25;"	d	file:
 g_debug	./phone.c	33;"	d	file:
 g_debug	./phone.c	34;"	d	file:
 g_debug	./routermanager.c	38;"	d	file:
@@ -1605,6 +1607,7 @@ holbefz0	./kons.cpp	/^void hcl::holbefz0(const int argc, const char *const *cons
 hold	./faxophone.h	/^	int hold;$/;"	m	struct:capi_connection
 holraus	./tr64.cpp	/^size_t holraus(const std::string xml,std::string item,std::string *ergp,size_t anf\/*=0*\/)$/;"	f
 holsystemsprache	./kons.cpp	/^string holsystemsprache(int obverb\/*=0*\/)$/;"	f
+holtif	./fbfax.cpp	/^int hhcl::holtif(const string& datei,ulong *seitenp,struct tm *tmp,struct stat *elogp, $/;"	f	class:hhcl
 holurl	./tr64.cpp	/^int holurl(const std::string url, std::string* bufp)$/;"	f
 holvomnetz	./kons.cpp	/^int hcl::holvomnetz(const string& datei,const string& vors\/*=defvors*\/,const string& nachs\/*=defnachs*\/)$/;"	f	class:hcl
 host	./direkt.h	/^    const std::string host;$/;"	m	class:fbcl
@@ -1678,7 +1681,7 @@ kschreib	./kons.h	/^		uchar kschreib=0; \/\/ Konfigurationsdatei schreiben$/;"	m
 ktage	./fbfax.cpp	/^const unsigned ktage=1; \/\/ kurzes Intervall fuer Faxtabellenkorrektur, 1 Tag$/;"	v
 kuerzelogdatei	./kons.cpp	/^int kuerzelogdatei(const char* logdatei,int obverb)$/;"	f
 kuerzevtz	./kons.cpp	/^void kuerzevtz(string *vzp)$/;"	f
-l	./capiutils.h	/^	_cword l;$/;"	m	struct:__anon6
+l	./capiutils.h	/^	_cword l;$/;"	m	struct:__anon4
 laeuft	./kons.cpp	/^int servc::laeuft()$/;"	f	class:servc
 langu	./kons.h	/^    string langu; \/\/ Sprache (Anfangsbuchstabe)$/;"	m	struct:hcl
 last_write	./faxophone.h	/^	gint64 last_write;$/;"	m	struct:recorder
@@ -1716,7 +1719,7 @@ logdname	./kons.h	/^    string logdname; \/\/ Logdatei-Name ohne Pfad <DPROG>.lo
 logdneu	./kons.h	/^    uchar logdneu=0;    \/\/ Logdatei geaendert$/;"	m	struct:hcl
 logdt	./fbfax.cpp	/^const char *logdt="\/var\/log\/" DPROG "vorgabe.log";\/\/darauf wird in kons.h verwiesen;$/;"	v
 loggespfad	./kons.h	/^    string loggespfad; \/\/ Gesamtpfad, auf den dann die in kons.h verwiesene und oben definierte Variable logdt zeigt$/;"	m	struct:hcl
-logging	./fax.c	/^static void (*logging)(gint level, const gchar *text) = NULL;$/;"	v	file:
+logging	./fax.c	/^static void (*logging)(void *user_data, gint level, const gchar *text) = NULL;$/;"	v	file:
 logvneu	./kons.h	/^    uchar logvneu=0;    \/\/ Logverzeichnis geaendert$/;"	m	struct:hcl
 logvz	./kons.h	/^    string logvz; \/\/ nur das Verzeichnis \/var\/log$/;"	m	struct:hcl
 lookup	./contact.h	/^	gboolean lookup;$/;"	m	struct:contact
@@ -1733,14 +1736,15 @@ lut_a2s	./isdn-convert.c	/^static short *lut_a2s = NULL;$/;"	v	file:
 lut_analyze	./isdn-convert.c	/^static unsigned char *lut_analyze = NULL;$/;"	v	file:
 lut_in	./isdn-convert.c	/^static unsigned char *lut_in = NULL;$/;"	v	file:
 lut_out	./isdn-convert.c	/^static unsigned char *lut_out = NULL;$/;"	v	file:
-m	./capiutils.h	/^	_cbyte *m;$/;"	m	struct:__anon6
-mFERTIG	./Makefile	/^mFERTIG=$(error mitzieh finished\/ Fertig mit mitzieh!)$/;"	m
+m	./capiutils.h	/^	_cbyte *m;$/;"	m	struct:__anon4
+mFERTIG	./Makefile	/^mFERTIG=$(error $(MAKECMDGOALS) finished\/ Fertig mit $(MAKECMDGOALS)!)$/;"	m
 m_color	./kons.h	/^  WORD m_color;$/;"	m	struct:color
 mab	./kons.h	/^    time_t mab,mbis;$/;"	m	struct:find3cl
 mabp	./kons.cpp	/^time_t *find3cl::mabp,*find3cl::mbisp;$/;"	m	class:find3cl	file:
 mabp	./kons.h	/^    static time_t *mabp,*mbisp;$/;"	m	struct:find3cl
 machfit	./kons.cpp	/^int servc::machfit(int obverb\/*=0*\/,int oblog\/*=0*\/, binaer nureinmal\/*=falsch*\/)$/;"	f	class:servc
 machvers	./Makefile	/^define machvers	 $/;"	m
+main	./fbfax.cpp	/^int main(int argc,char** argv) \/\/α$/;"	f
 main_loop	./direkt.c	/^GMainLoop *main_loop = NULL;$/;"	v
 manges	./Makefile	/^define manges$/;"	m
 manu	./faxophone.h	/^	uint32_t manu[5];$/;"	m	struct:capi_profile
@@ -1807,7 +1811,7 @@ net_remove_event	./net_monitor.c	/^void net_remove_event(gconstpointer net_event
 net_shutdown	./network.c	/^void net_shutdown(void)$/;"	f
 net_state	./net_monitor.c	/^static inline gchar *net_state(gboolean state)$/;"	f	file:
 network_authenticate	./network.c	/^void network_authenticate(gboolean auth_set, struct auth_data *auth_data)$/;"	f
-network_authenticate_cb	./network.c	/^static void network_authenticate_cb(SoupSession *session, SoupMessage *msg, SoupAuth *auth, gboolean retrying, gpointer user_data)$/;"	f	file:
+network_authenticate_cb	./network.c	/^static gboolean network_authenticate_cb(SoupMessage *msg, SoupAuth *auth, gboolean retrying, gpointer user_data)$/;"	f	file:
 neufind	./kons.h	111;"	d
 neurf	./fbfax.cpp	/^void hhcl::neurf()$/;"	f	class:hhcl
 ngvz	./fbfax.h	/^		string ngvz; \/\/ Nichtgefaxt-Verzeichnis (Gescheiterte)$/;"	m	class:hhcl
@@ -1876,7 +1880,7 @@ optcl	./kons.cpp	/^optcl::optcl(const void* pptr,const par_t part, const int kur
 optcl	./kons.h	/^struct optcl:wpgcl$/;"	s
 opts	./kons.h	/^    vector<optioncl> opts;$/;"	m	struct:hcl
 optslsz	./kons.h	/^    size_t optslsz=0; \/\/ last opts.size()$/;"	m	struct:hcl
-p	./capiutils.h	/^	unsigned p;$/;"	m	struct:__anon6
+p	./capiutils.h	/^	unsigned p;$/;"	m	struct:__anon4
 p1	./fbfax.h	/^		string p1;$/;"	m	class:hhcl
 p2	./fbfax.h	/^		int p2;$/;"	m	class:hhcl
 p3	./fbfax.h	/^		string p3;$/;"	m	class:hhcl
@@ -1887,7 +1891,7 @@ paare	./kons.h	/^	vector<paarcl> paare;$/;"	m	struct:confdcl
 pac	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	e	enum:instprog
 page_current	./fax.h	/^	gint page_current;$/;"	m	struct:fax_status
 page_total	./fax.h	/^	gint page_total;$/;"	m	struct:fax_status
-par	./capiutils.h	/^	unsigned char *par;$/;"	m	struct:__anon6
+par	./capiutils.h	/^	unsigned char *par;$/;"	m	struct:__anon4
 par_t	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	g
 parent	./appobject.h	/^	GObject parent;$/;"	m	struct:_AppObject
 parent_class	./appobject.h	/^	GObjectClass parent_class;$/;"	m	struct:_AppObjectClass
@@ -1907,9 +1911,9 @@ pfad	./kons.h	/^    string pfad;$/;"	m	struct:elem2
 pfad	./kons.h	/^    string pfad;$/;"	m	struct:elem3
 pfile	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	e	enum:par_t
 phase	./fax.h	/^	enum fax_phase phase;$/;"	m	struct:fax_status	typeref:enum:fax_status::fax_phase
-phase_handler_b	./fax.c	/^static gint phase_handler_b(t30_state_t *state, void *user_data, gint result)$/;"	f	file:
-phase_handler_d	./fax.c	/^static gint phase_handler_d(t30_state_t *state, void *user_data, gint result)$/;"	f	file:
-phase_handler_e	./fax.c	/^static void phase_handler_e(t30_state_t *state, void *user_data, gint result)$/;"	f	file:
+phase_handler_b	./fax.c	/^static gint phase_handler_b(void *user_data, gint result)$/;"	f	file:
+phase_handler_d	./fax.c	/^static gint phase_handler_d(void *user_data, gint result)$/;"	f	file:
+phase_handler_e	./fax.c	/^static void phase_handler_e(void *user_data, gint result)$/;"	f	file:
 phone_call	./phone.c	/^struct capi_connection *phone_call(guchar controller, const char *source, const char *target, gboolean anonymous)$/;"	f
 phone_conference	./phone.c	/^void phone_conference(struct capi_connection *active, struct capi_connection *hold)$/;"	f
 phone_flush	./phone.c	/^void phone_flush(struct capi_connection *connection)$/;"	f
@@ -1983,14 +1987,16 @@ puchar	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint
 pverz	./kons.h	/^enum par_t:uchar {pstri,pdez,ppwd,pverz,pfile,puchar,pbin,pint,plong,pdat}; \/\/ Parameterart: Sonstiges, Verzeichnis, Datei, uchar, int, long, Datum (struct tm)$/;"	e	enum:par_t
 pvirtVorgbSpeziell	./fbfax.cpp	/^void hhcl::pvirtVorgbSpeziell()$/;"	f	class:hhcl
 pvirtVorgbSpeziell	./vgb.cpp	/^void hhcl::pvirtVorgbSpeziell()$/;"	f	class:hhcl
+pvirtfuehraus	./fbfax.cpp	/^void hhcl::pvirtfuehraus() \/\/α$/;"	f	class:hhcl
 pvirtmacherkl	./fbfax.cpp	/^void hhcl::pvirtmacherkl()$/;"	f	class:hhcl
+pvirtnachrueckfragen	./fbfax.cpp	/^void hhcl::pvirtnachrueckfragen()$/;"	f	class:hhcl
 pvirtvorrueckfragen	./fbfax.cpp	/^void hhcl::pvirtvorrueckfragen()$/;"	f	class:hhcl
 pvirtvorzaehler	./fbfax.cpp	/^void hhcl::pvirtvorzaehler()$/;"	f	class:hhcl
 pwd	./direkt.h	/^    const std::string pwd;$/;"	m	class:fbcl
 pwd	./fbfax.h	/^		string pwd;$/;"	m	class:hhcl
 pzuweis	./kons.cpp	/^int optcl::pzuweis(const char *const nacstr, const uchar vgegenteil\/*=0*\/, const uchar vnichtspeichern\/*=0*\/)$/;"	f	class:optcl
 read	./audio.h	/^	gsize (*read)(gpointer priv, guchar *buffer, gsize max_len);$/;"	m	struct:audio
-real_time_frame_handler	./fax.c	/^static void real_time_frame_handler(t30_state_t *state, void *user_data, gint direction, const uint8_t *msg, gint len)$/;"	f	file:
+real_time_frame_handler	./fax.c	/^static void real_time_frame_handler(void *user_data, bool direction, const uint8_t *msg, gint len)$/;"	f	file:
 reason	./faxophone.h	/^	unsigned int reason;$/;"	m	struct:capi_connection
 reason_b3	./faxophone.h	/^	unsigned int reason_b3;$/;"	m	struct:capi_connection
 record_channel	./faxophone.h	/^struct record_channel {$/;"	s
@@ -2020,7 +2026,7 @@ retry	./network.h	/^	gboolean retry;$/;"	m	struct:auth_data
 richtige	./kons.h	/^	size_t richtige;$/;"	m	struct:confdcl
 right	./kons.h	/^inline std::string right(std::string const& source, size_t const length)$/;"	f
 ring	./faxophone.h	/^	void (*ring)(struct capi_connection *connection);$/;"	m	struct:session_handlers_st
-rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon3
+rm_error	./routermanager.h	/^} rm_error;$/;"	t	typeref:enum:__anon7
 rmcl	./routermanager.c	/^rmcl::rmcl(gboolean debug, GError **error)$/;"	f	class:rmcl
 rmcl	./routermanager.h	/^struct rmcl$/;"	s
 rot	./kons.cpp	/^const char *const drot="", *const rot="", *const schwarz="", *const blau="", *const gelb="", *const tuerkis="", *const hgrau="";$/;"	v
@@ -2031,7 +2037,7 @@ rtrim	./kons.h	/^inline std::string *rtrim(std::string *str) {$/;"	f	class:std
 rtrim	./kons.h	/^inline void rtrim(char* str,size_t size) {$/;"	f
 rueckfragen	./kons.cpp	/^void hcl::rueckfragen()$/;"	f	class:hcl
 rzf	./kons.h	/^    uchar rzf=0; \/\/ rueckzufragen$/;"	m	struct:hcl
-save_password_callback	./network.c	/^static void save_password_callback(SoupMessage* msg, struct auth_data *auth_data)$/;"	f	file:
+save_password_callback	./network.c	/^static void save_password_callback(SoupMessage *msg, struct auth_data *auth_data)$/;"	f	file:
 sb	./kons.h	/^    const struct stat sb={0};$/;"	m	struct:elem3	typeref:struct:elem3::stat
 schAcl	./kons.cpp	/^template<> schAcl<WPcl>::schAcl(const string& name, vector<aScl> *v):name(name)$/;"	f	class:schAcl
 schAcl	./kons.cpp	/^template<> schAcl<WPcl>::schAcl(const string& name, vector<aScl> v):name(name)$/;"	f	class:schAcl
@@ -2083,7 +2089,7 @@ soup_session	./network.c	/^SoupSession *soup_session = NULL;$/;"	v
 source	./faxophone.h	/^	char *source;$/;"	m	struct:capi_connection
 spandsp_close	./fax.c	/^gint spandsp_close(fax_state_t *fax_state)$/;"	f
 spandsp_init	./fax.c	/^gint spandsp_init(const gchar *tiff_file, gboolean sending, gchar modem, gchar ecm, const gchar *lsi, const gchar *local_header_info, struct capi_connection *connection)$/;"	f
-spandsp_msg_log	./fax.c	/^static void spandsp_msg_log(gint level, const gchar *text)$/;"	f	file:
+spandsp_msg_log	./fax.c	/^static void spandsp_msg_log(void *user_data, gint level, const gchar *text)$/;"	f	file:
 spandsp_rx	./fax.c	/^gint spandsp_rx(fax_state_t *fax_state, uint8_t *buf, size_t len)$/;"	f
 spandsp_tx	./fax.c	/^gint spandsp_tx(fax_state_t *fax_state, uint8_t *buf, size_t len)$/;"	f
 spath	./kons.cpp	/^const string& spath=$/;"	v
@@ -2158,7 +2164,7 @@ type	./faxophone.h	/^	enum session_type type;$/;"	m	struct:capi_connection	typer
 uchar	./kons.h	/^typedef unsigned char uchar; \/\/ 1 Byte$/;"	t
 udpr	./kons.h	/^ string udpr;   \/\/ Befehl zum direkten Deinstallieren$/;"	m	struct:linst_cl
 uebers	./kons.h	/^		stringstream uebers; \/\/ Ueberschrift fuer Verarbeitungslauf$/;"	m	struct:hcl
-uebersichtlich	./kons.cpp	5758;"	d	file:
+uebersichtlich	./kons.cpp	5763;"	d	file:
 uint16_t	./faxophone.h	/^typedef unsigned short uint16_t;$/;"	t
 uint32_t	./faxophone.h	/^typedef unsigned int uint32_t;$/;"	t
 ull	./kons.h	/^typedef unsigned long long ull;$/;"	t
@@ -2185,6 +2191,7 @@ verarbeit	./kons.cpp	/^int find3cl::verarbeit(const char *fpath, const struct st
 verarbeitkonf	./kons.cpp	/^void hcl::verarbeitkonf()$/;"	f	class:hcl
 versnr	./fbfax.cpp	/^const double& versnr= \/\/α$/;"	v
 verszuzahl	./kons.cpp	/^double verszuzahl(const string& vers)$/;"	f
+verzeichnisse	./fbfax.cpp	/^void hhcl::verzeichnisse()$/;"	f	class:hhcl
 verzneu	./kons.h	/^		int eingefuegt, verzneu;$/;"	m	struct:find2cl
 viadd	./kons.cpp	/^void viadd(string* const cmdp,string* const zeigp, const string& datei,const uchar ro\/*=0*\/,const uchar hinten\/*=0*\/, const uchar unten\/*=0*\/)$/;"	f
 violett	./kons.cpp	/^			*const dblau="\\e[0;34;1;47m", *const blau="\\e[1;34m", *const violett="\\e[0;35m", *const hviolett="\\e[1;35m",$/;"	v
@@ -2192,6 +2199,7 @@ virtMusterVorgb	./fbfax.cpp	/^void hhcl::virtMusterVorgb()$/;"	f	class:hhcl
 virtMusterVorgb	./kons.cpp	/^void hcl::virtMusterVorgb()$/;"	f	class:hcl
 virtVorgbAllg	./fbfax.cpp	/^void hhcl::virtVorgbAllg()$/;"	f	class:hhcl
 virtVorgbAllg	./kons.cpp	/^void hcl::virtVorgbAllg()$/;"	f	class:hcl
+virtautokonfschreib	./fbfax.cpp	/^void hhcl::virtautokonfschreib()$/;"	f	class:hhcl
 virtautokonfschreib	./kons.cpp	/^void hcl::virtautokonfschreib()$/;"	f	class:hcl
 virteinzutragen	./kons.cpp	/^const uchar optcl::virteinzutragen(\/*schAcl<optcl>**\/void* schlp,int obverb)$/;"	f	class:optcl
 virteinzutragen	./kons.cpp	/^const uchar wpgcl::virteinzutragen(void *schlp,int obverb)$/;"	f	class:wpgcl
@@ -2203,6 +2211,7 @@ virtholstr	./kons.cpp	/^string wpgcl::virtholstr() const$/;"	f	class:wpgcl
 virtinitopt	./fbfax.cpp	/^void hhcl::virtinitopt()$/;"	f	class:hhcl
 virtinitopt	./kons.cpp	/^void hcl::virtinitopt()$/;"	f	class:hcl
 virtlgnzuw	./kons.cpp	/^void hcl::virtlgnzuw()$/;"	f	class:hcl
+virtlieskonfein	./fbfax.cpp	/^void hhcl::virtlieskonfein()$/;"	f	class:hhcl
 virtlieskonfein	./kons.cpp	/^void hcl::virtlieskonfein()$/;"	f	class:hcl
 virtloeschomaps	./kons.cpp	/^void optcl::virtloeschomaps(schAcl<optcl> *schlp)$/;"	f	class:optcl
 virtmachbemerk	./kons.cpp	/^const string& optcl::virtmachbemerk(const Sprache lg,const binaer obfarbe\/*=wahr*\/)$/;"	f	class:optcl
@@ -2213,11 +2222,14 @@ virtoausgeb	./kons.cpp	/^void wpgcl::virtoausgeb() const$/;"	f	class:wpgcl
 virtpruefweiteres	./fbfax.cpp	/^void hhcl::virtpruefweiteres()$/;"	f	class:hhcl
 virtpruefweiteres	./kons.cpp	/^void hcl::virtpruefweiteres()$/;"	f	class:hcl
 virtrueckfrage	./kons.cpp	/^void hcl::virtrueckfrage(shared_ptr<optcl>& omit)$/;"	f	class:hcl
+virtschlussanzeige	./fbfax.cpp	/^void hhcl::virtschlussanzeige()$/;"	f	class:hhcl
 virtschlussanzeige	./kons.cpp	/^void hcl::virtschlussanzeige()$/;"	f	class:hcl
+virttesterg	./fbfax.cpp	/^void hhcl::virttesterg()$/;"	f	class:hhcl
 virttusetzbemerkwoher	./kons.cpp	/^void optcl::virttusetzbemerkwoher(const string& ibemerk,const uchar vwoher)$/;"	f	class:optcl
 virttusetzbemerkwoher	./kons.cpp	/^void wpgcl::virttusetzbemerkwoher(const string& ibemerk, const uchar vwoher)$/;"	f	class:wpgcl
 virtweisomapzu	./kons.cpp	/^void optcl::virtweisomapzu(void *schlp)$/;"	f	class:optcl
 virtweisomapzu	./kons.cpp	/^void wpgcl::virtweisomapzu(void *optp)$/;"	f	class:wpgcl
+virtzeigueberschrift	./fbfax.cpp	/^void hhcl::virtzeigueberschrift()$/;"	f	class:hhcl
 virtzeigueberschrift	./kons.cpp	/^void hcl::virtzeigueberschrift()$/;"	f	class:hcl
 virtzeigversion	./fbfax.cpp	/^void hhcl::virtzeigversion(const string& ltiffv\/*=string()*\/)$/;"	f	class:hhcl
 virtzeigversion	./kons.cpp	/^void hcl::virtzeigversion(const string& ltiffv\/*=string()*\/)$/;"	f	class:hcl
@@ -2281,6 +2293,7 @@ zypper	./kons.h	/^enum instprog {keinp,zypper,apt,dnf,yum,urp,pac};$/;"	e	enum:i
 ~fbcl	./direkt.c	/^fbcl::~fbcl()$/;"	f	class:fbcl
 ~find2cl	./kons.cpp	/^find2cl::~find2cl()$/;"	f	class:find2cl
 ~hcl	./kons.cpp	/^hcl::~hcl()$/;"	f	class:hcl
+~hhcl	./fbfax.cpp	/^hhcl::~hhcl() $/;"	f	class:hhcl
 ~ic_cl	./kons.cpp	/^ic_cl::~ic_cl() { $/;"	f	class:ic_cl
 ~optcl	./kons.cpp	/^optcl::~optcl()$/;"	f	class:optcl
 ~rmcl	./routermanager.c	/^rmcl::~rmcl()$/;"	f	class:rmcl

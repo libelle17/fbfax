@@ -1270,3 +1270,496 @@ Checking for file conflicts: [..done]
 (1/1) Installing: libsoup-devel-3.6.6-160000.1.1.x86_64 [...done]
 Running post-transaction scripts [...done]
 IP: ' libsoup-devel'
+
+Rueckmeldung bei einricht spandsp-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'spandsp-devel-3.0.0+g57-160000.2.2.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Die folgenden 2 NEUEN Pakete werden installiert:
+  libspandsp3 spandsp-devel
+
+2 neue Pakete zu installieren.
+
+Größe des Pakets zum Herunterladen:   575,8 KiB
+
+Änderung der Installationsgröße des Pakets:
+              |       2,1 MiB  erforderlich für Pakete, die installiert werden sollen
+     2,1 MiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Pakete vorladen [..
+Vorladen: spandsp-devel-3.0.0+g57-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libspandsp3-3.0.0+g57-160000.2.2.x86_64.rpm [fertig]
+.fertig]
+Abrufen: libspandsp3-3.0.0+g57-160000.2.2.x86_64 (repo-oss (16.0)) (1/2), 374,4 KiB    
+Abrufen: spandsp-devel-3.0.0+g57-160000.2.2.x86_64 (repo-oss (16.0)) (2/2), 201,5 KiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/2) Installieren: libspandsp3-3.0.0+g57-160000.2.2.x86_64 [..fertig]
+(2/2) Installieren: spandsp-devel-3.0.0+g57-160000.2.2.x86_64 [..fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Die folgenden 3 NEUEN Pakete werden installiert:
+  libsoup-devel sqlite3-devel typelib-1_0-Soup-3_0
+
+3 neue Pakete zu installieren.
+
+Größe des Pakets zum Herunterladen:     2,0 MiB
+
+Änderung der Installationsgröße des Pakets:
+              |       8,3 MiB  erforderlich für Pakete, die installiert werden sollen
+     8,3 MiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Pakete vorladen [..
+Vorladen: typelib-1_0-Soup-3_0-3.6.6-160000.1.1.x86_64.rpm [fertig]
+.
+Vorladen: sqlite3-devel-3.51.3-160000.1.1.x86_64.rpm [fertig]
+.
+Vorladen: libsoup-devel-3.6.6-160000.1.1.x86_64.rpm [fertig]
+.fertig]
+Abrufen: sqlite3-devel-3.51.3-160000.1.1.x86_64 (repo-oss (16.0)) (1/3), 305,4 KiB    
+Abrufen: typelib-1_0-Soup-3_0-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (2/3), 159,7 KiB    
+Abrufen: libsoup-devel-3.6.6-160000.1.1.x86_64 (repo-oss (16.0)) (3/3),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/3) Installieren: sqlite3-devel-3.51.3-160000.1.1.x86_64 [..fertig]
+(2/3) Installieren: typelib-1_0-Soup-3_0-3.6.6-160000.1.1.x86_64 [..fertig]
+(3/3) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [...fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsndfile-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsndfile-devel-1.2.2-160000.3.2.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Die folgenden 16 NEUEN Pakete werden installiert:
+  flac-devel libFLAC++10 libFLAC++10-x86-64-v3 libFLAC12 libFLAC12-x86-64-v3 libogg-devel libopus-devel libsndfile1 libsndfile-devel libspeex1 libspeexdsp1 libvorbis-devel libvorbisfile3 libvorbisfile3-x86-64-v3 speex-devel speexdsp-devel
+
+16 neue Pakete zu installieren.
+
+Größe des Pakets zum Herunterladen:     2,5 MiB
+
+Änderung der Installationsgröße des Pakets:
+              |       9,2 MiB  erforderlich für Pakete, die installiert werden sollen
+     9,2 MiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Pakete vorladen [..
+Vorladen: libopus-devel-1.5.2-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libspeex1-1.2.1-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libspeexdsp1-1.2.1-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libogg-devel-1.3.5-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: libvorbisfile3-1.3.7-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: libFLAC++10-1.4.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libsndfile1-1.2.2-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: libFLAC12-x86-64-v3-1.4.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libvorbisfile3-x86-64-v3-1.3.7-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: libvorbis-devel-1.3.7-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: libFLAC++10-x86-64-v3-1.4.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libFLAC12-1.4.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libsndfile-devel-1.2.2-160000.3.2.x86_64.rpm [fertig]
+.
+Vorladen: speex-devel-1.2.1-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: flac-devel-1.4.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: speexdsp-devel-1.2.1-160000.2.2.x86_64.rpm [fertig]
+.fertig]
+Abrufen: libFLAC12-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (1/16), 230,6 KiB    
+Abrufen: libogg-devel-1.3.5-160000.3.2.x86_64 (repo-oss (16.0)) (2/16), 192,8 KiB    
+Abrufen: libopus-devel-1.5.2-160000.2.2.x86_64 (repo-oss (16.0)) (3/16),  44,8 KiB    
+Abrufen: libspeex1-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (4/16),  64,7 KiB    
+Abrufen: libspeexdsp1-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (5/16),  51,1 KiB    
+Abrufen: libvorbisfile3-1.3.7-160000.3.2.x86_64 (repo-oss (16.0)) (6/16),  35,0 KiB    
+Abrufen: libFLAC12-x86-64-v3-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (7/16), 214,6 KiB    
+Abrufen: libFLAC++10-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (8/16),  71,0 KiB    
+Abrufen: libsndfile1-1.2.2-160000.3.2.x86_64 (repo-oss (16.0)) (9/16), 216,0 KiB    
+Abrufen: speexdsp-devel-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (10/16), 420,4 KiB    
+Abrufen: libvorbisfile3-x86-64-v3-1.3.7-160000.3.2.x86_64 (repo-oss (16.0)) (11/16),  34,8 KiB    
+Abrufen: libvorbis-devel-1.3.7-160000.3.2.x86_64 (repo-oss (16.0)) (12/16),  32,1 KiB    
+Abrufen: libFLAC++10-x86-64-v3-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (13/16),  53,0 KiB    
+Abrufen: flac-devel-1.4.3-160000.2.2.x86_64 (repo-oss (16.0)) (14/16), 376,3 KiB    
+Abrufen: speex-devel-1.2.1-160000.2.2.x86_64 (repo-oss (16.0)) (15/16), 422,2 KiB    
+Abrufen: libsndfile-devel-1.2.2-160000.3.2.x86_64 (repo-oss (16.0)) (16/16), 118,7 KiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+( 1/16) Installieren: libFLAC12-1.4.3-160000.2.2.x86_64 [..fertig]
+( 2/16) Installieren: libogg-devel-1.3.5-160000.3.2.x86_64 [..fertig]
+( 3/16) Installieren: libopus-devel-1.5.2-160000.2.2.x86_64 [..fertig]
+( 4/16) Installieren: libspeex1-1.2.1-160000.2.2.x86_64 [..fertig]
+( 5/16) Installieren: libspeexdsp1-1.2.1-160000.2.2.x86_64 [..fertig]
+( 6/16) Installieren: libvorbisfile3-1.3.7-160000.3.2.x86_64 [..fertig]
+( 7/16) Installieren: libFLAC12-x86-64-v3-1.4.3-160000.2.2.x86_64 [..fertig]
+( 8/16) Installieren: libFLAC++10-1.4.3-160000.2.2.x86_64 [..fertig]
+( 9/16) Installieren: libsndfile1-1.2.2-160000.3.2.x86_64 [..fertig]
+(10/16) Installieren: speexdsp-devel-1.2.1-160000.2.2.x86_64 [..fertig]
+(11/16) Installieren: libvorbisfile3-x86-64-v3-1.3.7-160000.3.2.x86_64 [..fertig]
+(12/16) Installieren: libvorbis-devel-1.3.7-160000.3.2.x86_64 [..fertig]
+(13/16) Installieren: libFLAC++10-x86-64-v3-1.4.3-160000.2.2.x86_64 [..fertig]
+(14/16) Installieren: flac-devel-1.4.3-160000.2.2.x86_64 [..fertig]
+(15/16) Installieren: speex-devel-1.2.1-160000.2.2.x86_64 [..fertig]
+(16/16) Installieren: libsndfile-devel-1.2.2-160000.3.2.x86_64 [..fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libgssdp-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libgssdp-devel-1.6.3-160000.2.2.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Die folgenden 3 NEUEN Pakete werden installiert:
+  libgssdp-1_6-0 libgssdp-devel typelib-1_0-GSSDP-1_0
+
+3 neue Pakete zu installieren.
+
+Größe des Pakets zum Herunterladen:   135,6 KiB
+
+Änderung der Installationsgröße des Pakets:
+              |     254,1 KiB  erforderlich für Pakete, die installiert werden sollen
+   254,1 KiB  |  -      0 B    freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Pakete vorladen [..
+Vorladen: libgssdp-1_6-0-1.6.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: libgssdp-devel-1.6.3-160000.2.2.x86_64.rpm [fertig]
+.
+Vorladen: typelib-1_0-GSSDP-1_0-1.6.3-160000.2.2.x86_64.rpm [fertig]
+.fertig]
+Abrufen: libgssdp-1_6-0-1.6.3-160000.2.2.x86_64 (repo-oss (16.0)) (1/3),  69,9 KiB    
+Abrufen: typelib-1_0-GSSDP-1_0-1.6.3-160000.2.2.x86_64 (repo-oss (16.0)) (2/3),  27,5 KiB    
+Abrufen: libgssdp-devel-1.6.3-160000.2.2.x86_64 (repo-oss (16.0)) (3/3),  38,2 KiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/3) Installieren: libgssdp-1_6-0-1.6.3-160000.2.2.x86_64 [..fertig]
+(2/3) Installieren: typelib-1_0-GSSDP-1_0-1.6.3-160000.2.2.x86_64 [..fertig]
+(3/3) Installieren: libgssdp-devel-1.6.3-160000.2.2.x86_64 [..fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:
+            |       1,5 MiB  Gesamtpaketgröße
+       0 B  |  -    1,5 MiB  bereits im Cache
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libsoup-devel-3.6.6-160000.1.1.x86_64.rpm (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [...fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:
+            |       1,5 MiB  Gesamtpaketgröße
+       0 B  |  -    1,5 MiB  bereits im Cache
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libsoup-devel-3.6.6-160000.1.1.x86_64.rpm (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [....fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:
+            |       1,5 MiB  Gesamtpaketgröße
+       0 B  |  -    1,5 MiB  bereits im Cache
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libsoup-devel-3.6.6-160000.1.1.x86_64.rpm (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [...fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [....fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:
+            |       1,5 MiB  Gesamtpaketgröße
+       0 B  |  -    1,5 MiB  bereits im Cache
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libsoup-devel-3.6.6-160000.1.1.x86_64.rpm (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [...fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [....fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:
+            |       1,5 MiB  Gesamtpaketgröße
+       0 B  |  -    1,5 MiB  bereits im Cache
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libsoup-devel-3.6.6-160000.1.1.x86_64.rpm (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [....fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:
+            |       1,5 MiB  Gesamtpaketgröße
+       0 B  |  -    1,5 MiB  bereits im Cache
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libsoup-devel-3.6.6-160000.1.1.x86_64.rpm (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [....fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:
+            |       1,5 MiB  Gesamtpaketgröße
+       0 B  |  -    1,5 MiB  bereits im Cache
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libsoup-devel-3.6.6-160000.1.1.x86_64.rpm (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [....fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:
+            |       1,5 MiB  Gesamtpaketgröße
+       0 B  |  -    1,5 MiB  bereits im Cache
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libsoup-devel-3.6.6-160000.1.1.x86_64.rpm (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [....fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:
+            |       1,5 MiB  Gesamtpaketgröße
+       0 B  |  -    1,5 MiB  bereits im Cache
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libsoup-devel-3.6.6-160000.1.1.x86_64.rpm (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [....fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:
+            |       1,5 MiB  Gesamtpaketgröße
+       0 B  |  -    1,5 MiB  bereits im Cache
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libsoup-devel-3.6.6-160000.1.1.x86_64.rpm (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [..fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [....fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
