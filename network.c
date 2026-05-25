@@ -119,8 +119,27 @@ gboolean net_init(void)
          * stattdessen soup_session_set_timeout() verwenden */
         soup_session = soup_session_new();
         soup_session_set_timeout(soup_session, 5);
-        g_signal_connect(soup_session, "authenticate", G_CALLBACK(network_authenticate_cb), soup_session);
+        /* libsoup 3: SoupSession::authenticate wurde entfernt.
+         * Das Signal wird jetzt pro SoupMessage verbunden –
+         * siehe network_new_message(). */
         return soup_session != NULL;
+}
+
+/**
+ * \brief Create a new SoupMessage and connect the libsoup-3 per-message
+ *        authenticate signal to it.
+ * \param method      HTTP method string, e.g. SOUP_METHOD_GET
+ * \param uri_string  target URL
+ * \return new SoupMessage, or NULL on error
+ */
+SoupMessage *network_new_message(const gchar *method, const gchar *uri_string)
+{
+        SoupMessage *msg = soup_message_new(method, uri_string);
+        if (msg) {
+                g_signal_connect(msg, "authenticate",
+                                 G_CALLBACK(network_authenticate_cb), soup_session);
+        }
+        return msg;
 }
 
 /**
