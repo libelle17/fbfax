@@ -322,7 +322,7 @@ int dmain(int argc, string *argv,fstream *vwdtph, const string usr,const string 
     if (nstumm) {
       printf("Sende: Datei: %s%s%s, Msn: %s%s%s, Ziel: %s%s%s, Absender: %s%s%s, Autor: %s%s%s\n",blau,ndat.c_str(),schwarz,blau,msn,schwarz,blau,ziel,schwarz,blau,abs,schwarz,blau,autor,schwarz);
     }
-		__attribute__ ((unused)) struct capi_connection * conn=fax_send((gchar*)ndat.c_str(),/*modem,3=14400*/3,/*ecm*/1,/*controller*/1,/*cip,4=speech,0x11=fax,geht beides*/4,
+		__attribute__ ((unused)) struct capi_connection * conn=fax_send((gchar*)ndat.c_str(),/*modem,3=14400*/3,/*ecm*/1,/*controller*/1,/*cip,0x11=Fax G3*/0x11,
 				(gchar*)msn,(gchar*)ziel,/*lsi*/(gchar*)abs,/*local_header_info*/(gchar*)autor,/*return error code*/0);
 		/* Create and start g_main_loop */
     
