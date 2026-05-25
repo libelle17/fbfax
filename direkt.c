@@ -159,7 +159,7 @@ void fax_connection_status_cb(AppObject *object, gint status, struct capi_connec
 				system((string("mv \"")+ptr[1]/*tifd*/+"\" \""+ptr[6]/*dtn[i]*/+"\" \""+ptr[7]/*gfvz*/+"/\"").c_str());
 				success = TRUE;
 			} else {
-				if (nstumm) g_message("%s", "Fax transfer failed");
+				if (nstumm) g_message("Fax transfer failed, CAPI error: 0x%04x", fax_status->error_code);
 				if (ptr[9]/*rest*/.empty()) {
 					vwdtp->close();
 					system((string("mv \"")+ptr[1]/*tifd*/+"\" \""+ptr[6]/*dtn[i]*/+"\" \""+ptr[8]/*ngvz*/+"/\"").c_str());
