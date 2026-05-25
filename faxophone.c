@@ -1845,7 +1845,7 @@ struct session *faxophone_init(struct session_handlers_st *handlers, const char 
 			capi20ext_set_driver((gchar*)"fritzbox");
 			capi20ext_set_host((char *) host);
 			capi20ext_set_port(5031);
-			capi20ext_set_tracelevel(0);
+			capi20ext_set_tracelevel(3);
 #else
 			setHostName(host);
 #endif

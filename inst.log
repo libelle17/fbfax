@@ -1964,3 +1964,46 @@ Repository-Daten werden geladen...
 Installierte Pakete werden gelesen...
 'verbose' wurde in den Paketnamen nicht gefunden. Fähigkeiten werden durchsucht.
 IP: ''
+
+Rueckmeldung bei einricht libsoup-devel:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+Installation von 'libsoup-devel-3.6.6-160000.1.1.x86_64' aus Repository 'repo-oss (16.0)' wird erzwungen.
+Paketabhängigkeiten werden aufgelöst...
+
+Das folgende Paket wird erneut installiert:
+  libsoup-devel
+
+1 zu installierendes Paket.
+
+Größe des Pakets zum Herunterladen:
+            |       1,5 MiB  Gesamtpaketgröße
+       0 B  |  -    1,5 MiB  bereits im Cache
+
+Änderung der Installationsgröße des Pakets:
+            |       7,6 MiB  erforderlich für Pakete, die installiert werden sollen
+       0 B  |  -    7,6 MiB  freigegeben von Paketen, die entfernt werden sollen
+
+Backend:  classic_rpmtrans
+Fortfahren? [j/n/v/...? zeigt alle Optionen] (j): j
+Im Cache libsoup-devel-3.6.6-160000.1.1.x86_64.rpm (1/1),   1,5 MiB    
+
+Überprüfung auf Dateikonflikte läuft: [...fertig]
+(1/1) Installieren: libsoup-devel-3.6.6-160000.1.1.x86_64 [...fertig]
+Nach-Transaktions-Skripte werden ausgeführt [...fertig]
+IP: ''
+
+Rueckmeldung bei einricht verbose:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+'verbose' wurde in den Paketnamen nicht gefunden. Fähigkeiten werden durchsucht.
+IP: ''
+
+Rueckmeldung bei einricht verbose:
+Dienst 'openSUSE' wird aktualisiert.
+Repository-Daten werden geladen...
+Installierte Pakete werden gelesen...
+'verbose' wurde in den Paketnamen nicht gefunden. Fähigkeiten werden durchsucht.
+IP: ''
