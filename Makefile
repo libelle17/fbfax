@@ -166,7 +166,7 @@ ifneq ($(LGLIB),)
 	LDFLAGS::=$(LDFLAGS) -lglib-2.0
 endif
 ifneq ($(LSOUP),)
-	SOUPVERS::=$(shell grep -l 'Cflags.*libsoup' $(PCFILES)|sort|tail -n1) # sort: bei mehreren installierten libsoup-Versionen (z.B. 2.4 UND 3.0) deterministisch die hoechste waehlen, nicht die von find() zufaellig zuletzt gelistete
+	SOUPVERS::=$(shell pkg-config --exists libsoup-3.0 && echo libsoup-3.0 || (grep -l 'Cflags.*libsoup' $(PCFILES)|sort|tail -n1)) # libsoup-3.0 explizit bevorzugen: alphabetisches sort|tail waehlt sonst je nach installierten Paketen faelschlich libsoup-2.4 oder gar libsoup-gnome-2.4
 	CFLAGS::=$(CFLAGS) $(shell pkg-config --cflags $(SOUPVERS))
 	LDFLAGS::=$(LDFLAGS) $(shell pkg-config --libs $(SOUPVERS))
 endif
