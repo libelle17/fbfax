@@ -2,7 +2,7 @@
 .\" Manual-Seite für ²DPROG²
 .\" Schreiben Sie an geraldschade@gmx.de, wenn Sie Fehler oder Mängel entdeckt haben
 .pc
-.TH man 1 "26.05.26" "Version 0.1041" "Manual-Seite für ²DPROG²"
+.TH man 1 "11.07.26" "Version 0.10411" "Manual-Seite für ²DPROG²"
 .hy 0
 .SH NAME
 \fB²DPROG² \- Faxversand über Fritz!Box\fR: stellt Faxe in eine Sendewarteschlange und überträgt sie über die Fritz!Box per TR-064-Protokoll
@@ -58,7 +58,7 @@ Gibt Warte-, Gefaxt- und Nichtgefaxt-Verzeichnis auf \fBstdout\fR aus, je eine Z
 .SH OPTIONEN
  '\fB²DPROG² -?\fR' oder '\fB²DPROG² -h\fR' zeigt die wichtigen Befehlszeilenoptionen und '\fB²DPROG² -lh\fR' alle. Die Konfigurationsdatei kann über '\fB²DPROG² -vi\fR' direkt editiert oder über '\fB²DPROG² -rf\fR' interaktiv gepflegt werden.
 .br
-                                                                                                                                                           \fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10410 \fR
+                                                                              \fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10411 \fR
 .br
 \fBOptionen, die nicht gespeichert werden (aktueller Wert in Klammern): \fR
 .br

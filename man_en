@@ -2,7 +2,7 @@
 .\" manual page for ²DPROG²
 .\" write to geraldschade@gmx.de if You discover an error or a deficit in the program
 .pc
-.TH man 1 "26.05.26" "Version 0.1041" "\fB²DPROG²\fR man page"
+.TH man 1 "11.07.26" "Version 0.10411" "\fB²DPROG²\fR man page"
 .hy 0
 .SH NAME
 \fB²DPROG² \- Fax transmission via Fritz!Box\fR: queues fax jobs and transmits them via a Fritz!Box using the TR-064 protocol
@@ -56,7 +56,7 @@ Prints the waiting, faxed and notfaxed directory paths to \fBstdout\fR, one per 
 .SH OPTIONS
  '\fB²DPROG² -?\fR' or '\fB²DPROG² -h\fR' shows the important command line options and '\fB²DPROG² -lh\fR' all of them. The configuration file can be edited directly by '\fB²DPROG² -vi\fR' or interactively by '\fB²DPROG² -rf\fR'.
 .br
-                                                                                                                                                           \fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10410 \fR
+                                                                              \fRProgramm: \fB/root/fbfax/fbfax\fR, V: \fB0.10411 \fR
 .br
 \fBOptions which are not saved (current value in parentheses): \fR
 .br

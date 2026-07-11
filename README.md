@@ -1,6 +1,6 @@
 <h3>Manual: 1) <a href="#english_E">english</a>, 2) <a href="#deutsch_D">deutsch (unten anschließend)</a></h3>
 
-<h1 align="center">FBFAX (Version 0.1041) - english<a name="english_D"></a></h1>
+<h1 align="center">FBFAX (Version 0.10411) - english<a name="english_D"></a></h1>
 
 <a href="#NAME_D">NAME</a><br>
 <a href="#SYNOPSIS_D">SYNOPSIS</a><br>
@@ -126,7 +126,7 @@ important command line options and &rsquo;<b>fbfax
 -lh</b>&rsquo; all of them. The configuration file can be
 edited directly by &rsquo;<b>fbfax -vi</b>&rsquo; or
 interactively by &rsquo;<b>fbfax -rf</b>&rsquo;. <br>
-Programm: <b>/root/fbfax/fbfax</b>, V: <b>0.10410 <br>
+Programm: <b>/root/fbfax/fbfax</b>, V: <b>0.10411 <br>
 Options which are not saved (current value in parentheses):
 <br>
 -st, --stop</b>: stop fbfax (<b>0</b>) <b><br>
@@ -459,7 +459,7 @@ caused by the program.</p>
 </body>
 </html>
 
-<h1 align="center">FBFAX (Version 0.1041) - deutsch<a name="deutsch_D"></a></h1>
+<h1 align="center">FBFAX (Version 0.10411) - deutsch<a name="deutsch_D"></a></h1>
 
 <a href="#NAME_D">NAME</a><br>
 <a href="#SYNOPSIS_D">SYNOPSIS</a><br>
@@ -595,7 +595,7 @@ wichtigen Befehlszeilenoptionen und &rsquo;<b>fbfax
 &uuml;ber &rsquo;<b>fbfax -vi</b>&rsquo; direkt editiert
 oder &uuml;ber &rsquo;<b>fbfax -rf</b>&rsquo; interaktiv
 gepflegt werden. <br>
-Programm: <b>/root/fbfax/fbfax</b>, V: <b>0.10410 <br>
+Programm: <b>/root/fbfax/fbfax</b>, V: <b>0.10411 <br>
 Optionen, die nicht gespeichert werden (aktueller Wert in
 Klammern): <br>
 -st, --stop</b>: fbfax anhalten (<b>0</b>) <b><br>
