@@ -166,7 +166,7 @@ ifneq ($(LGLIB),)
 	LDFLAGS::=$(LDFLAGS) -lglib-2.0
 endif
 ifneq ($(LSOUP),)
-	SOUPVERS::=$(shell grep -l 'Cflags.*libsoup' $(PCFILES)|tail -n1)
+	SOUPVERS::=$(shell grep -l 'Cflags.*libsoup' $(PCFILES)|sort|tail -n1) # sort: bei mehreren installierten libsoup-Versionen (z.B. 2.4 UND 3.0) deterministisch die hoechste waehlen, nicht die von find() zufaellig zuletzt gelistete
 	CFLAGS::=$(CFLAGS) $(shell pkg-config --cflags $(SOUPVERS))
 	LDFLAGS::=$(LDFLAGS) $(shell pkg-config --libs $(SOUPVERS))
 endif
@@ -178,7 +178,7 @@ ifneq ($(QPDF),)
 endif
 ifneq ($(LGSSDP),)
 #	LDFLAGS::=$(LDFLAGS) -lgssdp-1.0
-	LDFLAGS::=$(LDFLAGS) $(shell pkg-config --libs $(shell grep -l 'Cflags.*gssdp' $(PCFILES)|tail -n1))
+	LDFLAGS::=$(LDFLAGS) $(shell pkg-config --libs $(shell grep -l 'Cflags.*gssdp' $(PCFILES)|sort|tail -n1))
 endif
 ifneq ($(LCAPI),)
 	LDFLAGS::=$(LDFLAGS) -lcapi20
