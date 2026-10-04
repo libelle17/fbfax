@@ -1374,7 +1374,7 @@ static int capi_indication(_cmsg capi_message)
 		info = DISCONNECT_IND_REASON(&capi_message);
 //	if (verbg) printf("Stelle 27\n");
 
-		g_debug("IND: DISCONNECT - plci %d", plci);
+		g_debug("IND: DISCONNECT - plci %d, reason 0x%04x", plci, DISCONNECT_IND_REASON(&capi_message));
 //	if (verbg) printf("Stelle 28\n");
 
 		g_debug("RESP: DISCONNECT - plci %d", plci);
