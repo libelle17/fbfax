@@ -576,7 +576,20 @@ void hhcl::pvirtfuehraus() //α
 						fLog(rots+Tx[T_Gabelung_zu_dmain_misslungen]+schwarz,1,oblog);
 						exitt(1);
 					} else if (!pid) {
-						retu=dmain(sizeof ptr/sizeof *ptr,ptr,&vwdt,usr,pwd,host,obverb);
+						// Fritzbox-Zugangsdaten seit 4.10.2026 zentral in /root/.fbcred (username=/password=,
+						// wie fuer /etc/fstab, weckalle.sh, anrliste); nur wenn dort nichts steht, gelten
+						// usr/pwd aus der Konfiguration. Lokale Kopien, die Konfiguration bleibt unveraendert.
+						string fbu{usr},fbp{pwd};
+						{
+							ifstream fbc("/root/.fbcred");
+							string zeile;
+							while (getline(fbc,zeile)) {
+								if (!zeile.empty() && zeile.back()=='\r') zeile.pop_back();
+								if (!zeile.compare(0,9,"username=")) fbu=zeile.substr(9);
+								else if (!zeile.compare(0,9,"password=")) fbp=zeile.substr(9);
+							}
+						}
+						retu=dmain(sizeof ptr/sizeof *ptr,ptr,&vwdt,fbu,fbp,host,obverb);
 						exitt(retu);
 					} else {
 						pidcl phier(pid,"dmain"); // Elternprozess
